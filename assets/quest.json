@@ -1,0 +1,266 @@
+[
+  {
+    "name": "敵艦隊を撃破せよ！",
+    "category": 2,
+    "type": 2,
+    "condition": "获得胜利1次"
+  },
+  {
+    "name": "敵艦隊主力を撃滅せよ！",
+    "category": 2,
+    "type": 2,
+    "condition": "进行战斗1次"
+  },
+  {
+    "name": "敵艦隊を10回邀撃せよ！",
+    "category": 2,
+    "type": 2,
+    "condition": "进行战斗10次"
+  },
+  {
+    "name": "敵空母を3隻撃沈せよ！",
+    "category": 2,
+    "type": 4,
+    "condition": "击沉正规空母/轻空母3只"
+  },
+  {
+    "name": "敵補給艦を3隻撃沈せよ！",
+    "category": 2,
+    "type": 2,
+    "condition": "击沉补给舰3只"
+  },
+  {
+    "name": "敵輸送船団を叩け！",
+    "category": 2,
+    "type": 5,
+    "condition": "击沉补给舰5只"
+  },
+  {
+    "name": "南西諸島海域の制海権を握れ！",
+    "category": 2,
+    "type": 2,
+    "condition": "获得2-1～2-5 BOSS战胜利5次"
+  },
+  {
+    "name": "敵潜水艦を制圧せよ！",
+    "category": 2,
+    "type": 2,
+    "condition": "击沉潜水舰6只"
+  },
+  {
+    "name": "あ号作戦",
+    "category": 2,
+    "type": 3,
+    "condition": "获得S胜利6次, 获得BOSS战胜利12次, 进行BOSS战24次, 进行战斗36次"
+  },
+  {
+    "name": "い号作戦",
+    "category": 2,
+    "type": 3,
+    "condition": "击沉正规空母/轻空母20只"
+  },
+  {
+    "name": "海上通商破壊作戦",
+    "category": 2,
+    "type": 3,
+    "condition": "击沉补给舰20只"
+  },
+  {
+    "name": "ろ号作戦",
+    "category": 2,
+    "type": 3,
+    "condition": "击沉补给舰50只"
+  },
+  {
+    "name": "海上護衛戦",
+    "category": 2,
+    "type": 3,
+    "condition": "击沉潜水舰15只"
+  },
+  {
+    "name": "敵東方艦隊を撃滅せよ！",
+    "category": 2,
+    "type": 3,
+    "condition": "获得4-1～4-5 BOSS战胜利12次"
+  },
+  {
+    "name": "敵北方艦隊主力を撃滅せよ！",
+    "category": 2,
+    "type": 3,
+    "condition": "获得3-3～3-5 BOSS战胜利5次"
+  },
+  {
+    "name": "敵東方中枢艦隊を撃破せよ！",
+    "category": 2,
+    "type": 3,
+    "condition": "获得4-4 BOSS战胜利1次"
+  },
+  {
+    "name": "南方海域珊瑚諸島沖の制空権を握れ！",
+    "category": 2,
+    "type": 3,
+    "condition": "获得5-2 BOSS战S胜利2次"
+  },
+  {
+    "name": "海上輸送路の安全確保に努めよ！",
+    "category": 2,
+    "type": 3,
+    "condition": "获得1-5 BOSS战A胜利以上3次"
+  },
+  {
+    "name": "「第五戦隊」出撃せよ！",
+    "category": 2,
+    "type": 6,
+    "condition": "获得2-5 BOSS战S胜利1次, 需要妙高+那智+羽黑"
+  },
+  {
+    "name": "「潜水艦隊」出撃せよ！",
+    "category": 2,
+    "type": 6,
+    "condition": "获得6-1 BOSS战S胜利3次"
+  },
+  {
+    "name": "「水雷戦隊」南西へ！",
+    "category": 2,
+    "type": 6,
+    "condition": "获得1-4 BOSS战S胜利1次, 需要轻巡(旗舰)1-3只+驱逐1只以上"
+  },
+  {
+    "name": "「水上打撃部隊」南方へ！",
+    "category": 2,
+    "type": 6,
+    "condition": "获得5-1 BOSS战S胜利1次, 需要低速战舰3只+轻巡1只+其他舰船"
+  },
+  {
+    "name": "海上護衛強化月間",
+    "category": 2,
+    "type": 6,
+    "condition": "获得1-5 BOSS战A胜利以上10次"
+  },
+  {
+    "name": "「空母機動部隊」西へ！",
+    "category": 2,
+    "type": 6,
+    "condition": "获得4-2 BOSS战S胜利1次, 需要正规空母/轻空母/装甲空母2只+驱逐2只+其他舰船"
+  },
+  {
+    "name": "「水上反撃部隊」突入せよ！",
+    "category": 2,
+    "type": 6,
+    "condition": "获得2-5 BOSS战S胜利1次, 需要驱逐(旗舰)4只+重巡1只+轻巡1只"
+  },
+  {
+    "name": "「演習」で練度向上！",
+    "category": 2,
+    "type": 2,
+    "condition": "进行演习3次"
+  },
+  {
+    "name": "「演習」で他提督を圧倒せよ！",
+    "category": 3,
+    "type": 2,
+    "condition": "获得胜利5次"
+  },
+  {
+    "name": "大規模演習",
+    "category": 3,
+    "type": 3,
+    "condition": "获得胜利20次"
+  },
+  {
+    "name": "「遠征」を3回成功させよう！",
+    "category": 4,
+    "type": 2,
+    "condition": "获得成功3次"
+  },
+  {
+    "name": "「遠征」を１０回成功させよう！",
+    "category": 4,
+    "type": 2,
+    "condition": "获得成功10次"
+  },
+  {
+    "name": "大規模遠征作戦、発令！",
+    "category": 4,
+    "type": 3,
+    "condition": "获得成功30次"
+  },
+  {
+    "name": "南方への輸送作戦を成功させよ！",
+    "category": 4,
+    "type": 3,
+    "condition": "获得东京急行/东京急行(二)成功1次"
+  },
+  {
+    "name": "南方への鼠輸送を継続実施せよ!",
+    "category": 4,
+    "type": 3,
+    "condition": "获得东京急行/东京急行(二)成功6次"
+  },
+  {
+    "name": "艦隊大整備！",
+    "category": 5,
+    "type": 2,
+    "condition": "进行入渠5次"
+  },
+  {
+    "name": "艦隊酒保祭り！",
+    "category": 5,
+    "type": 2,
+    "condition": "进行补给15次"
+  },
+  {
+    "name": "新装備「開発」指令",
+    "category": 6,
+    "type": 2,
+    "condition": "进行开发1次"
+  },
+  {
+    "name": "新造艦「建造」指令",
+    "category": 6,
+    "type": 2,
+    "condition": "进行建造1次"
+  },
+  {
+    "name": "装備「開発」集中強化！",
+    "category": 6,
+    "type": 2,
+    "condition": "进行开发3次"
+  },
+  {
+    "name": "艦娘「建造」艦隊強化！",
+    "category": 6,
+    "type": 2,
+    "condition": "进行建造3次"
+  },
+  {
+    "name": "軍縮条約対応！",
+    "category": 6,
+    "type": 2,
+    "condition": "进行解体2次"
+  },
+  {
+    "name": "資源の再利用",
+    "category": 6,
+    "type": 3,
+    "condition": "进行废弃24次"
+  },
+  {
+    "name": "装備の改修強化",
+    "category": 6,
+    "type": 2,
+    "condition": "进行装备改修1次"
+  },
+  {
+    "name": "艦の「近代化改修」を実施せよ！",
+    "category": 7,
+    "type": 2,
+    "condition": "进行舰船近代化改修2次"
+  },
+  {
+    "name": "「近代化改修」を進め、戦備を整えよ！",
+    "category": 7,
+    "type": 3,
+    "condition": "进行舰船近代化改修15次"
+  }
+]
