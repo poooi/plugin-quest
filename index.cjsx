@@ -13,8 +13,6 @@ window.addEventListener 'task.change', (e) ->
     if quests?[task.name]?
       quest = quests[task.name]
       task.content = <div>{categoryNames[quest.category]} - {typeNames[quest.type]}<br />{quest.condition}</div>
-    else
-      task.content = <div>{categoryNames[task.category]} - {typeNames[task.type]}<br />{task.content}</div>
   event = new CustomEvent 'task.info',
     bubbles: true
     cancelable: true
@@ -26,8 +24,8 @@ module.exports =
   name: "quest"
   priority: 2
   displayName: [<FontAwesome key={0} name='indent' />, " 任务信息"]
-  description: "在任务面板提供详细信息"
+  description: "任务面板显示完成条件"
   author: "马里酱"
   link: "https://github.com/malichan"
-  version: '0.1.0'
+  version: '0.9.0'
   show: false
