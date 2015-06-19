@@ -1,6 +1,6 @@
 {join} = require "path-extra"
 fs = require "fs-extra"
-json = fs.readJsonSync join(__dirname, "assets", "quest.json"), "utf8"
+json = fs.readJsonSync join(__dirname, "assets", "quest.json")
 quests = []
 quests[quest.name] = quest for quest in json
 
