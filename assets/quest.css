@@ -1,3 +1,7 @@
+#quest-info {
+  cursor: default !important;
+}
+
 #quest-info .panel {
   margin-top: 1px;
   margin-bottom: 0px;
@@ -51,10 +55,10 @@
   padding-left: 15px;
 }
 
-#quest-info .questInfo .reqDetail, #quest-info .questInfo .prereqName a span {
-  cursor: pointer !important;
-}
-
 #quest-info .questInfo .prereqName a {
   text-decoration: none;
+}
+
+#quest-info .questInfo .prereqName a span {
+  cursor: pointer !important;
 }
