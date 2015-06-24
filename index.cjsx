@@ -5,6 +5,7 @@
 filterNames = ["空", "编成任务", "出击任务", "演习任务", "远征任务", "补给/入渠任务", "工厂任务", "改装任务", "结婚任务", "日常任务", "周常任务", "月常任务"]
 categoryNames = ["", "编成", "出击", "演习", "远征", "补给/入渠", "工厂", "改装"]
 typeNames = ["", "单次任务", "每日任务", "每周任务", "3/7/0日任务", "2/8日任务", "每月任务"]
+typeFreqs = [0, 1, 4, 3, 4, 4, 2]
 
 module.exports =
   name: "quest-info"
@@ -22,6 +23,7 @@ module.exports =
       quests[quest.game_id] = quest for quest in json
       {
         quests: quests
+        quests_status: []
         quest_filter: 0
         quest_id: 0
         quests_filtered: []
@@ -85,8 +87,27 @@ module.exports =
       quest_id = qid
       @handleFilterChange quest_filter
       @handleQuestChange quest_id
+    updatePrereqStatus: (qid, status) ->
+      quest = @state.quests[qid]
+      for pid in quest.prerequisite
+        prereq = @state.quests[pid]
+        if typeFreqs[quest.type] >= typeFreqs[prereq.type] and not status[prereq.game_id]?
+          status[prereq.game_id] = 1
+          @updatePrereqStatus prereq.game_id, status
+    handleResponse: (e) ->
+      {method, path, body, postBody} = e.detail
+      switch path
+        when '/kcsapi/api_get_member/questlist'
+          quests_status = {@state}
+          for quest in body.api_list
+            continue if quest is -1
+            quests_status[quest.api_no] = 1 if quest.api_state == 3
+            updatePrereqStatus quest.api_no, quests_status
+          @setState
+            quests_status: quests_status
     componentDidMount: ->
       window.addEventListener "task.change", @handleTaskChange
+      window.addEventListener "game.response", @handleResponse
     render: ->
       <div>
         <link rel='stylesheet' href={join(__dirname, "assets", "quest.css")} />
@@ -104,7 +125,7 @@ module.exports =
                   <option key={0}>空</option>
                   {
                     for quest in @state.quests_filtered
-                      <option key={quest.game_id} value={quest.game_id}>{quest.wiki_id} - {quest.name}</option>
+                      <option key={quest.game_id} value={quest.game_id} className={if @state.quests_status[quest.game_id]? then "finished" else "unknown"}>{quest.wiki_id} - {quest.name}</option>
                   }
                 </Input>
               </Panel>
