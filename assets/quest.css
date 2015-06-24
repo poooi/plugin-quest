@@ -1,0 +1,46 @@
+#quest-info .panel {
+  margin-top: 1px;
+  margin-bottom: 0px;
+}
+
+#quest-info .form-group {
+  margin-bottom: 5px;
+}
+
+#quest-info select {
+  height: 30px;
+}
+
+#quest-info h4, #quest-info h6 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+#quest-info .questInfo td {
+  vertical-align: top;
+}
+
+#quest-info .questInfo .panel {
+  margin-top: 10px;
+  margin-bottom: -14px;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+#quest-info .questInfo ul {
+  padding-left: 15px;
+  margin-bottom: 0px;
+}
+
+#quest-info .questInfo p {
+  margin-bottom: 0px;
+}
+
+#quest-info .questInfo .reqDetail, #quest-info .questInfo .prereqName {
+  padding-left: 15px;
+}
+
+#quest-info .questInfo .prereqName a {
+  text-decoration: none;
+}
