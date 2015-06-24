@@ -99,6 +99,7 @@ module.exports =
                     <div>
                       <h4>{@state.quest_selected.name}</h4>
                       <h6>{categoryNames[@state.quest_selected.category]} - {typeNames[@state.quest_selected.type]}</h6>
+                      <h5>{@state.quest_selected.detail}</h5>
                     </div>
                   else
                     <div>
@@ -107,45 +108,37 @@ module.exports =
                     </div>
                 }
                 <Row>
-                  <table width='100%' className='questInfo'>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <Panel header='任务奖励' bsStyle='info'>
-                            {
-                              if @state.quest_selected?
-                                <ul>
-                                  <li key='reward_fuel'>获得燃料 {@state.quest_selected.reward_fuel}</li>
-                                  <li key='reward_bullet'>获得弹药 {@state.quest_selected.reward_bullet}</li>
-                                  <li key='reward_steel'>获得钢材 {@state.quest_selected.reward_steel}</li>
-                                  <li key='reward_alum'>获得铝土 {@state.quest_selected.reward_alum}</li>
-                                  <li key='reward_other'>{@state.quest_selected.reward_other}</li>
-                                </ul>
-                            }
-                          </Panel>
-                        </td>
-                        <td>
-                          <Panel header='必要条件' bsStyle='success'>
-                            {
-                              if @state.quest_selected?
-                                <div>
-                                  <p>完成条件:</p>
-                                  <p className='reqDetail'>{@state.quest_selected.condition}</p>
-                                  <p>前置任务:</p>
-                                  {
-                                    if @state.quest_selected.prerequisite.length > 0
-                                      for qid in @state.quest_selected.prerequisite
-                                        <p className='prereqName'><a onClick={@handlePrereqClick.bind this, qid}>{@state.quests[qid].wiki_id} - {@state.quests[qid].name}</a></p>
-                                    else
-                                      <p className='prereqName'>无</p>
-                                  }
-                                </div>
-                            }
-                          </Panel>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <div className='questInfo'>
+                    <Panel header='任务奖励' bsStyle='info'>
+                    {
+                      if @state.quest_selected?
+                        <ul>
+                          <li key='reward_fuel'>获得燃料 {@state.quest_selected.reward_fuel}</li>
+                          <li key='reward_bullet'>获得弹药 {@state.quest_selected.reward_bullet}</li>
+                          <li key='reward_steel'>获得钢材 {@state.quest_selected.reward_steel}</li>
+                          <li key='reward_alum'>获得铝土 {@state.quest_selected.reward_alum}</li>
+                          <li key='reward_other'>{@state.quest_selected.reward_other}</li>
+                        </ul>
+                    }
+                    </Panel>
+                    <Panel header='必要条件' bsStyle='success'>
+                    {
+                      if @state.quest_selected?
+                        <div>
+                          <p>完成条件:</p>
+                          <p className='reqDetail'>{@state.quest_selected.condition}</p>
+                          <p>前置任务:</p>
+                          {
+                            if @state.quest_selected.prerequisite.length > 0
+                              for qid in @state.quest_selected.prerequisite
+                                <p className='prereqName'><a onClick={@handlePrereqClick.bind this, qid}>{@state.quests[qid].wiki_id} - {@state.quests[qid].name}</a></p>
+                            else
+                              <p className='prereqName'>无</p>
+                          }
+                        </div>
+                    }
+                    </Panel>
+                  </div>
                 </Row>
               </Panel>
             </Col>
