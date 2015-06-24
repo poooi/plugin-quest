@@ -1,6 +1,6 @@
 {join} = require "path-extra"
 {_, $, $$, React, ReactBootstrap, FontAwesome, layout} = window
-{Grid, Row, Col, Input, Panel} = ReactBootstrap
+{Grid, Row, Col, Input, Panel, OverlayTrigger, Tooltip} = ReactBootstrap
 
 categoryNames = ["空", "编成", "出击", "演习", "远征", "补给/入渠", "工厂", "改装"]
 typeNames = ["空", "单次任务", "每日任务", "每周任务", "3/7/0日任务", "2/8日任务", "每月任务"]
@@ -125,12 +125,16 @@ module.exports =
                       if @state.quest_selected?
                         <div>
                           <p>完成条件:</p>
-                          <p className='reqDetail'>{@state.quest_selected.condition}</p>
+                          <OverlayTrigger placement='left' overlay={<Tooltip>{@state.quest_selected.detail}</Tooltip>}>
+                            <p className='reqDetail'>{@state.quest_selected.condition}</p>
+                          </OverlayTrigger>
                           <p>前置任务:</p>
                           {
                             if @state.quest_selected.prerequisite.length > 0
                               for qid in @state.quest_selected.prerequisite
-                                <p className='prereqName'><a onClick={@handlePrereqClick.bind this, qid}>{@state.quests[qid].wiki_id} - {@state.quests[qid].name}</a></p>
+                                <OverlayTrigger placement='left' overlay={<Tooltip><strong>{@state.quests[qid].name}</strong><br />{categoryNames[@state.quests[qid].category]} - {typeNames[@state.quests[qid].type]}<br />{@state.quests[qid].condition}</Tooltip>}>
+                                  <p className='prereqName'><a onClick={@handlePrereqClick.bind this, qid}>{@state.quests[qid].wiki_id} - {@state.quests[qid].name}</a></p>
+                                </OverlayTrigger>
                             else
                               <p className='prereqName'>无</p>
                           }
