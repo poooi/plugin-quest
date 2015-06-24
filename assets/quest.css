@@ -7,6 +7,12 @@
   margin-bottom: 5px;
 }
 
+#quest-info select {
+  height: 30px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
 #quest-info h4, #quest-info h6 {
   margin-top: 0px;
   margin-bottom: 5px;

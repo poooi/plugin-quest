@@ -99,7 +99,6 @@ module.exports =
                     <div>
                       <h4>{@state.quest_selected.name}</h4>
                       <h6>{categoryNames[@state.quest_selected.category]} - {typeNames[@state.quest_selected.type]}</h6>
-                      <h5>{@state.quest_selected.detail}</h5>
                     </div>
                   else
                     <div>
