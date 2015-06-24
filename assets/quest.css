@@ -45,6 +45,10 @@
   padding-left: 15px;
 }
 
+#quest-info .questInfo .reqDetail, #quest-info .questInfo .prereqName a span {
+  cursor: pointer !important;
+}
+
 #quest-info .questInfo .prereqName a {
   text-decoration: none;
 }
