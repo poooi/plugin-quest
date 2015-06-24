@@ -9,6 +9,7 @@
 
 #quest-info select {
   height: 30px;
+  padding: 0px;
 }
 
 #quest-info h4, #quest-info h6 {
