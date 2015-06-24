@@ -1,3 +1,7 @@
+#quest-info {
+  cursor: default !important;
+}
+
 #quest-info .panel {
   margin-top: 1px;
   margin-bottom: 0px;
@@ -9,7 +13,8 @@
 
 #quest-info select {
   height: 30px;
-  padding: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 #quest-info h4, #quest-info h6 {
@@ -38,10 +43,22 @@
   margin-bottom: 0px;
 }
 
+#quest-info .questInfo {
+  display: flex;
+}
+
+#quest-info .questInfo .panel {
+  flex: 1;
+}
+
 #quest-info .questInfo .reqDetail, #quest-info .questInfo .prereqName {
   padding-left: 15px;
 }
 
 #quest-info .questInfo .prereqName a {
   text-decoration: none;
+}
+
+#quest-info .questInfo .prereqName a span {
+  cursor: pointer !important;
 }

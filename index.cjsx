@@ -1,6 +1,6 @@
 {join} = require "path-extra"
 {_, $, $$, React, ReactBootstrap, FontAwesome, layout} = window
-{Grid, Row, Col, Input, Panel} = ReactBootstrap
+{Grid, Row, Col, Input, Panel, OverlayTrigger, Tooltip} = ReactBootstrap
 
 categoryNames = ["空", "编成", "出击", "演习", "远征", "补给/入渠", "工厂", "改装"]
 typeNames = ["空", "单次任务", "每日任务", "每周任务", "3/7/0日任务", "2/8日任务", "每月任务"]
@@ -107,45 +107,41 @@ module.exports =
                     </div>
                 }
                 <Row>
-                  <table width='100%' className='questInfo'>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <Panel header='任务奖励' bsStyle='info'>
-                            {
-                              if @state.quest_selected?
-                                <ul>
-                                  <li key='reward_fuel'>获得燃料 {@state.quest_selected.reward_fuel}</li>
-                                  <li key='reward_bullet'>获得弹药 {@state.quest_selected.reward_bullet}</li>
-                                  <li key='reward_steel'>获得钢材 {@state.quest_selected.reward_steel}</li>
-                                  <li key='reward_alum'>获得铝土 {@state.quest_selected.reward_alum}</li>
-                                  <li key='reward_other'>{@state.quest_selected.reward_other}</li>
-                                </ul>
-                            }
-                          </Panel>
-                        </td>
-                        <td>
-                          <Panel header='必要条件' bsStyle='success'>
-                            {
-                              if @state.quest_selected?
-                                <div>
-                                  <p>完成条件:</p>
-                                  <p className='reqDetail'>{@state.quest_selected.condition}</p>
-                                  <p>前置任务:</p>
-                                  {
-                                    if @state.quest_selected.prerequisite.length > 0
-                                      for qid in @state.quest_selected.prerequisite
-                                        <p className='prereqName'><a onClick={@handlePrereqClick.bind this, qid}>{@state.quests[qid].wiki_id} - {@state.quests[qid].name}</a></p>
-                                    else
-                                      <p className='prereqName'>无</p>
-                                  }
-                                </div>
-                            }
-                          </Panel>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <div className='questInfo'>
+                    <Panel header='任务奖励' bsStyle='info'>
+                    {
+                      if @state.quest_selected?
+                        <ul>
+                          <li key='reward_fuel'>获得燃料 {@state.quest_selected.reward_fuel}</li>
+                          <li key='reward_bullet'>获得弹药 {@state.quest_selected.reward_bullet}</li>
+                          <li key='reward_steel'>获得钢材 {@state.quest_selected.reward_steel}</li>
+                          <li key='reward_alum'>获得铝土 {@state.quest_selected.reward_alum}</li>
+                          <li key='reward_other'>{@state.quest_selected.reward_other}</li>
+                        </ul>
+                    }
+                    </Panel>
+                    <Panel header='必要条件' bsStyle='success'>
+                    {
+                      if @state.quest_selected?
+                        <div>
+                          <p>完成条件:</p>
+                          <OverlayTrigger placement='left' overlay={<Tooltip>{@state.quest_selected.detail}</Tooltip>}>
+                            <p className='reqDetail'>{@state.quest_selected.condition}</p>
+                          </OverlayTrigger>
+                          <p>前置任务:</p>
+                          {
+                            if @state.quest_selected.prerequisite.length > 0
+                              for qid in @state.quest_selected.prerequisite
+                                <OverlayTrigger placement='left' overlay={<Tooltip><strong>{@state.quests[qid].name}</strong><br />{categoryNames[@state.quests[qid].category]} - {typeNames[@state.quests[qid].type]}<br />{@state.quests[qid].condition}</Tooltip>}>
+                                  <p className='prereqName'><a onClick={@handlePrereqClick.bind this, qid}>{@state.quests[qid].wiki_id} - {@state.quests[qid].name}</a></p>
+                                </OverlayTrigger>
+                            else
+                              <p className='prereqName'>无</p>
+                          }
+                        </div>
+                    }
+                    </Panel>
+                  </div>
                 </Row>
               </Panel>
             </Col>
