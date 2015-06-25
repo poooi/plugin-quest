@@ -23,15 +23,12 @@ module.exports =
       quests[quest.game_id] = quest for quest in json
       quests_status = []
       for quest in json
+        quest.postquest = []
         quests_status[quest.game_id] = 1
-        quest.postquest = [] unless quest.postquest?
+      for quest in json
         for pid in quest.prerequisite
           prereq = quests[pid]
-          if prereq.postquest?
-            prereq.postquest.push quest.game_id
-          else
-            prereq.postquest = [quest.game_id]
-
+          prereq.postquest.push quest.game_id
       {
         quests: quests
         quests_status: quests_status
@@ -145,12 +142,6 @@ module.exports =
                 </Input>
                 <Input type='select' label='任务名称' value={@state.quest_id} onChange={@handleQuestSelect}>
                   <option key={0}>空</option>
-                  <optgroup label='已完成'>
-                  {
-                    for quest in @state.quests_filtered when @state.quests_status[quest.game_id] is 1
-                      <option key={quest.game_id} value={quest.game_id}>{quest.wiki_id} - {quest.name}</option>
-                  }
-                  </optgroup>
                   <optgroup label='可执行'>
                   {
                     for quest in @state.quests_filtered when @state.quests_status[quest.game_id] is 2
@@ -160,6 +151,12 @@ module.exports =
                   <optgroup label='未开放'>
                   {
                     for quest in @state.quests_filtered when @state.quests_status[quest.game_id] is 3
+                      <option key={quest.game_id} value={quest.game_id}>{quest.wiki_id} - {quest.name}</option>
+                  }
+                  </optgroup>
+                  <optgroup label='已完成'>
+                  {
+                    for quest in @state.quests_filtered when @state.quests_status[quest.game_id] is 1
                       <option key={quest.game_id} value={quest.game_id}>{quest.wiki_id} - {quest.name}</option>
                   }
                   </optgroup>
