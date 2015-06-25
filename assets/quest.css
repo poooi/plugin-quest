@@ -62,11 +62,3 @@
 #quest-info .questInfo .prereqName a span {
   cursor: pointer !important;
 }
-
-#quest-info option.unknown {
-  background-color: transparent;
-}
-
-#quest-info option.finished {
-  background-color: lightgray;
-}

@@ -21,9 +21,20 @@ module.exports =
       json = fs.readJsonSync join(__dirname, "assets", "quest.json")
       quests = []
       quests[quest.game_id] = quest for quest in json
+      quests_status = []
+      for quest in json
+        quests_status[quest.game_id] = 1
+        quest.postquest = [] unless quest.postquest?
+        for pid in quest.prerequisite
+          prereq = quests[pid]
+          if prereq.postquest?
+            prereq.postquest.push quest.game_id
+          else
+            prereq.postquest = [quest.game_id]
+
       {
         quests: quests
-        quests_status: []
+        quests_status: quests_status
         quest_filter: 0
         quest_id: 0
         quests_filtered: []
@@ -76,6 +87,11 @@ module.exports =
     handleQuestSelect: (e) ->
       quest_id = parseInt e.target.value
       @handleQuestChange quest_id
+      # for test
+      # {quests_status} = @state
+      # @updateQuestStatus quest_id, quests_status
+      # @setState
+      #   quests_status: quests_status
     handlePrereqClick: (qid) ->
       quest = @state.quests[qid]
       quest_filter = switch
@@ -87,24 +103,30 @@ module.exports =
       quest_id = qid
       @handleFilterChange quest_filter
       @handleQuestChange quest_id
-    updatePrereqStatus: (qid, status) ->
+    updateQuestStatus: (qid, status) ->
       quest = @state.quests[qid]
-      for pid in quest.prerequisite
-        prereq = @state.quests[pid]
-        if typeFreqs[quest.type] >= typeFreqs[prereq.type] and not status[prereq.game_id]?
-          status[prereq.game_id] = 1
-          @updatePrereqStatus prereq.game_id, status
+      for pid in quest.postquest
+        postq = @state.quests[pid]
+        if typeFreqs[quest.type] <= typeFreqs[postq.type] and status[postq.game_id] isnt 3
+          status[postq.game_id] = 3
+          @updateQuestStatus postq.game_id, status
     handleResponse: (e) ->
       {method, path, body, postBody} = e.detail
+      {quests_status} = @state
       switch path
-        when '/kcsapi/api_get_member/questlist'
-          quests_status = {@state}
+        when "/kcsapi/api_get_member/questlist"
           for quest in body.api_list
             continue if quest is -1
-            quests_status[quest.api_no] = 1 if quest.api_state == 3
-            updatePrereqStatus quest.api_no, quests_status
-          @setState
-            quests_status: quests_status
+            if quests_status[quest.api_no] isnt 2
+              quests_status[quest.api_no] = 2
+              @updateQuestStatus quest.api_no, quests_status
+        when "/kcsapi/api_req_quest/clearitemget"
+          qid = parseInt postBody.api_quest_id
+          quests_status[qid] = 1
+          for postq in @state.quests[qid].postquest
+            quests_status[postq] = 2
+      @setState
+        quests_status: quests_status
     componentDidMount: ->
       window.addEventListener "task.change", @handleTaskChange
       window.addEventListener "game.response", @handleResponse
@@ -123,10 +145,24 @@ module.exports =
                 </Input>
                 <Input type='select' label='任务名称' value={@state.quest_id} onChange={@handleQuestSelect}>
                   <option key={0}>空</option>
+                  <optgroup label='已完成'>
                   {
-                    for quest in @state.quests_filtered
-                      <option key={quest.game_id} value={quest.game_id} className={if @state.quests_status[quest.game_id]? then "finished" else "unknown"}>{quest.wiki_id} - {quest.name}</option>
+                    for quest in @state.quests_filtered when @state.quests_status[quest.game_id] is 1
+                      <option key={quest.game_id} value={quest.game_id}>{quest.wiki_id} - {quest.name}</option>
                   }
+                  </optgroup>
+                  <optgroup label='可执行'>
+                  {
+                    for quest in @state.quests_filtered when @state.quests_status[quest.game_id] is 2
+                      <option key={quest.game_id} value={quest.game_id}>{quest.wiki_id} - {quest.name}</option>
+                  }
+                  </optgroup>
+                  <optgroup label='未开放'>
+                  {
+                    for quest in @state.quests_filtered when @state.quests_status[quest.game_id] is 3
+                      <option key={quest.game_id} value={quest.game_id}>{quest.wiki_id} - {quest.name}</option>
+                  }
+                  </optgroup>
                 </Input>
               </Panel>
             </Col>
