@@ -112,11 +112,12 @@ module.exports =
       {quests_status} = @state
       switch path
         when "/kcsapi/api_get_member/questlist"
-          for quest in body.api_list
-            continue if quest is -1
-            if quests_status[quest.api_no] isnt 2
-              quests_status[quest.api_no] = 2
-              @updateQuestStatus quest.api_no, quests_status
+          if body.api_list?
+            for quest in body.api_list
+              continue if quest is -1
+              if quests_status[quest.api_no] isnt 2
+                quests_status[quest.api_no] = 2
+                @updateQuestStatus quest.api_no, quests_status
         when "/kcsapi/api_req_quest/clearitemget"
           qid = parseInt postBody.api_quest_id
           quests_status[qid] = 1
