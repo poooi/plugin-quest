@@ -14,7 +14,7 @@ module.exports =
   description: "任务信息查询 & 任务面板强化"
   author: "马里酱"
   link: "https://github.com/malichan"
-  version: "1.1.0"
+  version: "1.1.1"
   reactClass: React.createClass
     getInitialState: ->
       fs = require "fs-extra"
@@ -198,19 +198,23 @@ module.exports =
                     {
                       if @state.quest_selected?
                         <div>
-                          <p>完成条件:</p>
-                          <OverlayTrigger placement='left' overlay={<Tooltip>{@state.quest_selected.detail}</Tooltip>}>
-                            <p className='reqDetail'>{@state.quest_selected.condition}</p>
-                          </OverlayTrigger>
-                          <p>前置任务:</p>
+                          <div>完成条件:</div>
+                          <div className='reqDetail'>
+                            <OverlayTrigger placement='left' overlay={<Tooltip>{@state.quest_selected.detail}</Tooltip>}>
+                              <div display='inline-block'>{@state.quest_selected.condition}</div>
+                            </OverlayTrigger>
+                          </div>
+                          <div>前置任务:</div>
                           {
                             if @state.quest_selected.prerequisite.length > 0
                               for qid in @state.quest_selected.prerequisite
-                                <OverlayTrigger placement='left' overlay={<Tooltip><strong>{@state.quests[qid].name}</strong><br />{categoryNames[@state.quests[qid].category]} - {typeNames[@state.quests[qid].type]}<br />{@state.quests[qid].condition}</Tooltip>}>
-                                  <p className='prereqName'><a onClick={@handlePrereqClick.bind this, qid}>{@state.quests[qid].wiki_id} - {@state.quests[qid].name}</a></p>
-                                </OverlayTrigger>
+                                <div className='prereqName'>
+                                  <OverlayTrigger placement='left' overlay={<Tooltip><strong>{@state.quests[qid].name}</strong><br />{categoryNames[@state.quests[qid].category]} - {typeNames[@state.quests[qid].type]}<br />{@state.quests[qid].condition}</Tooltip>}>
+                                    <div display='inline-block'><a onClick={@handlePrereqClick.bind this, qid}>{@state.quests[qid].wiki_id} - {@state.quests[qid].name}</a></div>
+                                  </OverlayTrigger>
+                                </div>
                             else
-                              <p className='prereqName'>无</p>
+                              <div className='prereqName'>无</div>
                           }
                         </div>
                     }
