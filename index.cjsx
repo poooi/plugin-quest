@@ -201,7 +201,7 @@ module.exports =
                           <div>完成条件:</div>
                           <div className='reqDetail'>
                             <OverlayTrigger placement='left' overlay={<Tooltip>{@state.quest_selected.detail}</Tooltip>}>
-                              <div display='inline-block'>{@state.quest_selected.condition}</div>
+                              <div className='tooltipTrigger'>{@state.quest_selected.condition}</div>
                             </OverlayTrigger>
                           </div>
                           <div>前置任务:</div>
@@ -210,7 +210,7 @@ module.exports =
                               for qid in @state.quest_selected.prerequisite
                                 <div className='prereqName'>
                                   <OverlayTrigger placement='left' overlay={<Tooltip><strong>{@state.quests[qid].name}</strong><br />{categoryNames[@state.quests[qid].category]} - {typeNames[@state.quests[qid].type]}<br />{@state.quests[qid].condition}</Tooltip>}>
-                                    <div display='inline-block'><a onClick={@handlePrereqClick.bind this, qid}>{@state.quests[qid].wiki_id} - {@state.quests[qid].name}</a></div>
+                                    <div className='tooltipTrigger'><a onClick={@handlePrereqClick.bind this, qid}>{@state.quests[qid].wiki_id} - {@state.quests[qid].name}</a></div>
                                   </OverlayTrigger>
                                 </div>
                             else
