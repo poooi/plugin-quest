@@ -2,6 +2,10 @@
   cursor: default !important;
 }
 
+#quest-info .tooltipTrigger {
+  display: inline-block;
+}
+
 #quest-info .panel {
   margin-top: 1px;
   margin-bottom: 0px;
