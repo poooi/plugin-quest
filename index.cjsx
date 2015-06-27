@@ -14,7 +14,7 @@ module.exports =
   description: "任务信息查询 & 任务面板强化"
   author: "马里酱"
   link: "https://github.com/malichan"
-  version: "1.1.1"
+  version: "1.1.2"
   reactClass: React.createClass
     getInitialState: ->
       fs = require "fs-extra"
@@ -121,7 +121,7 @@ module.exports =
         when "/kcsapi/api_req_quest/clearitemget"
           qid = parseInt postBody.api_quest_id
           quests_status[qid] = 1
-          for postq in @state.quests[qid].postquest
+          for postq in @state.quests[qid].postquest when quests_status[postq] is 3
             quests_status[postq] = 2
       @setState
         quests_status: quests_status
