@@ -171,13 +171,13 @@ module.exports =
                 {
                   if @state.quest_selected?
                     <div>
-                      <h4>{@state.quest_selected.name}</h4>
-                      <h6>{categoryNames[@state.quest_selected.category]} - {typeNames[@state.quest_selected.type]}</h6>
+                      <div className='questTitle'>{@state.quest_selected.name}</div>
+                      <div className='questType'>{categoryNames[@state.quest_selected.category]} - {typeNames[@state.quest_selected.type]}</div>
                     </div>
                   else
                     <div>
-                      <h4>请选择任务</h4>
-                      <h6>未知类型</h6>
+                      <div className='questTitle'>请选择任务</div>
+                      <div className='questType'>未知类型</div>
                     </div>
                 }
                 <Row>
