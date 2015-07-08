@@ -26,6 +26,8 @@
   margin-top: 0px;
   margin-bottom: 5px;
   text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 #quest-info .questType {
