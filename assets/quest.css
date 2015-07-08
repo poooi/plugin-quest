@@ -21,7 +21,15 @@
   padding-bottom: 0px;
 }
 
-#quest-info h4, #quest-info h6 {
+#quest-info .questTitle {
+  font-size: 24px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+#quest-info .questType {
+  font-size: 14px;
   margin-top: 0px;
   margin-bottom: 5px;
   text-align: center;
