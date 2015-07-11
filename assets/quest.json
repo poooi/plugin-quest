@@ -1407,7 +1407,7 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "開発資材x3，改修資材x3",
-    "prerequisite": [304]
+    "prerequisite": [154, 307]
   },
   {
     "game_id": 274,
@@ -2502,7 +2502,7 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "給糧艦「伊良湖」x4",
-    "prerequisite": [608]
+    "prerequisite": [215, 608]
   },
   {
     "game_id": 618,
