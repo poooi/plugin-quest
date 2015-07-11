@@ -5,7 +5,7 @@
 filterNames = ["空", "编成任务", "出击任务", "演习任务", "远征任务", "补给/入渠任务", "工厂任务", "改装任务", "结婚任务", "日常任务", "周常任务", "月常任务"]
 categoryNames = ["", "编成", "出击", "演习", "远征", "补给/入渠", "工厂", "改装"]
 typeNames = ["", "单次任务", "每日任务", "每周任务", "3/7/0日任务", "2/8日任务", "每月任务"]
-typeFreqs = [0, 1, 4, 3, 4, 4, 2]
+typeFreqs = [0, 1, 5, 3, 4, 4, 2]
 
 module.exports =
   name: "quest-info"
@@ -14,7 +14,7 @@ module.exports =
   description: "任务信息查询 & 任务面板强化"
   author: "马里酱"
   link: "https://github.com/malichan"
-  version: "1.1.3"
+  version: "1.1.4"
   reactClass: React.createClass
     getInitialState: ->
       fs = require "fs-extra"
