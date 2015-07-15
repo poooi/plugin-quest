@@ -10,7 +10,7 @@ typeFreqs = [0, 1, 5, 3, 4, 4, 2]
 module.exports =
   name: "quest-info"
   priority: 2
-  displayName: [<FontAwesome key={0} name='indent' />, " 任务信息"]
+  displayName: <span><FontAwesome key={0} name='indent' /> 任务信息</span>
   description: "任务信息查询 & 任务面板强化"
   author: "马里酱"
   link: "https://github.com/malichan"
