@@ -102,6 +102,7 @@ module.exports =
       @handleQuestChange quest_id
     updateQuestStatus: (qid, status) ->
       quest = @state.quests[qid]
+      return unless quest?
       for pid in quest.postquest
         postq = @state.quests[pid]
         if typeFreqs[quest.type] <= typeFreqs[postq.type] and status[postq.game_id] isnt 3
