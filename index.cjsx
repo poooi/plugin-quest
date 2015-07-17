@@ -43,6 +43,8 @@ module.exports =
         if @state.quests[task.id]?
           quest = @state.quests[task.id]
           task.content = <div>{categoryNames[quest.category]} - {typeNames[quest.type]}<br />{quest.condition}</div>
+        else
+          task.content = <div>任务详情未知<br />任务ID:{task.id}</div>
       event = new CustomEvent 'task.info',
         bubbles: true
         cancelable: true
