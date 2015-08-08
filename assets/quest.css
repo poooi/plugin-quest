@@ -6,6 +6,16 @@
   display: inline-block;
 }
 
+#quest-info .tooltipTrigger a {
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+  overflow:hidden;
+  color: #bf534d;
+  width: 175px;
+}
+
+
 #quest-info .panel {
   margin-top: 1px;
   margin-bottom: 0px;

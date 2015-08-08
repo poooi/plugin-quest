@@ -207,7 +207,10 @@ module.exports =
                               <div className='tooltipTrigger'>{@state.quest_selected.condition}</div>
                             </OverlayTrigger>
                           </div>
-                          <div>前置任务:</div>
+                          {
+                            if @state.quest_selected.prerequisite.length > 0
+                              <div>前置任务:</div>
+                          }
                           {
                             if @state.quest_selected.prerequisite.length > 0
                               for qid in @state.quest_selected.prerequisite
@@ -216,8 +219,19 @@ module.exports =
                                     <div className='tooltipTrigger'><a onClick={@handlePrereqClick.bind this, qid}>{@state.quests[qid].wiki_id} - {@state.quests[qid].name}</a></div>
                                   </OverlayTrigger>
                                 </div>
-                            else
-                              <div className='prereqName'>无</div>
+                          }
+                          {
+                            if @state.quest_selected.postquest.length > 0
+                              <div>后续任务:</div>
+                          }
+                          {
+                            if @state.quest_selected.postquest.length > 0
+                              for qid in @state.quest_selected.postquest
+                                <div className='prereqName'>
+                                  <OverlayTrigger placement='left' overlay={<Tooltip><strong>{@state.quests[qid].name}</strong><br />{categoryNames[@state.quests[qid].category]} - {typeNames[@state.quests[qid].type]}<br />{@state.quests[qid].condition}</Tooltip>}>
+                                    <div className='tooltipTrigger'> <a onClick={@handlePrereqClick.bind this, qid}>{@state.quests[qid].wiki_id} - {@state.quests[qid].name}</a></div>
+                                  </OverlayTrigger>
+                                </div>
                           }
                         </div>
                     }
