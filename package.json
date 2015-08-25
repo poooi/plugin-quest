@@ -1,0 +1,19 @@
+{
+  "name": "quest-info",
+  "version": "1.1.5",
+  "description": "show quest info",
+  "main": "index.cjsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poooi/plugin-quest.git"
+  },
+  "author": "malichan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/poooi/plugin-quest/issues"
+  },
+  "homepage": "https://github.com/poooi/plugin-quest#readme"
+}
