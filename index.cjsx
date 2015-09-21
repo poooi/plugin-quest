@@ -40,7 +40,9 @@ module.exports =
     handleTaskChange: (e) ->
       {tasks} = e.detail
       for task in tasks when task.id isnt 100000
-        if @state.quests[task.id]?
+        if task.id is 100001  #lockedTask
+          task.content = <div>{'使用道具[司令部要員]可将同时接受的任务数+1'}</div>
+        else if @state.quests[task.id]?
           quest = @state.quests[task.id]
           task.content = <div>{categoryNames[quest.category]} - {typeNames[quest.type]}<br />{quest.condition}</div>
         else if typeof task.content isnt 'object'
