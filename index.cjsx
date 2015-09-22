@@ -39,7 +39,7 @@ module.exports =
       }
     handleTaskChange: (e) ->
       {tasks} = e.detail
-      for task in tasks when task.id isnt 100000
+      for task in tasks when task.id < 100000
         if @state.quests[task.id]?
           quest = @state.quests[task.id]
           task.content = <div>{categoryNames[quest.category]} - {typeNames[quest.type]}<br />{quest.condition}</div>
