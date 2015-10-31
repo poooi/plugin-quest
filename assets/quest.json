@@ -870,6 +870,69 @@
     "prerequisite": [216]
   },
   {
+    "game_id": 164,
+    "wiki_id": "A59",
+    "category": 1,
+    "type": 1,
+    "name": "「第三航空戦隊」を編成せよ！",
+    "detail": "「瑞鶴改」を旗艦とした「瑞鳳」「千歳」「千代田」を加えた4隻の空母部隊を編制せよ！
+                ※「千歳」「千代田」は軽空母に改造済みでないと達成不可",
+    "condition": "编成以「瑞鹤改」为旗舰，包含「瑞凤」「千岁」「千代田」在内的四艘空母组成的空母编队！
+                  ※「千岁」「千代田」必须改造为轻空母。",
+    "reward_fuel": 200,
+    "reward_bullet": 200,
+    "reward_steel": 0,
+    "reward_alum": 200,
+    "reward_other": "開発資材x2，熟練搭乗員×1",
+    "prerequisite": [264,624]
+  },
+  {
+    "game_id": 165,
+    "wiki_id": "A60",
+    "category": 1,
+    "type": 1,
+    "name": "「第四航空戦隊」を編成せよ！",
+    "detail": "航空戦艦「伊勢改」及び「日向改」を基幹戦力とした第四航空戦隊を編成せよ！",
+    "condition": "编成包含伊势改、日向改的舰队",
+    "reward_fuel": 0,
+    "reward_bullet": 200,
+    "reward_steel": 0,
+    "reward_alum": 200,
+    "reward_other": "改修資材x2，装備 瑞雲(六三四空)×1",
+    "prerequisite": [289]
+  },
+  {
+    "game_id": 166,
+    "wiki_id": "A61",
+    "category": 1,
+    "type": 1,
+    "name": "「小沢艦隊」を編成せよ！",
+    "detail": "「瑞鶴改」旗艦、空母「瑞鳳改」「千歳」「千代田」及び「伊勢改」「日向改」を配備せよ！
+                ※「千歳」「千代田」は軽空母に改造済みでないと達成不可。",
+    "condition": "编成旗舰为瑞鹤改，包含瑞凤改+千岁航+千代田航+伊势改+日向改的舰队",
+    "reward_fuel": 300,
+    "reward_bullet": 0,
+    "reward_steel": 0,
+    "reward_alum": 300,
+    "reward_other": "開発資材×2，応急修理要員×1",
+    "prerequisite": [165,266]
+  },
+  {
+    "game_id": 167,
+    "wiki_id": "A62",
+    "category": 1,
+    "type": 1,
+    "name": "新航空戦隊を編成せよ！",
+    "detail": "改二改装を終えた翔鶴型航空母艦2隻と同護衛艦による新航空戦隊を新編成せよ！",
+    "condition": "配备翔鹤改二+瑞鹤改二+任意四艘舰娘",
+    "reward_fuel": 0,
+    "reward_bullet": 300,
+    "reward_steel": 300,
+    "reward_alum": 300,
+    "reward_other": "給糧艦×1，熟練搭乗員×1",
+    "prerequisite": [632]
+  },
+  {
     "game_id": 202,
     "wiki_id": "B01",
     "category": 2,
@@ -1648,6 +1711,42 @@
     "reward_alum": 0,
     "reward_other": "家具箱(中)x1，プレゼント箱x1",
     "prerequisite": [163]
+  },
+  {
+    "game_id": 293,
+    "wiki_id": "B53",
+    "category": 2,
+    "type": 1,
+    "name": "「第三航空戦隊」南西諸島防衛線に出撃！",
+    "detail": "編成した「第三航空戦隊」を南西諸島防衛線に展開、敵侵攻部隊を捕捉迎撃せよ！
+                ※「瑞鶴改」を旗艦として「千歳」「千代田」「瑞鳳」+自由枠2で「敵機動部隊」(1-4ボス戦)にS勝利で達成。
+                ※「千歳」「千代田」は軽空母に改造済みでないと達成不可。",
+    "condition": "「瑞鹤改」旗舰+「千岁」+「千代田」+「瑞凤」+2任意舰娘 1-4BOSS S胜
+                    ※「千岁」「千代田」必须改造为轻空母",
+    "reward_fuel": 0,
+    "reward_bullet": 0,
+    "reward_steel": 300,
+    "reward_alum": 0,
+    "reward_other": "高速修復材×2，給糧艦「伊良湖」×1",
+    "prerequisite": [164]
+  },
+  {
+    "game_id": 294,
+    "wiki_id": "B54",
+    "category": 2,
+    "type": 1,
+    "name": "「小沢艦隊」出撃せよ！",
+    "detail": "「小沢艦隊」を沖ノ島海域前面に展開し、侵攻する敵機動部隊を捕捉、これを撃滅せよ！
+                ※「瑞鶴改」を旗艦として「瑞鳳改」「千歳」「千代田」及び「伊勢改」「日向改」で「敵侵攻中核艦隊」(2-4ボス戦)にS勝利で達成。
+                  瑞鶴は瑞鶴改二および瑞鶴改二甲でも達成",
+    "condition": "旗舰瑞鹤改（改二和改二甲皆可）+瑞凤改+千岁航+千代田航+伊势改+日向改
+                  2-4BOSS S胜",
+    "reward_fuel": 300,
+    "reward_bullet": 0,
+    "reward_steel": 300,
+    "reward_alum": 300,
+    "reward_other": "高速修復材×3，装備 零戦52型丙(六〇一空)×1",
+    "prerequisite": [164]
   },
   {
     "game_id": 201,
@@ -2803,6 +2902,144 @@
     "reward_alum": 0,
     "reward_other": "試製甲板カタパルトx1",
     "prerequisite": [420]
+  },
+  {
+    "game_id": 626,
+    "wiki_id": "F22",
+    "category": 6,
+    "type": 1,
+    "name": "精鋭「艦戦」隊の新編成",
+    "detail": "要熟練搭乗員：練度max「零戦21型」搭載「鳳翔」秘書艦で「零戦21型」×2「九六艦戦」×1廃棄！
+                ※A59の報酬アイテム「熟練搭乗員」がいないと達成不可
+                 任務達成時に「熟練搭乗員」を1個消費",
+    "condition": "以「凤翔」为秘书舰，在搭载满熟练度(熟练度7)的「零戦21型」时下分解「零戦21型」x2和「九六舰戦」x1",
+    "reward_fuel": 0,
+    "reward_bullet": 0,
+    "reward_steel": 0,
+    "reward_alum": 50,
+    "reward_other": "装備 零式艦戦21型(熟練)x1",
+    "prerequisite": []
+  },
+  {
+    "game_id": 625,
+    "wiki_id": "F23",
+    "category": 6,
+    "type": 1,
+    "name": "試製航空艤装の追加試作",
+    "detail": "「工廠」で装備アイテムを9つ「廃棄」して、「試製甲板カタパルト」を追加試作します。
+                  ※装備9個廃棄で達成。まとめて複数廃棄しても可。",
+    "condition": "分解9个装备（9个一同分解也可以）",
+    "reward_fuel": 0,
+    "reward_bullet": 0,
+    "reward_steel": 100,
+    "reward_alum": 50,
+    "reward_other": "试制甲板カタパルト×1",
+    "prerequisite": [294]
+  },
+  {
+    "game_id": 627,
+    "wiki_id": "F24",
+    "category": 6,
+    "type": 1,
+    "name": "機種転換",
+    "detail": "「零戦21型(熟練)」搭載空母を秘書艦にして、新たに「零戦52型」を2つ廃棄！",
+    "condition": "空母秘书舰搭载「零戦21型(熟练)」，分解两个「零戦52型」",
+    "reward_fuel": 0,
+    "reward_bullet": 0,
+    "reward_steel": 0,
+    "reward_alum": 50,
+    "reward_other": "装備 零式艦戦52型(熟練)×1",
+    "prerequisite": [626]
+  },
+  {
+    "game_id": 628,
+    "wiki_id": "F25",
+    "category": 6,
+    "type": 1,
+    "name": "機種転換",
+    "detail": "練度max「零戦21型(熟練)」搭載空母を秘書艦にして、新たに「零戦52型」を2つ廃棄！",
+    "condition": "空母秘书舰搭载满熟练度（熟练度7）的「零戦21型(熟练)」，分解两个「零戦52型」",
+    "reward_fuel": 0,
+    "reward_bullet": 0,
+    "reward_steel": 0,
+    "reward_alum": 50,
+    "reward_other": "装備 零式艦戦52型(熟練)×1",
+    "prerequisite": [627]
+  },
+  {
+    "game_id": 629,
+    "wiki_id": "F26",
+    "category": 6,
+    "type": 1,
+    "name": "「艦戦」隊の再編成",
+    "detail": "練度max「零戦52型(熟練)」搭載「瑞鶴」が秘書艦で「零戦52型丙(六〇一空)」を廃棄！",
+    "condition": "秘书舰瑞鹤在搭载满熟练度（熟练度7）的「零戦52型(熟练)」并废弃「零戦52型丙(六〇一空)」",
+    "reward_fuel": 0,
+    "reward_bullet": 0,
+    "reward_steel": 0,
+    "reward_alum": 50,
+    "reward_other": "装備 零式艦戦52型丙(付岩井小隊)×1",
+    "prerequisite": [627]
+  },
+  {
+    "game_id": 631,
+    "wiki_id": "F27",
+    "category": 6,
+    "type": 1,
+    "name": "機種転換＆部隊再編",
+    "detail": "練度max「零戦52型丙(付岩井小隊)」搭載瑞鶴秘書艦で「零戦62型(爆戦)」を2つ廃棄！",
+    "condition": "秘书舰瑞鹤在搭载满熟练度（熟练度7）的「零戦52型丙(付岩井小队)」时分解「零戦62型(爆戦)」x2",
+    "reward_fuel": 0,
+    "reward_bullet": 0,
+    "reward_steel": 0,
+    "reward_alum": 50,
+    "reward_other": "装備 零式艦戦62型(爆戦／岩井隊)×1",
+    "prerequisite": [629]
+  },
+  {
+    "game_id": 630,
+    "wiki_id": "F28",
+    "category": 6,
+    "type": 1,
+    "name": "「艦戦」隊の再編成",
+    "detail": "練度max「零戦21型(熟練)」搭載「瑞鶴」が秘書の状態で「零戦21型」を2つ廃棄！",
+    "condition": "秘书舰瑞鹤在搭载满熟练度（熟练度7）的「零戦21型(熟练)」时分解「零戦21型」x2",
+    "reward_fuel": 0,
+    "reward_bullet": 0,
+    "reward_steel": 0,
+    "reward_alum": 50,
+    "reward_other": "装備 零式艦戦21型(付岩本小隊)×1",
+    "prerequisite": [626]
+  },
+  {
+    "game_id": 632,
+    "wiki_id": "F29",
+    "category": 6,
+    "type": 1,
+    "name": "機種転換",
+    "detail": "練度max「零戦21型(付岩本小隊)」搭載「瑞鶴」秘書艦で「零戦52型」を2つ廃棄！",
+    "condition": "秘书舰瑞鹤在搭载满熟练度（熟练度7）的「零戦21型(付岩本小队)」时分解「零戦52型」x2",
+    "reward_fuel": 0,
+    "reward_bullet": 0,
+    "reward_steel": 0,
+    "reward_alum": 50,
+    "reward_other": "装備 零式艦戦52型甲(付岩本小隊)×1",
+    "prerequisite": [630]
+  },
+  {
+    "game_id": 633,
+    "wiki_id": "F30",
+    "category": 6,
+    "type": 1,
+    "name": "機種転換＆部隊再編",
+    "detail": "部隊を再編する！練度max「零戦52型甲(付岩本小隊)」搭載「瑞鶴」秘書艦で、「彩雲」を2つ廃棄！",
+    "condition": "秘书舰瑞鹤在搭载满熟练度（熟练度7）的「零戦52型甲(付岩井小队)」时分解「彩云」x2",
+    "reward_fuel": 0,
+    "reward_bullet": 0,
+    "reward_steel": 0,
+    "reward_alum": 50,
+    "reward_other": "装備 零式艦戦53型(岩本隊)×1",
+    "prerequisite": [167]
   },
   {
     "game_id": 701,
