@@ -687,7 +687,7 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "高速修復材x2，開発資材x2",
-    "prerequisite": [123,224]
+    "prerequisite": [123]
   },
   {
     "game_id": 149,
@@ -816,7 +816,7 @@
     "type": 1,
     "name": "「第一水雷戦隊」北方再突入準備！",
     "detail": "「阿武隈改二」を旗艦として「響」「夕雲」「長波」「秋雲」「島風」の一水戦を再編成せよ!",
-    "condition": "编组阿武隈改二(旗舰)+响+夕雲+秋雲+長波+島風",
+    "condition": "编组阿武隈改二(旗舰)+响+夕云+秋云+长波+岛风",
     "reward_fuel": 200,
     "reward_bullet": 200,
     "reward_steel": 0,
@@ -837,7 +837,7 @@
     "reward_steel": 0,
     "reward_alum": 300,
     "reward_other": "開発資材x3",
-    "prerequisite": [264]
+    "prerequisite": [123, 264]
   },
   {
     "game_id": 162,
@@ -852,7 +852,7 @@
     "reward_steel": 150,
     "reward_alum": 0,
     "reward_other": "開発資材x2，改修資材x2",
-    "prerequisite": [152]
+    "prerequisite": [152,263]
   },
   {
     "game_id": 163,
@@ -897,7 +897,7 @@
     "reward_steel": 0,
     "reward_alum": 200,
     "reward_other": "改修資材x2，装備 瑞雲(六三四空)×1",
-    "prerequisite": [289]
+    "prerequisite": [293]
   },
   {
     "game_id": 166,
@@ -1542,7 +1542,7 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "開発資材x3，改修資材x3",
-    "prerequisite": [154, 307]
+    "prerequisite": [307]
   },
   {
     "game_id": 274,
@@ -1647,7 +1647,7 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "特注家具職人x1",
-    "prerequisite": [205,201]
+    "prerequisite": [201]
   },
   {
     "game_id": 285,
@@ -1662,7 +1662,7 @@
     "reward_steel": 500,
     "reward_alum": 0,
     "reward_other": "改修資材x3，戦闘糧食x2",
-    "prerequisite": [260,226]
+    "prerequisite": [260, 230]
   },
   {
     "game_id": 287,
@@ -1737,7 +1737,7 @@
     "reward_steel": 300,
     "reward_alum": 300,
     "reward_other": "高速修復材×3，装備 零戦52型丙(六〇一空)×1",
-    "prerequisite": [164]
+    "prerequisite": [166]
   },
   {
     "game_id": 201,
@@ -2742,7 +2742,7 @@
     "reward_steel": 30,
     "reward_alum": 0,
     "reward_other": "装備「ドラム缶(輸送用)」x3",
-    "prerequisite": []
+    "prerequisite": [105]
   },
   {
     "game_id": 613,
@@ -2907,7 +2907,7 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備 零式艦戦21型(熟練)x1",
-    "prerequisite": []
+    "prerequisite": [264, 114]
   },
   {
     "game_id": 625,
@@ -2952,7 +2952,7 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備 零式艦戦52型(熟練)×1",
-    "prerequisite": [627]
+    "prerequisite": [264, 265, 627]
   },
   {
     "game_id": 629,
@@ -2967,7 +2967,7 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備 零式艦戦52型丙(付岩井小隊)×1",
-    "prerequisite": [627]
+    "prerequisite": [293,627]
   },
   {
     "game_id": 631,
@@ -2982,7 +2982,7 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備 零式艦戦62型(爆戦／岩井隊)×1",
-    "prerequisite": [629]
+    "prerequisite": [294,629]
   },
   {
     "game_id": 630,
@@ -2997,7 +2997,7 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備 零式艦戦21型(付岩本小隊)×1",
-    "prerequisite": [626]
+    "prerequisite": [626, 166]
   },
   {
     "game_id": 632,
@@ -3012,7 +3012,7 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備 零式艦戦52型甲(付岩本小隊)×1",
-    "prerequisite": [630]
+    "prerequisite": [625, 630]
   },
   {
     "game_id": 633,
