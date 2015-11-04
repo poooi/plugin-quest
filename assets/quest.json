@@ -657,7 +657,7 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "開発資材x2，改修資材x3",
-    "prerequisite": [137,224]
+    "prerequisite": [137, 224]
   },
   {
     "game_id": 146,
@@ -747,7 +747,7 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "高速修復材x2",
-    "prerequisite": [136,227]
+    "prerequisite": [136, 227]
   },
   {
     "game_id": 153,
@@ -852,7 +852,7 @@
     "reward_steel": 150,
     "reward_alum": 0,
     "reward_other": "開発資材x2，改修資材x2",
-    "prerequisite": [152,263]
+    "prerequisite": [152, 263]
   },
   {
     "game_id": 163,
@@ -882,7 +882,7 @@
     "reward_steel": 0,
     "reward_alum": 200,
     "reward_other": "開発資材x2，熟練搭乗員×1",
-    "prerequisite": [264,624]
+    "prerequisite": [264, 624]
   },
   {
     "game_id": 165,
@@ -912,7 +912,7 @@
     "reward_steel": 0,
     "reward_alum": 300,
     "reward_other": "開発資材×2，応急修理要員×1",
-    "prerequisite": [165,266]
+    "prerequisite": [165, 266]
   },
   {
     "game_id": 167,
@@ -1107,7 +1107,7 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "高速修復材x1",
-    "prerequisite": [120,213]
+    "prerequisite": [120, 213]
   },
   {
     "game_id": 223,
@@ -1497,7 +1497,7 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "改修資材x2，家具箱(大)x1",
-    "prerequisite": [249,269]
+    "prerequisite": [249, 269]
   },
   {
     "game_id": 270,
@@ -1587,7 +1587,7 @@
     "reward_steel": 500,
     "reward_alum": 0,
     "reward_other": "開発資材x5，改修資材x2",
-    "prerequisite": [154,243]
+    "prerequisite": [154, 243]
   },
   {
     "game_id": 277,
@@ -1602,7 +1602,7 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "改修資材x2，装備「九三式水中聴音機」x1",
-    "prerequisite": [155,274]
+    "prerequisite": [155, 274]
   },
   {
     "game_id": 278,
@@ -2007,7 +2007,7 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "改修資材x3",
-    "prerequisite": [146,221]
+    "prerequisite": [146, 221]
   },
   {
     "game_id": 249,
@@ -2082,7 +2082,7 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "開発資材x5，改修資材x3",
-    "prerequisite": [240,249]
+    "prerequisite": [240, 249]
   },
   {
     "game_id": 264,
@@ -2097,7 +2097,7 @@
     "reward_steel": 600,
     "reward_alum": 800,
     "reward_other": "改修資材x2，家具箱(大)x2",
-    "prerequisite": [221,239]
+    "prerequisite": [221, 239]
   },
   {
     "game_id": 266,
@@ -2112,7 +2112,7 @@
     "reward_steel": 0,
     "reward_alum": 200,
     "reward_other": "開発資材x4，改修資材x2",
-    "prerequisite": [148,264]
+    "prerequisite": [148, 264]
   },
   {
     "game_id": 301,
@@ -2517,7 +2517,7 @@
     "reward_steel": 400,
     "reward_alum": 0,
     "reward_other": "改修資材x2，家具箱(大)x1",
-    "prerequisite": [287,410]
+    "prerequisite": [287, 410]
   },
   {
     "game_id": 501,
@@ -2847,7 +2847,7 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "改修資材x1",
-    "prerequisite": [608,618]
+    "prerequisite": [608, 618]
   },
   {
     "game_id": 622,
@@ -2967,7 +2967,7 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備 零式艦戦52型丙(付岩井小隊)×1",
-    "prerequisite": [293,627]
+    "prerequisite": [293, 627]
   },
   {
     "game_id": 631,
@@ -2982,7 +2982,7 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備 零式艦戦62型(爆戦／岩井隊)×1",
-    "prerequisite": [294,629]
+    "prerequisite": [294, 629]
   },
   {
     "game_id": 630,
