@@ -14,7 +14,7 @@ module.exports =
   description: "任务信息查询 & 任务面板强化"
   author: "马里酱"
   link: "https://github.com/malichan"
-  version: "1.1.5"
+  version: "1.2.0"
   reactClass: React.createClass
     getInitialState: ->
       fs = require "fs-extra"
