@@ -1,5 +1,5 @@
 {
-  "name": "quest-info",
+  "name": "poi-plugin-quest-info",
   "version": "1.1.5",
   "description": "show quest info",
   "main": "index.cjsx",
