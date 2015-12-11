@@ -322,7 +322,16 @@
     "reward_steel": 150,
     "reward_alum": 100,
     "reward_other": "高速修復材x1，開発資材x1",
-    "prerequisite": [109]
+    "prerequisite": [109],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "妙高"},
+        {"ship": "那智"},
+        {"ship": "足柄"},
+        {"ship": "羽黒"}
+      ]
+    }
   },
   {
     "game_id": 118,
@@ -337,7 +346,16 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "第4艦隊開放",
-    "prerequisite": [110]
+    "prerequisite": [110],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "金剛"},
+        {"ship": "比叡"},
+        {"ship": "榛名"},
+        {"ship": "霧島"}
+      ]
+    }
   },
   {
     "game_id": 111,
@@ -352,7 +370,14 @@
     "reward_steel": 200,
     "reward_alum": 200,
     "reward_other": "高速修復材x2，開発資材x1",
-    "prerequisite": [108]
+    "prerequisite": [108],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "扶桑"},
+        {"ship": "山城"}
+      ]
+    }
   },
   {
     "game_id": 112,
@@ -367,7 +392,14 @@
     "reward_steel": 300,
     "reward_alum": 200,
     "reward_other": "高速修復材x2，開発資材x2",
-    "prerequisite": [111]
+    "prerequisite": [111],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "伊勢"},
+        {"ship": "日向"}
+      ]
+    }
   },
   {
     "game_id": 114,
@@ -382,7 +414,17 @@
     "reward_steel": 500,
     "reward_alum": 500,
     "reward_other": "高速建造材x2，開発資材x4",
-    "prerequisite": [113]
+    "prerequisite": [113],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "赤城"},
+        {"ship": "加賀"},
+        {"ship": "飛龍"},
+        {"ship": "蒼龍"}
+      ],
+      "disallowed": "他の艦"
+    }
   },
   {
     "game_id": 119,
@@ -397,7 +439,18 @@
     "reward_steel": 200,
     "reward_alum": 0,
     "reward_other": "高速修復材x3",
-    "prerequisite": [113]
+    "prerequisite": [113],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "鳥海"},
+        {"ship": "青葉"},
+        {"ship": "加古"},
+        {"ship": "古鷹"},
+        {"ship": "天龍"},
+        {"ship": "高速艦", "amount": 1}
+      ]
+    }
   },
   {
     "game_id": 121,
@@ -412,7 +465,16 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "高速修復材x2，開発資材x1",
-    "prerequisite": [119]
+    "prerequisite": [119],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "愛宕"},
+        {"ship": "高雄"},
+        {"ship": "鳥海"},
+        {"ship": "摩耶"}
+      ]
+    }
   },
   {
     "game_id": 122,
@@ -427,7 +489,16 @@
     "reward_steel": 200,
     "reward_alum": 0,
     "reward_other": "給糧艦「間宮」x1",
-    "prerequisite": [121]
+    "prerequisite": [121],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "扶桑"},
+        {"ship": "山城"},
+        {"ship": "最上"},
+        {"ship": "時雨"}
+      ]
+    }
   },
   {
     "game_id": 123,
@@ -442,7 +513,15 @@
     "reward_steel": 0,
     "reward_alum": 300,
     "reward_other": "応急修理要員x1",
-    "prerequisite": [122]
+    "prerequisite": [122],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "翔鶴"},
+        {"ship": "瑞鶴"},
+        {"ship": "駆逐", "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 124,
@@ -457,7 +536,18 @@
     "reward_steel": 300,
     "reward_alum": 0,
     "reward_other": "給糧艦「間宮」x1",
-    "prerequisite": [121]
+    "prerequisite": [121],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "鳥海"},
+        {"ship": "青葉"},
+        {"ship": "衣笠"},
+        {"ship": "加古"},
+        {"ship": "古鷹"},
+        {"ship": "天龍"}
+      ]
+    }
   },
   {
     "game_id": 125,
@@ -472,7 +562,13 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "応急修理要員x1",
-    "prerequisite": [121]
+    "prerequisite": [121],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": ["潜水艦", "潜水空母"], "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 126,
@@ -487,7 +583,14 @@
     "reward_steel": 200,
     "reward_alum": 200,
     "reward_other": "高速修復材x2",
-    "prerequisite": [122]
+    "prerequisite": [122],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "航戦", "amount": 2},
+        {"ship": "航巡", "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 127,
@@ -502,7 +605,13 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "給糧艦「間宮」x1",
-    "prerequisite": [121]
+    "prerequisite": [121],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": ["潜水艦", "潜水空母"], "amount": 3}
+      ]
+    }
   },
   {
     "game_id": 128,
@@ -517,7 +626,16 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "給糧艦「間宮」x1",
-    "prerequisite": [120]
+    "prerequisite": [120],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "古鷹"},
+        {"ship": "加古"},
+        {"ship": "青葉"},
+        {"ship": "衣笠"}
+      ]
+    }
   },
   {
     "game_id": 129,
@@ -532,7 +650,16 @@
     "reward_steel": 300,
     "reward_alum": 0,
     "reward_other": "高速修復材x3",
-    "prerequisite": [121]
+    "prerequisite": [121],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "那智"},
+        {"ship": "足柄"},
+        {"ship": "多摩"},
+        {"ship": "木曽"}
+      ]
+    }
   },
   {
     "game_id": 130,
@@ -547,7 +674,17 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "応急修理要員x1",
-    "prerequisite": [129]
+    "prerequisite": [129],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "阿武隈"},
+        {"ship": "曙"},
+        {"ship": "潮"},
+        {"ship": "霞"},
+        {"ship": "不知火"}
+      ]
+    }
   },
   {
     "game_id": 131,
@@ -562,7 +699,17 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "開発資材x3",
-    "prerequisite": [125]
+    "prerequisite": [125],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "朝潮"},
+        {"ship": "満潮"},
+        {"ship": "大潮"},
+        {"ship": "荒潮"}
+      ],
+      "disallowed": "他の艦"
+    }
   },
   {
     "game_id": 132,
@@ -577,7 +724,17 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "開発資材x1，応急修理要員x1",
-    "prerequisite": [239]
+    "prerequisite": [239],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "霞"},
+        {"ship": "霰"},
+        {"ship": "陽炎"},
+        {"ship": "不知火"}
+      ],
+      "disallowed": "他の艦"
+    }
   },
   {
     "game_id": 133,
@@ -592,7 +749,17 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "高速修復材x2，応急修理要員x1",
-    "prerequisite": [131]
+    "prerequisite": [131],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "睦月"},
+        {"ship": "如月"},
+        {"ship": "弥生"},
+        {"ship": "望月"}
+      ],
+      "disallowed": "他の艦"
+    }
   },
   {
     "game_id": 136,
@@ -607,7 +774,17 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "開発資材x3",
-    "prerequisite": [133]
+    "prerequisite": [133],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "睦月"},
+        {"ship": "弥生"},
+        {"ship": "卯月"},
+        {"ship": "望月"}
+      ],
+      "disallowed": "他の艦"
+    }
   },
   {
     "game_id": 137,
@@ -622,7 +799,15 @@
     "reward_steel": 300,
     "reward_alum": 0,
     "reward_other": "開発資材x5",
-    "prerequisite": [248]
+    "prerequisite": [248],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "妙高"},
+        {"ship": "那智"},
+        {"ship": "羽黒"}
+      ]
+    }
   },
   {
     "game_id": 138,
@@ -637,7 +822,15 @@
     "reward_steel": 0,
     "reward_alum": 400,
     "reward_other": "高速修復材x2，開発資材x2",
-    "prerequisite": [128]
+    "prerequisite": [128],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "飛龍改二", "flagship": true},
+        {"ship": "蒼龍"},
+        {"ship": "駆逐", "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 139,
@@ -652,7 +845,14 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "開発資材x3",
-    "prerequisite": [127]
+    "prerequisite": [127],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "潜水母艦", "flagship": true},
+        {"ship": ["潜水艦", "潜水空母"], "amount": 4}
+      ]
+    }
   },
   {
     "game_id": 140,
@@ -667,7 +867,14 @@
     "reward_steel": 0,
     "reward_alum": 300,
     "reward_other": "装備「22号対水上電探改四」x1",
-    "prerequisite": [137]
+    "prerequisite": [137],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "妙高改二", "flagship": true}
+      ],
+      "fleetid": 1
+    }
   },
   {
     "game_id": 141,
@@ -682,7 +889,15 @@
     "reward_steel": 0,
     "reward_alum": 450,
     "reward_other": "高速建造材x2，開発資材x2",
-    "prerequisite": [250]
+    "prerequisite": [250],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "蒼龍改二", "flagship": true},
+        {"ship": "飛龍改二"},
+        {"ship": "駆逐", "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 142,
@@ -697,7 +912,16 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "装備「試製35.6cm三連装砲」x1",
-    "prerequisite": [246]
+    "prerequisite": [246],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "金剛改二"},
+        {"ship": "比叡改二"},
+        {"ship": "榛名改二"},
+        {"ship": "霧島改二"}
+      ]
+    }
   },
   {
     "game_id": 143,
@@ -712,7 +936,14 @@
     "reward_steel": 100,
     "reward_alum": 300,
     "reward_other": "開発資材x2",
-    "prerequisite": [123]
+    "prerequisite": [123],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "雲龍", "flagship": true}
+      ],
+      "fleetid": 1
+    }
   },
   {
     "game_id": 144,
@@ -727,7 +958,16 @@
     "reward_steel": 250,
     "reward_alum": 0,
     "reward_other": "高速修復材x2",
-    "prerequisite": [132]
+    "prerequisite": [132],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "長門"},
+        {"ship": "陸奥"},
+        {"ship": "扶桑"},
+        {"ship": "山城"}
+      ]
+    }
   },
   {
     "game_id": 145,
@@ -742,7 +982,14 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "開発資材x3",
-    "prerequisite": [258]
+    "prerequisite": [258],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": ["低速戦艦", "航戦"], "amount": [3, 3]},
+        {"ship": "軽巡", "amount": 1}
+      ]
+    }
   },
   {
     "game_id": 147,
@@ -757,7 +1004,17 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "開発資材x2，改修資材x3",
-    "prerequisite": [137, 224]
+    "prerequisite": [137, 224],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "扶桑"},
+        {"ship": "山城"},
+        {"ship": "最上"},
+        {"ship": "時雨"},
+        {"ship": "満潮"}
+      ]
+    }
   },
   {
     "game_id": 146,
@@ -772,7 +1029,14 @@
     "reward_steel": 100,
     "reward_alum": 0,
     "reward_other": "改修資材x5，改修工廠開放",
-    "prerequisite": [116]
+    "prerequisite": [116],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "明石", "flagship": true}
+      ],
+      "fleetid": 1
+    }
   },
   {
     "game_id": 148,
@@ -787,7 +1051,16 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "高速修復材x2，開発資材x2",
-    "prerequisite": [123]
+    "prerequisite": [123],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "霞", "flagship": true},
+        {"ship": "足柄"},
+        {"ship": "軽巡", "amount": 1},
+        {"ship": "駆逐", "amount": 4}
+      ]
+    }
   },
   {
     "game_id": 149,
@@ -802,7 +1075,17 @@
     "reward_steel": 110,
     "reward_alum": 0,
     "reward_other": "開発資材x3",
-    "prerequisite": [132]
+    "prerequisite": [132],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "吹雪"},
+        {"ship": "白雪"},
+        {"ship": "初雪"},
+        {"ship": "叢雲"}
+      ],
+      "disallowed": "他の艦"
+    }
   },
   {
     "game_id": 150,
@@ -817,7 +1100,17 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "高速修復材x3",
-    "prerequisite": [267]
+    "prerequisite": [267],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "初春"},
+        {"ship": "子日"},
+        {"ship": "若葉"},
+        {"ship": "初霜"}
+      ],
+      "disallowed": "他の艦"
+    }
   },
   {
     "game_id": 151,
@@ -832,7 +1125,17 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "開発資材x2，高速修復材x2",
-    "prerequisite": [271]
+    "prerequisite": [271],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "皐月"},
+        {"ship": "文月"},
+        {"ship": "長月"},
+        {"ship": "駆逐", "amount": 1}
+      ],
+      "disallowed": "他の艦"
+    }
   },
   {
     "game_id": 152,
@@ -847,7 +1150,14 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "高速修復材x2",
-    "prerequisite": [136, 227]
+    "prerequisite": [136, 227],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "鳥海改二", "flagship": true},
+        {"ship": ["古鷹", "加古", "青葉", "衣笠", "夕張", "天龍"], "select": 5}
+      ]
+    }
   },
   {
     "game_id": 153,
@@ -862,7 +1172,15 @@
     "reward_steel": 0,
     "reward_alum": 180,
     "reward_other": "開発資材x2",
-    "prerequisite": [274]
+    "prerequisite": [274],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "天龍"},
+        {"ship": "龍田"},
+        {"ship": "艦", "amount": [2, 99]}
+      ]
+    }
   },
   {
     "game_id": 154,
@@ -877,7 +1195,18 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "開発資材x2，高速修復材x2",
-    "prerequisite": [227]
+    "prerequisite": [227],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "比叡"},
+        {"ship": "霧島"},
+        {"ship": "長良"},
+        {"ship": "暁"},
+        {"ship": "電"},
+        {"ship": "雷"}
+      ]
+    }
   },
   {
     "game_id": 155,
@@ -892,7 +1221,16 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "装備「探照灯」x1",
-    "prerequisite": [224]
+    "prerequisite": [224],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "暁改二", "flagship": true},
+        {"ship": "響"},
+        {"ship": "雷"},
+        {"ship": "電"}
+      ]
+    }
   },
   {
     "game_id": 156,
@@ -907,7 +1245,18 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "高速修復材x2，家具箱(中)x1",
-    "prerequisite": [240]
+    "prerequisite": [240],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "阿武隈", "flagship": true},
+        {"ship": "響"},
+        {"ship": "初霜"},
+        {"ship": "若葉"},
+        {"ship": "五月雨"},
+        {"ship": "島風"}
+      ]
+    }
   },
   {
     "game_id": 157,
@@ -922,7 +1271,18 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "高速修復材x3，家具箱(大)x1",
-    "prerequisite": [309]
+    "prerequisite": [309],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "阿武隈改二", "flagship": true},
+        {"ship": "響"},
+        {"ship": "夕雲"},
+        {"ship": "秋雲"},
+        {"ship": "長波"},
+        {"ship": "島風"}
+      ]
+    }
   },
   {
     "game_id": 161,
@@ -937,7 +1297,16 @@
     "reward_steel": 0,
     "reward_alum": 300,
     "reward_other": "開発資材x3",
-    "prerequisite": [123, 264]
+    "prerequisite": [123, 264],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "翔鶴"},
+        {"ship": "瑞鶴"},
+        {"ship": "朧"},
+        {"ship": "秋雲"}
+      ]
+    }
   },
   {
     "game_id": 162,
@@ -952,7 +1321,16 @@
     "reward_steel": 150,
     "reward_alum": 0,
     "reward_other": "開発資材x2，改修資材x2",
-    "prerequisite": [152, 263]
+    "prerequisite": [152, 263],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "那智改二"},
+        {"ship": "足柄改二"},
+        {"ship": "多摩"},
+        {"ship": "木曽"}
+      ]
+    }
   },
   {
     "game_id": 163,
@@ -967,7 +1345,15 @@
     "reward_steel": 150,
     "reward_alum": 0,
     "reward_other": "開発資材x2，高速修復材x2",
-    "prerequisite": [216]
+    "prerequisite": [216],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "足柄", "flagship": true},
+        {"ship": "球磨"},
+        {"ship": "長良"}
+      ]
+    }
   },
   {
     "game_id": 164,
@@ -982,7 +1368,16 @@
     "reward_steel": 0,
     "reward_alum": 200,
     "reward_other": "開発資材x2，熟練搭乗員×1",
-    "prerequisite": [264, 624]
+    "prerequisite": [264, 624],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "瑞鶴改", "flagship": true},
+        {"ship": "瑞鳳"},
+        {"ship": "千歳航", "note": "軽母"},
+        {"ship": "千代田航", "note": "軽母"}
+      ]
+    }
   },
   {
     "game_id": 165,
@@ -997,7 +1392,14 @@
     "reward_steel": 0,
     "reward_alum": 200,
     "reward_other": "改修資材x2，装備 瑞雲(六三四空)×1",
-    "prerequisite": [293]
+    "prerequisite": [293],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "伊勢改"},
+        {"ship": "日向改"}
+      ]
+    }
   },
   {
     "game_id": 166,
@@ -1012,7 +1414,18 @@
     "reward_steel": 0,
     "reward_alum": 300,
     "reward_other": "開発資材×2，応急修理要員×1",
-    "prerequisite": [165, 266]
+    "prerequisite": [165, 266],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "瑞鶴改", "flagship": true},
+        {"ship": "瑞鳳改"},
+        {"ship": "千歳航", "note": "軽母"},
+        {"ship": "千代田航", "note": "軽母"},
+        {"ship": "伊勢改"},
+        {"ship": "日向改"}
+      ]
+    }
   },
   {
     "game_id": 167,
@@ -1027,7 +1440,15 @@
     "reward_steel": 300,
     "reward_alum": 300,
     "reward_other": "給糧艦×1，熟練搭乗員×1",
-    "prerequisite": [632]
+    "prerequisite": [632],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "翔鶴改二"},
+        {"ship": "瑞鶴改二"},
+        {"ship": "艦", "amount": 4}
+      ]
+    }
   },
   {
     "game_id": 202,
@@ -1102,7 +1523,12 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "高速修復材x1",
-    "prerequisite": []
+    "prerequisite": [],
+    "requirements": {
+      "category": "sortie",
+      "map": "1-2",
+      "times": 1
+    }
   },
   {
     "game_id": 205,
@@ -1117,7 +1543,14 @@
     "reward_steel": 50,
     "reward_alum": 0,
     "reward_other": "開発資材x1，艦娘「深雪」x1",
-    "prerequisite": []
+    "prerequisite": [],
+    "requirements": {
+      "category": "sortie",
+      "map": "1-2",
+      "boss": true,
+      "result": "B",
+      "times": 1
+    }
   },
   {
     "game_id": 206,
@@ -1137,8 +1570,8 @@
       "category": "sortie",
       "times": 1,
       "groups": [
-          {"ship": "軽巡", "flagship": true},
-          {"ship": "駆逐", "amount": 3}
+        {"ship": "軽巡", "flagship": true},
+        {"ship": "駆逐", "amount": 3}
       ]
     }
   },
@@ -1155,7 +1588,14 @@
     "reward_steel": 70,
     "reward_alum": 0,
     "reward_other": "開発資材x1",
-    "prerequisite": [206]
+    "prerequisite": [206],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "groups": [
+          {"ship": "重巡", "flagship": true}
+      ]
+    }
   },
   {
     "game_id": 208,
@@ -1170,7 +1610,14 @@
     "reward_steel": 150,
     "reward_alum": 0,
     "reward_other": "開発資材x1",
-    "prerequisite": [207]
+    "prerequisite": [207],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "groups": [
+        {"ship": "戦艦", "flagship": true, "amount": 1}
+      ]
+    }
   },
   {
     "game_id": 209,
@@ -1208,7 +1655,12 @@
     "reward_steel": 0,
     "reward_alum": 100,
     "reward_other": "艦娘「赤城」x1",
-    "prerequisite": [117]
+    "prerequisite": [117],
+    "requirements": {
+      "category": "sink",
+      "amount": 1,
+      "ship": ["敵空母", "敵軽母"]
+    }
   },
   {
     "game_id": 219,
@@ -1228,12 +1680,12 @@
       "category": "sortie",
       "times": 1,
       "groups": [
-          {"ship": "鳥海"},
-          {"ship": "青葉"},
-          {"ship": "加古"},
-          {"ship": "古鷹"},
-          {"ship": "天龍"},
-          {"ship": "高速艦", "amount": 1}
+        {"ship": "鳥海"},
+        {"ship": "青葉"},
+        {"ship": "加古"},
+        {"ship": "古鷹"},
+        {"ship": "天龍"},
+        {"ship": "高速艦", "amount": 1}
       ]
     }
   },
@@ -1276,7 +1728,20 @@
     "reward_steel": 150,
     "reward_alum": 100,
     "reward_other": "高速修復材x2",
-    "prerequisite": [121]
+    "prerequisite": [121],
+    "requirements": {
+      "category": "sortie",
+      "map": "2-2",
+      "boss": true,
+      "result": "B",
+      "times": 1,
+      "groups": [
+        {"ship": "愛宕"},
+        {"ship": "高雄"},
+        {"ship": "鳥海"},
+        {"ship": "摩耶"}
+      ]
+    }
   },
   {
     "game_id": 224,
@@ -1291,7 +1756,20 @@
     "reward_steel": 400,
     "reward_alum": 0,
     "reward_other": "高速修復材x2，家具箱(小)x1",
-    "prerequisite": [122]
+    "prerequisite": [122],
+    "requirements": {
+      "category": "sortie",
+      "map": "2-3",
+      "boss": true,
+      "result": "B",
+      "times": 1,
+      "groups": [
+        {"ship": "扶桑"},
+        {"ship": "山城"},
+        {"ship": "最上"},
+        {"ship": "時雨"}
+      ]
+    }
   },
   {
     "game_id": 225,
@@ -1306,7 +1784,18 @@
     "reward_steel": 0,
     "reward_alum": 700,
     "reward_other": "高速修復材x2，家具箱(中)x1",
-    "prerequisite": [123]
+    "prerequisite": [123],
+    "requirements": {
+      "category": "sortie",
+      "map": "3-1",
+      "boss": true,
+      "result": "B",
+      "times": 1,
+      "groups": [
+        {"ship": "翔鶴"},
+        {"ship": "瑞鶴"}
+      ]
+    }
   },
   {
     "game_id": 227,
@@ -1321,7 +1810,22 @@
     "reward_steel": 100,
     "reward_alum": 150,
     "reward_other": "応急修理要員x1",
-    "prerequisite": [124]
+    "prerequisite": [124],
+    "requirements": {
+      "category": "sortie",
+      "map": "2-3",
+      "boss": true,
+      "result": "B",
+      "times": 1,
+      "groups": [
+        {"ship": "鳥海"},
+        {"ship": "青葉"},
+        {"ship": "衣笠"},
+        {"ship": "加古"},
+        {"ship": "古鷹"},
+        {"ship": "天龍"}
+      ]
+    }
   },
   {
     "game_id": 231,
@@ -1336,7 +1840,17 @@
     "reward_steel": 300,
     "reward_alum": 0,
     "reward_other": "特注家具職人x1",
-    "prerequisite": [125]
+    "prerequisite": [125],
+    "requirements": {
+      "category": "sortie",
+      "map": "2-3",
+      "boss": true,
+      "result": "B",
+      "times": 1,
+      "groups": [
+        {"ship": ["潜水艦", "潜水空母"], "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 232,
@@ -1351,7 +1865,18 @@
     "reward_steel": 0,
     "reward_alum": 300,
     "reward_other": "給糧艦「間宮」x1",
-    "prerequisite": [126]
+    "prerequisite": [126],
+    "requirements": {
+      "category": "sortie",
+      "map": "4-2",
+      "boss": true,
+      "result": "B",
+      "times": 1,
+      "groups": [
+        {"ship": "航戦", "amount": 2},
+        {"ship": "航巡", "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 233,
@@ -1366,7 +1891,20 @@
     "reward_steel": 0,
     "reward_alum": 300,
     "reward_other": "家具箱(中)x1，応急修理要員x1",
-    "prerequisite": [128]
+    "prerequisite": [128],
+    "requirements": {
+      "category": "sortie",
+      "map": "2-3",
+      "boss": true,
+      "result": "S",
+      "times": 1,
+      "groups": [
+        {"ship": "古鷹"},
+        {"ship": "加古"},
+        {"ship": "青葉"},
+        {"ship": "衣笠"}
+      ]
+    }
   },
   {
     "game_id": 239,
@@ -1381,7 +1919,20 @@
     "reward_steel": 400,
     "reward_alum": 0,
     "reward_other": "開発資材x1，家具箱(中)x1",
-    "prerequisite": [131]
+    "prerequisite": [131],
+    "requirements": {
+      "category": "sortie",
+      "map": "2-3",
+      "boss": true,
+      "result": "B",
+      "times": 1,
+      "groups": [
+        {"ship": "朝潮"},
+        {"ship": "満潮"},
+        {"ship": "大潮"},
+        {"ship": "荒潮"}
+      ]
+    }
   },
   {
     "game_id": 240,
@@ -1396,7 +1947,20 @@
     "reward_steel": 0,
     "reward_alum": 400,
     "reward_other": "開発資材x2，家具箱(大)x1",
-    "prerequisite": [132]
+    "prerequisite": [132],
+    "requirements": {
+      "category": "sortie",
+      "map": "3-1",
+      "boss": true,
+      "result": "B",
+      "times": 1,
+      "groups": [
+        {"ship": "霞"},
+        {"ship": "霰"},
+        {"ship": "陽炎"},
+        {"ship": "不知火"}
+      ]
+    }
   },
   {
     "game_id": 244,
@@ -1411,7 +1975,20 @@
     "reward_steel": 100,
     "reward_alum": 500,
     "reward_other": "給糧艦「間宮」x1",
-    "prerequisite": [133]
+    "prerequisite": [133],
+    "requirements": {
+      "category": "sortie",
+      "map": "3-2",
+      "boss": true,
+      "result": "C",
+      "times": 1,
+      "groups": [
+        {"ship": "睦月"},
+        {"ship": "如月"},
+        {"ship": "弥生"},
+        {"ship": "望月"}
+      ]
+    }
   },
   {
     "game_id": 247,
@@ -1426,7 +2003,17 @@
     "reward_steel": 300,
     "reward_alum": 900,
     "reward_other": "高速修復材x3，家具箱(大)x1",
-    "prerequisite": [412]
+    "prerequisite": [412],
+    "requirements": {
+      "category": "sortie",
+      "map": "4-4",
+      "boss": true,
+      "result": "B",
+      "times": 1,
+      "groups": [
+        {"ship": "航戦", "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 248,
@@ -1450,10 +2037,11 @@
       "result": "C",
       "groups": [
         {"ship": "睦月"},
-        {"ship": "卯月"},
         {"ship": "弥生"},
+        {"ship": "卯月"},
         {"ship": "望月"}
-      ]
+      ],
+      "disallowed": "他の艦"
     }
   },
   {
@@ -1469,7 +2057,19 @@
     "reward_steel": 0,
     "reward_alum": 500,
     "reward_other": "給糧艦「間宮」x1",
-    "prerequisite": [138]
+    "prerequisite": [138],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "5-2", 
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "飛龍改二", "flagship": true},
+        {"ship": "蒼龍"},
+        {"ship": "駆逐", "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 251,
@@ -1492,8 +2092,8 @@
       "boss": true,
       "result": "S",
       "groups": [
-        {"ship": "飛龍改二", "flagship": true},
-        {"ship": "蒼龍改二"},
+        {"ship": "蒼龍改二", "flagship": true},
+        {"ship": "飛龍改二"},
         {"ship": "駆逐", "amount": 2}
       ]
     }
@@ -1511,7 +2111,17 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "装備「試製35.6cm三連装砲」x1",
-    "prerequisite": [248]
+    "prerequisite": [248],
+    "requirements": {
+      "category": "sortie",
+      "map": "5-1", 
+      "boss": true,
+      "result": "S",
+      "times": 1,
+      "groups": [
+        {"ship": "榛名改二"}
+      ]
+    }
   },
   {
     "game_id": 253,
@@ -1526,7 +2136,17 @@
     "reward_steel": 0,
     "reward_alum": 300,
     "reward_other": "家具箱(大)x1，装備「熟練艦載機整備員」x1",
-    "prerequisite": [143]
+    "prerequisite": [143],
+    "requirements": {
+      "category": "sortie",
+      "map": "5-2", 
+      "boss": true,
+      "result": "S",
+      "times": 1,
+      "groups": [
+        {"ship": "雲龍改"}
+      ]
+    }
   },
   {
     "game_id": 254,
@@ -1569,7 +2189,19 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "家具箱(大)x1，特注家具職人x1",
-    "prerequisite": [206]
+    "prerequisite": [206],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "2-2", 
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "軽巡", "amount": [1, 2], "flagship": true},
+        {"ship": "駆逐", "amount": [1, 99]}
+      ],
+      "disallowed": "他の艦"
+    }
   },
   {
     "game_id": 258,
@@ -1584,7 +2216,20 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "装備「一式徹甲弾」x1",
-    "prerequisite": [144]
+    "prerequisite": [144],
+    "requirements": {
+      "category": "sortie",
+      "times": 2,
+      "map": "4-2", 
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "長門"},
+        {"ship": "陸奥"},
+        {"ship": "扶桑"},
+        {"ship": "山城"}
+      ]
+    }
   },
   {
     "game_id": 260,
@@ -1599,7 +2244,19 @@
     "reward_steel": 0,
     "reward_alum": 250,
     "reward_other": "開発資材x2，装備「一式徹甲弾」x1",
-    "prerequisite": [259]
+    "prerequisite": [259],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "3-5", 
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "戦艦", "amount": [2, 2]},
+        {"ship": "軽母", "amount": [1, 1]}
+      ],
+      "disallowed": "空母"
+    }
   },
   {
     "game_id": 262,
@@ -1614,7 +2271,21 @@
     "reward_steel": 500,
     "reward_alum": 300,
     "reward_other": "改修資材x5，勲章x1",
-    "prerequisite": [147]
+    "prerequisite": [147],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "5-1", 
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "扶桑"},
+        {"ship": "山城"},
+        {"ship": "最上"},
+        {"ship": "時雨"},
+        {"ship": "満潮"}
+      ]
+    }
   },
   {
     "game_id": 263,
@@ -1629,7 +2300,20 @@
     "reward_steel": 0,
     "reward_alum": 400,
     "reward_other": "家具箱(大)x1，特注家具職人x1",
-    "prerequisite": [233]
+    "prerequisite": [233],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "2-5", 
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "古鷹"},
+        {"ship": "加古"},
+        {"ship": "青葉"},
+        {"ship": "衣笠"}
+      ]
+    }
   },
   {
     "game_id": 267,
@@ -1644,7 +2328,20 @@
     "reward_steel": 300,
     "reward_alum": 0,
     "reward_other": "給糧艦「間宮」x1",
-    "prerequisite": [149]
+    "prerequisite": [149],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "2-3", 
+      "boss": true,
+      "result": "B",
+      "groups": [
+        {"ship": "吹雪"},
+        {"ship": "白雪"},
+        {"ship": "初雪"},
+        {"ship": "叢雲"}
+      ]
+    }
   },
   {
     "game_id": 268,
@@ -1659,7 +2356,21 @@
     "reward_steel": 0,
     "reward_alum": 200,
     "reward_other": "開発資材x2，装備「三式水中探信儀」x1",
-    "prerequisite": [149]
+    "prerequisite": [149],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "1-5", 
+      "boss": true,
+      "result": "C",
+      "groups": [
+        {"ship": "吹雪"},
+        {"ship": "白雪"},
+        {"ship": "初雪"},
+        {"ship": "叢雲"}
+      ],
+      "disallowed": "他の艦"
+    }
   },
   {
     "game_id": 269,
@@ -1674,7 +2385,20 @@
     "reward_steel": 300,
     "reward_alum": 0,
     "reward_other": "プレゼント箱x1",
-    "prerequisite": [150]
+    "prerequisite": [150],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "3-1", 
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "初春"},
+        {"ship": "子日"},
+        {"ship": "若葉"},
+        {"ship": "初霜"}
+      ]
+    }
   },
   {
     "game_id": 271,
@@ -1689,7 +2413,23 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "改修資材x2，家具箱(大)x1",
-    "prerequisite": [249, 269]
+    "prerequisite": [249, 269],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "2-2", 
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "那智", "flagship": true},
+        {"ship": "初霜"},
+        {"ship": "霞"},
+        {"ship": "霰"},
+        {"ship": "潮"},
+        {"ship": "曙"},
+        {"ship": "艦", "amount": 1}
+      ]
+    }
   },
   {
     "game_id": 270,
@@ -1704,7 +2444,20 @@
     "reward_steel": 0,
     "reward_alum": 400,
     "reward_other": "給糧艦「伊良湖」x1，家具箱(中)x1",
-    "prerequisite": [151]
+    "prerequisite": [151],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "1-4", 
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "皐月"},
+        {"ship": "文月"},
+        {"ship": "長月"},
+        {"ship": "駆逐", "amount": 1}
+      ]
+    }
   },
   {
     "game_id": 272,
@@ -1719,7 +2472,19 @@
     "reward_steel": 300,
     "reward_alum": 0,
     "reward_other": "「25mm三連装機銃」x1，装備「三式弾」x1",
-    "prerequisite": [416]
+    "prerequisite": [416],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "2-3", 
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "摩耶"},
+        {"ship": "軽巡", "amount": 1},
+        {"ship": "駆逐", "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 273,
@@ -1737,10 +2502,10 @@
     "prerequisite": [307],
     "requirements": {
       "category": "sortie",
-      "times": 1,
       "map": "5-1", 
       "boss": true,
       "result": "S",
+      "times": 1,
       "groups": [
         {"ship": "鳥海改二", "flagship": true},
         {"ship": ["古鷹", "加古", "青葉", "衣笠", "夕張", "天龍"], "select": 5}
@@ -1760,7 +2525,21 @@
     "reward_steel": 200,
     "reward_alum": 0,
     "reward_other": "開発資材x3，装備「九三式水中聴音機」x1",
-    "prerequisite": [120]
+    "prerequisite": [120],
+    "requirements": {
+      "category": "sortie",
+      "map": "1-5", 
+      "boss": true,
+      "result": "C",
+      "times": 1,
+      "groups": [
+        {"ship": "暁"},
+        {"ship": "響"},
+        {"ship": "雷"},
+        {"ship": "電"}
+      ],
+      "disallowed": "他の艦"
+    }
   },
   {
     "game_id": 275,
@@ -1775,7 +2554,18 @@
     "reward_steel": 0,
     "reward_alum": 250,
     "reward_other": "高速修復材x3，特注家具職人x1",
-    "prerequisite": [153]
+    "prerequisite": [153],
+    "requirements": {
+      "category": "sortie",
+      "map": "2-3", 
+      "boss": true,
+      "result": "S",
+      "times": 1,
+      "groups": [
+        {"ship": "天龍"},
+        {"ship": "龍田"}
+      ]
+    }
   },
   {
     "game_id": 276,
@@ -1790,7 +2580,22 @@
     "reward_steel": 500,
     "reward_alum": 0,
     "reward_other": "開発資材x5，改修資材x2",
-    "prerequisite": [154, 243]
+    "prerequisite": [154, 243],
+    "requirements": {
+      "category": "sortie",
+      "map": "5-1", 
+      "boss": true,
+      "result": "S",
+      "times": 1,
+      "groups": [
+        {"ship": "比叡"},
+        {"ship": "霧島"},
+        {"ship": "長良"},
+        {"ship": "暁"},
+        {"ship": "電"},
+        {"ship": "雷"}
+      ]
+    }
   },
   {
     "game_id": 277,
@@ -1805,7 +2610,21 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "改修資材x2，装備「九三式水中聴音機」x1",
-    "prerequisite": [155, 274]
+    "prerequisite": [155, 274],
+    "requirements": {
+      "category": "sortie",
+      "map": "1-5", 
+      "boss": true,
+      "result": "A",
+      "times": 1,
+      "groups": [
+        {"ship": "暁"},
+        {"ship": "響"},
+        {"ship": "雷"},
+        {"ship": "電"}
+      ],
+      "disallowed": "他の艦"
+    }
   },
   {
     "game_id": 278,
@@ -1820,7 +2639,22 @@
     "reward_steel": 0,
     "reward_alum": 400,
     "reward_other": "高速修復剤x3，特注家具職人x1",
-    "prerequisite": [156]
+    "prerequisite": [156],
+    "requirements": {
+      "category": "sortie",
+      "map": "3-2", 
+      "boss": true,
+      "result": "B",
+      "times": 1,
+      "groups": [
+        {"ship": "阿武隈", "flagship": true},
+        {"ship": "響"},
+        {"ship": "初霜"},
+        {"ship": "若葉"},
+        {"ship": "五月雨"},
+        {"ship": "島風"}
+      ]
+    }
   },
   {
     "game_id": 279,
@@ -1835,7 +2669,22 @@
     "reward_steel": 0,
     "reward_alum": 500,
     "reward_other": "開発資材x4，改修資材x4",
-    "prerequisite": [157]
+    "prerequisite": [157],
+    "requirements": {
+      "category": "sortie",
+      "map": "3-2", 
+      "boss": true,
+      "result": "S",
+      "times": 1,
+      "groups": [
+        {"ship": "阿武隈改二", "flagship": true},
+        {"ship": "響"},
+        {"ship": "夕雲"},
+        {"ship": "秋雲"},
+        {"ship": "長波"},
+        {"ship": "島風"}
+      ]
+    }
   },
   {
     "game_id": "286",
@@ -1850,7 +2699,14 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "特注家具職人x1",
-    "prerequisite": [201]
+    "prerequisite": [201],
+    "requirements": {
+      "category": "sortie",
+      "map": "1-5", 
+      "boss": true,
+      "result": "A",
+      "times": 4
+    }
   },
   {
     "game_id": 285,
@@ -1868,10 +2724,10 @@
     "prerequisite": [260, 230],
     "requirements": {
       "category": "sortie",
-      "times": 1,
       "map": "3-5", 
       "boss": true,
       "result": "S",
+      "times": 1,
       "groups": [
         {"ship": "空母", "flagship": true}
       ]
@@ -1890,7 +2746,20 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "高速修復材x3，給糧艦「伊良湖」x1",
-    "prerequisite": [161]
+    "prerequisite": [161],
+    "requirements": {
+      "category": "sortie",
+      "map": "3-5", 
+      "boss": true,
+      "result": "S",
+      "times": 1,
+      "groups": [
+        {"ship": "翔鶴"},
+        {"ship": "瑞鶴"},
+        {"ship": "朧"},
+        {"ship": "秋雲"}
+      ]
+    }
   },
   {
     "game_id": 288,
@@ -1933,7 +2802,19 @@
     "reward_steel": 200,
     "reward_alum": 0,
     "reward_other": "家具箱(中)x1，プレゼント箱x1",
-    "prerequisite": [163]
+    "prerequisite": [163],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "2-2", 
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "足柄", "flagship": true},
+        {"ship": "球磨"},
+        {"ship": "長良"}
+      ]
+    }
   },
   {
     "game_id": 293,
@@ -1959,7 +2840,8 @@
         {"ship": "瑞鶴改", "flagship": true},
         {"ship": "瑞鳳"},
         {"ship": "千歳航", "note": "軽母"},
-        {"ship": "千代田航", "note": "軽母"}
+        {"ship": "千代田航", "note": "軽母"},
+        {"ship": "艦", "amount": 2}
       ]
     }
   },
@@ -1976,7 +2858,22 @@
     "reward_steel": 300,
     "reward_alum": 300,
     "reward_other": "高速修復材×3，装備 零戦52型丙(六〇一空)×1",
-    "prerequisite": [166]
+    "prerequisite": [166],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "2-4", 
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "瑞鶴改", "flagship": true},
+        {"ship": "瑞鳳改"},
+        {"ship": "千歳航", "note": "軽母"},
+        {"ship": "千代田航", "note": "軽母"},
+        {"ship": "伊勢改"},
+        {"ship": "日向改"}
+      ]
+    }
   },
   {
     "game_id": 201,
@@ -2030,7 +2927,12 @@
     "reward_steel": 200,
     "reward_alum": 100,
     "reward_other": "開発資材x1",
-    "prerequisite": [216]
+    "prerequisite": [216],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "battle",
+      "times": 10
+    }
   },
   {
     "game_id": 211,
@@ -2049,7 +2951,7 @@
     "requirements": {
       "category": "sink",
       "amount": 3,
-      "ship": ["空母", "軽母"]
+      "ship": ["敵空母", "敵軽母"]
     }
   },
   {
@@ -2069,7 +2971,7 @@
     "requirements": {
       "category": "sink",
       "amount": 3,
-      "ship": "補給艦"
+      "ship": "敵補給艦"
     }
   },
   {
@@ -2085,7 +2987,12 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "開発資材x2",
-    "prerequisite": [201]
+    "prerequisite": [201],
+    "requirements": {
+      "category": "sink",
+      "amount": 5,
+      "ship": "敵補給艦"
+    }
   },
   {
     "game_id": 226,
@@ -2126,7 +3033,7 @@
     "requirements": {
       "category": "sink",
       "amount": 6,
-      "ship": "潜水艦"
+      "ship": "敵潜水艦"
     }
   },
   {
@@ -2160,7 +3067,12 @@
     "reward_steel": 0,
     "reward_alum": 500,
     "reward_other": "開発資材x2",
-    "prerequisite": [218]
+    "prerequisite": [218],
+    "requirements": {
+      "category": "sink",
+      "amount": 20,
+      "ship": ["敵空母", "敵軽母"]
+    }
   },
   {
     "game_id": 213,
@@ -2175,7 +3087,12 @@
     "reward_steel": 400,
     "reward_alum": 0,
     "reward_other": "開発資材x3",
-    "prerequisite": [216]
+    "prerequisite": [216],
+    "requirements": {
+      "category": "sink",
+      "amount": 20,
+      "ship": "敵補給艦"
+    }
   },
   {
     "game_id": 221,
@@ -2190,7 +3107,12 @@
     "reward_steel": 800,
     "reward_alum": 0,
     "reward_other": "高速修復材x3",
-    "prerequisite": [214]
+    "prerequisite": [214],
+    "requirements": {
+      "category": "sink",
+      "amount": 50,
+      "ship": "敵補給艦"
+    }
   },
   {
     "game_id": 228,
@@ -2205,7 +3127,12 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "高速修復材x2，改修資材x1",
-    "prerequisite": [220]
+    "prerequisite": [220],
+    "requirements": {
+      "category": "sink",
+      "amount": 15,
+      "ship": "敵潜水艦"
+    }
   },
   {
     "game_id": 229,
@@ -2220,7 +3147,14 @@
     "reward_steel": 0,
     "reward_alum": 700,
     "reward_other": "開発資材x2",
-    "prerequisite": [228]
+    "prerequisite": [228],
+    "requirements": {
+      "category": "sortie",
+      "map": "4-1 ~ 4-5", 
+      "boss": true,
+      "result": "B",
+      "times": 12
+    }
   },
   {
     "game_id": 241,
@@ -2235,7 +3169,14 @@
     "reward_steel": 400,
     "reward_alum": 300,
     "reward_other": "開発資材x3，改修資材x3",
-    "prerequisite": [228]
+    "prerequisite": [228],
+    "requirements": {
+      "category": "sortie",
+      "map": "3-3 ~ 3-5", 
+      "boss": true,
+      "result": "B",
+      "times": 5
+    }
   },
   {
     "game_id": 242,
@@ -2250,7 +3191,14 @@
     "reward_steel": 500,
     "reward_alum": 0,
     "reward_other": "高速修復材x1，開発資材x1",
-    "prerequisite": [229]
+    "prerequisite": [229],
+    "requirements": {
+      "category": "sortie",
+      "map": "4-4", 
+      "boss": true,
+      "result": "B",
+      "times": 1
+    }
   },
   {
     "game_id": 243,
@@ -2265,7 +3213,14 @@
     "reward_steel": 0,
     "reward_alum": 800,
     "reward_other": "開発資材x2，改修資材x2",
-    "prerequisite": [242]
+    "prerequisite": [242],
+    "requirements": {
+      "category": "sortie",
+      "map": "5-2", 
+      "boss": true,
+      "result": "S",
+      "times": 2
+    }
   },
   {
     "game_id": 261,
@@ -2280,7 +3235,14 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "改修資材x3",
-    "prerequisite": [146, 221]
+    "prerequisite": [146, 221],
+    "requirements": {
+      "category": "sortie",
+      "map": "1-5", 
+      "boss": true,
+      "result": "A",
+      "times": 3
+    }
   },
   {
     "game_id": 249,
@@ -2295,7 +3257,19 @@
     "reward_steel": 550,
     "reward_alum": 0,
     "reward_other": "開発資材x5，家具箱(大)x1",
-    "prerequisite": [137]
+    "prerequisite": [137],
+    "requirements": {
+      "category": "sortie",
+      "map": "2-5", 
+      "boss": true,
+      "result": "S",
+      "times": 1,
+      "groups": [
+        {"ship": "妙高"},
+        {"ship": "那智"},
+        {"ship": "羽黒"}
+      ]
+    }
   },
   {
     "game_id": 256,
@@ -2310,7 +3284,14 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "家具箱(大)x1，給糧艦「伊良湖」x1",
-    "prerequisite": [255]
+    "prerequisite": [255],
+    "requirements": {
+      "category": "sortie",
+      "map": "6-1", 
+      "boss": true,
+      "result": "S",
+      "times": 3
+    }
   },
   {
     "game_id": 257,
@@ -2334,7 +3315,7 @@
       "result": "S",
       "groups": [
         {"ship": "軽巡", "flagship": true, "amount": [1, 3]},
-        {"ship": "駆逐", "amount": [1, 6]}
+        {"ship": "駆逐", "amount": [1, 99]}
       ],
       "disallowed": "他の艦"
     }
@@ -2378,7 +3359,14 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "開発資材x5，改修資材x3",
-    "prerequisite": [240, 249]
+    "prerequisite": [240, 249],
+    "requirements": {
+      "category": "sortie",
+      "map": "1-5", 
+      "boss": true,
+      "result": "A",
+      "times": 10
+    }
   },
   {
     "game_id": 264,
@@ -2393,7 +3381,18 @@
     "reward_steel": 600,
     "reward_alum": 800,
     "reward_other": "改修資材x2，家具箱(大)x2",
-    "prerequisite": [221, 239]
+    "prerequisite": [221, 239],
+    "requirements": {
+      "category": "sortie",
+      "map": "4-2", 
+      "boss": true,
+      "result": "S",
+      "times": 1,
+      "groups": [
+        {"ship": ["空母", "軽母", "装母"], "amount": 2},
+        {"ship": "駆逐", "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 266,
@@ -2408,7 +3407,19 @@
     "reward_steel": 0,
     "reward_alum": 200,
     "reward_other": "開発資材x4，改修資材x2",
-    "prerequisite": [148, 264]
+    "prerequisite": [148, 264],
+    "requirements": {
+      "category": "sortie",
+      "map": "2-5", 
+      "boss": true,
+      "result": "S",
+      "times": 1,
+      "groups": [
+        {"ship": "駆逐", "amount": 4, "flagship": true},
+        {"ship": "重巡", "amount": 1},
+        {"ship": "軽巡", "amount": 1}
+      ]
+    }
   },
   {
     "game_id": 301,

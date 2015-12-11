@@ -44,8 +44,6 @@ reqstr_ordinalize = (num) ->
   return num if !__['option_ordinalize']
   _.ordinalize num
 
-reqstr_categories = []
-
 reqstr_ship = (ship, amount) ->
   if typeof ship == "string"
     str_one = _$ ship
@@ -109,6 +107,8 @@ reqstr_group = extract_first_arg (group) ->
 reqstr_groups = (groups) ->
   delim_join (reqstr_group(group) for group in groups), 
       __['format_groups_delim'], __['format_groups_delim_last']
+
+reqstr_categories = []
 
 reqstr_categories['fleet'] = extract_first_arg (detail) ->
   # FORMAT:
@@ -291,7 +291,7 @@ reqstr = (requirements) ->
   try
     category = requirements['category']
     fn = reqstr_categories[category]
-    console.log "+"+fn(requirements)
+    console.log fn(requirements)
   catch e
     console.log "Invalid requirements: #{requirements} reason: #{e} #{e.stack}"
   
@@ -299,7 +299,7 @@ test_reqstr = ->
   for quest in conditions
     if quest['requirements']
       reqstr quest['requirements']
-      console.log "-"+quest['condition']
+      #console.log quest['condition']
     else
       console.log "***"+quest['condition']
 
