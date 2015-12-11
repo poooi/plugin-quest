@@ -14,7 +14,7 @@
     "reward_other": "艦娘「白雪」x1",
     "prerequisite": [],
     "requirements": {
-      "category": "compfleet",
+      "category": "fleet",
       "detail": { 
         "groups": [
           {"ship": "艦", "amount": 2}
@@ -37,7 +37,7 @@
     "reward_other": "高速建造材x1",
     "prerequisite": [],
     "requirements": {
-      "category": "compfleet",
+      "category": "fleet",
       "detail": { 
         "groups": [
           {"ship": "駆逐", "amount": 4}
@@ -60,11 +60,11 @@
     "reward_other": "開発資材x1",
     "prerequisite": [],
     "requirements": {
-      "category": "compfleet",
+      "category": "fleet",
       "detail": {
         "groups": [
           {"ship": "軽巡", "flagship": true},
-          {"ship": "駆逐", "amount": "数"}
+          {"ship": "駆逐", "amount": 3}
         ]
       }
     }
@@ -84,7 +84,7 @@
     "reward_other": "第2艦隊開放",
     "prerequisite": [103],
     "requirements": {
-      "category": "compfleet",
+      "category": "fleet",
       "detail": {
         "groups": [
           {"ship": "艦", "amount": 6}
@@ -107,7 +107,7 @@
     "reward_other": "開発資材x1",
     "prerequisite": [],
     "requirements": {
-      "category": "compfleet",
+      "category": "fleet",
       "detail": {
         "groups": [
           {"ship": "軽巡", "amount": 2}
@@ -130,7 +130,7 @@
     "reward_other": "高速建造材x1",
     "prerequisite": [],
     "requirements": {
-      "category": "compfleet",
+      "category": "fleet",
       "detail": {
         "groups": [
           {"ship": "艦", "amount": 1}
@@ -154,7 +154,7 @@
     "reward_other": "高速修復材x1",
     "prerequisite": [105],
     "requirements": {
-      "category": "compfleet",
+      "category": "fleet",
       "detail": {
         "groups": [
           {"ship": "重巡", "amount": 2}
@@ -177,7 +177,7 @@
     "reward_other": "高速建造材x2",
     "prerequisite": [105],
     "requirements": {
-      "category": "compfleet",
+      "category": "fleet",
       "detail": {
         "groups": [
           {"ship": "天龍"},
@@ -201,7 +201,7 @@
     "reward_other": "開発資材x1",
     "prerequisite": [],
     "requirements": {
-      "category": "compfleet",
+      "category": "fleet",
       "detail": {
         "groups": [
           {"ship": "水母", "amount": 1}
@@ -224,7 +224,7 @@
     "reward_other": "応急修理要員x1",
     "prerequisite": [116],
     "requirements": {
-      "category": "compfleet",
+      "category": "fleet",
       "detail": {
         "groups": [
           {"ship": "暁"},
@@ -232,7 +232,7 @@
           {"ship": "雷"},
           {"ship": "電"}
         ],
-        "disallowed": "其它舰船"
+        "disallowed": "他の艦"
       }
     }
   },
@@ -251,7 +251,7 @@
     "reward_other": "高速建造材x2",
     "prerequisite": [215],
     "requirements": {
-      "category": "compfleet",
+      "category": "fleet",
       "detail": {
         "groups": [
           {"ship": ["空母", "軽母", "水母"], "amount": 1},
@@ -276,14 +276,14 @@
     "reward_other": "開発資材x1",
     "prerequisite": [],
     "requirements": {
-      "category": "compfleet",
+      "category": "fleet",
       "detail": {
         "groups": [
           {
             "ship": ["空母", "軽母", "水母"],
             "flagship": true
           },
-          {"ship": "驱逐", "amount": 3}
+          {"ship": "駆逐", "amount": 3}
         ]
       }
     }
@@ -303,7 +303,7 @@
     "reward_other": "高速建造材x2",
     "prerequisite": [107],
     "requirements": {
-      "category": "compfleet",
+      "category": "fleet",
       "detail": {
         "groups": [
           {"ship": "戦艦", "amount": 1},
@@ -327,7 +327,7 @@
     "reward_other": "第3艦隊開放",
     "prerequisite": [106],
     "requirements": {
-      "category": "compfleet",
+      "category": "fleet",
       "detail": {
         "groups": [
           {"ship": "川内"},
@@ -1072,7 +1072,7 @@
     "reward_other": "高速修復材x1",
     "prerequisite": [],
     "requirements": {
-      "category": "attack_map",
+      "category": "attack",
       "detail": { 
         "times": 1
       }
@@ -1091,7 +1091,15 @@
     "reward_steel": 30,
     "reward_alum": 0,
     "reward_other": "高速修復材x1",
-    "prerequisite": []
+    "prerequisite": [],
+    "requirements": {
+      "category": "attack",
+      "detail": { 
+        "times": 1,
+        "map": "1-1",
+        "result": "B"
+      }
+    }
   },
   {
     "game_id": 215,
@@ -1106,7 +1114,14 @@
     "reward_steel": 200,
     "reward_alum": 200,
     "reward_other": "開発資材x1",
-    "prerequisite": [115]
+    "prerequisite": [115],
+    "requirements": {
+      "category": "attack",
+      "detail": { 
+        "times": 1,
+        "fleetid": 2
+      }
+    }
   },
   {
     "game_id": 204,
@@ -1151,7 +1166,17 @@
     "reward_steel": 0,
     "reward_alum": 60,
     "reward_other": "艦娘「龍田」x1",
-    "prerequisite": [205]
+    "prerequisite": [205],
+    "requirements": {
+      "category": "attack",
+      "detail": { 
+        "times": 1,
+        "groups": [
+            {"ship": "軽巡", "flagship": true},
+            {"ship": "駆逐", "amount": 3}
+        ]
+      }
+    }
   },
   {
     "game_id": 207,
@@ -1196,7 +1221,17 @@
     "reward_steel": 0,
     "reward_alum": 300,
     "reward_other": "高速修復材x1，開発資材x1",
-    "prerequisite": [208]
+    "prerequisite": [208],
+    "requirements": {
+      "category": "attack",
+      "detail": { 
+        "times": 1,
+        "groups": [
+            {"ship": ["空母", "軽母"], "amount": 1},
+            {"ship": "他の艦", "amount": 3}
+        ]
+      }
+    }
   },
   {
     "game_id": 217,
@@ -1226,7 +1261,21 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "応急修理要員x1",
-    "prerequisite": [119]
+    "prerequisite": [119],
+    "requirements": {
+      "category": "attack",
+      "detail": { 
+        "times": 1,
+        "groups": [
+            {"ship": "鳥海"},
+            {"ship": "青葉"},
+            {"ship": "加古"},
+            {"ship": "古鷹"},
+            {"ship": "天龍"},
+            {"ship": "高速艦", "amount": 1}
+        ]
+      }
+    }
   },
   {
     "game_id": 222,
@@ -1241,7 +1290,20 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "高速修復材x1",
-    "prerequisite": [120, 213]
+    "prerequisite": [120, 213],
+    "requirements": {
+      "category": "attack",
+      "detail": { 
+        "times": 1,
+        "groups": [
+          {"ship": "暁"},
+          {"ship": "響"},
+          {"ship": "雷"},
+          {"ship": "電"}
+        ],
+        "disallowed": "他の艦"
+      }
+    }
   },
   {
     "game_id": 223,
@@ -1421,7 +1483,22 @@
     "reward_steel": 330,
     "reward_alum": 0,
     "reward_other": "特注家具職人x1",
-    "prerequisite": [136]
+    "prerequisite": [136],
+    "requirements": {
+      "category": "attack",
+      "detail": { 
+        "times": 1,
+        "map": "1-5", 
+        "boss": true,
+        "result": "C",
+        "groups": [
+          {"ship": "睦月"},
+          {"ship": "卯月"},
+          {"ship": "弥生"},
+          {"ship": "望月"}
+        ]
+      }
+    }
   },
   {
     "game_id": 250,

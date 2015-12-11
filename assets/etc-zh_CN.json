@@ -1,5 +1,6 @@
 {
     "艦": "任意舰船",
+    "他の艦": "其它舰船",
     "駆逐": "驱逐",
     "軽巡": "轻巡",
     "重巡": "重巡",
@@ -7,5 +8,33 @@
     "空母": "空母",
     "軽母": "轻母",
     "戦艦": "战舰",
-    "何か高速"
+    "高速艦": "高速舰船",
+
+    "result_S": "S胜",
+    "result_A": "A胜或以上",
+    "result_B": "B胜或以上",
+    "result_C": "C败或以上",
+
+    "format_group": "%(ship)s%(amount)s%(flagship)s%(note)s",
+    "format_groups_delim": "+",
+    "format_group_amount": "%s只",
+    "format_group_amountonly": "仅%s只",
+
+    "format_fleet": "编组%(groups)s%(disallowed)s%(fleet)s",
+    "format_fleet_flagship": "(旗舰)",
+    "format_fleet_fleetid": "，限第%s舰队",
+    "format_fleet_note": "(%s)",
+    "format_fleet_disallowed": "，%s不可",
+
+
+    "format_attack": "出击%(map)s%(boss)s%(result)s%(times)s%(groups)s%(fleet)s%(disallowed)s",
+    "format_attack_map": "%s",
+    "format_attack_boss": " Boss ",
+    "format_attack_result": "获得%s",
+    "format_attack_times": "%s次",
+    "format_attack_groups": "，需要%s",
+    "format_attack_fleet": "，限第%s舰队",
+    "format_attack_disallowed": "，%s不可",
+    
+    "":""
 }
