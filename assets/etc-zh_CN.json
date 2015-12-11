@@ -49,6 +49,24 @@
     "format_sink_ship": "%s",
 
     "format_a_gou": "S胜利6次, BOSS战胜利12次, 进行BOSS战24次, 出击36次(一次出击多次战斗算一次)",
+
+    "format_expedition": "%(name)s成功%(times)s次",
+    "format_expedition_any": "远征",
+    "format_expedition_id": "远征%s",
+    "format_expedition_delim": "，",
+
+    "format_simple_equipment": "开发装备%s次(失败也可)",
+    "format_simple_ship": "建造舰船%s次",
+    "format_simple_scrapequipment": "废弃装备%s次%%(batch)s",
+    "format_simple_scrapequipment_batch": "，可一次性废弃",
+    "format_simple_scrapship": "解体舰船%s次",
+    "format_simple_modernization": "近代化改造成功%s次",
+    "format_simple_improvement": "装备改修%s次(失败也可)",
+    "format_simple_resupply": "进行补给%s次",
+    "format_simple_repair": "入渠%s次",
+
+    "format_excercise": "演习%(result)%(times)次%(daily)",
+    "format_excercise_daily": "，需一日内完成",
     
     "":""
 }

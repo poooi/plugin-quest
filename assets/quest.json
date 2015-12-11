@@ -2543,7 +2543,13 @@
     "reward_steel": 30,
     "reward_alum": 30,
     "reward_other": "家具箱(小)x1",
-    "prerequisite": [105]
+    "prerequisite": [105],
+    "requirements": {
+      "category": "expedition", 
+      "objects": [
+        {"times": 1}
+      ]
+    }
   },
   {
     "game_id": 402,
@@ -2558,7 +2564,13 @@
     "reward_steel": 100,
     "reward_alum": 100,
     "reward_other": "開発資材x1",
-    "prerequisite": []
+    "prerequisite": [],
+    "requirements": {
+      "category": "expedition", 
+      "objects": [
+        {"times": 3}
+      ]
+    }
   },
   {
     "game_id": 403,
@@ -2618,7 +2630,13 @@
     "reward_steel": 10,
     "reward_alum": 10,
     "reward_other": "装備「Ju87C改」x1",
-    "prerequisite": [405]
+    "prerequisite": [405],
+    "requirements": {
+      "category": "expedition", 
+      "objects": [
+        {"times": 1, "id": 30}
+      ]
+    }
   },
   {
     "game_id": 408,
@@ -2633,7 +2651,13 @@
     "reward_steel": 0,
     "reward_alum": 800,
     "reward_other": "特注家具職人x1，装備「Ju87C改」x1",
-    "prerequisite": [406]
+    "prerequisite": [406],
+    "requirements": {
+      "category": "expedition", 
+      "objects": [
+        {"times": 2, "id": 30}
+      ]
+    }
   },
   {
     "game_id": 409,
@@ -2663,7 +2687,13 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "家具箱(小)x1",
-    "prerequisite": [130]
+    "prerequisite": [130],
+    "requirements": {
+      "category": "expedition", 
+      "objects": [
+        {"times": 1, "id": [37, 38]}
+      ]
+    }
   },
   {
     "game_id": 412,
@@ -2678,7 +2708,13 @@
     "reward_steel": 0,
     "reward_alum": 100,
     "reward_other": "装備「瑞雲(六三四空)」x1",
-    "prerequisite": [239]
+    "prerequisite": [239],
+    "requirements": {
+      "category": "expedition", 
+      "objects": [
+        {"times": 1, "id": 23}
+      ]
+    }
   },
   {
     "game_id": 411,
@@ -2693,7 +2729,13 @@
     "reward_steel": 0,
     "reward_alum": 400,
     "reward_other": "開発資材x2，改修資材x1",
-    "prerequisite": [410]
+    "prerequisite": [410],
+    "requirements": {
+      "category": "expedition", 
+      "objects": [
+        {"times": 6, "id": [37, 38]}
+      ]
+    }
   },
   {
     "game_id": 413,
@@ -2708,7 +2750,13 @@
     "reward_steel": 0,
     "reward_alum": 200,
     "reward_other": "装備「瑞雲(六三四空)」x1",
-    "prerequisite": [412]
+    "prerequisite": [412],
+    "requirements": {
+      "category": "expedition", 
+      "objects": [
+        {"times": 3, "id": 23}
+      ]
+    }
   },
   {
     "game_id": 414,
@@ -2723,7 +2771,13 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "装備「潜水艦53cm艦首魚雷(8門)」x1",
-    "prerequisite": [139]
+    "prerequisite": [139],
+    "requirements": {
+      "category": "expedition", 
+      "objects": [
+        {"times": 1, "id": 39}
+      ]
+    }
   },
   {
     "game_id": 415,
@@ -2738,7 +2792,13 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "装備「潜水艦53cm艦首魚雷(8門)」x1",
-    "prerequisite": [414]
+    "prerequisite": [414],
+    "requirements": {
+      "category": "expedition", 
+      "objects": [
+        {"times": 2, "id": 39}
+      ]
+    }
   },
   {
     "game_id": 416,
@@ -2753,7 +2813,13 @@
     "reward_steel": 0,
     "reward_alum": 200,
     "reward_other": "開発資材x2，装備「25mm三連装機銃」x1",
-    "prerequisite": [207]
+    "prerequisite": [207],
+    "requirements": {
+      "category": "expedition", 
+      "objects": [
+        {"times": 3, "id": 6}
+      ]
+    }
   },
   {
     "game_id": 417,
@@ -2768,7 +2834,13 @@
     "reward_steel": 0,
     "reward_alum": 400,
     "reward_other": "開発資材x2，装備「91式高射装置」x1",
-    "prerequisite": [272]
+    "prerequisite": [272],
+    "requirements": {
+      "category": "expedition", 
+      "objects": [
+        {"times": 1, "id": 15}
+      ]
+    }
   },
   {
     "game_id": 418,
@@ -2783,7 +2855,13 @@
     "reward_steel": 0,
     "reward_alum": 150,
     "reward_other": "開発資材x3",
-    "prerequisite": [137]
+    "prerequisite": [137],
+    "requirements": {
+      "category": "expedition", 
+      "objects": [
+        {"times": 2, "id": 7}
+      ]
+    }
   },
   {
     "game_id": 419,
@@ -2798,7 +2876,13 @@
     "reward_steel": 300,
     "reward_alum": 0,
     "reward_other": "改修資材x1，司令部要員x1",
-    "prerequisite": [308]
+    "prerequisite": [308],
+    "requirements": {
+      "category": "expedition", 
+      "objects": [
+        {"times": 1, "id": 8}
+      ]
+    }
   },
   {
     "game_id": 420,
@@ -2813,7 +2897,14 @@
     "reward_steel": 400,
     "reward_alum": 0,
     "reward_other": "改修資材x2，家具箱(大)x1",
-    "prerequisite": [287, 410]
+    "prerequisite": [287, 410],
+    "requirements": {
+      "category": "expedition", 
+      "objects": [
+        {"times": 1, "id": 26},
+        {"times": 1, "id": 35}
+      ]
+    }
   },
   {
     "game_id": 501,
@@ -2828,7 +2919,12 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "高速修復材x1",
-    "prerequisite": [203]
+    "prerequisite": [203],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "resupply",
+      "times": 1
+    }
   },
   {
     "game_id": 502,
@@ -2843,7 +2939,12 @@
     "reward_steel": 30,
     "reward_alum": 0,
     "reward_other": "開発資材x1",
-    "prerequisite": [203]
+    "prerequisite": [203],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "repair",
+      "times": 1
+    }
   },
   {
     "game_id": 503,
@@ -2858,7 +2959,12 @@
     "reward_steel": 30,
     "reward_alum": 30,
     "reward_other": "高速修復材x2",
-    "prerequisite": []
+    "prerequisite": [],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "repair",
+      "times": 5
+    }
   },
   {
     "game_id": 504,
@@ -2873,7 +2979,12 @@
     "reward_steel": 50,
     "reward_alum": 50,
     "reward_other": "開発資材x1，高速建造材x1",
-    "prerequisite": [503]
+    "prerequisite": [503],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "resupply",
+      "times": 15
+    }
   },
   {
     "game_id": 601,
@@ -2888,7 +2999,12 @@
     "reward_steel": 50,
     "reward_alum": 50,
     "reward_other": "開発資材x1",
-    "prerequisite": []
+    "prerequisite": [],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "ship",
+      "times": 1
+    }
   },
   {
     "game_id": 602,
@@ -2903,7 +3019,12 @@
     "reward_steel": 100,
     "reward_alum": 100,
     "reward_other": "開発資材x1",
-    "prerequisite": []
+    "prerequisite": [],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "equipment",
+      "times": 1
+    }
   },
   {
     "game_id": 603,
@@ -2918,7 +3039,12 @@
     "reward_steel": 60,
     "reward_alum": 60,
     "reward_other": "高速建造材x1，開発資材x1",
-    "prerequisite": []
+    "prerequisite": [],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapship",
+      "times": 1
+    }
   },
   {
     "game_id": 604,
@@ -2933,7 +3059,13 @@
     "reward_steel": 80,
     "reward_alum": 80,
     "reward_other": "高速修復材x1，開発資材x1",
-    "prerequisite": []
+    "prerequisite": [],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 1,
+      "batch": false
+    }
   },
   {
     "game_id": 605,
@@ -2948,7 +3080,12 @@
     "reward_steel": 40,
     "reward_alum": 40,
     "reward_other": "高速建造材x1，開発資材x1",
-    "prerequisite": []
+    "prerequisite": [],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "equipment",
+      "times": 1
+    }
   },
   {
     "game_id": 606,
@@ -2963,7 +3100,12 @@
     "reward_steel": 50,
     "reward_alum": 50,
     "reward_other": "高速修復材x1，開発資材x1",
-    "prerequisite": [605]
+    "prerequisite": [605],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "ship",
+      "times": 1
+    }
   },
   {
     "game_id": 607,
@@ -2978,7 +3120,12 @@
     "reward_steel": 100,
     "reward_alum": 100,
     "reward_other": "開発資材x2",
-    "prerequisite": [606]
+    "prerequisite": [606],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "equipment",
+      "times": 3
+    }
   },
   {
     "game_id": 608,
@@ -2993,7 +3140,12 @@
     "reward_steel": 300,
     "reward_alum": 100,
     "reward_other": "高速建造材x1，開発資材x2",
-    "prerequisite": [607]
+    "prerequisite": [607],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "ship",
+      "times": 3
+    }
   },
   {
     "game_id": 609,
@@ -3008,7 +3160,12 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "高速修復材x1",
-    "prerequisite": [608]
+    "prerequisite": [608],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapship",
+      "times": 2
+    }
   },
   {
     "game_id": 610,
@@ -3023,7 +3180,13 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "大型艦建造開放",
-    "prerequisite": [704]
+    "prerequisite": [704],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 4,
+      "batch": false
+    }
   },
   {
     "game_id": 612,
@@ -3038,7 +3201,13 @@
     "reward_steel": 30,
     "reward_alum": 0,
     "reward_other": "装備「ドラム缶(輸送用)」x3",
-    "prerequisite": [105]
+    "prerequisite": [105],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 3,
+      "batch": false
+    }
   },
   {
     "game_id": 613,
@@ -3053,7 +3222,13 @@
     "reward_steel": 100,
     "reward_alum": 0,
     "reward_other": "装備「ドラム缶(輸送用)」x1",
-    "prerequisite": [228]
+    "prerequisite": [228],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 24,
+      "batch": false
+    }
   },
   {
     "game_id": 614,
@@ -3113,7 +3288,13 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "給糧艦「伊良湖」x4",
-    "prerequisite": [215, 608]
+    "prerequisite": [215, 608],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 10,
+      "batch": false
+    }
   },
   {
     "game_id": 618,
@@ -3128,7 +3309,12 @@
     "reward_steel": 100,
     "reward_alum": 0,
     "reward_other": "改修資材x7",
-    "prerequisite": [146]
+    "prerequisite": [146],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "improvement",
+      "times": 1
+    }
   },
   {
     "game_id": 619,
@@ -3143,7 +3329,12 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "改修資材x1",
-    "prerequisite": [608, 618]
+    "prerequisite": [608, 618],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "improvement",
+      "times": 1
+    }
   },
   {
     "game_id": 622,
@@ -3188,7 +3379,13 @@
     "reward_steel": 100,
     "reward_alum": 0,
     "reward_other": "試製甲板カタパルトx1",
-    "prerequisite": [420]
+    "prerequisite": [420],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 7,
+      "batch": true
+    }
   },
   {
     "game_id": 626,
@@ -3218,7 +3415,13 @@
     "reward_steel": 100,
     "reward_alum": 50,
     "reward_other": "试制甲板カタパルト×1",
-    "prerequisite": [294]
+    "prerequisite": [294],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 9,
+      "batch": true
+    }
   },
   {
     "game_id": 627,
@@ -3338,7 +3541,12 @@
     "reward_steel": 50,
     "reward_alum": 50,
     "reward_other": "開発資材x1",
-    "prerequisite": []
+    "prerequisite": [],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "modernization",
+      "times": 1
+    }
   },
   {
     "game_id": 702,
@@ -3353,7 +3561,12 @@
     "reward_steel": 50,
     "reward_alum": 0,
     "reward_other": "高速修復材x1",
-    "prerequisite": []
+    "prerequisite": [],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "modernization",
+      "times": 2
+    }
   },
   {
     "game_id": 703,
@@ -3368,7 +3581,12 @@
     "reward_steel": 300,
     "reward_alum": 100,
     "reward_other": "高速建造材x1，開発資材x2",
-    "prerequisite": [702]
+    "prerequisite": [702],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "modernization",
+      "times": 15
+    }
   },
   {
     "game_id": 704,
@@ -3383,7 +3601,12 @@
     "reward_steel": 400,
     "reward_alum": 400,
     "reward_other": "開発資材x1",
-    "prerequisite": [109]
+    "prerequisite": [109],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "modernization",
+      "times": 4
+    }
   },
   {
     "game_id": 611,
@@ -3398,7 +3621,13 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "開発資材x1",
-    "prerequisite": [118]
+    "prerequisite": [118],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 2,
+      "batch": false
+    }
   },
   {
     "game_id": 306,

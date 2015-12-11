@@ -37,7 +37,7 @@ reqstr_frequency = (times) ->
   return times if !__['option_frequency']
   switch times
     when 1 then 'once'
-    when 2 then 'once'
+    when 2 then 'twice'
     else "#{times} times"
 
 reqstr_ordinalize = (num) ->
@@ -112,7 +112,8 @@ reqstr_groups = (groups) ->
 
 reqstr_categories['fleet'] = extract_first_arg (detail) ->
   # FORMAT:
-  # "detail": {
+  # "requirements": {
+  #   "category": "fleet",
   #   "groups": [(group), ...],
   #   <"fleetid": 2,>
   #   <"disallowed": "其它舰船",>
@@ -128,7 +129,8 @@ reqstr_categories['fleet'] = extract_first_arg (detail) ->
 
 reqstr_categories['sortie'] = extract_first_arg (detail) ->
   # FORMAT:
-  # "detail": {
+  # "requirements": {
+  #   "category": "sortie",
   #   "times": 2,
   #   <"map": 2,>
   #   <"result": "C",>
@@ -156,7 +158,8 @@ reqstr_categories['sortie'] = extract_first_arg (detail) ->
 
 reqstr_categories['sink'] = extract_first_arg (detail) ->
   # FORMAT:
-  # "detail": {
+  # "requirements": {
+  #   "category": "sink",
   #   "amount": 2,
   #   "ship": (ship),
   # }
@@ -167,8 +170,70 @@ reqstr_categories['sink'] = extract_first_arg (detail) ->
     amount: str_amount,
     ship: str_ship
 
+reqstr_categories['expedition'] = extract_first_arg (detail) ->
+  # FORMAT:
+  # "requirements": {
+  #   "category": "expedition",
+  #   <"id": 39 | [37, 38],>
+  #   "times": 2,
+  # }
+  
+  (for object in detail['objects']
+    str_name = if object.id 
+        str_id = if Array.isArray object.id then object.id.join '/' else object.id
+        sprintf __['format_expedition_id'], str_id
+      else 
+        __['format_expedition_any']
+    str_times = reqstr_frequency object.times
+    sprintf __['format_expedition'],
+      name: str_name,
+      times: str_times).join __["format_expedition_delim"]
+
 reqstr_categories['a_gou'] = ->
   __['format_a_gou']
+
+reqstr_categories['simple'] = extract_first_arg (detail) ->
+  # FORMAT:
+  # "requirements": {
+  #   "category": "simple",
+  #   "subcategory": "equipment" | "ship" | "scrapequipment" | "scrapship" |
+  #                  "modernization" | "improvement" | "resupply" | "repair"
+  #   "times": 2,
+  #   <other subcategory-specified terms>
+  # }
+  # DEFINITION FORMAT: 
+  #   format_simple_SUBCATEGORYNAME = "......%s.......%%(FOO)s.....%%(BAR)s"
+  #     %s : "times"
+  #     %%(FOO)s : Subcategory-specifed terms, must be double-"%"ed
+  #   format_simple_SUBCATEGORYNAME_quantifier 
+  #     [Optional] Used to be pluralized and inserted to %s
+  #   format_simple_SUBCATEGORYNAME_FOO 
+  #     Must be boolean
+  # Example:
+  #     "format_simple_scrapequipment": "Scrap equipment %s%%(batch)",
+  #     "format_simple_scrapequipment_quantifier": "time",
+  #     "format_simple_scrapequipment_note": " (scrapping together is ok)",
+  #   "requirements": {
+  #     "times": 5
+  #     "batch": true
+  #   }
+  #   => "Scrap equipment 5 times (scrapping together is ok)"
+
+  subcat = @subcategory
+  basename = "format_simple_#{@subcategory}"
+  quantifier = __["#{basename}_quantifier"] || ''
+  if !quantifier
+    str_times = @times
+  else if quantifier == 'time'
+    str_times = reqstr_frequency @times
+  else
+    str_times = @times + ' ' + reqstr_pluralize quantifier, @times
+  extras = {}
+  for extra_name, extra_value of detail
+    extra_str = if extra_value then __["#{basename}_#{extra_name}"] || '' else ''
+    extras[extra_name] = extra_str
+
+  sprintf (sprintf __[basename], str_times), extras
 
 reqstr = (requirements) ->
   try

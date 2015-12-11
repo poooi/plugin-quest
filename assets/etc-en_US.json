@@ -55,5 +55,28 @@
 
     "format_a_gou": "Launch your fleet 36 times, encounter 24 bosses, kill 12 bosses, and get 6 S-Rank victories",
 
+    "format_expedition": "Complete %(name)s %(times)s",
+    "format_expedition_any": "any expeditions",
+    "format_expedition_id": "expedition %s",
+    "format_expedition_delim": ". ",
+
+    "format_simple_equipment": "Craft %s of equipment (failures are ok)",
+    "format_simple_equipment_quantifier": "piece",
+    "format_simple_ship": "Craft %s",
+    "format_simple_ship_quantifier": "ship",
+    "format_simple_scrapequipment": "Scrap equipment %s%%(batch)s",
+    "format_simple_scrapequipment_quantifier": "time",
+    "format_simple_scrapequipment_batch": " (scrapping together is ok)",
+    "format_simple_scrapship": "Scrap %s",
+    "format_simple_scrapship_quantifier": "ship",
+    "format_simple_modernization": "Perform %s",
+    "format_simple_modernization_quantifier": "successful modernization",
+    "format_simple_improvement": "Improve equipment %s",
+    "format_simple_improvement_quantifier": "time",
+    "format_simple_resupply": "Resupply %s",
+    "format_simple_resupply_quantifier": "ship",
+    "format_simple_repair": "Repair %s",
+    "format_simple_repair_quantifier": "ship",
+
     "":""
 }
