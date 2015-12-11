@@ -8,33 +8,47 @@
     "空母": "空母",
     "軽母": "轻母",
     "戦艦": "战舰",
+    "低速戦艦": "低速战舰",
+    "航戦": "航战",
     "高速艦": "高速舰船",
+    "補給艦": "补给舰",
+    "潜水艦": "潜艇",
 
     "result_S": "S胜",
     "result_A": "A胜或以上",
     "result_B": "B胜或以上",
     "result_C": "C败或以上",
 
-    "format_group": "%(ship)s%(amount)s%(flagship)s%(note)s",
+    "format_group": "%(lv)s%(ship)s%(select)s%(flagship)s%(amount)s%(note)s",
     "format_groups_delim": "+",
+    "format_group_lv": "Lv.%s",
+    "format_group_lvmore": "Lv.%s或以上",
     "format_group_amount": "%s只",
     "format_group_amountonly": "仅%s只",
+    "format_group_amountmore": "%s只或以上",
+    "format_group_select": "任意%s只",
+    "format_group_note": "(%s)",
+    "format_group_flagship": "旗舰",
 
     "format_fleet": "编组%(groups)s%(disallowed)s%(fleet)s",
-    "format_fleet_flagship": "(旗舰)",
     "format_fleet_fleetid": "，限第%s舰队",
-    "format_fleet_note": "(%s)",
     "format_fleet_disallowed": "，%s不可",
 
 
     "format_attack": "出击%(map)s%(boss)s%(result)s%(times)s%(groups)s%(fleet)s%(disallowed)s",
     "format_attack_map": "%s",
-    "format_attack_boss": " Boss ",
+    "format_attack_boss": " Boss",
     "format_attack_result": "获得%s",
     "format_attack_times": "%s次",
     "format_attack_groups": "，需要%s",
     "format_attack_fleet": "，限第%s舰队",
     "format_attack_disallowed": "，%s不可",
+
+    "format_sink": "击沉%(ship)s%(amount)s",
+    "format_sink_amount": "%s只",
+    "format_sink_ship": "%s",
+
+    "format_a_gou": "S胜利6次, BOSS战胜利12次, 进行BOSS战24次, 出击36次(一次出击多次战斗算一次)",
     
     "":""
 }

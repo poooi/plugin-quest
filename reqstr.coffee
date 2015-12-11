@@ -22,6 +22,9 @@ extract_first_arg = (f) ->
       f.apply Object.assign(this, local_args), arguments
     new_f.apply new_f, arguments
 
+MAX_SHIP_AMOUNT = 6
+MAX_SHIP_LV = 200       # Doesn't matter, usually we use 999. See usage below
+
 # translate
 _$ = (s) ->
   __[s] or s
@@ -46,7 +49,7 @@ reqstr_categories = []
 reqstr_ship = (ship, amount) ->
   if typeof ship == "string"
     str_one = _$ ship
-  else
+  else if Array.isArray ship
     str_one = (reqstr_ship(_s) for _s in ship).join '/'
   amount = if Array.isArray amount then amount[amount.length-1] else amount
   reqstr_pluralize str_one, amount
@@ -60,27 +63,46 @@ delim_join = (strs, delim, delim_last) ->
 reqstr_group = extract_first_arg (group) ->
   #     {
   #       "ship":  "晓" | ["空母", "轻母", "水母"],
-  #       <"amount": 1 | [1, 3] | [3, 3],>
+  #       <"amount": 1 | [1, 3] | [3, 3] | [3, 6],>  # 6 == 'inf'
   #       <"flagship": true,>
   #       <"note": "轻母",>
+  #       <"select": 5,>    # "any 5 of xxx/xxx ships"
+  #       <"lv": 99 | [95, 99] | [100, 999],>   # 999 == 'inf'
   #     }, ...
 
   if @amount
-    if Array.isArray(@amount)
+    if Array.isArray @amount
       if @amount[0] == @amount[1]
         str_amount = sprintf __['format_group_amountonly'], "#{@amount[0]}"
+      else if @amount[1] >= MAX_SHIP_AMOUNT
+        str_amount = sprintf __['format_group_amountmore'], "#{@amount[0]}"
       else
         str_amount = sprintf __['format_group_amount'], "#{@amount[0]}~#{@amount[1]}"
     else
       str_amount = sprintf __['format_group_amount'], "#{@amount}"
   else
     str_amount = ''
+
+  if @lv
+    if Array.isArray @lv
+      if @lv[1] >= MAX_SHIP_LV
+        str_lv = sprintf __['format_group_lvmore'], "#{@lv[0]}"
+      else
+        str_lv = sprintf __['format_group_lv'], "#{@lv[0]}~#{@lv[1]}"
+    else
+      str_lv = sprintf __['format_group_lv'], "#{@lv}"
+  else
+    str_lv = ''
+
+  str_select = if @select then sprintf __['format_group_select'], @select else ''
   str_ship = reqstr_ship @ship, @amount 
-  str_flagship = if @flagship then __['format_fleet_flagship'] else ''
-  str_note = if @note then __['note'] else ''
+  str_flagship = if @flagship then __['format_group_flagship'] else ''
+  str_note = if @note then sprintf __['format_group_note'], _$ @note else ''
   sprintf __['format_group'], 
+    select: str_select,
     ship: str_ship,
     amount: str_amount,
+    lv: str_lv,
     flagship: str_flagship,
     note: str_note
 
@@ -97,7 +119,7 @@ reqstr_categories['fleet'] = extract_first_arg (detail) ->
   # }
 
   str_groups = reqstr_groups @groups
-  str_disallowed = if @disallowed then sprintf __['format_fleet_disallowed'], reqstr_ship @disallowed else ''
+  str_disallowed = if @disallowed then sprintf __['format_fleet_disallowed'], reqstr_ship @disallowed, 2 else ''
   str_fleet = if @fleetid then sprintf __['format_fleet_fleetid'], reqstr_ordinalize @fleetid else ''
   sprintf __['format_fleet'], 
     groups: str_groups,
@@ -122,7 +144,7 @@ reqstr_categories['attack'] = extract_first_arg (detail) ->
   str_times = sprintf __['format_attack_times'], reqstr_frequency @times
   str_groups = if @groups then sprintf __['format_attack_groups'], reqstr_groups @groups else ''
   str_fleet = if @fleetid then sprintf __['format_attack_fleet'], reqstr_ordinalize @fleetid else ''
-  str_disallowed = if @disallowed then sprintf __['format_attack_disallowed'], reqstr_ship @disallowed else ''
+  str_disallowed = if @disallowed then sprintf __['format_attack_disallowed'], reqstr_ship @disallowed, 2 else ''
   sprintf __['format_attack'],
     map: str_map,
     boss: str_boss,
@@ -131,6 +153,22 @@ reqstr_categories['attack'] = extract_first_arg (detail) ->
     groups: str_groups,
     fleet: str_fleet
     disallowed: str_disallowed
+
+reqstr_categories['sink'] = extract_first_arg (detail) ->
+  # FORMAT:
+  # "detail": {
+  #   "amount": 2,
+  #   "ship": (ship),
+  # }
+
+  str_amount = sprintf __['format_sink_amount'], @amount
+  str_ship = sprintf __['format_sink_ship'], reqstr_ship(@ship, @amount)
+  sprintf __['format_sink'],
+    amount: str_amount,
+    ship: str_ship
+
+reqstr_categories['a_gou'] = ->
+  __['format_a_gou']
 
 reqstr = (requirements) ->
   try

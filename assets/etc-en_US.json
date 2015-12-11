@@ -1,0 +1,59 @@
+{
+    "艦": "any ship",
+    "他の艦": "other ship",
+    "駆逐": "DD",
+    "軽巡": "CL",
+    "重巡": "CA",
+    "水母": "AV",
+    "空母": "CV",
+    "軽母": "CVL",
+    "戦艦": "BB",
+    "低速戦艦": "slow BB",
+    "航戦": "BBV",
+    "高速艦": "fast ship",
+    "補給艦": "transport ship",
+    "潜水艦": "submarine",
+
+    "result_S": "an S-Rank",
+    "result_A": "an A-Rank or better",
+    "result_B": "a B-Rank or better",
+    "result_C": "a C-Rank or better",
+
+    "option_pluralize": true,
+    "option_ordinalize": true,
+    "option_frequency": true,
+
+    "format_group": "%(select)s%(amount)s%(ship)s%(lv)s%(flagship)s%(note)s",
+    "format_groups_delim": ", ",
+    "format_groups_delim_last": " and ",
+    "format_group_lv": " of level %s",
+    "format_group_lvmore": " of level %s or more",
+    "format_group_amount": "%s ",
+    "format_group_amountonly": "only %s ",
+    "format_group_amountmore": "%s or more ",
+    "format_group_select": "any %s from ",
+    "format_group_note": " (%s)",
+    "format_group_flagship": " as the flagship",
+
+    "format_fleet": "Have %(groups)s in your%(fleet)s fleet%(disallowed)s",
+    "format_fleet_fleetid": " %s",
+    "format_fleet_disallowed": ", %s not allowed",
+
+    
+    "format_attack": "Sortie%(fleet)s%(map)s%(times)s%(groups)s%(result)s%(boss)s%(disallowed)s",
+    "format_attack_fleet": " your %s fleet",
+    "format_attack_times": " %s",
+    "format_attack_map": " to World %s",
+    "format_attack_groups": " with %s",
+    "format_attack_result": " and obtain %s",
+    "format_attack_boss": " at the boss",
+    "format_attack_disallowed": ", %s not allowed",
+
+    "format_sink": "Sink %(amount)s enemy %(ship)s",
+    "format_sink_amount": "%s",
+    "format_sink_ship": "%s",
+
+    "format_a_gou": "Launch your fleet 36 times, encounter 24 bosses, kill 12 bosses, and get 6 S-Rank victories",
+
+    "":""
+}
