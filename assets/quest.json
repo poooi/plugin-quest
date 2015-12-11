@@ -2423,7 +2423,11 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "開発資材x1",
-    "prerequisite": []
+    "prerequisite": [],
+    "requirements": {
+      "category": "excercise",
+      "times": 1
+    }
   },
   {
     "game_id": 303,
@@ -2438,7 +2442,11 @@
     "reward_steel": 50,
     "reward_alum": 0,
     "reward_other": "高速建造材x1",
-    "prerequisite": []
+    "prerequisite": [],
+    "requirements": {
+      "category": "excercise",
+      "times": 3
+    }
   },
   {
     "game_id": 304,
@@ -2453,7 +2461,12 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "開発資材x1",
-    "prerequisite": [303]
+    "prerequisite": [303],
+    "requirements": {
+      "category": "excercise",
+      "times": 5,
+      "victory": true
+    }
   },
   {
     "game_id": 302,
@@ -2468,7 +2481,12 @@
     "reward_steel": 200,
     "reward_alum": 200,
     "reward_other": "開発資材x2，改修資材x1",
-    "prerequisite": [303]
+    "prerequisite": [303],
+    "requirements": {
+      "category": "excercise",
+      "times": 20,
+      "victory": true
+    }
   },
   {
     "game_id": 307,
@@ -2483,7 +2501,13 @@
     "reward_steel": 300,
     "reward_alum": 300,
     "reward_other": "高速修復材x2",
-    "prerequisite": [152]
+    "prerequisite": [152],
+    "requirements": {
+      "category": "excercise",
+      "times": 3,
+      "victory": true,
+      "daily": true
+    }
   },
   {
     "game_id": 308,
@@ -2498,7 +2522,13 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "高速修復材x2，改修資材x1",
-    "prerequisite": [418]
+    "prerequisite": [418],
+    "requirements": {
+      "category": "excercise",
+      "times": 4,
+      "victory": true,
+      "daily": true
+    }
   },
   {
     "game_id": 309,
@@ -2513,7 +2543,13 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "高速修復材x2，改修資材x1",
-    "prerequisite": [278]
+    "prerequisite": [278],
+    "requirements": {
+      "category": "excercise",
+      "times": 4,
+      "victory": true,
+      "daily": true
+    }
   },
     {
     "game_id": 311,
@@ -2528,7 +2564,13 @@
     "reward_steel": 0,
     "reward_alum": 200,
     "reward_other": "高速修復材x2，戰鬥糧食x1",
-    "prerequisite": [201]
+    "prerequisite": [201],
+    "requirements": {
+      "category": "excercise",
+      "times": 7,
+      "victory": true,
+      "daily": true
+    }
   },
   {
     "game_id": 401,
@@ -2585,7 +2627,13 @@
     "reward_steel": 300,
     "reward_alum": 150,
     "reward_other": "家具箱(小)x1，家具箱(中)x1",
-    "prerequisite": [402]
+    "prerequisite": [402],
+    "requirements": {
+      "category": "expedition", 
+      "objects": [
+        {"times": 10}
+      ]
+    }
   },
   {
     "game_id": 404,
@@ -2600,7 +2648,13 @@
     "reward_steel": 500,
     "reward_alum": 300,
     "reward_other": "開発資材x3，家具箱(大)x1",
-    "prerequisite": []
+    "prerequisite": [],
+    "requirements": {
+      "category": "expedition", 
+      "objects": [
+        {"times": 30}
+      ]
+    }
   },
   {
     "game_id": 405,
@@ -2615,7 +2669,13 @@
     "reward_steel": 10,
     "reward_alum": 10,
     "reward_other": "応急修理要員x1",
-    "prerequisite": [127]
+    "prerequisite": [127],
+    "requirements": {
+      "category": "expedition", 
+      "objects": [
+        {"times": 1, "id": 30}
+      ]
+    }
   },
   {
     "game_id": 406,
@@ -3642,7 +3702,13 @@
     "reward_steel": 88,
     "reward_alum": 88,
     "reward_other": "開発資材x1",
-    "prerequisite": [611]
+    "prerequisite": [611],
+    "requirements": {
+      "category": "excercise",
+      "times": 2,
+      "victory": true,
+      "daily": true
+    }
   },
   {
     "game_id": 134,

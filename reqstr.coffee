@@ -6,8 +6,8 @@ _.mixin require 'underscore.inflection'
 
 conditions = require './assets/quest.json'
 
-#__ = require './assets/etc-zh_CN.json'
-__ = Object.assign require('./assets/etc-en_US.json'), require('../fetchList/en-US.json')
+__ = require './assets/etc-zh_CN.json'
+#__ = Object.assign require('./assets/etc-en_US.json'), require('../fetchList/en-US.json')
 
 # Create a function, that exactly runs as f, but allows the elements in the 
 # first argument passed to f (which is an object) accessed by @arg_name
@@ -235,6 +235,26 @@ reqstr_categories['simple'] = extract_first_arg (detail) ->
 
   sprintf (sprintf __[basename], str_times), extras
 
+reqstr_categories['excercise'] = extract_first_arg (detail) ->
+  # FORMAT:
+  # "requirements": {
+  #   "category": "excercise",
+  #   "times": 2,
+  #   <"victory": true,>
+  #   <"daily": true,>
+  # }
+  quantifier = __['format_excercise_quantifier'] || ''
+  if quantifier
+    str_times = @times + ' ' + reqstr_pluralize quantifier, @times
+  else
+    str_times = @times
+  str_victory = if @victory then __['format_excercise_victory'] else ''
+  str_daily = if @daily then __['format_excercise_daily'] else ''
+  sprintf __['format_excercise'], 
+    times: str_times,
+    victory: str_victory,
+    daily: str_daily
+
 reqstr = (requirements) ->
   try
     category = requirements['category']
@@ -248,5 +268,7 @@ test_reqstr = ->
     if quest['requirements']
       reqstr quest['requirements']
       console.log "-"+quest['condition']
+    else
+      console.log "***"+quest['condition']
 
 test_reqstr()

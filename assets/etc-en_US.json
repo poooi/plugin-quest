@@ -78,5 +78,10 @@
     "format_simple_repair": "Repair %s",
     "format_simple_repair_quantifier": "ship",
 
+    "format_excercise": "Perform %(times)s%(victory)s%(daily)s",
+    "format_excercise_quantifier": "excercise",
+    "format_excercise_victory": " with victory",
+    "format_excercise_daily": " within one day",
+
     "":""
 }

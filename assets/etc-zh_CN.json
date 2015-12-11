@@ -65,8 +65,9 @@
     "format_simple_resupply": "进行补给%s次",
     "format_simple_repair": "入渠%s次",
 
-    "format_excercise": "演习%(result)%(times)次%(daily)",
-    "format_excercise_daily": "，需一日内完成",
+    "format_excercise": "演习%(victory)s%(times)s次%(daily)s",
+    "format_excercise_victory": "胜利",
+    "format_excercise_daily": "，限一日内",
     
     "":""
 }
