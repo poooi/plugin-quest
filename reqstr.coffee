@@ -6,8 +6,8 @@ _.mixin require 'underscore.inflection'
 
 conditions = require './assets/quest.json'
 
-__ = require './assets/etc-zh_CN.json'
-#__ = Object.assign require('./assets/etc-en_US.json'), require('../fetchList/en-US.json')
+#__ = require './assets/etc-zh_CN.json'
+__ = Object.assign require('./assets/etc-en_US.json'), require('../fetchList/en-US.json')
 
 # Create a function, that exactly runs as f, but allows the elements in the 
 # first argument passed to f (which is an object) accessed by @arg_name
@@ -174,7 +174,7 @@ reqstr = (requirements) ->
   try
     category = requirements['category']
     fn = reqstr_categories[category]
-    console.log "+"+fn(requirements['detail'])
+    console.log "+"+fn(requirements)
   catch e
     console.log "Invalid requirements: #{requirements} reason: #{e} #{e.stack}"
   
