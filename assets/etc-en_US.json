@@ -40,14 +40,14 @@
     "format_fleet_disallowed": ", %s not allowed",
 
     
-    "format_attack": "Sortie%(fleet)s%(map)s%(times)s%(groups)s%(result)s%(boss)s%(disallowed)s",
-    "format_attack_fleet": " your %s fleet",
-    "format_attack_times": " %s",
-    "format_attack_map": " to World %s",
-    "format_attack_groups": " with %s",
-    "format_attack_result": " and obtain %s",
-    "format_attack_boss": " at the boss",
-    "format_attack_disallowed": ", %s not allowed",
+    "format_sortie": "Sortie%(fleet)s%(map)s%(times)s%(groups)s%(result)s%(boss)s%(disallowed)s",
+    "format_sortie_fleet": " your %s fleet",
+    "format_sortie_times": " %s",
+    "format_sortie_map": " to World %s",
+    "format_sortie_groups": " with %s",
+    "format_sortie_result": " and obtain %s",
+    "format_sortie_boss": " at the boss",
+    "format_sortie_disallowed": ", %s not allowed",
 
     "format_sink": "Sink %(amount)s enemy %(ship)s",
     "format_sink_amount": "%s",

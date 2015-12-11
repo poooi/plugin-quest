@@ -1072,7 +1072,7 @@
     "reward_other": "高速修復材x1",
     "prerequisite": [],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": { 
         "times": 1
       }
@@ -1093,7 +1093,7 @@
     "reward_other": "高速修復材x1",
     "prerequisite": [],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": { 
         "times": 1,
         "map": "1-1",
@@ -1116,7 +1116,7 @@
     "reward_other": "開発資材x1",
     "prerequisite": [115],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": { 
         "times": 1,
         "fleetid": 2
@@ -1168,7 +1168,7 @@
     "reward_other": "艦娘「龍田」x1",
     "prerequisite": [205],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": { 
         "times": 1,
         "groups": [
@@ -1223,7 +1223,7 @@
     "reward_other": "高速修復材x1，開発資材x1",
     "prerequisite": [208],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": { 
         "times": 1,
         "groups": [
@@ -1263,7 +1263,7 @@
     "reward_other": "応急修理要員x1",
     "prerequisite": [119],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": { 
         "times": 1,
         "groups": [
@@ -1292,7 +1292,7 @@
     "reward_other": "高速修復材x1",
     "prerequisite": [120, 213],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": { 
         "times": 1,
         "groups": [
@@ -1485,7 +1485,7 @@
     "reward_other": "特注家具職人x1",
     "prerequisite": [136],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": { 
         "times": 1,
         "map": "1-5", 
@@ -1530,7 +1530,7 @@
     "reward_other": "特注家具職人x1",
     "prerequisite": [141],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": { 
         "times": 1,
         "map": "4-3", 
@@ -1589,7 +1589,7 @@
     "reward_other": "高速修復材x3，応急修理要員x1",
     "prerequisite": [105],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": { 
         "times": 1,
         "map": "2-1", 
@@ -1784,7 +1784,7 @@
     "reward_other": "開発資材x3，改修資材x3",
     "prerequisite": [307],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": { 
         "times": 1,
         "map": "5-1", 
@@ -1917,7 +1917,7 @@
     "reward_other": "改修資材x3，戦闘糧食x2",
     "prerequisite": [260, 230],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": { 
         "times": 1,
         "map": "3-5", 
@@ -1959,7 +1959,7 @@
     "reward_other": "戦闘糧食x1，プレゼント箱x1",
     "prerequisite": [162],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": { 
         "times": 1,
         "map": "3-1", 
@@ -2004,7 +2004,7 @@
     "reward_other": "高速修復材×2，給糧艦「伊良湖」×1",
     "prerequisite": [164],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": { 
         "times": 1,
         "map": "1-4", 
@@ -2049,7 +2049,7 @@
     "reward_other": "開発資材x1",
     "prerequisite": [204],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": { 
         "times": 1,
         "result": "B"
@@ -2071,7 +2071,7 @@
     "reward_other": "高速修復材x1，開発資材x1",
     "prerequisite": [201],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": { 
         "times": 1
       }
@@ -2166,7 +2166,7 @@
     "reward_other": "高速建造材x1，高速修復材x1",
     "prerequisite": [218],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": { 
         "times": 5,
         "map": "2-1 ~ 2-5", 
@@ -2395,7 +2395,7 @@
     "reward_other": "改修資材x3，給糧艦「伊良湖」x1",
     "prerequisite": [221],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": { 
         "times": 1,
         "map": "1-4", 
@@ -2424,7 +2424,7 @@
     "reward_other": "高速修復材x3，改修資材x4",
     "prerequisite": [145],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": { 
         "times": 1,
         "map": "5-1", 
@@ -3526,7 +3526,7 @@
     "reward_other": "書類一式&指輪x1",
     "prerequisite": [134],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": {
         "map": "2-3", 
         "boss": true,
@@ -3579,7 +3579,7 @@
     "reward_other": "家具「煎餅布団」x1",
     "prerequisite": [135],
     "requirements": {
-      "category": "attack",
+      "category": "sortie",
       "detail": {
         "map": "4-3", 
         "boss": true,

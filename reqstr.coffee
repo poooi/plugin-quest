@@ -6,8 +6,8 @@ _.mixin require 'underscore.inflection'
 
 conditions = require './assets/quest.json'
 
-#__ = require './assets/etc-zh_CN.json'
-__ = Object.assign require('./assets/etc-en_US.json'), require('../fetchList/en-US.json')
+__ = require './assets/etc-zh_CN.json'
+#__ = Object.assign require('./assets/etc-en_US.json'), require('../fetchList/en-US.json')
 
 # Create a function, that exactly runs as f, but allows the elements in the 
 # first argument passed to f (which is an object) accessed by @arg_name
@@ -126,7 +126,7 @@ reqstr_categories['fleet'] = extract_first_arg (detail) ->
     disallowed: str_disallowed,
     fleet: str_fleet
 
-reqstr_categories['attack'] = extract_first_arg (detail) ->
+reqstr_categories['sortie'] = extract_first_arg (detail) ->
   # FORMAT:
   # "detail": {
   #   "times": 2,
@@ -138,14 +138,14 @@ reqstr_categories['attack'] = extract_first_arg (detail) ->
   #   <"disallowed": "其它舰船" | "正规航母",>
   # }
 
-  str_map = if @map then sprintf __['format_attack_map'], @map else ''
-  str_boss = if @boss then sprintf __['format_attack_boss'] else ''
-  str_result = if @result then sprintf __['format_attack_result'], __['result_'+@result] else ''
-  str_times = sprintf __['format_attack_times'], reqstr_frequency @times
-  str_groups = if @groups then sprintf __['format_attack_groups'], reqstr_groups @groups else ''
-  str_fleet = if @fleetid then sprintf __['format_attack_fleet'], reqstr_ordinalize @fleetid else ''
-  str_disallowed = if @disallowed then sprintf __['format_attack_disallowed'], reqstr_ship @disallowed, 2 else ''
-  sprintf __['format_attack'],
+  str_map = if @map then sprintf __['format_sortie_map'], @map else ''
+  str_boss = if @boss then sprintf __['format_sortie_boss'] else ''
+  str_result = if @result then sprintf __['format_sortie_result'], __['result_'+@result] else ''
+  str_times = sprintf __['format_sortie_times'], reqstr_frequency @times
+  str_groups = if @groups then sprintf __['format_sortie_groups'], reqstr_groups @groups else ''
+  str_fleet = if @fleetid then sprintf __['format_sortie_fleet'], reqstr_ordinalize @fleetid else ''
+  str_disallowed = if @disallowed then sprintf __['format_sortie_disallowed'], reqstr_ship @disallowed, 2 else ''
+  sprintf __['format_sortie'],
     map: str_map,
     boss: str_boss,
     result: str_result,

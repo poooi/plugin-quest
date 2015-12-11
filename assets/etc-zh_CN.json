@@ -35,14 +35,14 @@
     "format_fleet_disallowed": "，%s不可",
 
 
-    "format_attack": "出击%(map)s%(boss)s%(result)s%(times)s%(groups)s%(fleet)s%(disallowed)s",
-    "format_attack_map": "%s",
-    "format_attack_boss": " Boss",
-    "format_attack_result": "获得%s",
-    "format_attack_times": "%s次",
-    "format_attack_groups": "，需要%s",
-    "format_attack_fleet": "，限第%s舰队",
-    "format_attack_disallowed": "，%s不可",
+    "format_sortie": "出击%(map)s%(boss)s%(result)s%(times)s%(groups)s%(fleet)s%(disallowed)s",
+    "format_sortie_map": "%s",
+    "format_sortie_boss": " Boss",
+    "format_sortie_result": "获得%s",
+    "format_sortie_times": "%s次",
+    "format_sortie_groups": "，需要%s",
+    "format_sortie_fleet": "，限第%s舰队",
+    "format_sortie_disallowed": "，%s不可",
 
     "format_sink": "击沉%(ship)s%(amount)s",
     "format_sink_amount": "%s只",
