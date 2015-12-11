@@ -2732,7 +2732,13 @@
     "reward_steel": 0,
     "reward_alum": 0,
     "reward_other": "艦娘「Z1」x1",
-    "prerequisite": [408]
+    "prerequisite": [408],
+    "requirements": {
+      "category": "expedition", 
+      "objects": [
+        {"times": 1, "id": 31}
+      ]
+    }
   },
   {
     "game_id": 410,
@@ -3303,7 +3309,14 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備「天山一二型(友永隊)」x1",
-    "prerequisite": [250]
+    "prerequisite": [250],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "九七式艦攻(友永隊)",
+      "scraps": [
+        {"name": "天山", "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 615,
@@ -3318,7 +3331,14 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備「彗星(江草隊)」x1",
-    "prerequisite": [250]
+    "prerequisite": [250],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "九九式艦爆(江草隊)",
+      "scraps": [
+        {"name": "彗星", "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 616,
@@ -3333,7 +3353,14 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備「烈風(六〇一空)」x1",
-    "prerequisite": [253]
+    "prerequisite": [253],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "零戦52型丙(六〇一空)",
+      "scraps": [
+        {"name": "烈風", "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 617,
@@ -3409,7 +3436,15 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備「天山(村田隊)」x1",
-    "prerequisite": [287]
+    "prerequisite": [287],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "九七式艦攻(村田隊)",
+      "secretary": "翔鶴",
+      "scraps": [
+        {"name": "天山", "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 623,
@@ -3424,7 +3459,14 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備「九七式艦攻(村田隊)」x1",
-    "prerequisite": [287]
+    "prerequisite": [287],
+    "requirements": {
+      "category": "modelconversion",
+      "secretary": ["翔鶴", "赤城"],
+      "scraps": [
+        {"name": "九七式艦攻", "amount": 3}
+      ]
+    }
   },
   {
     "game_id": 624,
@@ -3460,7 +3502,18 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備 零式艦戦21型(熟練)x1",
-    "prerequisite": [264, 114]
+    "prerequisite": [264, 114],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "零式艦戦21型",
+      "secretary": "鳳翔",
+      "fullyskilled": true,
+      "scraps": [
+        {"name": "零式艦戦21型", "amount": 2},
+        {"name": "九六式艦戦", "amount": 1}
+      ],
+      "use_skilled_crew": true
+    }
   },
   {
     "game_id": 625,
@@ -3496,7 +3549,14 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備 零式艦戦52型(熟練)×1",
-    "prerequisite": [626]
+    "prerequisite": [626],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "零式艦戦21型(熟練)",
+      "scraps": [
+        {"name": "零式艦戦52型", "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 628,
@@ -3511,7 +3571,15 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備 零式艦戦52型(熟練)×1",
-    "prerequisite": [264, 265, 627]
+    "prerequisite": [264, 265, 627],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "零式艦戦21型(熟練)",
+      "fullyskilled": true,
+      "scraps": [
+        {"name": "零式艦戦52型", "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 629,
@@ -3526,7 +3594,16 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備 零式艦戦52型丙(付岩井小隊)×1",
-    "prerequisite": [293, 627]
+    "prerequisite": [293, 627],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "零式艦戦52型(熟練)",
+      "fullyskilled": true,
+      "secretary": "瑞鶴", 
+      "scraps": [
+        {"name": "零戦52型丙(六〇一空)", "amount": 1}
+      ]
+    }
   },
   {
     "game_id": 631,
@@ -3541,7 +3618,16 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備 零式艦戦62型(爆戦／岩井隊)×1",
-    "prerequisite": [294, 629]
+    "prerequisite": [294, 629],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "零戦52型丙(付岩井小隊)",
+      "fullyskilled": true,
+      "secretary": "瑞鶴", 
+      "scraps": [
+        {"name": "零式艦戦62型(爆戦)", "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 630,
@@ -3556,7 +3642,16 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備 零式艦戦21型(付岩本小隊)×1",
-    "prerequisite": [626, 166]
+    "prerequisite": [626, 166],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "零式艦戦21型",
+      "fullyskilled": true,
+      "secretary": "瑞鶴", 
+      "scraps": [
+        {"name": "零式艦戦21型", "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 632,
@@ -3571,7 +3666,16 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備 零式艦戦52型甲(付岩本小隊)×1",
-    "prerequisite": [625, 630]
+    "prerequisite": [625, 630],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "零戦21型(付岩本小隊)",
+      "fullyskilled": true,
+      "secretary": "瑞鶴", 
+      "scraps": [
+        {"name": "零式艦戦52型", "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 633,
@@ -3586,7 +3690,16 @@
     "reward_steel": 0,
     "reward_alum": 50,
     "reward_other": "装備 零式艦戦53型(岩本隊)×1",
-    "prerequisite": [167]
+    "prerequisite": [167],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "零戦52型甲(付岩本小隊)",
+      "fullyskilled": true,
+      "secretary": "瑞鶴", 
+      "scraps": [
+        {"name": "彩雲", "amount": 2}
+      ]
+    }
   },
   {
     "game_id": 701,

@@ -68,6 +68,15 @@
     "format_excercise": "演习%(victory)s%(times)s次%(daily)s",
     "format_excercise_victory": "胜利",
     "format_excercise_daily": "，限一日内",
+
+    "format_modelconversion": "%(secretary_equip)s，然后废弃%(scraps)s%(note)s",
+    "format_modelconversion_equip": "秘书舰%(secretary)s搭载已解锁的%(fullyskilled)s%(equipment)s",
+    "format_modelconversion_noequip": "秘书舰设为%(secretary)s",
+    "format_modelconversion_secretarydefault": "空母",
+    "format_modelconversion_scrap": "%(name)s%(amount)s只",
+    "format_modelconversion_scrapdelim": "，",
+    "format_modelconversion_fullyskilled": "、满熟练度的",
+    "format_modelconversion_useskilledcrew": "，同时消耗一个熟练搭乘员",
     
     "":""
 }

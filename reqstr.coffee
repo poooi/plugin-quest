@@ -7,7 +7,7 @@ _.mixin require 'underscore.inflection'
 conditions = require './assets/quest.json'
 
 __ = require './assets/etc-zh_CN.json'
-#__ = Object.assign require('./assets/etc-en_US.json'), require('../fetchList/en-US.json')
+#__ = Object.assign require('./assets/etc-en_US.json'), require('../fetchList/en-US.json'), require('../fetchList/item-en-US.json')
 
 # Create a function, that exactly runs as f, but allows the elements in the 
 # first argument passed to f (which is an object) accessed by @arg_name
@@ -254,6 +254,38 @@ reqstr_categories['excercise'] = extract_first_arg (detail) ->
     times: str_times,
     victory: str_victory,
     daily: str_daily
+
+reqstr_categories['modelconversion'] = extract_first_arg (detail) ->
+  # FORMAT:
+  # "requirements": {
+  #   "category": "modelconversion",
+  #   <"equipment": "零式艦戦21型(熟練)">,
+  #   <"fullyskilled": true,>
+  #   "scraps": [
+  #     {"name": "零式艦戦52型", "amount": 2}
+  #   ],
+  #   <"secretary": (ship),>    # Default: "a carrier"
+  #   <"use_skilled_crew": true>
+  # }
+  str_secretary = if @secretary then reqstr_ship @secretary else __['format_modelconversion_secretarydefault']
+  str_secretary_equip = if @equipment
+      str_fullyskilled = if @fullyskilled then __['format_modelconversion_fullyskilled'] else ''
+      sprintf __['format_modelconversion_equip'], 
+        secretary: str_secretary,
+        equipment: _$(@equipment),
+        fullyskilled: str_fullyskilled
+    else 
+      sprintf __['format_modelconversion_noequip'], 
+        secretary: str_secretary,
+  str_scraps = (for scrap in @scraps
+    sprintf __['format_modelconversion_scrap'],
+      name: _$(scrap['name']),
+      amount: scrap['amount']).join __['format_modelconversion_scrapdelim']
+  str_note = if @use_skilled_crew then __['format_modelconversion_useskilledcrew'] else ''
+  sprintf __['format_modelconversion'], 
+    secretary_equip: str_secretary_equip,
+    scraps: str_scraps,
+    note: str_note
 
 reqstr = (requirements) ->
   try
