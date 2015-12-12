@@ -296,7 +296,8 @@
       "groups": [
         {"ship": "戦艦", "amount": 1},
         {"ship": "重巡", "amount": 2}
-      ]
+      ],
+      "disallowed": "航戦"
     }
   },
   {
@@ -1269,8 +1270,8 @@
         {"ship": "霧島"},
         {"ship": "長良"},
         {"ship": "暁"},
-        {"ship": "電"},
-        {"ship": "雷"}
+        {"ship": "雷"},
+        {"ship": "電"}
       ]
     }
   },
@@ -1572,6 +1573,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
+      "boss": true,
       "map": "1-1",
       "result": "B"
     }
@@ -1708,8 +1710,9 @@
       "category": "sortie",
       "times": 1,
       "groups": [
-        {"ship": "戦艦", "flagship": true, "amount": 1}
-      ]
+        {"ship": "戦艦", "flagship": true}
+      ],
+      "disallowed": "航戦"
     }
   },
   {

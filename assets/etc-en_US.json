@@ -63,7 +63,8 @@
 
     "format_a_gou": "Launch your fleet 36 times, encounter 24 bosses, kill 12 bosses, and get 6 S-Rank victories",
 
-    "format_expedition": "Complete %(name)s %(times)s",
+    "format_expedition": "%s",
+    "format_expedition_object": "Complete %(name)s %(times)s",
     "format_expedition_any": "any expeditions",
     "format_expedition_id": "expedition %s",
     "format_expedition_delim": ". ",

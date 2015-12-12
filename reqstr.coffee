@@ -6,8 +6,12 @@ _.mixin require 'underscore.inflection'
 
 conditions = require './assets/quest.json'
 
-__ = require './assets/etc-zh_CN.json'
+# zh-CN
+#__ = require './assets/etc-zh_CN.json'
+# en-US
 #__ = Object.assign require('./assets/etc-en_US.json'), require('../fetchList/en-US.json'), require('../fetchList/item-en-US.json')
+# ja-JP
+__ = require('./assets/etc-ja_JP.json')
 
 # Create a function, that exactly runs as f, but allows the elements in the 
 # first argument passed to f (which is an object) accessed by @arg_name
@@ -134,15 +138,21 @@ reqstr_categories['sortie'] = extract_first_arg (detail) ->
   #   "times": 2,
   #   <"map": 2,>
   #   <"result": "C",>
-  #   <"not_boss": true,>   # boss is default
+  #   <"boss": true,>
   #   <"groups": [(group), ...]>,
   #   <"fleetid": 2,>
   #   <"disallowed": "其它舰船" | "正规航母",>
   # }
 
-  str_map = if @map then sprintf __['format_sortie_map'], @map else ''
-  str_boss = if @boss then sprintf __['format_sortie_boss'] else ''
-  str_result = if @result then sprintf __['format_sortie_result'], __['result_'+@result] else ''
+  str_boss = if @boss
+      __['format_sortie_boss'] || ''
+    else
+      __['format_sortie_!boss'] || ''
+  str_map = if @map then sprintf __['format_sortie_map'], {map: @map, boss: str_boss} else ''
+  str_result = if @result 
+      sprintf __['format_sortie_result'], __['result_'+@result] 
+    else
+      __['format_sortie_!result'] || ''
   str_times = sprintf __['format_sortie_times'], reqstr_frequency @times
   str_groups = if @groups then sprintf __['format_sortie_groups'], reqstr_groups @groups else ''
   str_fleet = if @fleetid then sprintf __['format_sortie_fleet'], reqstr_ordinalize @fleetid else ''
@@ -178,6 +188,7 @@ reqstr_categories['expedition'] = extract_first_arg (detail) ->
   #   "times": 2,
   # }
   
+  sprintf __["format_expedition"], 
   (for object in detail['objects']
     str_name = if object.id 
         str_id = if Array.isArray object.id then object.id.join '/' else object.id
@@ -185,7 +196,7 @@ reqstr_categories['expedition'] = extract_first_arg (detail) ->
       else 
         __['format_expedition_any']
     str_times = reqstr_frequency object.times
-    sprintf __['format_expedition'],
+    sprintf __['format_expedition_object'],
       name: str_name,
       times: str_times).join __["format_expedition_delim"]
 
@@ -208,11 +219,13 @@ reqstr_categories['simple'] = extract_first_arg (detail) ->
   #   format_simple_SUBCATEGORYNAME_quantifier 
   #     [Optional] Used to be pluralized and inserted to %s
   #   format_simple_SUBCATEGORYNAME_FOO 
-  #     Must be boolean
+  #     [Optional] Used in %(FOO)s when FOO=true
+  #   format_simple_SUBCATEGORYNAME_!FOO
+  #     [Optional] Used in %(FOO)s when FOO=false
   # Example:
   #     "format_simple_scrapequipment": "Scrap equipment %s%%(batch)",
   #     "format_simple_scrapequipment_quantifier": "time",
-  #     "format_simple_scrapequipment_note": " (scrapping together is ok)",
+  #     "format_simple_scrapequipment_batch": " (scrapping together is ok)",
   #   "requirements": {
   #     "times": 5
   #     "batch": true
@@ -230,7 +243,10 @@ reqstr_categories['simple'] = extract_first_arg (detail) ->
     str_times = @times + ' ' + reqstr_pluralize quantifier, @times
   extras = {}
   for extra_name, extra_value of detail
-    extra_str = if extra_value then __["#{basename}_#{extra_name}"] || '' else ''
+    extra_str = if extra_value 
+        __["#{basename}_#{extra_name}"] || '' 
+      else 
+        __["#{basename}_!#{extra_name}"] || '' 
     extras[extra_name] = extra_str
 
   sprintf (sprintf __[basename], str_times), extras

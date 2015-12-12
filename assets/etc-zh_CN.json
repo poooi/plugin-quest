@@ -18,7 +18,7 @@
     "潜水母艦": "潜水母舰(大鲸)",
 
     "敵補給艦": "补给舰",
-    "敵潜水艦": "潜艇",
+    "敵潜水艦": "潜水舰",
     "敵空母": "空母",
     "敵軽母": "轻母",
 
@@ -43,9 +43,10 @@
     "format_fleet_disallowed": "，%s不可",
 
 
-    "format_sortie": "%(map)s%(boss)s出击%(result)s%(times)s%(groups)s%(fleet)s%(disallowed)s",
+    "format_sortie": "%(map)s%(boss)s%(result)s%(times)s%(groups)s%(fleet)s%(disallowed)s",
     "format_sortie_map": "%s",
-    "format_sortie_boss": "Boss",
+    "format_sortie_boss": "Boss战",
+    "format_sortie_!boss": "出击",
     "format_sortie_result": "获得%s",
     "format_sortie_times": "%s次",
     "format_sortie_groups": "，需要%s",
@@ -58,15 +59,17 @@
 
     "format_a_gou": "S胜利6次, BOSS战胜利12次, 进行BOSS战24次, 出击36次(一次出击多次战斗算一次)",
 
-    "format_expedition": "%(name)s成功%(times)s次",
+    "format_expedition": "%s",
+    "format_expedition_object": "%(name)s成功%(times)s次",
     "format_expedition_any": "远征",
     "format_expedition_id": "远征%s",
     "format_expedition_delim": "，",
 
     "format_simple_equipment": "开发装备%s次(失败也可)",
     "format_simple_ship": "建造舰船%s次",
-    "format_simple_scrapequipment": "废弃装备%s次%%(batch)s",
-    "format_simple_scrapequipment_batch": "，可一次性废弃",
+    "format_simple_scrapequipment": "废弃装备%s%%(batch)s",
+    "format_simple_scrapequipment_batch": "件，可一次性废弃",
+    "format_simple_scrapequipment_!batch": "次",
     "format_simple_scrapship": "解体舰船%s次",
     "format_simple_modernization": "近代化改造成功%s次",
     "format_simple_improvement": "装备改修%s次(失败也可)",
