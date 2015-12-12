@@ -2424,7 +2424,6 @@
         {"ship": "那智", "flagship": true},
         {"ship": "初霜"},
         {"ship": "霞"},
-        {"ship": "霰"},
         {"ship": "潮"},
         {"ship": "曙"},
         {"ship": "艦", "amount": 1}
@@ -2480,7 +2479,7 @@
       "boss": true,
       "result": "S",
       "groups": [
-        {"ship": "摩耶"},
+        {"ship": ["摩耶改", "摩耶改二"]},
         {"ship": "軽巡", "amount": 1},
         {"ship": "駆逐", "amount": 2}
       ]
@@ -2749,7 +2748,7 @@
     "prerequisite": [161],
     "requirements": {
       "category": "sortie",
-      "map": "3-5", 
+      "map": "5-2", 
       "boss": true,
       "result": "S",
       "times": 1,

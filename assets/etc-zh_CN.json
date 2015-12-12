@@ -79,7 +79,7 @@
     "format_excercise_daily": "，限一日内",
 
     "format_modelconversion": "%(secretary_equip)s，然后废弃%(scraps)s%(note)s",
-    "format_modelconversion_equip": "秘书舰%(secretary)s搭载已解锁的%(fullyskilled)s%(equipment)s",
+    "format_modelconversion_equip": "秘书舰%(secretary)s搭载未上锁的%(fullyskilled)s%(equipment)s",
     "format_modelconversion_noequip": "秘书舰设为%(secretary)s",
     "format_modelconversion_secretarydefault": "空母",
     "format_modelconversion_scrap": "%(name)s%(amount)s只",
