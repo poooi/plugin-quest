@@ -54,7 +54,7 @@ module.exports =
   name: 'quest-info'
   priority: 2
   displayName: <span><FontAwesome key={0} name='indent' /> {__('Quest Information')}</span>
-  description: {__ 'Plugin Description'}
+  description: __ 'Plugin Description'
   author: '马里酱'
   link: 'https://github.com/malichan'
   version: '1.3.0'
