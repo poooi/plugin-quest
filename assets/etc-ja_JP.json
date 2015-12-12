@@ -1,6 +1,6 @@
 {
     "艦": "艦",
-    "他の艦": "その他の艦",
+    "他の艦": "他の艦",
     "潜水母艦": "潜水母艦(大鲸)",
 
     "敵補給艦": "補給艦",
@@ -24,7 +24,7 @@
     "format_group_note": "(%s)",
     "format_group_flagship": "(旗艦)",
 
-    "format_fleet": "%(groups)sを%(fleet)s編成%(disallowed)s",
+    "format_fleet": "%(fleet)s%(groups)sによる艦隊を編成%(disallowed)s",
     "format_fleet_fleetid": "第%s艦隊に",
     "format_fleet_disallowed": "(%sは不可)",
 
