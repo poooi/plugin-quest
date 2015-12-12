@@ -24,7 +24,7 @@
     "format_group_note": "(%s)",
     "format_group_flagship": "(旗艦)",
 
-    "format_fleet": "%(groups)sを%(fleet)s編成する%(disallowed)s",
+    "format_fleet": "%(groups)sを%(fleet)s編成%(disallowed)s",
     "format_fleet_fleetid": "第%s艦隊に",
     "format_fleet_disallowed": "(%sは不可)",
 
