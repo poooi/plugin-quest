@@ -6,12 +6,13 @@
     "type": 1,
     "name": "はじめての「編成」！",
     "detail": "２隻以上の艦で構成される「艦隊」を編成せよ！",
-    "condition": "编组舰船2只",
     "reward_fuel": 20,
     "reward_bullet": 20,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "艦娘「白雪」x1",
+    "reward_other": [
+      {"name": "白雪", "category": "艦娘", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "fleet",
@@ -27,12 +28,13 @@
     "type": 1,
     "name": "「駆逐隊」を編成せよ！",
     "detail": "駆逐艦４隻以上で構成される「駆逐隊」を編成せよ！",
-    "condition": "编组驱逐4只",
     "reward_fuel": 30,
     "reward_bullet": 30,
     "reward_steel": 30,
     "reward_alum": 0,
-    "reward_other": "高速建造材x1",
+    "reward_other": [
+      {"name": "高速建造材", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "fleet",
@@ -48,12 +50,13 @@
     "type": 1,
     "name": "「水雷戦隊」を編成せよ！",
     "detail": "軽巡洋艦を旗艦とし、数隻の駆逐艦で構成される「水雷戦隊」を編成せよ！",
-    "condition": "编组轻巡(旗舰)+驱逐数只",
     "reward_fuel": 40,
     "reward_bullet": 40,
     "reward_steel": 0,
     "reward_alum": 40,
-    "reward_other": "開発資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "fleet",
@@ -70,12 +73,13 @@
     "type": 1,
     "name": "６隻編成の艦隊を編成せよ！",
     "detail": "全6隻で構成される主力艦隊を編成せよ！",
-    "condition": "编组舰船6只",
     "reward_fuel": 50,
     "reward_bullet": 0,
     "reward_steel": 50,
     "reward_alum": 0,
-    "reward_other": "第2艦隊開放",
+    "reward_other": [
+      {"name": "第2艦隊開放"}
+    ],
     "prerequisite": [103],
     "requirements": {
       "category": "fleet",
@@ -91,12 +95,13 @@
     "type": 1,
     "name": "軽巡２隻を擁する隊を編成せよ！",
     "detail": "軽巡洋艦２隻を擁する高速艦隊を編成せよ！",
-    "condition": "编组轻巡2只",
     "reward_fuel": 60,
     "reward_bullet": 60,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "開発資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "fleet",
@@ -112,12 +117,13 @@
     "type": 1,
     "name": "第２艦隊を編成せよ！",
     "detail": "二つ目の艦隊、第２艦隊の旗艦を指定して、第２艦隊を編成せよ！",
-    "condition": "编组舰船1只, 限第2舰队",
     "reward_fuel": 50,
     "reward_bullet": 50,
     "reward_steel": 100,
     "reward_alum": 0,
-    "reward_other": "高速建造材x1",
+    "reward_other": [
+      {"name": "高速建造材", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "fleet",
@@ -134,12 +140,13 @@
     "type": 1,
     "name": "「重巡戦隊」を編成せよ！",
     "detail": "重巡洋艦２隻を擁する重巡艦隊を編成せよ！",
-    "condition": "编组重巡2只",
     "reward_fuel": 0,
     "reward_bullet": 70,
     "reward_steel": 0,
     "reward_alum": 30,
-    "reward_other": "高速修復材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1}
+    ],
     "prerequisite": [105],
     "requirements": {
       "category": "fleet",
@@ -155,12 +162,13 @@
     "type": 1,
     "name": "「天龍」型軽巡姉妹の全２艦を編成せよ！",
     "detail": "天龍型軽巡洋艦「天龍」「龍田」を同一艦隊に配属せよ！",
-    "condition": "编组天龙+龙田",
     "reward_fuel": 100,
     "reward_bullet": 100,
     "reward_steel": 100,
     "reward_alum": 50,
-    "reward_other": "高速建造材x2",
+    "reward_other": [
+      {"name": "高速建造材", "amount": 2}
+    ],
     "prerequisite": [105],
     "requirements": {
       "category": "fleet",
@@ -177,12 +185,13 @@
     "type": 1,
     "name": "「水上機母艦」を配備せよ！",
     "detail": "多数の水上偵察機を運用する「水上機母艦」を艦隊に配備せよ！",
-    "condition": "编组水母",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 200,
-    "reward_other": "開発資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "fleet",
@@ -198,12 +207,13 @@
     "type": 1,
     "name": "「第六駆逐隊」を編成せよ！",
     "detail": "「暁」「響」「雷」「電」4隻による第六駆逐隊を編成せよ！",
-    "condition": "编组晓+响+雷+电, 其他舰船不可",
     "reward_fuel": 150,
     "reward_bullet": 150,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "応急修理要員x1",
+    "reward_other": [
+      {"name": "応急修理要員", "amount": 1}
+    ],
     "prerequisite": [116],
     "requirements": {
       "category": "fleet",
@@ -223,12 +233,13 @@
     "type": 1,
     "name": "第２艦隊で空母機動部隊を編成せよ！",
     "detail": "第２艦隊に空母を配備して、空母機動部隊を編成せよ！",
-    "condition": "编组空母/轻母/水母1只+驱逐2只, 限第2舰队",
     "reward_fuel": 100,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 100,
-    "reward_other": "高速建造材x2",
+    "reward_other": [
+      {"name": "高速建造材", "amount": 2}
+    ],
     "prerequisite": [215],
     "requirements": {
       "category": "fleet",
@@ -246,12 +257,13 @@
     "type": 1,
     "name": "「空母機動部隊」を編成せよ！",
     "detail": "空母1隻以上を旗艦とし、その護衛艦艇と共に、空母機動部隊を編成せよ！",
-    "condition": "编组空母/轻母/水母(旗舰)1只+驱逐3只",
     "reward_fuel": 50,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 100,
-    "reward_other": "開発資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "fleet",
@@ -271,12 +283,13 @@
     "type": 1,
     "name": "戦艦と重巡による主力艦隊を編成せよ！",
     "detail": "戦艦1隻以上、重巡2隻以上を主力とした水上打撃艦隊を編成せよ！",
-    "condition": "编组高速战舰/低速战舰1只+重巡2只",
     "reward_fuel": 0,
     "reward_bullet": 150,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "高速建造材x2",
+    "reward_other": [
+      {"name": "高速建造材", "amount": 2}
+    ],
     "prerequisite": [107],
     "requirements": {
       "category": "fleet",
@@ -293,12 +306,13 @@
     "type": 1,
     "name": "「川内」型軽巡姉妹の全３艦を編成せよ！",
     "detail": "川内型軽巡洋艦「川内」「神通」「那珂」を同一艦隊に配属せよ！",
-    "condition": "编组川内+神通+那珂",
     "reward_fuel": 100,
     "reward_bullet": 0,
     "reward_steel": 100,
     "reward_alum": 0,
-    "reward_other": "第3艦隊開放",
+    "reward_other": [
+      {"name": "第3艦隊開放"}
+    ],
     "prerequisite": [106],
     "requirements": {
       "category": "fleet",
@@ -316,12 +330,14 @@
     "type": 1,
     "name": "「妙高」型重巡姉妹の全４隻を編成せよ！",
     "detail": "妙高型重巡洋艦「妙高」「那智」「足柄」「羽黒」を同一艦隊に配属せよ！",
-    "condition": "编组妙高+那智+足柄+羽黑",
     "reward_fuel": 150,
     "reward_bullet": 100,
     "reward_steel": 150,
     "reward_alum": 100,
-    "reward_other": "高速修復材x1，開発資材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1},
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [109],
     "requirements": {
       "category": "fleet",
@@ -340,12 +356,13 @@
     "type": 1,
     "name": "「金剛」型による高速戦艦部隊を編成せよ！",
     "detail": "金剛型戦艦「金剛」「比叡」「榛名」「霧島」全４隻の高速戦艦を集中配備せよ！",
-    "condition": "编组金刚+比叡+榛名+雾岛",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "第4艦隊開放",
+    "reward_other": [
+      {"name": "第4艦隊開放"}
+    ],
     "prerequisite": [110],
     "requirements": {
       "category": "fleet",
@@ -364,12 +381,14 @@
     "type": 1,
     "name": "「扶桑」型戦艦姉妹の全２隻を編成せよ！",
     "detail": "扶桑型戦艦「扶桑」「山城」を同一艦隊に配属せよ！",
-    "condition": "编组扶桑+山城",
     "reward_fuel": 200,
     "reward_bullet": 200,
     "reward_steel": 200,
     "reward_alum": 200,
-    "reward_other": "高速修復材x2，開発資材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2},
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [108],
     "requirements": {
       "category": "fleet",
@@ -386,12 +405,14 @@
     "type": 1,
     "name": "「伊勢」型戦艦姉妹の全２隻を編成せよ！",
     "detail": "伊勢型戦艦「伊勢」「日向」を同一艦隊に配属せよ！",
-    "condition": "编组伊势+日向",
     "reward_fuel": 300,
     "reward_bullet": 200,
     "reward_steel": 300,
     "reward_alum": 200,
-    "reward_other": "高速修復材x2，開発資材x2",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2},
+      {"name": "開発資材", "amount": 2}
+    ],
     "prerequisite": [111],
     "requirements": {
       "category": "fleet",
@@ -408,12 +429,14 @@
     "type": 1,
     "name": "「南雲機動部隊」を編成せよ！",
     "detail": "一航戦「赤城」「加賀」二航戦「飛龍」「蒼龍」からなる第一機動部隊を編成せよ！",
-    "condition": "编组赤城+加贺+飞龙+苍龙, 其他舰船不可",
     "reward_fuel": 500,
     "reward_bullet": 500,
     "reward_steel": 500,
     "reward_alum": 500,
-    "reward_other": "高速建造材x2，開発資材x4",
+    "reward_other": [
+      {"name": "高速建造材", "amount": 2},
+      {"name": "開発資材", "amount": 4}
+    ],
     "prerequisite": [113],
     "requirements": {
       "category": "fleet",
@@ -433,12 +456,13 @@
     "type": 1,
     "name": "「三川艦隊」を編成せよ！",
     "detail": "「鳥海」「青葉」「加古」「古鷹」「天龍」を含む高速艦隊を編成せよ！",
-    "condition": "编组鸟海+青叶+加古+古鹰+天龙+高速舰船1只",
     "reward_fuel": 400,
     "reward_bullet": 0,
     "reward_steel": 200,
     "reward_alum": 0,
-    "reward_other": "高速修復材x3",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 3}
+    ],
     "prerequisite": [113],
     "requirements": {
       "category": "fleet",
@@ -459,12 +483,14 @@
     "type": 1,
     "name": "「第四戦隊」を編成せよ！",
     "detail": "「愛宕」「高雄」「鳥海」「摩耶」を基幹とした第四戦隊を編成せよ！",
-    "condition": "编组爱宕+高雄+鸟海+摩耶",
     "reward_fuel": 300,
     "reward_bullet": 150,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "高速修復材x2，開発資材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2},
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [119],
     "requirements": {
       "category": "fleet",
@@ -483,12 +509,13 @@
     "type": 1,
     "name": "「西村艦隊」を編成せよ！",
     "detail": "「扶桑」「山城」「最上」「時雨」を基幹とした西村艦隊を編成せよ！",
-    "condition": "编组扶桑+山城+最上+时雨",
     "reward_fuel": 200,
     "reward_bullet": 200,
     "reward_steel": 200,
     "reward_alum": 0,
-    "reward_other": "給糧艦「間宮」x1",
+    "reward_other": [
+      {"name": "間宮", "category": "給糧艦", "amount": 1}
+    ],
     "prerequisite": [121],
     "requirements": {
       "category": "fleet",
@@ -507,12 +534,13 @@
     "type": 1,
     "name": "「第五航空戦隊」を編成せよ！",
     "detail": "「翔鶴」「瑞鶴」を基幹とし、駆逐艦2隻を加えた第五航空戦隊を編成せよ！",
-    "condition": "编组翔鹤+瑞鹤+驱逐2只",
     "reward_fuel": 300,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 300,
-    "reward_other": "応急修理要員x1",
+    "reward_other": [
+      {"name": "応急修理要員", "amount": 1}
+    ],
     "prerequisite": [122],
     "requirements": {
       "category": "fleet",
@@ -530,12 +558,13 @@
     "type": 1,
     "name": "新「三川艦隊」を編成せよ！",
     "detail": "「鳥海」「青葉」「衣笠」「加古」「古鷹」「天龍」からなる三川艦隊を編成せよ！",
-    "condition": "编组鸟海+青叶+衣笠+加古+古鹰+天龙",
     "reward_fuel": 300,
     "reward_bullet": 0,
     "reward_steel": 300,
     "reward_alum": 0,
-    "reward_other": "給糧艦「間宮」x1",
+    "reward_other": [
+      {"name": "間宮", "category": "給糧艦", "amount": 1}
+    ],
     "prerequisite": [121],
     "requirements": {
       "category": "fleet",
@@ -556,12 +585,13 @@
     "type": 1,
     "name": "潜水艦隊を編成せよ！",
     "detail": "伊号潜水艦2隻からなる潜水艦隊を編成せよ！",
-    "condition": "编组潜水舰/潜水空母2只",
     "reward_fuel": 150,
     "reward_bullet": 150,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "応急修理要員x1",
+    "reward_other": [
+      {"name": "応急修理要員", "amount": 1}
+    ],
     "prerequisite": [121],
     "requirements": {
       "category": "fleet",
@@ -577,12 +607,13 @@
     "type": 1,
     "name": "航空水上打撃艦隊を編成せよ！",
     "detail": "航空戦艦2隻と航空巡洋艦2隻を基幹とする艦隊を編成せよ！",
-    "condition": "编组航战2只+航巡2只",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 200,
     "reward_alum": 200,
-    "reward_other": "高速修復材x2",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2}
+    ],
     "prerequisite": [122],
     "requirements": {
       "category": "fleet",
@@ -599,12 +630,13 @@
     "type": 1,
     "name": "中規模潜水艦隊を編成せよ！",
     "detail": "伊号潜水艦3隻以上からなる潜水艦隊を編成せよ！",
-    "condition": "编组潜水舰/潜水空母3只",
     "reward_fuel": 150,
     "reward_bullet": 150,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "給糧艦「間宮」x1",
+    "reward_other": [
+      {"name": "間宮", "category": "給糧艦", "amount": 1}
+    ],
     "prerequisite": [121],
     "requirements": {
       "category": "fleet",
@@ -620,12 +652,13 @@
     "type": 1,
     "name": "「第六戦隊」を編成せよ！",
     "detail": "「古鷹」「加古」「青葉」「衣笠」を基幹とした第六戦隊を編成せよ！",
-    "condition": "编组古鹰+加古+青叶+衣笠",
     "reward_fuel": 250,
     "reward_bullet": 300,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "給糧艦「間宮」x1",
+    "reward_other": [
+      {"name": "間宮", "category": "給糧艦", "amount": 1}
+    ],
     "prerequisite": [120],
     "requirements": {
       "category": "fleet",
@@ -644,12 +677,13 @@
     "type": 1,
     "name": "「第五艦隊」を編成せよ！",
     "detail": "「那智」「足柄」「多摩」「木曾」を中核とした「第五艦隊」を編成せよ！",
-    "condition": "编组那智+足柄+多摩+木曾",
     "reward_fuel": 200,
     "reward_bullet": 0,
     "reward_steel": 300,
     "reward_alum": 0,
-    "reward_other": "高速修復材x3",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 3}
+    ],
     "prerequisite": [121],
     "requirements": {
       "category": "fleet",
@@ -668,12 +702,13 @@
     "type": 1,
     "name": "「第一水雷戦隊」を編成せよ！",
     "detail": "「阿武隈」「曙」「潮」「霞」「不知火」を中核とした「第一水雷戦隊」を編成せよ！",
-    "condition": "编组阿武隈+曙+潮+霞+不知火",
     "reward_fuel": 200,
     "reward_bullet": 300,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "応急修理要員x1",
+    "reward_other": [
+      {"name": "応急修理要員", "amount": 1}
+    ],
     "prerequisite": [129],
     "requirements": {
       "category": "fleet",
@@ -693,12 +728,13 @@
     "type": 1,
     "name": "「第八駆逐隊」を編成せよ！",
     "detail": "「朝潮」「満潮」「大潮」「荒潮」4隻による第八駆逐隊を編成せよ！",
-    "condition": "编组朝潮+满潮+大潮+荒潮, 其他舰船不可",
     "reward_fuel": 150,
     "reward_bullet": 150,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "開発資材x3",
+    "reward_other": [
+      {"name": "開発資材", "amount": 3}
+    ],
     "prerequisite": [125],
     "requirements": {
       "category": "fleet",
@@ -718,12 +754,14 @@
     "type": 1,
     "name": "「第十八駆逐隊」を編成せよ！",
     "detail": "「霞」「霰」「陽炎」「不知火」4隻による第十八駆逐隊を編成せよ！",
-    "condition": "编组霞+霰+阳炎+不知火, 其他舰船不可",
     "reward_fuel": 180,
     "reward_bullet": 180,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "開発資材x1，応急修理要員x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1},
+      {"name": "応急修理要員", "amount": 1}
+    ],
     "prerequisite": [239],
     "requirements": {
       "category": "fleet",
@@ -743,12 +781,14 @@
     "type": 1,
     "name": "「第三十駆逐隊(第一次)」を編成せよ！",
     "detail": "「睦月」「如月」「弥生」「望月」4隻による第三十駆逐隊(第一次)を編成せよ！",
-    "condition": "编组睦月+如月+弥生+望月, 其他舰船不可",
     "reward_fuel": 200,
     "reward_bullet": 200,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "高速修復材x2，応急修理要員x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2},
+      {"name": "応急修理要員", "amount": 1}
+    ],
     "prerequisite": [131],
     "requirements": {
       "category": "fleet",
@@ -768,12 +808,13 @@
     "type": 1,
     "name": "「第三十駆逐隊(第二次)」を編成せよ！",
     "detail": "「睦月」「弥生」「卯月」「望月」4隻による第三十駆逐隊(第二次)を編成せよ！",
-    "condition": "编组睦月+卯月+弥生+望月, 其他舰船不可",
     "reward_fuel": 220,
     "reward_bullet": 220,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "開発資材x3",
+    "reward_other": [
+      {"name": "開発資材", "amount": 3}
+    ],
     "prerequisite": [133],
     "requirements": {
       "category": "fleet",
@@ -793,12 +834,13 @@
     "type": 1,
     "name": "「第五戦隊」を編成せよ！",
     "detail": "「妙高」「那智」「羽黒」を基幹とした第五戦隊を編成せよ！",
-    "condition": "编组妙高+那智+羽黑",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 300,
     "reward_alum": 0,
-    "reward_other": "開発資材x5",
+    "reward_other": [
+      {"name": "開発資材", "amount": 5}
+    ],
     "prerequisite": [248],
     "requirements": {
       "category": "fleet",
@@ -816,12 +858,14 @@
     "type": 1,
     "name": "新編「第二航空戦隊」を編成せよ！",
     "detail": "「飛龍改二」(旗艦)及び「蒼龍」を基幹とした二航戦(要駆逐艦2隻)を編成せよ！",
-    "condition": "编组飞龙改二(旗舰)+苍龙+驱逐2只",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 400,
-    "reward_other": "高速修復材x2，開発資材x2",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2},
+      {"name": "開発資材", "amount": 2}
+    ],
     "prerequisite": [128],
     "requirements": {
       "category": "fleet",
@@ -839,12 +883,13 @@
     "type": 1,
     "name": "潜水艦隊「第六艦隊」を編成せよ！",
     "detail": "「潜水母艦」と複数の潜水艦(4隻以上)からなる潜水艦隊「第六艦隊」を編成せよ！",
-    "condition": "编组潜水母舰(旗舰)1只+潜水舰/潜水空母4只",
     "reward_fuel": 250,
     "reward_bullet": 250,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "開発資材x3",
+    "reward_other": [
+      {"name": "開発資材", "amount": 3}
+    ],
     "prerequisite": [127],
     "requirements": {
       "category": "fleet",
@@ -861,12 +906,13 @@
     "type": 1,
     "name": "新型電探を配備せよ！",
     "detail": "新型電探運用試験のため、第一艦隊の旗艦に「妙高改二」を配備せよ！",
-    "condition": "编组妙高改二(旗舰), 限第1舰队",
     "reward_fuel": 300,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 300,
-    "reward_other": "装備「22号対水上電探改四」x1",
+    "reward_other": [
+      {"name": "22号対水上電探改四", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [137],
     "requirements": {
       "category": "fleet",
@@ -883,12 +929,14 @@
     "type": 1,
     "name": "再編成「第二航空戦隊」を強化せよ！",
     "detail": "「蒼龍改二」(旗艦)及び「飛龍改二」を基幹とした二航戦(要駆逐艦2隻)を編成せよ！",
-    "condition": "编组苍龙改二(旗舰)+飞龙改二+驱逐2只",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 450,
-    "reward_other": "高速建造材x2，開発資材x2",
+    "reward_other": [
+      {"name": "高速建造材", "amount": 2},
+      {"name": "開発資材", "amount": 2}
+    ],
     "prerequisite": [250],
     "requirements": {
       "category": "fleet",
@@ -906,12 +954,13 @@
     "type": 1,
     "name": "精鋭「第三戦隊」全艦集結せよ！",
     "detail": "第二次改装を完了した改装金剛型高速戦艦4隻を集結させよ！",
-    "condition": "编组金刚改二+比叡改二+榛名改二+雾岛改二",
     "reward_fuel": 0,
     "reward_bullet": 100,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "装備「試製35.6cm三連装砲」x1",
+    "reward_other": [
+      {"name": "試製35.6cm三連装砲", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [246],
     "requirements": {
       "category": "fleet",
@@ -930,12 +979,13 @@
     "type": 1,
     "name": "「新型正規空母」を配備せよ！",
     "detail": "雲龍型航空母艦一番艦「雲龍」を第一艦隊機旗艦に配備せよ！",
-    "condition": "编组云龙(旗舰), 限第1舰队",
     "reward_fuel": 100,
     "reward_bullet": 100,
     "reward_steel": 100,
     "reward_alum": 300,
-    "reward_other": "開発資材x2",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2}
+    ],
     "prerequisite": [123],
     "requirements": {
       "category": "fleet",
@@ -952,12 +1002,13 @@
     "type": 1,
     "name": "主力戦艦部隊「第二戦隊」を編成せよ！",
     "detail": "長門型2隻及び扶桑型2隻の計4隻の主力戦艦からなる第二戦隊を編成せよ！",
-    "condition": "编组长门+陆奥+扶桑+山城",
     "reward_fuel": 0,
     "reward_bullet": 250,
     "reward_steel": 250,
     "reward_alum": 0,
-    "reward_other": "高速修復材x2",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2}
+    ],
     "prerequisite": [132],
     "requirements": {
       "category": "fleet",
@@ -976,12 +1027,13 @@
     "type": 1,
     "name": "戦艦を主力とした水上打撃部隊を編成せよ！",
     "detail": "大和型・長門型・伊勢型・扶桑型のいずれか3隻と軽巡1隻他の水上打撃部隊を配備せよ！",
-    "condition": "编组低速战舰/航战仅3只+轻巡1只",
     "reward_fuel": 300,
     "reward_bullet": 300,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "開発資材x3",
+    "reward_other": [
+      {"name": "開発資材", "amount": 3}
+    ],
     "prerequisite": [258],
     "requirements": {
       "category": "fleet",
@@ -998,12 +1050,14 @@
     "type": 1,
     "name": "「西村艦隊」を再編成せよ！",
     "detail": "「扶桑」「山城」「最上」「時雨」「満潮」を基幹とした西村艦隊を編成せよ！",
-    "condition": "编组扶桑+山城+最上+时雨+满潮",
     "reward_fuel": 300,
     "reward_bullet": 300,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "開発資材x2，改修資材x3",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "改修資材", "amount": 3}
+    ],
     "prerequisite": [137, 224],
     "requirements": {
       "category": "fleet",
@@ -1023,12 +1077,14 @@
     "type": 1,
     "name": "改修工廠を準備せよ！",
     "detail": "第一艦隊の旗艦に工作艦「明石」を配備、改修工廠の準備を実施せよ！",
-    "condition": "编组明石(旗舰), 限第1舰队",
     "reward_fuel": 100,
     "reward_bullet": 0,
     "reward_steel": 100,
     "reward_alum": 0,
-    "reward_other": "改修資材x5，改修工廠開放",
+    "reward_other": [
+      {"name": "改修資材", "amount": 5},
+      {"name": "改修工廠開放"}
+    ],
     "prerequisite": [116],
     "requirements": {
       "category": "fleet",
@@ -1045,12 +1101,14 @@
     "type": 1,
     "name": "軽快な「水上反撃部隊」を編成せよ！",
     "detail": "駆逐艦「霞」を旗艦とした重巡「足柄」及び軽巡1隻駆逐艦4隻の水上挺身部隊を編成せよ！",
-    "condition": "编组霞(旗舰)+足柄+轻巡1只+驱逐4只",
     "reward_fuel": 250,
     "reward_bullet": 250,
     "reward_steel": 0,
     "reward_alum": 50,
-    "reward_other": "高速修復材x2，開発資材x2",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2},
+      {"name": "開発資材", "amount": 2}
+    ],
     "prerequisite": [123],
     "requirements": {
       "category": "fleet",
@@ -1069,12 +1127,13 @@
     "type": 1,
     "name": "「第十一駆逐隊」を編成せよ！",
     "detail": "特I型駆逐艦「吹雪」「白雪」「初雪」「叢雲」4隻による第十一駆逐隊を編成せよ！",
-    "condition": "编组吹雪+白雪+初雪+从云, 其他舰船不可",
     "reward_fuel": 110,
     "reward_bullet": 110,
     "reward_steel": 110,
     "reward_alum": 0,
-    "reward_other": "開発資材x3",
+    "reward_other": [
+      {"name": "開発資材", "amount": 3}
+    ],
     "prerequisite": [132],
     "requirements": {
       "category": "fleet",
@@ -1094,12 +1153,13 @@
     "type": 1,
     "name": "「第二一駆逐隊」を編成せよ！",
     "detail": "「初春」「子日」「若葉」「初霜」4隻による第二一駆逐隊を編成せよ！",
-    "condition": "编组初春+子日+若叶+初霜, 其他舰船不可",
     "reward_fuel": 210,
     "reward_bullet": 210,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "高速修復材x3",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 3}
+    ],
     "prerequisite": [267],
     "requirements": {
       "category": "fleet",
@@ -1119,12 +1179,14 @@
     "type": 1,
     "name": "「第二二駆逐隊」を編成せよ！",
     "detail": "「皐月」「文月」「長月」他1隻計駆逐艦4隻による第二二駆逐隊を編成せよ！",
-    "condition": "编组皋月+文月+长月+驱逐1只, 其他舰船不可",
     "reward_fuel": 220,
     "reward_bullet": 220,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "開発資材x2，高速修復材x2",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "高速修復材", "amount": 2}
+    ],
     "prerequisite": [271],
     "requirements": {
       "category": "fleet",
@@ -1144,12 +1206,13 @@
     "type": 1,
     "name": "「三川艦隊」を新編、突入準備せよ！",
     "detail": "第一艦隊において、「鳥海改ニ」を旗艦とする「三川艦隊」を編成せよ！",
-    "condition": "编组鸟海改二(旗舰)+古鹰/加古/青叶/衣笠/夕张/天龙任意5只",
     "reward_fuel": 300,
     "reward_bullet": 300,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "高速修復材x2",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2}
+    ],
     "prerequisite": [136, 227],
     "requirements": {
       "category": "fleet",
@@ -1166,12 +1229,13 @@
     "type": 1,
     "name": "「第十八戦隊」を新編成せよ！",
     "detail": "軽巡洋艦「天龍」「龍田」を基幹戦力とした「第十八戦隊」を4隻以上で新編成せよ！",
-    "condition": "编组天龙+龙田+其他舰船2只以上",
     "reward_fuel": 180,
     "reward_bullet": 180,
     "reward_steel": 0,
     "reward_alum": 180,
-    "reward_other": "開発資材x2",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2}
+    ],
     "prerequisite": [274],
     "requirements": {
       "category": "fleet",
@@ -1189,12 +1253,14 @@
     "type": 1,
     "name": "海上突入部隊を編成せよ！",
     "detail": "戦艦「比叡」「霧島」軽巡「長良」駆逐艦「暁」「雷」「電」による海上突入部隊を編成せよ！",
-    "condition": "编组比睿+雾岛+长良+晓+雷+电",
     "reward_fuel": 0,
     "reward_bullet": 300,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "開発資材x2，高速修復材x2",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "高速修復材", "amount": 2}
+    ],
     "prerequisite": [227],
     "requirements": {
       "category": "fleet",
@@ -1215,12 +1281,13 @@
     "type": 1,
     "name": "新編「第六駆逐隊」を編成せよ！",
     "detail": "「暁改二」を旗艦とした「響」「雷」「電」4隻による第六駆逐隊を編成せよ！",
-    "condition": "编组晓改二(旗舰)+响+雷+电",
     "reward_fuel": 150,
     "reward_bullet": 150,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "装備「探照灯」x1",
+    "reward_other": [
+      {"name": "探照灯", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [224],
     "requirements": {
       "category": "fleet",
@@ -1239,12 +1306,14 @@
     "type": 1,
     "name": "「第一水雷戦隊」北方突入準備！",
     "detail": "「阿武隈」を旗艦として「響」「初霜」「若葉」「五月雨」「島風」による一水戦を編成せよ！",
-    "condition": "编组阿武隈(旗舰)+响+初霜+若叶+五月雨+岛风",
     "reward_fuel": 150,
     "reward_bullet": 150,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "高速修復材x2，家具箱(中)x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2},
+      {"name": "家具箱(中)", "amount": 1}
+    ],
     "prerequisite": [240],
     "requirements": {
       "category": "fleet",
@@ -1265,12 +1334,14 @@
     "type": 1,
     "name": "「第一水雷戦隊」北方再突入準備！",
     "detail": "「阿武隈改二」を旗艦として「響」「夕雲」「長波」「秋雲」「島風」の一水戦を再編成せよ!",
-    "condition": "编组阿武隈改二(旗舰)+响+夕云+秋云+长波+岛风",
     "reward_fuel": 200,
     "reward_bullet": 200,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "高速修復材x3，家具箱(大)x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 3},
+      {"name": "家具箱(大)", "amount": 1}
+    ],
     "prerequisite": [309],
     "requirements": {
       "category": "fleet",
@@ -1291,12 +1362,13 @@
     "type": 1,
     "name": "「第五航空戦隊」を再編成せよ！",
     "detail": "「翔鶴」「瑞鶴」と随伴駆逐艦「朧」「秋雲」を基幹とした第五航空戦隊を再編成せよ！",
-    "condition": "编组翔鹤+瑞鹤+胧+秋云",
     "reward_fuel": 300,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 300,
-    "reward_other": "開発資材x3",
+    "reward_other": [
+      {"name": "開発資材", "amount": 3}
+    ],
     "prerequisite": [123, 264],
     "requirements": {
       "category": "fleet",
@@ -1315,12 +1387,14 @@
     "type": 1,
     "name": "新編「第二一戦隊」出撃準備！",
     "detail": "「那智改二」「足柄改二」及び「多摩」「木曾」を基幹とした、第二一戦隊を編成せよ！",
-    "condition": "编组那智改二+足柄改二+多摩+木曾",
     "reward_fuel": 150,
     "reward_bullet": 150,
     "reward_steel": 150,
     "reward_alum": 0,
-    "reward_other": "開発資材x2，改修資材x2",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "改修資材", "amount": 2}
+    ],
     "prerequisite": [152, 263],
     "requirements": {
       "category": "fleet",
@@ -1339,12 +1413,14 @@
     "type": 1,
     "name": "「第十六戦隊(第一次)」を編成せよ！",
     "detail": "「足柄」を旗艦として「球磨」「長良」を擁する、第十六戦隊(第一次)を編成せよ！",
-    "condition": "编组足柄(旗舰)+球磨+长良",
     "reward_fuel": 150,
     "reward_bullet": 150,
     "reward_steel": 150,
     "reward_alum": 0,
-    "reward_other": "開発資材x2，高速修復材x2",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "高速修復材", "amount": 2}
+    ],
     "prerequisite": [216],
     "requirements": {
       "category": "fleet",
@@ -1362,12 +1438,14 @@
     "type": 1,
     "name": "「第三航空戦隊」を編成せよ！",
     "detail": "「瑞鶴改」を旗艦とした「瑞鳳」「千歳」「千代田」を加えた4隻の空母部隊を編制せよ！",
-    "condition": "编组瑞鹤改(旗舰)+瑞凤+千岁(轻母)+千代田(轻母)",
     "reward_fuel": 200,
     "reward_bullet": 200,
     "reward_steel": 0,
     "reward_alum": 200,
-    "reward_other": "開発資材x2，熟練搭乗員×1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "熟練搭乗員", "amount": 1}
+    ],
     "prerequisite": [264, 624],
     "requirements": {
       "category": "fleet",
@@ -1386,12 +1464,14 @@
     "type": 1,
     "name": "「第四航空戦隊」を編成せよ！",
     "detail": "航空戦艦「伊勢改」及び「日向改」を基幹戦力とした第四航空戦隊を編成せよ！",
-    "condition": "编组伊势改+日向改",
     "reward_fuel": 0,
     "reward_bullet": 200,
     "reward_steel": 0,
     "reward_alum": 200,
-    "reward_other": "改修資材x2，装備 瑞雲(六三四空)×1",
+    "reward_other": [
+      {"name": "改修資材", "amount": 2},
+      {"name": "瑞雲(六三四空)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [293],
     "requirements": {
       "category": "fleet",
@@ -1408,12 +1488,14 @@
     "type": 1,
     "name": "「小沢艦隊」を編成せよ！",
     "detail": "「瑞鶴改」旗艦、空母「瑞鳳改」「千歳」「千代田」及び「伊勢改」「日向改」を配備せよ！",
-    "condition": "编组瑞鹤改(旗舰)+瑞凤改+千岁(轻母)+千代田(轻母)+伊势改+日向改",
     "reward_fuel": 300,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 300,
-    "reward_other": "開発資材×2，応急修理要員×1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "応急修理要員", "amount": 1}
+    ],
     "prerequisite": [165, 266],
     "requirements": {
       "category": "fleet",
@@ -1434,12 +1516,14 @@
     "type": 1,
     "name": "新航空戦隊を編成せよ！",
     "detail": "改二改装を終えた翔鶴型航空母艦2隻と同護衛艦による新航空戦隊を新編成せよ！",
-    "condition": "编组翔鹤改二+瑞鹤改二+舰船4只",
     "reward_fuel": 0,
     "reward_bullet": 300,
     "reward_steel": 300,
     "reward_alum": 300,
-    "reward_other": "給糧艦×1，熟練搭乗員×1",
+    "reward_other": [
+      {"name": "伊良湖", "category": "給糧艦", "amount": 1},
+      {"name": "熟練搭乗員", "amount": 1}
+    ],
     "prerequisite": [632],
     "requirements": {
       "category": "fleet",
@@ -1457,12 +1541,13 @@
     "type": 1,
     "name": "はじめての「出撃」！",
     "detail": "艦隊を出撃させ、敵艦隊と交戦せよ！",
-    "condition": "进行战斗1次",
     "reward_fuel": 20,
     "reward_bullet": 20,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "高速修復材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "sortie",
@@ -1476,12 +1561,13 @@
     "type": 1,
     "name": "鎮守府正面海域を護れ！",
     "detail": "鎮守府正面海域に艦隊を出撃させ、敵艦の跳梁を阻止せよ！",
-    "condition": "1-1 BOSS战胜利1次",
     "reward_fuel": 30,
     "reward_bullet": 30,
     "reward_steel": 30,
     "reward_alum": 0,
-    "reward_other": "高速修復材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "sortie",
@@ -1497,12 +1583,13 @@
     "type": 1,
     "name": "第２艦隊、出撃せよ！",
     "detail": "新たに編成した「第２艦隊」を出撃させよ！",
-    "condition": "进行战斗1次, 限第2舰队",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 200,
     "reward_alum": 200,
-    "reward_other": "開発資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [115],
     "requirements": {
       "category": "sortie",
@@ -1517,12 +1604,13 @@
     "type": 1,
     "name": "南西諸島沖に出撃せよ！",
     "detail": "南西諸島沖に艦隊を出撃させ、敵艦隊と交戦せよ！",
-    "condition": "进行1-2 战斗1次",
     "reward_fuel": 40,
     "reward_bullet": 40,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "高速修復材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "sortie",
@@ -1537,12 +1625,14 @@
     "type": 1,
     "name": "接近する「敵前衛艦隊」を迎撃せよ！",
     "detail": "南西諸島沖に接近する「敵前衛艦隊」を捕捉、これを撃滅せよ！",
-    "condition": "1-2 BOSS战胜利1次",
     "reward_fuel": 50,
     "reward_bullet": 0,
     "reward_steel": 50,
     "reward_alum": 0,
-    "reward_other": "開発資材x1，艦娘「深雪」x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1},
+      {"name": "深雪", "category": "艦娘", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "sortie",
@@ -1559,12 +1649,13 @@
     "type": 1,
     "name": "「水雷戦隊」で出撃せよ！",
     "detail": "軽巡洋艦1隻を旗艦とし、複数の駆逐艦からなる水雷戦隊で出撃せよ！",
-    "condition": "进行战斗1次, 需要轻巡(旗舰)1只+驱逐数只",
     "reward_fuel": 60,
     "reward_bullet": 60,
     "reward_steel": 0,
     "reward_alum": 60,
-    "reward_other": "艦娘「龍田」x1",
+    "reward_other": [
+      {"name": "龍田", "category": "艦娘", "amount": 1}
+    ],
     "prerequisite": [205],
     "requirements": {
       "category": "sortie",
@@ -1582,12 +1673,13 @@
     "type": 1,
     "name": "「重巡洋艦」を出撃させよ！",
     "detail": "重巡洋艦を旗艦とした艦隊を編成、これを出撃させよ！",
-    "condition": "进行战斗1次, 需要重巡(旗舰)1只",
     "reward_fuel": 70,
     "reward_bullet": 0,
     "reward_steel": 70,
     "reward_alum": 0,
-    "reward_other": "開発資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [206],
     "requirements": {
       "category": "sortie",
@@ -1604,12 +1696,13 @@
     "type": 1,
     "name": "「戦艦」を出撃させよ！",
     "detail": "海上の覇者、戦艦を旗艦とした艦隊を編成、これを出撃させよ！",
-    "condition": "进行战斗1次, 需要高速战舰/低速战舰(旗舰)1只",
     "reward_fuel": 0,
     "reward_bullet": 150,
     "reward_steel": 150,
     "reward_alum": 0,
-    "reward_other": "開発資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [207],
     "requirements": {
       "category": "sortie",
@@ -1626,12 +1719,14 @@
     "type": 1,
     "name": "「空母機動部隊」出撃せよ！",
     "detail": "空母1隻とその護衛艦艇で構成した空母機動部隊を出撃させよ！",
-    "condition": "进行战斗1次, 需要空母/轻母1只+其他舰船3只",
     "reward_fuel": 200,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 300,
-    "reward_other": "高速修復材x1，開発資材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1},
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [208],
     "requirements": {
       "category": "sortie",
@@ -1649,12 +1744,13 @@
     "type": 1,
     "name": "敵空母を撃沈せよ！",
     "detail": "敵機動部隊を捕捉し、これを邀撃、敵空母を轟沈せよ！",
-    "condition": "击沉空母/轻母1只",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 100,
-    "reward_other": "艦娘「赤城」x1",
+    "reward_other": [
+      {"name": "赤城", "category": "艦娘", "amount": 1}
+    ],
     "prerequisite": [117],
     "requirements": {
       "category": "sink",
@@ -1669,12 +1765,13 @@
     "type": 1,
     "name": "「三川艦隊」出撃せよ！",
     "detail": "新編成した「三川艦隊」で出撃せよ！",
-    "condition": "进行战斗1次, 需要鸟海+青叶+加古+古鹰+天龙+高速舰船1只",
     "reward_fuel": 0,
     "reward_bullet": 200,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "応急修理要員x1",
+    "reward_other": [
+      {"name": "応急修理要員", "amount": 1}
+    ],
     "prerequisite": [119],
     "requirements": {
       "category": "sortie",
@@ -1696,12 +1793,13 @@
     "type": 1,
     "name": "「第六駆逐隊」出撃せよ！",
     "detail": "「暁」「響」「雷」「電」による第六駆逐隊、出撃せよ！",
-    "condition": "进行战斗1次, 需要晓+响+雷+电, 其他舰船不可",
     "reward_fuel": 200,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "高速修復材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1}
+    ],
     "prerequisite": [120, 213],
     "requirements": {
       "category": "sortie",
@@ -1722,12 +1820,13 @@
     "type": 1,
     "name": "「第四戦隊」出撃せよ！",
     "detail": "「愛宕」「高雄」「鳥海」「摩耶」を基幹とする第四戦隊で、バシー島沖の敵を撃滅せよ！",
-    "condition": "2-2 BOSS战胜利1次, 需要爱宕+高雄+鸟海+摩耶",
     "reward_fuel": 150,
     "reward_bullet": 100,
     "reward_steel": 150,
     "reward_alum": 100,
-    "reward_other": "高速修復材x2",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2}
+    ],
     "prerequisite": [121],
     "requirements": {
       "category": "sortie",
@@ -1750,12 +1849,14 @@
     "type": 1,
     "name": "「西村艦隊」出撃せよ！",
     "detail": "「扶桑」「山城」「最上」「時雨」を基幹とする西村艦隊で、オリョール海の敵を撃滅せよ！",
-    "condition": "2-3 BOSS战胜利1次, 需要扶桑+山城+最上+时雨",
     "reward_fuel": 400,
     "reward_bullet": 0,
     "reward_steel": 400,
     "reward_alum": 0,
-    "reward_other": "高速修復材x2，家具箱(小)x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2},
+      {"name": "家具箱(小)", "amount": 1}
+    ],
     "prerequisite": [122],
     "requirements": {
       "category": "sortie",
@@ -1778,12 +1879,14 @@
     "type": 1,
     "name": "「第五航空戦隊」出撃せよ！",
     "detail": "「翔鶴」「瑞鶴」を基幹とする第五航空戦隊で、北方海域モーレイ海の敵を撃滅せよ！",
-    "condition": "3-1 BOSS战胜利1次, 需要翔鹤+瑞鹤",
     "reward_fuel": 200,
     "reward_bullet": 200,
     "reward_steel": 0,
     "reward_alum": 700,
-    "reward_other": "高速修復材x2，家具箱(中)x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2},
+      {"name": "家具箱(中)", "amount": 1}
+    ],
     "prerequisite": [123],
     "requirements": {
       "category": "sortie",
@@ -1804,12 +1907,13 @@
     "type": 1,
     "name": "新「三川艦隊」出撃せよ！",
     "detail": "完全編成した「三川艦隊」をもって、オリョール海の敵を撃滅せよ！",
-    "condition": "2-3 BOSS战胜利1次, 需要鸟海+青叶+衣笠+加古+古鹰+天龙",
     "reward_fuel": 100,
     "reward_bullet": 150,
     "reward_steel": 100,
     "reward_alum": 150,
-    "reward_other": "応急修理要員x1",
+    "reward_other": [
+      {"name": "応急修理要員", "amount": 1}
+    ],
     "prerequisite": [124],
     "requirements": {
       "category": "sortie",
@@ -1834,12 +1938,13 @@
     "type": 1,
     "name": "「潜水艦隊」出撃せよ！",
     "detail": "伊号潜水艦2隻からなる潜水艦隊でオリョール海の敵を撃滅せよ！",
-    "condition": "2-3 BOSS战胜利1次, 需要潜水舰/潜水空母2只",
     "reward_fuel": 150,
     "reward_bullet": 0,
     "reward_steel": 300,
     "reward_alum": 0,
-    "reward_other": "特注家具職人x1",
+    "reward_other": [
+      {"name": "特注家具職人", "amount": 1}
+    ],
     "prerequisite": [125],
     "requirements": {
       "category": "sortie",
@@ -1859,12 +1964,13 @@
     "type": 1,
     "name": "「航空水上打撃艦隊」出撃せよ！",
     "detail": "航空戦艦2隻と航空巡洋艦2隻を基幹とする艦隊でカレー洋の制海権を握れ！",
-    "condition": "4-2 BOSS战胜利1次, 需要航战2只+航巡2只",
     "reward_fuel": 0,
     "reward_bullet": 150,
     "reward_steel": 0,
     "reward_alum": 300,
-    "reward_other": "給糧艦「間宮」x1",
+    "reward_other": [
+      {"name": "間宮", "category": "給糧艦", "amount": 1}
+    ],
     "prerequisite": [126],
     "requirements": {
       "category": "sortie",
@@ -1885,12 +1991,14 @@
     "type": 1,
     "name": "「第六戦隊」出撃せよ！",
     "detail": "編成した「第六戦隊」をもって出撃し、オリョール海の敵を撃滅「完全勝利」せよ！",
-    "condition": "2-3 BOSS战S胜利1次, 需要古鹰+加古+青叶+衣笠",
     "reward_fuel": 0,
     "reward_bullet": 150,
     "reward_steel": 0,
     "reward_alum": 300,
-    "reward_other": "家具箱(中)x1，応急修理要員x1",
+    "reward_other": [
+      {"name": "家具箱(中)", "amount": 1},
+      {"name": "応急修理要員", "amount": 1}
+    ],
     "prerequisite": [128],
     "requirements": {
       "category": "sortie",
@@ -1913,12 +2021,14 @@
     "type": 1,
     "name": "「第八駆逐隊」出撃せよ！",
     "detail": "編成した「第八駆逐隊」を含む艦隊で出撃し、オリョール海の敵を撃滅せよ！",
-    "condition": "2-3 BOSS战胜利1次, 需要朝潮+满潮+大潮+荒潮",
     "reward_fuel": 0,
     "reward_bullet": 100,
     "reward_steel": 400,
     "reward_alum": 0,
-    "reward_other": "開発資材x1，家具箱(中)x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1},
+      {"name": "家具箱(中)", "amount": 1}
+    ],
     "prerequisite": [131],
     "requirements": {
       "category": "sortie",
@@ -1941,12 +2051,14 @@
     "type": 1,
     "name": "「第十八駆逐隊」出撃せよ！",
     "detail": "編成した「第十八駆逐隊」を含む艦隊で出撃し、北方海域モーレイ海の敵を撃滅せよ！",
-    "condition": "3-1 BOSS战胜利1次, 需要霞+霰+阳炎+不知火",
     "reward_fuel": 0,
     "reward_bullet": 100,
     "reward_steel": 0,
     "reward_alum": 400,
-    "reward_other": "開発資材x2，家具箱(大)x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "家具箱(大)", "amount": 1}
+    ],
     "prerequisite": [132],
     "requirements": {
       "category": "sortie",
@@ -1969,12 +2081,13 @@
     "type": 1,
     "name": "「第三十駆逐隊(第一次)」出撃せよ！",
     "detail": "「第三十駆逐隊(第一次)」を含む艦隊で出撃し、キス島沖の主力艦隊と交戦せよ！",
-    "condition": "3-2 BOSS战C败北以上1次, 需要睦月+如月+弥生+望月",
     "reward_fuel": 100,
     "reward_bullet": 100,
     "reward_steel": 100,
     "reward_alum": 500,
-    "reward_other": "給糧艦「間宮」x1",
+    "reward_other": [
+      {"name": "間宮", "category": "給糧艦", "amount": 1}
+    ],
     "prerequisite": [133],
     "requirements": {
       "category": "sortie",
@@ -1997,12 +2110,14 @@
     "type": 1,
     "name": "「航空戦艦」抜錨せよ！",
     "detail": "航空戦艦2隻を基幹とする艦隊で、西方海域カスガダマ島の敵勢力を撃破せよ！",
-    "condition": "4-4 BOSS战胜利1次, 需要航战2只",
     "reward_fuel": 0,
     "reward_bullet": 300,
     "reward_steel": 300,
     "reward_alum": 900,
-    "reward_other": "高速修復材x3，家具箱(大)x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 3},
+      {"name": "家具箱(大)", "amount": 1}
+    ],
     "prerequisite": [412],
     "requirements": {
       "category": "sortie",
@@ -2022,12 +2137,13 @@
     "type": 1,
     "name": "「第三十駆逐隊」対潜哨戒！",
     "detail": "「第三十駆逐隊(第二次)」は直ちに抜錨！鎮守府正面の対潜哨戒を実施せよ！",
-    "condition": "1-5 BOSS战C败北以上1次, 需要睦月+卯月+弥生+望月",
     "reward_fuel": 330,
     "reward_bullet": 330,
     "reward_steel": 330,
     "reward_alum": 0,
-    "reward_other": "特注家具職人x1",
+    "reward_other": [
+      {"name": "特注家具職人", "amount": 1}
+    ],
     "prerequisite": [136],
     "requirements": {
       "category": "sortie",
@@ -2051,12 +2167,13 @@
     "type": 1,
     "name": "新編「第二航空戦隊」出撃せよ！",
     "detail": "新編「二航戦」を基幹とした艦隊で、珊瑚諸島沖に出撃、敵機動部隊を撃滅せよ！",
-    "condition": "5-2 BOSS战S胜利1次, 需要飞龙改二(旗舰)+苍龙+驱逐2只",
     "reward_fuel": 0,
     "reward_bullet": 500,
     "reward_steel": 0,
     "reward_alum": 500,
-    "reward_other": "給糧艦「間宮」x1",
+    "reward_other": [
+      {"name": "間宮", "category": "給糧艦", "amount": 1}
+    ],
     "prerequisite": [138],
     "requirements": {
       "category": "sortie",
@@ -2078,12 +2195,13 @@
     "type": 1,
     "name": "精鋭「第二航空戦隊」抜錨せよ！",
     "detail": "錬成を終え再編成「二航戦」を基幹とした艦隊で、敵リランカ島を空襲、破砕せよ！",
-    "condition": "4-3 BOSS战S胜利1次, 需要苍龙改二(旗舰)+飞龙改二+驱逐2只",
     "reward_fuel": 500,
     "reward_bullet": 0,
     "reward_steel": 500,
     "reward_alum": 0,
-    "reward_other": "特注家具職人x1",
+    "reward_other": [
+      {"name": "特注家具職人", "amount": 1}
+    ],
     "prerequisite": [141],
     "requirements": {
       "category": "sortie",
@@ -2105,12 +2223,13 @@
     "type": 1,
     "name": "戦艦「榛名」出撃せよ！",
     "detail": "第二次改装実施した「榛名」を基幹とした艦隊で「南方海域」へ進出、敵艦隊主力を撃滅せよ！",
-    "condition": "5-1 BOSS战S胜利1次, 需要榛名改二",
     "reward_fuel": 100,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "装備「試製35.6cm三連装砲」x1",
+    "reward_other": [
+      {"name": "試製35.6cm三連装砲", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [248],
     "requirements": {
       "category": "sortie",
@@ -2130,12 +2249,14 @@
     "type": 1,
     "name": "「第六〇一航空隊」出撃せよ！",
     "detail": "雲龍型航空母艦「雲龍改」含む機動部隊で珊瑚島沖に出撃、敵機動部隊を撃滅せよ！",
-    "condition": "5-2 BOSS战S胜利1次, 需要云龙改",
     "reward_fuel": 0,
     "reward_bullet": 300,
     "reward_steel": 0,
     "reward_alum": 300,
-    "reward_other": "家具箱(大)x1，装備「熟練艦載機整備員」x1",
+    "reward_other": [
+      {"name": "家具箱(大)", "amount": 1},
+      {"name": "熟練艦載機整備員", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [143],
     "requirements": {
       "category": "sortie",
@@ -2155,12 +2276,14 @@
     "type": 1,
     "name": "「軽空母」戦隊、出撃せよ！",
     "detail": "軽空母1～2隻、軽巡1隻、駆逐艦3～4隻の艦隊でカムラン半島の敵を撃滅せよ！",
-    "condition": "2-1 BOSS战S胜利1次, 需要轻母1～2只+轻巡1只+驱逐3～4只, 其他舰船不可",
     "reward_fuel": 0,
     "reward_bullet": 300,
     "reward_steel": 0,
     "reward_alum": 300,
-    "reward_other": "高速修復材x3，応急修理要員x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 3},
+      {"name": "応急修理要員", "amount": 1}
+    ],
     "prerequisite": [105],
     "requirements": {
       "category": "sortie",
@@ -2183,12 +2306,14 @@
     "type": 1,
     "name": "「水雷戦隊」バシー島沖緊急展開",
     "detail": "軽巡を旗艦とした水雷戦隊(軽巡最大2隻他駆逐艦)でバシー島沖の敵を撃滅せよ！",
-    "condition": "2-2 BOSS战S胜利1次, 需要轻巡(旗舰)1～2只+驱逐1只以上, 其他舰船不可",
     "reward_fuel": 300,
     "reward_bullet": 300,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "家具箱(大)x1，特注家具職人x1",
+    "reward_other": [
+      {"name": "家具箱(大)", "amount": 1},
+      {"name": "特注家具職人", "amount": 1}
+    ],
     "prerequisite": [206],
     "requirements": {
       "category": "sortie",
@@ -2210,12 +2335,13 @@
     "type": 1,
     "name": "「第二戦隊」抜錨！",
     "detail": "「第二戦隊」を基幹とした艦隊でカレー洋に進出、反復出撃により敵海上兵力を撃滅せよ！",
-    "condition": "4-2 BOSS战S胜利2次, 需要长门+陆奥+扶桑+山城",
     "reward_fuel": 0,
     "reward_bullet": 400,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "装備「一式徹甲弾」x1",
+    "reward_other": [
+      {"name": "一式徹甲弾", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [144],
     "requirements": {
       "category": "sortie",
@@ -2238,12 +2364,14 @@
     "type": 1,
     "name": "「戦艦部隊」北方海域に突入せよ！",
     "detail": "戦艦2隻と直援軽空母1隻(正規空母無し)基幹の艦隊で北方AL海域に突入、敵を撃滅せよ！",
-    "condition": "3-5 BOSS战S胜利1次, 需要高速战舰/低速战舰仅2只+轻母仅1只, 空母不可",
     "reward_fuel": 0,
     "reward_bullet": 500,
     "reward_steel": 0,
     "reward_alum": 250,
-    "reward_other": "開発資材x2，装備「一式徹甲弾」x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "一式徹甲弾", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [259],
     "requirements": {
       "category": "sortie",
@@ -2265,12 +2393,14 @@
     "type": 1,
     "name": "「西村艦隊」南方海域へ進出せよ！",
     "detail": "「西村艦隊」を南方海域に進出させ、敵主力艦隊へ突入、これを撃滅せよ！",
-    "condition": "5-1 BOSS战S胜利1次, 需要扶桑+山城+最上+时雨+满潮",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 500,
     "reward_alum": 300,
-    "reward_other": "改修資材x5，勲章x1",
+    "reward_other": [
+      {"name": "改修資材", "amount": 5},
+      {"name": "勲章", "amount": 1}
+    ],
     "prerequisite": [147],
     "requirements": {
       "category": "sortie",
@@ -2294,12 +2424,14 @@
     "type": 1,
     "name": "「第六戦隊」南西海域へ出撃せよ！",
     "detail": "「古鷹」「加古」「青葉」「衣笠」を基幹とした「第六戦隊」で、沖ノ島沖の敵艦隊を撃滅せよ！",
-    "condition": "2-5 BOSS战S胜利1次, 需要古鹰+加古+青叶+衣笠",
     "reward_fuel": 0,
     "reward_bullet": 400,
     "reward_steel": 0,
     "reward_alum": 400,
-    "reward_other": "家具箱(大)x1，特注家具職人x1",
+    "reward_other": [
+      {"name": "家具箱(大)", "amount": 1},
+      {"name": "特注家具職人", "amount": 1}
+    ],
     "prerequisite": [233],
     "requirements": {
       "category": "sortie",
@@ -2322,12 +2454,13 @@
     "type": 1,
     "name": "「第十一駆逐隊」出撃せよ！",
     "detail": "「第十一駆逐隊」を含む艦隊で出撃し、オリョール海の敵を撃破せよ！",
-    "condition": "2-3 BOSS战胜利1次, 需要吹雪+白雪+初雪+从云",
     "reward_fuel": 0,
     "reward_bullet": 300,
     "reward_steel": 300,
     "reward_alum": 0,
-    "reward_other": "給糧艦「間宮」x1",
+    "reward_other": [
+      {"name": "間宮", "category": "給糧艦", "amount": 1}
+    ],
     "prerequisite": [149],
     "requirements": {
       "category": "sortie",
@@ -2350,12 +2483,14 @@
     "type": 1,
     "name": "「第十一駆逐隊」対潜哨戒！",
     "detail": "「第十一駆逐隊」を含む艦隊で鎮守府正面へ展開、対潜哨戒を実施せよ！",
-    "condition": "1-5 BOSS战C败北以上1次, 需要吹雪+白雪+初雪+从云",
     "reward_fuel": 400,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 200,
-    "reward_other": "開発資材x2，装備「三式水中探信儀」x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "三式水中探信儀", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [149],
     "requirements": {
       "category": "sortie",
@@ -2379,12 +2514,13 @@
     "type": 1,
     "name": "「第二一駆逐隊」出撃せよ！",
     "detail": "「第二一駆逐隊」を含む艦隊で出撃し、北方海域モーレイ海の敵を撃滅せよ！",
-    "condition": "3-1 BOSS战S胜利1次, 需要初春+子日+若叶+初霜",
     "reward_fuel": 300,
     "reward_bullet": 300,
     "reward_steel": 300,
     "reward_alum": 0,
-    "reward_other": "プレゼント箱x1",
+    "reward_other": [
+      {"name": "プレゼント箱", "amount": 1}
+    ],
     "prerequisite": [150],
     "requirements": {
       "category": "sortie",
@@ -2407,12 +2543,14 @@
     "type": 1,
     "name": "「那智戦隊」抜錨せよ！",
     "detail": "旗艦「那智」及び「初霜」「霞」「潮」「曙」他1隻の艦隊でバシー島沖の敵を撃滅せよ！",
-    "condition": "2-2 BOSS战S胜利1次, 需要那智(旗舰)+初霜+霞+潮+曙+其他舰船1只",
     "reward_fuel": 500,
     "reward_bullet": 300,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "改修資材x2，家具箱(大)x1",
+    "reward_other": [
+      {"name": "改修資材", "amount": 2},
+      {"name": "家具箱(大)", "amount": 1}
+    ],
     "prerequisite": [249, 269],
     "requirements": {
       "category": "sortie",
@@ -2437,12 +2575,14 @@
     "type": 1,
     "name": "「第二二駆逐隊」出撃せよ！",
     "detail": "「第二二駆逐隊」を含む艦隊で南西諸島防衛線に出撃、敵主力艦隊を撃滅せよ！",
-    "condition": "1-4 BOSS战S胜利1次, 需要皋月+文月+长月+驱逐1只",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 400,
-    "reward_other": "給糧艦「伊良湖」x1，家具箱(中)x1",
+    "reward_other": [
+      {"name": "伊良湖", "category": "給糧艦", "amount": 1},
+      {"name": "家具箱(中)", "amount": 1}
+    ],
     "prerequisite": [151],
     "requirements": {
       "category": "sortie",
@@ -2465,12 +2605,14 @@
     "type": 1,
     "name": "「改装防空重巡」出撃せよ！",
     "detail": "摩耶改または摩耶改二及び軽巡1駆逐2隻を含む艦隊でオリョール海の敵艦隊を撃滅せよ！",
-    "condition": "2-3 BOSS战S胜利1次, 需要摩耶改/改二+轻巡1只+驱逐2只",
     "reward_fuel": 300,
     "reward_bullet": 0,
     "reward_steel": 300,
     "reward_alum": 0,
-    "reward_other": "「25mm三連装機銃」x1，装備「三式弾」x1",
+    "reward_other": [
+      {"name": "25mm三連装機銃", "category": "装備", "amount": 1},
+      {"name": "三式弾", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [416],
     "requirements": {
       "category": "sortie",
@@ -2492,12 +2634,14 @@
     "type": 1,
     "name": "新編「三川艦隊」ソロモン方面へ！",
     "detail": "第一艦隊に編成した「三川艦隊」を南方海域に進出させ、同方面の敵艦隊を撃滅せよ！",
-    "condition": "5-1 BOSS战S胜利1次, 需要鸟海改二(旗舰)+古鹰/加古/青叶/衣笠/夕张/天龙任意5只",
     "reward_fuel": 480,
     "reward_bullet": 480,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "開発資材x3，改修資材x3",
+    "reward_other": [
+      {"name": "開発資材", "amount": 3},
+      {"name": "改修資材", "amount": 3}
+    ],
     "prerequisite": [307],
     "requirements": {
       "category": "sortie",
@@ -2518,12 +2662,14 @@
     "type": 1,
     "name": "「第六駆逐隊」対潜哨戒なのです！",
     "detail": "「第六駆逐隊」を含む艦隊で鎮守府正面へ展開、対潜哨戒を実施せよ！",
-    "condition": "1-5 BOSS战C败北以上1次, 需要晓+响+雷+电",
     "reward_fuel": 200,
     "reward_bullet": 200,
     "reward_steel": 200,
     "reward_alum": 0,
-    "reward_other": "開発資材x3，装備「九三式水中聴音機」x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 3},
+      {"name": "九三式水中聴音機", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [120],
     "requirements": {
       "category": "sortie",
@@ -2545,14 +2691,16 @@
     "wiki_id": "B43",
     "category": 2,
     "type": 1,
-    "name": "抜錨！「第十八戦隊」",
+    "name": "第十八戦隊", "category": "抜錨！",
     "detail": "「天龍」「龍田」を基幹戦力とした「第十八戦隊」で出撃し、オリョール海の敵主力を撃滅せよ！",
-    "condition": "2-3 BOSS战S胜利1次, 需要天龙+龙田",
     "reward_fuel": 350,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 250,
-    "reward_other": "高速修復材x3，特注家具職人x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 3},
+      {"name": "特注家具職人", "amount": 1}
+    ],
     "prerequisite": [153],
     "requirements": {
       "category": "sortie",
@@ -2573,12 +2721,14 @@
     "type": 1,
     "name": "海上突入部隊、進発せよ！",
     "detail": "「比叡」「霧島」「長良」「暁」「雷」「電」の艦隊で、南方海域進出作戦を実施、敵を撃滅せよ！",
-    "condition": "5-1 BOSS战S胜利1次, 需要比睿+雾岛+长良+晓+雷+电",
     "reward_fuel": 500,
     "reward_bullet": 0,
     "reward_steel": 500,
     "reward_alum": 0,
-    "reward_other": "開発資材x5，改修資材x2",
+    "reward_other": [
+      {"name": "開発資材", "amount": 5},
+      {"name": "改修資材", "amount": 2}
+    ],
     "prerequisite": [154, 243],
     "requirements": {
       "category": "sortie",
@@ -2603,12 +2753,14 @@
     "type": 1,
     "name": "「第六駆逐隊」対潜哨戒を徹底なのです！",
     "detail": "「第六駆逐隊」を含む艦隊で鎮守府正面で対潜哨戒を実施、敵潜水艦部隊を痛打せよ！",
-    "condition": "1-5 BOSS战A胜利以上1次, 需要晓+响+雷+电",
     "reward_fuel": 300,
     "reward_bullet": 300,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "改修資材x2，装備「九三式水中聴音機」x1",
+    "reward_other": [
+      {"name": "改修資材", "amount": 2},
+      {"name": "九三式水中聴音機", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [155, 274],
     "requirements": {
       "category": "sortie",
@@ -2632,12 +2784,14 @@
     "type": 1,
     "name": "「第一水雷戦隊」ケ号作戦、突入せよ！",
     "detail": "北方突入準備を完了した「一水戦」で北方キス島に突入！包囲網を破り、友軍を救出せよ！",
-    "condition": "3-2 BOSS战B胜利1次，需要阿武隈(旗舰)+响+初霜+若叶+五月雨+岛风",
     "reward_fuel": 0,
     "reward_bullet": 300,
     "reward_steel": 0,
     "reward_alum": 400,
-    "reward_other": "高速修復剤x3，特注家具職人x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 3},
+      {"name": "特注家具職人", "amount": 1}
+    ],
     "prerequisite": [156],
     "requirements": {
       "category": "sortie",
@@ -2662,12 +2816,14 @@
     "type": 1,
     "name": "「第一水雷戦隊」北方ケ号作戦、再突入！",
     "detail": "北方再突入準備の新編「一水戦」で北方キス島に再突入を敢行、同撤収作戦を完遂せよ!",
-    "condition": "3-2 BOSS战S胜利1次，需要阿武隈改二(旗舰)+响+夕云+长波+秋云+岛风",
     "reward_fuel": 0,
     "reward_bullet": 400,
     "reward_steel": 0,
     "reward_alum": 500,
-    "reward_other": "開発資材x4，改修資材x4",
+    "reward_other": [
+      {"name": "開発資材", "amount": 4},
+      {"name": "改修資材", "amount": 4}
+    ],
     "prerequisite": [157],
     "requirements": {
       "category": "sortie",
@@ -2692,12 +2848,13 @@
     "type": 1,
     "name": "鎮守府正面の対潜哨戒を強化せよ！",
     "detail": "鎮守府正面の対潜哨戒を強化し、海上資源輸送路の安全を確立せよ！!",
-    "condition": "1-5 BOSS战A胜利4次",
     "reward_fuel": 300,
     "reward_bullet": 300,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "特注家具職人x1",
+    "reward_other": [
+      {"name": "特注家具職人", "amount": 1}
+    ],
     "prerequisite": [201],
     "requirements": {
       "category": "sortie",
@@ -2714,12 +2871,14 @@
     "type": 1,
     "name": "「空母機動部隊」北方海域に進出せよ！",
     "detail": "航空母艦を旗艦とした空母機動部隊を北方AL海域方面に展開、敵戦力を撃滅せよ!",
-    "condition": "3-5 BOSS战S胜利1次，需要空母旗舰（轻空母可能失败）",
     "reward_fuel": 500,
     "reward_bullet": 0,
     "reward_steel": 500,
     "reward_alum": 0,
-    "reward_other": "改修資材x3，戦闘糧食x2",
+    "reward_other": [
+      {"name": "改修資材", "amount": 3},
+      {"name": "戦闘糧食", "amount": 2}
+    ],
     "prerequisite": [260, 230],
     "requirements": {
       "category": "sortie",
@@ -2739,12 +2898,14 @@
     "type": 1,
     "name": "「第五航空戦隊」珊瑚諸島沖に出撃せよ！",
     "detail": "再編成した「第五航空戦隊」を珊瑚諸島沖に展開、敵機動部隊を捕捉撃滅せよ!",
-    "condition": "5-2 BOSS战S胜利1次，需要翔鹤+瑞鹤+胧+秋云",
     "reward_fuel": 0,
     "reward_bullet": 500,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "高速修復材x3，給糧艦「伊良湖」x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 3},
+      {"name": "伊良湖", "category": "給糧艦", "amount": 1}
+    ],
     "prerequisite": [161],
     "requirements": {
       "category": "sortie",
@@ -2767,12 +2928,14 @@
     "type": 1,
     "name": "新編「第二一戦隊」北方へ出撃せよ！",
     "detail": "新編「第二一戦隊」を基幹とする艦隊で北方海域モーレイ海に出撃、敵を撃滅せよ!",
-    "condition": "3-1 BOSS战S胜利1次，要求那智改二+足柄改二+多摩+木曾+任意舰船",
     "reward_fuel": 300,
     "reward_bullet": 300,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "戦闘糧食x1，プレゼント箱x1",
+    "reward_other": [
+      {"name": "戦闘糧食", "amount": 1},
+      {"name": "プレゼント箱", "amount": 1}
+    ],
     "prerequisite": [162],
     "requirements": {
       "category": "sortie",
@@ -2795,12 +2958,14 @@
     "type": 1,
     "name": "「第十六戦隊(第一次)」出撃せよ！",
     "detail": "「第十六戦隊(第一次)」をバシー島沖に展開、敵艦隊を撃滅せよ！!",
-    "condition": "2-2 BOSS战S胜利1次，要求足柄(旗舰)+球磨+长良+任意舰船",
     "reward_fuel": 200,
     "reward_bullet": 0,
     "reward_steel": 200,
     "reward_alum": 0,
-    "reward_other": "家具箱(中)x1，プレゼント箱x1",
+    "reward_other": [
+      {"name": "家具箱(中)", "amount": 1},
+      {"name": "プレゼント箱", "amount": 1}
+    ],
     "prerequisite": [163],
     "requirements": {
       "category": "sortie",
@@ -2822,12 +2987,14 @@
     "type": 1,
     "name": "「第三航空戦隊」南西諸島防衛線に出撃！",
     "detail": "編成した「第三航空戦隊」を南西諸島防衛線に展開、敵侵攻部隊を捕捉迎撃せよ！",
-    "condition": "1-4 BOSS战S胜利1次，需要瑞鹤改(旗舰)+瑞凤+千岁(轻母)+千代田(轻母)+舰船2只",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 300,
     "reward_alum": 0,
-    "reward_other": "高速修復材×2，給糧艦「伊良湖」×1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2},
+      {"name": "伊良湖", "category": "給糧艦", "amount": 1}
+    ],
     "prerequisite": [164],
     "requirements": {
       "category": "sortie",
@@ -2851,12 +3018,14 @@
     "type": 1,
     "name": "「小沢艦隊」出撃せよ！",
     "detail": "「小沢艦隊」を沖ノ島海域前面に展開し、侵攻する敵機動部隊を捕捉、これを撃滅せよ！",
-    "condition": "2-4 BOSS战S胜利1次，需要瑞鹤改(旗舰)+瑞凤改+千岁(轻母)+千代田(轻母)+伊势改+日向改",
     "reward_fuel": 300,
     "reward_bullet": 0,
     "reward_steel": 300,
     "reward_alum": 300,
-    "reward_other": "高速修復材×3，装備 零戦52型丙(六〇一空)×1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 3},
+      {"name": "零戦52型丙(六〇一空)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [166],
     "requirements": {
       "category": "sortie",
@@ -2881,12 +3050,13 @@
     "type": 2,
     "name": "敵艦隊を撃破せよ！",
     "detail": "艦隊を出撃させ、敵艦隊を捕捉、これを撃滅せよ！",
-    "condition": "出击胜利1次",
     "reward_fuel": 50,
     "reward_bullet": 50,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "開発資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [204],
     "requirements": {
       "category": "sortie",
@@ -2901,12 +3071,14 @@
     "type": 2,
     "name": "敵艦隊主力を撃滅せよ！",
     "detail": "艦隊を出撃させ、敵艦隊「主力」を捕捉！これを撃滅せよ！",
-    "condition": "出击1次",
     "reward_fuel": 50,
     "reward_bullet": 50,
     "reward_steel": 50,
     "reward_alum": 50,
-    "reward_other": "高速修復材x1，開発資材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1},
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [201],
     "requirements": {
       "category": "sortie",
@@ -2920,12 +3092,13 @@
     "type": 2,
     "name": "敵艦隊を10回邀撃せよ！",
     "detail": "艦隊全力出撃！遊弋する敵艦隊を10回邀撃せよ！",
-    "condition": "进行战斗10次",
     "reward_fuel": 150,
     "reward_bullet": 150,
     "reward_steel": 200,
     "reward_alum": 100,
-    "reward_other": "開発資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [216],
     "requirements": {
       "category": "simple",
@@ -2940,12 +3113,13 @@
     "type": 4,
     "name": "敵空母を３隻撃沈せよ！",
     "detail": "艦隊の脅威となる敵空母群。これを捕捉撃滅し、3隻轟沈せよ！",
-    "condition": "击沉空母/轻母3只",
     "reward_fuel": 150,
     "reward_bullet": 150,
     "reward_steel": 150,
     "reward_alum": 300,
-    "reward_other": "高速修復材x2",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2}
+    ],
     "prerequisite": [201],
     "requirements": {
       "category": "sink",
@@ -2960,12 +3134,14 @@
     "type": 2,
     "name": "敵補給艦を3隻撃沈せよ！",
     "detail": "艦隊を出撃させ、敵補給艦を捕捉、これを撃滅せよ！",
-    "condition": "击沉补给舰3只",
     "reward_fuel": 100,
     "reward_bullet": 50,
     "reward_steel": 200,
     "reward_alum": 50,
-    "reward_other": "高速修復材x1，開発資材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1},
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [216],
     "requirements": {
       "category": "sink",
@@ -2980,12 +3156,13 @@
     "type": 5,
     "name": "敵輸送船団を叩け！",
     "detail": "敵の輸送船5隻以上を撃沈し、敵の補給路を寸断せよ！",
-    "condition": "击沉补给舰5只",
     "reward_fuel": 0,
     "reward_bullet": 200,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "開発資材x2",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2}
+    ],
     "prerequisite": [201],
     "requirements": {
       "category": "sink",
@@ -3000,12 +3177,14 @@
     "type": 2,
     "name": "南西諸島海域の制海権を握れ！",
     "detail": "艦隊を南西諸島海域に全力出撃させ、多数の敵艦隊「主力」群を捕捉、撃滅せよ！",
-    "condition": "2-1～2-5 BOSS战胜利5次",
     "reward_fuel": 300,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 200,
-    "reward_other": "高速建造材x1，高速修復材x1",
+    "reward_other": [
+      {"name": "高速建造材", "amount": 1},
+      {"name": "高速修復材", "amount": 1}
+    ],
     "prerequisite": [218],
     "requirements": {
       "category": "sortie",
@@ -3022,12 +3201,13 @@
     "type": 2,
     "name": "敵潜水艦を制圧せよ！",
     "detail": "対潜能力の充実した艦隊で出撃、敵潜水艦狩りを実施せよ！",
-    "condition": "击沉潜水舰6只",
     "reward_fuel": 300,
     "reward_bullet": 30,
     "reward_steel": 300,
     "reward_alum": 30,
-    "reward_other": "高速修復材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1}
+    ],
     "prerequisite": [226],
     "requirements": {
       "category": "sink",
@@ -3042,12 +3222,14 @@
     "type": 3,
     "name": "あ号作戦",
     "detail": "1週間の全力出撃を行い、可能な限り多くの敵艦隊を捕捉、これを迎撃せよ！",
-    "condition": "S胜利6次, BOSS战胜利12次, 进行BOSS战24次, 出击36次(一次出击多次战斗算一次)",
     "reward_fuel": 300,
     "reward_bullet": 300,
     "reward_steel": 300,
     "reward_alum": 100,
-    "reward_other": "高速建造材x2，開発資材x2",
+    "reward_other": [
+      {"name": "高速建造材", "amount": 2},
+      {"name": "開発資材", "amount": 2}
+    ],
     "prerequisite": [216],
     "requirements": {
       "category": "a_gou"
@@ -3060,12 +3242,13 @@
     "type": 3,
     "name": "い号作戦",
     "detail": "有力な母艦航空隊で1週間の全力出撃を行い、可能な限り多くの敵空母を撃滅せよ！",
-    "condition": "击沉空母/轻母20只",
     "reward_fuel": 0,
     "reward_bullet": 500,
     "reward_steel": 0,
     "reward_alum": 500,
-    "reward_other": "開発資材x2",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2}
+    ],
     "prerequisite": [218],
     "requirements": {
       "category": "sink",
@@ -3080,12 +3263,13 @@
     "type": 3,
     "name": "海上通商破壊作戦",
     "detail": "1週間で敵輸送船を20隻以上撃沈せよ！",
-    "condition": "击沉补给舰20只",
     "reward_fuel": 500,
     "reward_bullet": 0,
     "reward_steel": 400,
     "reward_alum": 0,
-    "reward_other": "開発資材x3",
+    "reward_other": [
+      {"name": "開発資材", "amount": 3}
+    ],
     "prerequisite": [216],
     "requirements": {
       "category": "sink",
@@ -3100,12 +3284,13 @@
     "type": 3,
     "name": "ろ号作戦",
     "detail": "1週間の全力出撃を行い、敵輸送船団を捕捉・撃滅、敵の補給路を寸断せよ！",
-    "condition": "击沉补给舰50只",
     "reward_fuel": 400,
     "reward_bullet": 0,
     "reward_steel": 800,
     "reward_alum": 0,
-    "reward_other": "高速修復材x3",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 3}
+    ],
     "prerequisite": [214],
     "requirements": {
       "category": "sink",
@@ -3120,12 +3305,14 @@
     "type": 3,
     "name": "海上護衛戦",
     "detail": "有力な対潜能力を持つ海上護衛隊によって、可能な限り多くの敵潜水艦を撃滅せよ！",
-    "condition": "击沉潜水舰15只",
     "reward_fuel": 600,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "高速修復材x2，改修資材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2},
+      {"name": "改修資材", "amount": 1}
+    ],
     "prerequisite": [220],
     "requirements": {
       "category": "sink",
@@ -3140,12 +3327,13 @@
     "type": 3,
     "name": "敵東方艦隊を撃滅せよ！",
     "detail": "西方海域に出撃し、敵東方艦隊の主力を捕捉、これを撃滅せよ！",
-    "condition": "4-1～4-5 BOSS战胜利12次",
     "reward_fuel": 400,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 700,
-    "reward_other": "開発資材x2",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2}
+    ],
     "prerequisite": [228],
     "requirements": {
       "category": "sortie",
@@ -3162,12 +3350,14 @@
     "type": 3,
     "name": "敵北方艦隊主力を撃滅せよ！",
     "detail": "北方海域の深部に出撃し、敵北方艦隊の主力艦隊を捕捉、これを撃滅せよ！",
-    "condition": "3-3～3-5 BOSS战胜利5次",
     "reward_fuel": 300,
     "reward_bullet": 300,
     "reward_steel": 400,
     "reward_alum": 300,
-    "reward_other": "開発資材x3，改修資材x3",
+    "reward_other": [
+      {"name": "開発資材", "amount": 3},
+      {"name": "改修資材", "amount": 3}
+    ],
     "prerequisite": [228],
     "requirements": {
       "category": "sortie",
@@ -3184,12 +3374,14 @@
     "type": 3,
     "name": "敵東方中枢艦隊を撃破せよ！",
     "detail": "西方海域カスガダマ島沖に出撃し、敵東方中枢艦隊を捕捉、これを撃破せよ！",
-    "condition": "4-4 BOSS战胜利1次",
     "reward_fuel": 500,
     "reward_bullet": 0,
     "reward_steel": 500,
     "reward_alum": 0,
-    "reward_other": "高速修復材x1，開発資材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1},
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [229],
     "requirements": {
       "category": "sortie",
@@ -3206,12 +3398,14 @@
     "type": 3,
     "name": "南方海域珊瑚諸島沖の制空権を握れ！",
     "detail": "南方海域珊瑚諸島沖に出撃し、敵機動部隊本体を捕捉撃滅、これに完全勝利せよ！",
-    "condition": "5-2 BOSS战S胜利2次",
     "reward_fuel": 0,
     "reward_bullet": 300,
     "reward_steel": 0,
     "reward_alum": 800,
-    "reward_other": "開発資材x2，改修資材x2",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "改修資材", "amount": 2}
+    ],
     "prerequisite": [242],
     "requirements": {
       "category": "sortie",
@@ -3228,12 +3422,13 @@
     "type": 3,
     "name": "海上輸送路の安全確保に努めよ！",
     "detail": "鎮守府正面の対潜哨戒を反復実施し、安全な海上輸送路を確保せよ！",
-    "condition": "1-5 BOSS战A胜利以上3次",
     "reward_fuel": 100,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "改修資材x3",
+    "reward_other": [
+      {"name": "改修資材", "amount": 3}
+    ],
     "prerequisite": [146, 221],
     "requirements": {
       "category": "sortie",
@@ -3250,12 +3445,14 @@
     "type": 6,
     "name": "「第五戦隊」出撃せよ！",
     "detail": "「第五戦隊」は沖ノ島沖の戦闘哨戒を実施、敵艦隊主力を捕捉、これを撃滅せよ！",
-    "condition": "2-5 BOSS战S胜利1次, 需要妙高+那智+羽黑",
     "reward_fuel": 0,
     "reward_bullet": 550,
     "reward_steel": 550,
     "reward_alum": 0,
-    "reward_other": "開発資材x5，家具箱(大)x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 5},
+      {"name": "家具箱(大)", "amount": 1}
+    ],
     "prerequisite": [137],
     "requirements": {
       "category": "sortie",
@@ -3277,12 +3474,14 @@
     "type": 6,
     "name": "「潜水艦隊」出撃せよ！",
     "detail": "潜水艦戦力を中核とした艦隊で中部海域哨戒線へ反復出撃、敵戦力を漸減せよ！",
-    "condition": "6-1 BOSS战S胜利3次",
     "reward_fuel": 0,
     "reward_bullet": 600,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "家具箱(大)x1，給糧艦「伊良湖」x1",
+    "reward_other": [
+      {"name": "家具箱(大)", "amount": 1},
+      {"name": "伊良湖", "category": "給糧艦", "amount": 1}
+    ],
     "prerequisite": [255],
     "requirements": {
       "category": "sortie",
@@ -3299,12 +3498,14 @@
     "type": 6,
     "name": "「水雷戦隊」南西へ！",
     "detail": "軽巡旗艦の水雷戦隊(軽巡最大3隻他駆逐艦)を急派、南西諸島防衛線で敵を撃滅せよ！",
-    "condition": "1-4 BOSS战S胜利1次, 需要轻巡(旗舰)1～3只+驱逐1只以上, 其他舰船不可",
     "reward_fuel": 500,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 300,
-    "reward_other": "改修資材x3，給糧艦「伊良湖」x1",
+    "reward_other": [
+      {"name": "改修資材", "amount": 3},
+      {"name": "伊良湖", "category": "給糧艦", "amount": 1}
+    ],
     "prerequisite": [221],
     "requirements": {
       "category": "sortie",
@@ -3326,12 +3527,14 @@
     "type": 6,
     "name": "「水上打撃部隊」南方へ！",
     "detail": "戦艦3隻軽巡1隻他を基幹とした水上打撃部隊で南方海域へ進出、敵艦隊を撃滅せよ！",
-    "condition": "5-1 BOSS战S胜利1次, 需要低速战舰/航战3只+轻巡1只",
     "reward_fuel": 350,
     "reward_bullet": 400,
     "reward_steel": 350,
     "reward_alum": 0,
-    "reward_other": "高速修復材x3，改修資材x4",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 3},
+      {"name": "改修資材", "amount": 4}
+    ],
     "prerequisite": [145],
     "requirements": {
       "category": "sortie",
@@ -3352,12 +3555,14 @@
     "type": 6,
     "name": "海上護衛強化月間",
     "detail": "鎮守府正面海域の対潜哨戒を強化し、敵潜水艦を制圧、安全な海上輸送体制を確立せよ！",
-    "condition": "1-5 BOSS战A胜利以上10次",
     "reward_fuel": 800,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "開発資材x5，改修資材x3",
+    "reward_other": [
+      {"name": "開発資材", "amount": 5},
+      {"name": "改修資材", "amount": 3}
+    ],
     "prerequisite": [240, 249],
     "requirements": {
       "category": "sortie",
@@ -3374,12 +3579,14 @@
     "type": 6,
     "name": "「空母機動部隊」西へ！",
     "detail": "航空母艦2隻(随伴駆逐艦2隻)を基幹とする空母機動艦隊で、カレー洋の敵艦隊を撃滅せよ！",
-    "condition": "4-2 BOSS战S胜利1次, 需要空母/轻母/装母2只+驱逐2只",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 600,
     "reward_alum": 800,
-    "reward_other": "改修資材x2，家具箱(大)x2",
+    "reward_other": [
+      {"name": "改修資材", "amount": 2},
+      {"name": "家具箱(大)", "amount": 2}
+    ],
     "prerequisite": [221, 239],
     "requirements": {
       "category": "sortie",
@@ -3400,12 +3607,14 @@
     "type": 6,
     "name": "「水上反撃部隊」突入せよ！",
     "detail": "駆逐艦を旗艦とした重巡1隻軽巡1隻駆逐艦4隻からなる水上挺身部隊、沖ノ島沖に突入せよ！",
-    "condition": "2-5 BOSS战S胜利1次, 需要驱逐(旗舰)4只+重巡1只+轻巡1只",
     "reward_fuel": 0,
     "reward_bullet": 600,
     "reward_steel": 0,
     "reward_alum": 200,
-    "reward_other": "開発資材x4，改修資材x2",
+    "reward_other": [
+      {"name": "開発資材", "amount": 4},
+      {"name": "改修資材", "amount": 2}
+    ],
     "prerequisite": [148, 264],
     "requirements": {
       "category": "sortie",
@@ -3427,12 +3636,13 @@
     "type": 1,
     "name": "はじめての「演習」！",
     "detail": "他の提督(プレイヤー)の艦隊と「演習」を行おう！",
-    "condition": "进行演习1次",
     "reward_fuel": 10,
     "reward_bullet": 10,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "開発資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "excercise",
@@ -3446,12 +3656,13 @@
     "type": 2,
     "name": "「演習」で練度向上！",
     "detail": "本日中に他の司令官の艦隊に対して3回「演習」を挑もう！",
-    "condition": "进行演习3次",
     "reward_fuel": 50,
     "reward_bullet": 0,
     "reward_steel": 50,
     "reward_alum": 0,
-    "reward_other": "高速建造材x1",
+    "reward_other": [
+      {"name": "高速建造材", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "excercise",
@@ -3465,12 +3676,13 @@
     "type": 2,
     "name": "「演習」で他提督を圧倒せよ！",
     "detail": "本日中に他の司令官の艦隊との「演習」で5回以上「勝利」をおさめよう！",
-    "condition": "演习胜利5次",
     "reward_fuel": 0,
     "reward_bullet": 50,
     "reward_steel": 0,
     "reward_alum": 50,
-    "reward_other": "開発資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [303],
     "requirements": {
       "category": "excercise",
@@ -3485,12 +3697,14 @@
     "type": 3,
     "name": "大規模演習",
     "detail": "今週中に「演習」で他の提督の艦隊に対して20回「勝利」しよう！",
-    "condition": "演习胜利20次",
     "reward_fuel": 200,
     "reward_bullet": 200,
     "reward_steel": 200,
     "reward_alum": 200,
-    "reward_other": "開発資材x2，改修資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "改修資材", "amount": 1}
+    ],
     "prerequisite": [303],
     "requirements": {
       "category": "excercise",
@@ -3505,12 +3719,13 @@
     "type": 1,
     "name": "艦隊の練度向上に努めよ！",
     "detail": "作戦前に艦隊の練度向上を図る！本日中に「演習」で3回以上「勝利」をおさめよう！",
-    "condition": "演习胜利3次, 限一日内",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 300,
     "reward_alum": 300,
-    "reward_other": "高速修復材x2",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2}
+    ],
     "prerequisite": [152],
     "requirements": {
       "category": "excercise",
@@ -3526,12 +3741,14 @@
     "type": 1,
     "name": "演習を強化、艦隊の練度向上に努めよ！",
     "detail": "艦隊のさらなる練度向上を図る！本日中に「演習」で4回以上「勝利」をおさめよう！",
-    "condition": "演习胜利4次, 限一日内",
     "reward_fuel": 0,
     "reward_bullet": 300,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "高速修復材x2，改修資材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2},
+      {"name": "改修資材", "amount": 1}
+    ],
     "prerequisite": [418],
     "requirements": {
       "category": "excercise",
@@ -3547,12 +3764,14 @@
     "type": 1,
     "name": "北方再突入に備え、練度向上に努めよ！",
     "detail": "艦隊再突入に備え、艦隊練度向上を図る！本日中に「演習」で4回以上「勝利」せよ！",
-    "condition": "演习胜利4次，限一日内",
     "reward_fuel": 300,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "高速修復材x2，改修資材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2},
+      {"name": "改修資材", "amount": 1}
+    ],
     "prerequisite": [278],
     "requirements": {
       "category": "excercise",
@@ -3568,12 +3787,14 @@
     "type": 6,
     "name": "精鋭艦隊演習",
     "detail": "同日中に「演習」で７回以上「勝利」をおさめ、我が精鋭艦隊の練度を示そう！",
-    "condition": "演习胜利7次，限一日内",
     "reward_fuel": 0,
     "reward_bullet": 400,
     "reward_steel": 0,
     "reward_alum": 200,
-    "reward_other": "高速修復材x2，戰鬥糧食x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2},
+      {"name": "戦闘糧食", "amount": 1}
+    ],
     "prerequisite": [201],
     "requirements": {
       "category": "excercise",
@@ -3589,12 +3810,13 @@
     "type": 1,
     "name": "はじめての「遠征」！",
     "detail": "艦隊を「遠征」に出発させよう！",
-    "condition": "远征成功1次",
     "reward_fuel": 30,
     "reward_bullet": 30,
     "reward_steel": 30,
     "reward_alum": 30,
-    "reward_other": "家具箱(小)x1",
+    "reward_other": [
+      {"name": "家具箱(小)", "amount": 1}
+    ],
     "prerequisite": [105],
     "requirements": {
       "category": "expedition", 
@@ -3610,12 +3832,13 @@
     "type": 2,
     "name": "「遠征」を３回成功させよう！",
     "detail": "本日中に「遠征」３回成功させよう！",
-    "condition": "远征成功3次",
     "reward_fuel": 100,
     "reward_bullet": 100,
     "reward_steel": 100,
     "reward_alum": 100,
-    "reward_other": "開発資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "expedition", 
@@ -3631,12 +3854,14 @@
     "type": 2,
     "name": "「遠征」を１０回成功させよう！",
     "detail": "本日中に「遠征」10回成功させよう！",
-    "condition": "远征成功10次",
     "reward_fuel": 150,
     "reward_bullet": 300,
     "reward_steel": 300,
     "reward_alum": 150,
-    "reward_other": "家具箱(小)x1，家具箱(中)x1",
+    "reward_other": [
+      {"name": "家具箱(小)", "amount": 1},
+      {"name": "家具箱(中)", "amount": 1}
+    ],
     "prerequisite": [402],
     "requirements": {
       "category": "expedition", 
@@ -3652,12 +3877,14 @@
     "type": 3,
     "name": "大規模遠征作戦、発令！",
     "detail": "今週中に「遠征」30回成功させよう！",
-    "condition": "远征成功30次",
     "reward_fuel": 300,
     "reward_bullet": 500,
     "reward_steel": 500,
     "reward_alum": 300,
-    "reward_other": "開発資材x3，家具箱(大)x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 3},
+      {"name": "家具箱(大)", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "expedition", 
@@ -3673,12 +3900,13 @@
     "type": 1,
     "name": "第一次潜水艦派遣作戦",
     "detail": "はじめての潜水艦派遣作戦を成功させよう！",
-    "condition": "远征30成功1次",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 10,
     "reward_alum": 10,
-    "reward_other": "応急修理要員x1",
+    "reward_other": [
+      {"name": "応急修理要員", "amount": 1}
+    ],
     "prerequisite": [127],
     "requirements": {
       "category": "expedition", 
@@ -3694,12 +3922,13 @@
     "type": 1,
     "name": "第二次潜水艦派遣作戦",
     "detail": "第二次潜水艦派遣作戦を成功させよう！",
-    "condition": "远征30成功1次",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 10,
     "reward_alum": 10,
-    "reward_other": "装備「Ju87C改」x1",
+    "reward_other": [
+      {"name": "Ju87C改", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [405],
     "requirements": {
       "category": "expedition", 
@@ -3715,12 +3944,14 @@
     "type": 1,
     "name": "潜水艦派遣作戦による技術入手の継続！",
     "detail": "第三次及び第四次潜水艦派遣作戦を成功させ、他国製技術の導入に努めよ！",
-    "condition": "远征30成功2次",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 800,
-    "reward_other": "特注家具職人x1，装備「Ju87C改」x1",
+    "reward_other": [
+      {"name": "特注家具職人", "amount": 1},
+      {"name": "Ju87C改", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [406],
     "requirements": {
       "category": "expedition", 
@@ -3736,12 +3967,13 @@
     "type": 1,
     "name": "潜水艦派遣による海外艦との接触作戦",
     "detail": "有力な潜水艦隊派遣による海外艦との接触作戦を成功させよ！",
-    "condition": "远征31成功1次",
     "reward_fuel": 0,
     "reward_bullet": 100,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "艦娘「Z1」x1",
+    "reward_other": [
+      {"name": "Z1", "category": "艦娘", "amount": 1}
+    ],
     "prerequisite": [408],
     "requirements": {
       "category": "expedition", 
@@ -3757,12 +3989,13 @@
     "type": 3,
     "name": "南方への輸送作戦を成功させよ！",
     "detail": "激戦海域である南方海域への「東京急行」系遠征を敢行、これを成功させよ！",
-    "condition": "远征37/38成功1次",
     "reward_fuel": 150,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "家具箱(小)x1",
+    "reward_other": [
+      {"name": "家具箱(小)", "amount": 1}
+    ],
     "prerequisite": [130],
     "requirements": {
       "category": "expedition", 
@@ -3778,12 +4011,13 @@
     "type": 1,
     "name": "航空火力艦の運用を強化せよ！",
     "detail": "「航空戦艦運用演習」を実施し、航空火力艦の運用の強化に努めよ！",
-    "condition": "远征23成功1次",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 100,
-    "reward_other": "装備「瑞雲(六三四空)」x1",
+    "reward_other": [
+      {"name": "瑞雲(六三四空)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [239],
     "requirements": {
       "category": "expedition", 
@@ -3799,12 +4033,14 @@
     "type": 3,
     "name": "南方への鼠輸送を継続実施せよ！",
     "detail": "今週中に「東京急行」系遠征を継続的に実施、同種作戦を7回成功させよう！",
-    "condition": "远征37/38成功6次",
     "reward_fuel": 400,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 400,
-    "reward_other": "開発資材x2，改修資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "改修資材", "amount": 1}
+    ],
     "prerequisite": [410],
     "requirements": {
       "category": "expedition", 
@@ -3820,12 +4056,13 @@
     "type": 1,
     "name": "(続)航空火力艦の運用を強化せよ！",
     "detail": "「航空戦艦運用演習」を継続実施し、航空火力艦の運用の強化に引き続き努めよ！",
-    "condition": "远征23成功3次",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 200,
-    "reward_other": "装備「瑞雲(六三四空)」x1",
+    "reward_other": [
+      {"name": "瑞雲(六三四空)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [412],
     "requirements": {
       "category": "expedition", 
@@ -3841,12 +4078,13 @@
     "type": 1,
     "name": "遠洋潜水艦作戦を実施せよ！",
     "detail": "「遠洋潜水艦作戦」を実施し、潜水艦隊の練度向上と敵艦隊漸減に努めよ！",
-    "condition": "远征39成功1次",
     "reward_fuel": 0,
     "reward_bullet": 200,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "装備「潜水艦53cm艦首魚雷(8門)」x1",
+    "reward_other": [
+      {"name": "潜水艦53cm艦首魚雷(8門)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [139],
     "requirements": {
       "category": "expedition", 
@@ -3862,12 +4100,13 @@
     "type": 1,
     "name": "遠洋潜水艦作戦の成果を拡大せよ！",
     "detail": "「遠洋潜水艦作戦」を継続実施し、潜水艦隊の練度向上と敵艦隊漸減に努めよ！",
-    "condition": "远征39成功2次",
     "reward_fuel": 0,
     "reward_bullet": 400,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "装備「潜水艦53cm艦首魚雷(8門)」x1",
+    "reward_other": [
+      {"name": "潜水艦53cm艦首魚雷(8門)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [414],
     "requirements": {
       "category": "expedition", 
@@ -3883,12 +4122,14 @@
     "type": 1,
     "name": "防空射撃演習を実施せよ！",
     "detail": "「防空射撃演習」を複数回実施し、艦隊の防空能力を高めよ！",
-    "condition": "远征6成功3次",
     "reward_fuel": 0,
     "reward_bullet": 200,
     "reward_steel": 0,
     "reward_alum": 200,
-    "reward_other": "開発資材x2，装備「25mm三連装機銃」x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "25mm三連装機銃", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [207],
     "requirements": {
       "category": "expedition", 
@@ -3904,12 +4145,14 @@
     "type": 1,
     "name": "囮機動部隊支援作戦を実施せよ！",
     "detail": "「囮機動部隊支援作戦」を実施し、これを成功させよ！",
-    "condition": "远征15成功1次",
     "reward_fuel": 400,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 400,
-    "reward_other": "開発資材x2，装備「91式高射装置」x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "91式高射装置", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [272],
     "requirements": {
       "category": "expedition", 
@@ -3925,12 +4168,13 @@
     "type": 1,
     "name": "観艦式予行を実施せよ！",
     "detail": "観艦式を実施する。予行として「観艦式予行」を複数回実施し、これを2回成功させよ！",
-    "condition": "远征7成功2次",
     "reward_fuel": 150,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 150,
-    "reward_other": "開発資材x3",
+    "reward_other": [
+      {"name": "開発資材", "amount": 3}
+    ],
     "prerequisite": [137],
     "requirements": {
       "category": "expedition", 
@@ -3946,12 +4190,14 @@
     "type": 1,
     "name": "観艦式を敢行せよ！",
     "detail": "練度の高い艦隊で観艦式本番を実施する。「観艦式」を実施し、これを成功させよ！",
-    "condition": "远征8成功1次",
     "reward_fuel": 300,
     "reward_bullet": 300,
     "reward_steel": 300,
     "reward_alum": 0,
-    "reward_other": "改修資材x1，司令部要員x1",
+    "reward_other": [
+      {"name": "改修資材", "amount": 1},
+      {"name": "司令部要員", "amount": 1}
+    ],
     "prerequisite": [308],
     "requirements": {
       "category": "expedition", 
@@ -3967,12 +4213,14 @@
     "type": 1,
     "name": "機動部隊の運用を強化せよ！",
     "detail": "機動部隊遠征を実施、「MO作戦」及び「敵母港空襲作戦」を展開、これを成功させよ！",
-    "condition": "远征26成功1次，远征35成功1次",
     "reward_fuel": 200,
     "reward_bullet": 200,
     "reward_steel": 400,
     "reward_alum": 0,
-    "reward_other": "改修資材x2，家具箱(大)x1",
+    "reward_other": [
+      {"name": "改修資材", "amount": 2},
+      {"name": "家具箱(大)", "amount": 1}
+    ],
     "prerequisite": [287, 410],
     "requirements": {
       "category": "expedition", 
@@ -3989,12 +4237,13 @@
     "type": 1,
     "name": "はじめての「補給」！",
     "detail": "補給は大事です！燃料・弾薬を艦に「補給」しよう！",
-    "condition": "进行补给1次",
     "reward_fuel": 20,
     "reward_bullet": 20,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "高速修復材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1}
+    ],
     "prerequisite": [203],
     "requirements": {
       "category": "simple",
@@ -4009,12 +4258,13 @@
     "type": 1,
     "name": "はじめての「入渠」！",
     "detail": "戦闘で傷ついた艦を「入渠」させて修理して、次の出撃に備えよう！",
-    "condition": "进行入渠1次",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 30,
     "reward_alum": 0,
-    "reward_other": "開発資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [203],
     "requirements": {
       "category": "simple",
@@ -4029,12 +4279,13 @@
     "type": 2,
     "name": "艦隊大整備！",
     "detail": "各艦隊から整備が必要な艦を5隻以上ドック入りさせ、大規模な整備をしよう！",
-    "condition": "进行入渠5次",
     "reward_fuel": 30,
     "reward_bullet": 30,
     "reward_steel": 30,
     "reward_alum": 30,
-    "reward_other": "高速修復材x2",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "simple",
@@ -4049,12 +4300,14 @@
     "type": 2,
     "name": "艦隊酒保祭り！",
     "detail": "艦隊酒保祭り！各艦に延べ15回以上の補給を実施しよう！",
-    "condition": "进行补给15次",
     "reward_fuel": 50,
     "reward_bullet": 50,
     "reward_steel": 50,
     "reward_alum": 50,
-    "reward_other": "開発資材x1，高速建造材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1},
+      {"name": "高速建造材", "amount": 1}
+    ],
     "prerequisite": [503],
     "requirements": {
       "category": "simple",
@@ -4069,12 +4322,13 @@
     "type": 1,
     "name": "はじめての「建造」！",
     "detail": "「工廠」で鋼材などの資材を使って新しい艦を「建造」しよう！",
-    "condition": "进行建造1次",
     "reward_fuel": 50,
     "reward_bullet": 50,
     "reward_steel": 50,
     "reward_alum": 50,
-    "reward_other": "開発資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "simple",
@@ -4089,12 +4343,13 @@
     "type": 1,
     "name": "はじめての「開発」！",
     "detail": "「工廠」でボーキサイトなどの資材を使って新しい装備アイテムを「開発」しよう！",
-    "condition": "进行开发1次",
     "reward_fuel": 100,
     "reward_bullet": 100,
     "reward_steel": 100,
     "reward_alum": 100,
-    "reward_other": "開発資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "simple",
@@ -4109,12 +4364,14 @@
     "type": 1,
     "name": "はじめての「解体」！",
     "detail": "「工廠」で不要な艦を「解体」してみよう！",
-    "condition": "进行解体1次",
     "reward_fuel": 60,
     "reward_bullet": 60,
     "reward_steel": 60,
     "reward_alum": 60,
-    "reward_other": "高速建造材x1，開発資材x1",
+    "reward_other": [
+      {"name": "高速建造材", "amount": 1},
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "simple",
@@ -4129,12 +4386,14 @@
     "type": 1,
     "name": "はじめての「廃棄」！",
     "detail": "「工廠」で装備アイテムを「廃棄」してみよう！",
-    "condition": "进行废弃1次",
     "reward_fuel": 80,
     "reward_bullet": 80,
     "reward_steel": 80,
     "reward_alum": 80,
-    "reward_other": "高速修復材x1，開発資材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1},
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "simple",
@@ -4150,12 +4409,14 @@
     "type": 2,
     "name": "新装備「開発」指令",
     "detail": "「工廠」で装備アイテムを新たに「開発」しよう(失敗もOK)！",
-    "condition": "进行开发1次",
     "reward_fuel": 40,
     "reward_bullet": 40,
     "reward_steel": 40,
     "reward_alum": 40,
-    "reward_other": "高速建造材x1，開発資材x1",
+    "reward_other": [
+      {"name": "高速建造材", "amount": 1},
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "simple",
@@ -4170,12 +4431,14 @@
     "type": 2,
     "name": "新造艦「建造」指令",
     "detail": "「工廠」で艦娘を本日中に新たに「建造」しよう！",
-    "condition": "进行建造1次",
     "reward_fuel": 50,
     "reward_bullet": 50,
     "reward_steel": 50,
     "reward_alum": 50,
-    "reward_other": "高速修復材x1，開発資材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1},
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [605],
     "requirements": {
       "category": "simple",
@@ -4190,12 +4453,13 @@
     "type": 2,
     "name": "装備「開発」集中強化！",
     "detail": "「工廠」で装備アイテムを本日中に3回「開発」しよう(失敗もOK)！",
-    "condition": "进行开发3次",
     "reward_fuel": 100,
     "reward_bullet": 100,
     "reward_steel": 100,
     "reward_alum": 100,
-    "reward_other": "開発資材x2",
+    "reward_other": [
+      {"name": "開発資材", "amount": 2}
+    ],
     "prerequisite": [606],
     "requirements": {
       "category": "simple",
@@ -4210,12 +4474,14 @@
     "type": 2,
     "name": "艦娘「建造」艦隊強化！",
     "detail": "艦隊強化のため、「工廠」で艦娘を本日中に3隻「建造」しよう！",
-    "condition": "进行建造3次",
     "reward_fuel": 200,
     "reward_bullet": 200,
     "reward_steel": 300,
     "reward_alum": 100,
-    "reward_other": "高速建造材x1，開発資材x2",
+    "reward_other": [
+      {"name": "高速建造材", "amount": 1},
+      {"name": "開発資材", "amount": 2}
+    ],
     "prerequisite": [607],
     "requirements": {
       "category": "simple",
@@ -4230,12 +4496,13 @@
     "type": 2,
     "name": "軍縮条約対応！",
     "detail": "少し艦隊規模が大きくなりすぎました！「工廠」で不要な艦を2隻「解体」してください！",
-    "condition": "进行解体2次",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 50,
-    "reward_other": "高速修復材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1}
+    ],
     "prerequisite": [608],
     "requirements": {
       "category": "simple",
@@ -4250,12 +4517,13 @@
     "type": 1,
     "name": "「大型艦建造」の準備！(その弐)",
     "detail": "大型艦建造の準備をします！「工廠」で装備アイテムを4回「廃棄」してみてください！",
-    "condition": "进行废弃4次",
     "reward_fuel": 800,
     "reward_bullet": 800,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "大型艦建造開放",
+    "reward_other": [
+      {"name": "大型艦建造開放"}
+    ],
     "prerequisite": [704],
     "requirements": {
       "category": "simple",
@@ -4271,12 +4539,13 @@
     "type": 1,
     "name": "輸送用ドラム缶の準備",
     "detail": "「工廠」で装備アイテムを3回「廃棄」して、輸送用のドラム缶を準備します。",
-    "condition": "废弃装备3次",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 30,
     "reward_alum": 0,
-    "reward_other": "装備「ドラム缶(輸送用)」x3",
+    "reward_other": [
+      {"name": "ドラム缶(輸送用)", "category": "装備", "amount": 3}
+    ],
     "prerequisite": [105],
     "requirements": {
       "category": "simple",
@@ -4292,12 +4561,13 @@
     "type": 3,
     "name": "資源の再利用",
     "detail": "「工廠」で余剰の装備アイテムをなるべく多く「廃棄」して、鋼材の再利用に努めよう！",
-    "condition": "进行废弃24次",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 100,
     "reward_alum": 0,
-    "reward_other": "装備「ドラム缶(輸送用)」x1",
+    "reward_other": [
+      {"name": "ドラム缶(輸送用)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [228],
     "requirements": {
       "category": "simple",
@@ -4313,12 +4583,13 @@
     "type": 1,
     "name": "機種転換",
     "detail": "「九七式艦攻(友永隊)」搭載空母を秘書艦にした状態で新たに「天山」を2つ廃棄！",
-    "condition": "秘书舰空母装备九七式舰攻(友永队), 该装备不可上锁, 废弃天山2只",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 50,
-    "reward_other": "装備「天山一二型(友永隊)」x1",
+    "reward_other": [
+      {"name": "天山一二型(友永隊)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [250],
     "requirements": {
       "category": "modelconversion",
@@ -4335,12 +4606,13 @@
     "type": 1,
     "name": "機種転換",
     "detail": "「九九式艦爆(江草隊)」搭載空母を秘書艦にした状態で新たに「彗星」を2つ廃棄！",
-    "condition": "秘书舰空母装备九九式舰爆(江草队), 该装备不可上锁, 废弃彗星2只",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 50,
-    "reward_other": "装備「彗星(江草隊)」x1",
+    "reward_other": [
+      {"name": "彗星(江草隊)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [250],
     "requirements": {
       "category": "modelconversion",
@@ -4357,12 +4629,13 @@
     "type": 1,
     "name": "機種転換",
     "detail": "「零戦52型丙(六〇一空)」搭載空母を秘書艦にした状態で新たに「烈風」を2つ廃棄！",
-    "condition": "秘书舰空母装备零战52型丙(六〇一空), 该装备不可上锁, 废弃烈风2只",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 50,
-    "reward_other": "装備「烈風(六〇一空)」x1",
+    "reward_other": [
+      {"name": "烈風(六〇一空)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [253],
     "requirements": {
       "category": "modelconversion",
@@ -4379,12 +4652,13 @@
     "type": 1,
     "name": "「伊良湖」の準備",
     "detail": "「工廠」で不要な装備アイテムをいくつか「廃棄」して、新型給糧艦召喚の準備をしましょう！",
-    "condition": "进行废弃10次",
     "reward_fuel": 100,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "給糧艦「伊良湖」x4",
+    "reward_other": [
+      {"name": "伊良湖", "category": "給糧艦", "amount": 4}
+    ],
     "prerequisite": [215, 608],
     "requirements": {
       "category": "simple",
@@ -4400,12 +4674,13 @@
     "type": 1,
     "name": "はじめての「装備改修」！",
     "detail": "「改修工廠」で「装備」を改修してみましょう！明石さん、お願いします！",
-    "condition": "进行装备改修1次",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 100,
     "reward_alum": 0,
-    "reward_other": "改修資材x7",
+    "reward_other": [
+      {"name": "改修資材", "amount": 7}
+    ],
     "prerequisite": [146],
     "requirements": {
       "category": "simple",
@@ -4420,12 +4695,13 @@
     "type": 2,
     "name": "装備の改修強化",
     "detail": "「改修工廠」で「装備」の改修強化に努めます。",
-    "condition": "进行装备改修1次",
     "reward_fuel": 0,
     "reward_bullet": 50,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "改修資材x1",
+    "reward_other": [
+      {"name": "改修資材", "amount": 1}
+    ],
     "prerequisite": [608, 618],
     "requirements": {
       "category": "simple",
@@ -4440,12 +4716,13 @@
     "type": 1,
     "name": "機種転換",
     "detail": "「九七式艦攻(村田隊)」搭載「翔鶴」を秘書艦にして、新たに「天山」を2つ廃棄！",
-    "condition": "秘书舰翔鹤装备九七式艦攻(村田隊), 该装备不可上锁, 废弃天山2只",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 50,
-    "reward_other": "装備「天山(村田隊)」x1",
+    "reward_other": [
+      {"name": "天山(村田隊)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [287],
     "requirements": {
       "category": "modelconversion",
@@ -4463,12 +4740,13 @@
     "type": 1,
     "name": "精鋭「九七式艦攻」部隊の編成",
     "detail": "「翔鶴」または「赤城」を秘書艦にした状態で新たに「九七式艦攻」を3つ破棄",
-    "condition": "秘书舰翔鹤或赤城，废弃九七式艦攻3只",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 50,
-    "reward_other": "装備「九七式艦攻(村田隊)」x1",
+    "reward_other": [
+      {"name": "九七式艦攻(村田隊)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [287],
     "requirements": {
       "category": "modelconversion",
@@ -4485,12 +4763,13 @@
     "type": 1,
     "name": "試作艤装の準備",
     "detail": "「工廠」で装備アイテムを7つ「廃棄」して、「試製甲板カタパルト」を準備します。",
-    "condition": "废弃装备7个（可以同时废弃）",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 100,
     "reward_alum": 0,
-    "reward_other": "試製甲板カタパルトx1",
+    "reward_other": [
+      {"name": "試製甲板カタパルト", "amount": 1}
+    ],
     "prerequisite": [420],
     "requirements": {
       "category": "simple",
@@ -4506,12 +4785,13 @@
     "type": 6,
     "name": "精鋭「艦戦」隊の新編成",
     "detail": "要熟練搭乗員：練度max「零戦21型」搭載「鳳翔」秘書艦で「零戦21型」×2「九六艦戦」×1廃棄！",
-    "condition": "以「凤翔」为秘书舰，在搭载满熟练度(熟练度7)的「零戦21型」时分解「零戦21型」x2和「九六舰戦」x1。消耗1个 熟練搭乗員",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 50,
-    "reward_other": "装備 零式艦戦21型(熟練)x1",
+    "reward_other": [
+      {"name": "零式艦戦21型(熟練)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [264, 114],
     "requirements": {
       "category": "modelconversion",
@@ -4532,12 +4812,13 @@
     "type": 1,
     "name": "試製航空艤装の追加試作",
     "detail": "「工廠」で装備アイテムを9つ「廃棄」して、「試製甲板カタパルト」を追加試作します。",
-    "condition": "分解9个装备（9个一同分解也可以）",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 100,
     "reward_alum": 50,
-    "reward_other": "试制甲板カタパルト×1",
+    "reward_other": [
+      {"name": "試製甲板カタパルト", "amount": 1}
+    ],
     "prerequisite": [294],
     "requirements": {
       "category": "simple",
@@ -4553,12 +4834,13 @@
     "type": 1,
     "name": "機種転換",
     "detail": "「零戦21型(熟練)」搭載空母を秘書艦にして、新たに「零戦52型」を2つ廃棄！",
-    "condition": "空母秘书舰搭载「零戦21型(熟练)」，分解两个「零戦52型」",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 50,
-    "reward_other": "装備 零式艦戦52型(熟練)×1",
+    "reward_other": [
+      {"name": "零式艦戦52型(熟練)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [626],
     "requirements": {
       "category": "modelconversion",
@@ -4575,12 +4857,13 @@
     "type": 6,
     "name": "機種転換",
     "detail": "練度max「零戦21型(熟練)」搭載空母を秘書艦にして、新たに「零戦52型」を2つ廃棄！",
-    "condition": "空母秘书舰搭载满熟练度（熟练度7）的「零戦21型(熟练)」，分解两个「零戦52型」",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 50,
-    "reward_other": "装備 零式艦戦52型(熟練)×1",
+    "reward_other": [
+      {"name": "零式艦戦52型(熟練)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [264, 265, 627],
     "requirements": {
       "category": "modelconversion",
@@ -4598,12 +4881,13 @@
     "type": 1,
     "name": "「艦戦」隊の再編成",
     "detail": "練度max「零戦52型(熟練)」搭載「瑞鶴」が秘書艦で「零戦52型丙(六〇一空)」を廃棄！",
-    "condition": "秘书舰瑞鹤在搭载满熟练度（熟练度7）的「零戦52型(熟练)」并废弃「零戦52型丙(六〇一空)」",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 50,
-    "reward_other": "装備 零式艦戦52型丙(付岩井小隊)×1",
+    "reward_other": [
+      {"name": "零式艦戦52型丙(付岩井小隊)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [293, 627],
     "requirements": {
       "category": "modelconversion",
@@ -4622,12 +4906,13 @@
     "type": 1,
     "name": "機種転換＆部隊再編",
     "detail": "練度max「零戦52型丙(付岩井小隊)」搭載瑞鶴秘書艦で「零戦62型(爆戦)」を2つ廃棄！",
-    "condition": "秘书舰瑞鹤在搭载满熟练度（熟练度7）的「零戦52型丙(付岩井小队)」时分解「零戦62型(爆戦)」x2",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 50,
-    "reward_other": "装備 零式艦戦62型(爆戦／岩井隊)×1",
+    "reward_other": [
+      {"name": "零式艦戦62型(爆戦／岩井隊)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [294, 629],
     "requirements": {
       "category": "modelconversion",
@@ -4646,12 +4931,13 @@
     "type": 1,
     "name": "「艦戦」隊の再編成",
     "detail": "練度max「零戦21型(熟練)」搭載「瑞鶴」が秘書の状態で「零戦21型」を2つ廃棄！",
-    "condition": "秘书舰瑞鹤在搭载满熟练度（熟练度7）的「零戦21型(熟练)」时分解「零戦21型」x2",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 50,
-    "reward_other": "装備 零式艦戦21型(付岩本小隊)×1",
+    "reward_other": [
+      {"name": "零式艦戦21型(付岩本小隊)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [626, 166],
     "requirements": {
       "category": "modelconversion",
@@ -4670,12 +4956,13 @@
     "type": 1,
     "name": "機種転換",
     "detail": "練度max「零戦21型(付岩本小隊)」搭載「瑞鶴」秘書艦で「零戦52型」を2つ廃棄！",
-    "condition": "秘书舰瑞鹤在搭载满熟练度（熟练度7）的「零戦21型(付岩本小队)」时分解「零戦52型」x2",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 50,
-    "reward_other": "装備 零式艦戦52型甲(付岩本小隊)×1",
+    "reward_other": [
+      {"name": "零式艦戦52型甲(付岩本小隊)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [625, 630],
     "requirements": {
       "category": "modelconversion",
@@ -4694,12 +4981,13 @@
     "type": 1,
     "name": "機種転換＆部隊再編",
     "detail": "部隊を再編する！練度max「零戦52型甲(付岩本小隊)」搭載「瑞鶴」秘書艦で、「彩雲」を2つ廃棄！",
-    "condition": "秘书舰瑞鹤在搭载满熟练度（熟练度7）的「零戦52型甲(付岩本小队)」时分解「彩云」x2",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 50,
-    "reward_other": "装備 零式艦戦53型(岩本隊)×1",
+    "reward_other": [
+      {"name": "零式艦戦53型(岩本隊)", "category": "装備", "amount": 1}
+    ],
     "prerequisite": [167],
     "requirements": {
       "category": "modelconversion",
@@ -4718,12 +5006,13 @@
     "type": 1,
     "name": "はじめての「近代化改修」！",
     "detail": "任意の艦を近代化改修(合成)して、強化せよ！",
-    "condition": "进行舰船近代化改修1次",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 50,
     "reward_alum": 50,
-    "reward_other": "開発資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "simple",
@@ -4738,12 +5027,13 @@
     "type": 2,
     "name": "艦の「近代化改修」を実施せよ！",
     "detail": "近代化改修を実施して、２回以上これを成功させよ！",
-    "condition": "进行舰船近代化改修2次",
     "reward_fuel": 20,
     "reward_bullet": 20,
     "reward_steel": 50,
     "reward_alum": 0,
-    "reward_other": "高速修復材x1",
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1}
+    ],
     "prerequisite": [],
     "requirements": {
       "category": "simple",
@@ -4758,12 +5048,14 @@
     "type": 3,
     "name": "「近代化改修」を進め、戦備を整えよ！",
     "detail": "一週間の間に、近代化改修を１5回成功させよ！",
-    "condition": "进行舰船近代化改修15次",
     "reward_fuel": 200,
     "reward_bullet": 200,
     "reward_steel": 300,
     "reward_alum": 100,
-    "reward_other": "高速建造材x1，開発資材x2",
+    "reward_other": [
+      {"name": "高速建造材", "amount": 1},
+      {"name": "開発資材", "amount": 2}
+    ],
     "prerequisite": [702],
     "requirements": {
       "category": "simple",
@@ -4778,12 +5070,13 @@
     "type": 1,
     "name": "「大型艦建造」の準備！(その壱)",
     "detail": "大型艦/新型艦建造のための準備を行う。任意の艦で近代化改修を4回成功させよ！",
-    "condition": "进行舰船近代化改修4次",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 400,
     "reward_alum": 400,
-    "reward_other": "開発資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [109],
     "requirements": {
       "category": "simple",
@@ -4798,12 +5091,13 @@
     "type": 1,
     "name": "式の準備！(その壱)",
     "detail": "式の準備をします！「工廠」で装備アイテムを2回「廃棄」して身の回りの整理を！",
-    "condition": "进行废弃2次",
     "reward_fuel": 88,
     "reward_bullet": 88,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "開発資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [118],
     "requirements": {
       "category": "simple",
@@ -4819,12 +5113,13 @@
     "type": 1,
     "name": "式の準備！(その弐)",
     "detail": "本日中に「演習」で2回以上「勝利」をおさめ、式への気持ちを整理しよう！",
-    "condition": "演习胜利2次, 限一日内",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 88,
     "reward_alum": 88,
-    "reward_other": "開発資材x1",
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
     "prerequisite": [611],
     "requirements": {
       "category": "excercise",
@@ -4840,12 +5135,13 @@
     "type": 1,
     "name": "式の準備！(その参)",
     "detail": "第一艦隊旗艦に練度の高い(Lv.90以上～99以下)艦娘を配備して気持ちを整理せよ！",
-    "condition": "编组Lv.90～99舰船(旗舰), 限第1舰队",
     "reward_fuel": 88,
     "reward_bullet": 88,
     "reward_steel": 88,
     "reward_alum": 88,
-    "reward_other": "家具箱(大)x1",
+    "reward_other": [
+      {"name": "家具箱(大)", "amount": 1}
+    ],
     "prerequisite": [306],
     "requirements": {
       "category": "fleet",
@@ -4862,12 +5158,13 @@
     "type": 1,
     "name": "式の準備！(最終)",
     "detail": "練度の高い(Lv.90～99)第一艦隊旗艦で出撃し、オリョール海の暁に勝利を刻め！",
-    "condition": "2-3 BOSS战S胜利1次, 需要Lv.90～99舰船(旗舰), 限第1舰队",
     "reward_fuel": 0,
     "reward_bullet": 0,
     "reward_steel": 0,
     "reward_alum": 0,
-    "reward_other": "書類一式&指輪x1",
+    "reward_other": [
+      {"name": "書類一式&指輪", "amount": 1}
+    ],
     "prerequisite": [134],
     "requirements": {
       "category": "sortie",
@@ -4888,12 +5185,13 @@
     "type": 1,
     "name": "新たなる旅立ち！",
     "detail": "第一艦隊旗艦に強い絆を結んだLv.100以上の艦娘を配備した6隻の艦隊を編成せよ！",
-    "condition": "编组Lv.100以上舰船(旗舰)+其他舰船5只, 限第1舰队",
     "reward_fuel": 200,
     "reward_bullet": 200,
     "reward_steel": 200,
     "reward_alum": 200,
-    "reward_other": "応急修理要員x1",
+    "reward_other": [
+      {"name": "応急修理要員", "amount": 1}
+    ],
     "prerequisite": [245],
     "requirements": {
       "category": "fleet",
@@ -4911,12 +5209,13 @@
     "type": 1,
     "name": "二人でする初めての任務！",
     "detail": "強い絆を結んだ艦娘を旗艦とした第一艦隊でリランカ島へ出撃、敵中枢を撃滅せよ！",
-    "condition": "4-3 BOSS战S胜利1次, 需要Lv.100及以上舰船(旗舰), 限第1舰队",
     "reward_fuel": 300,
     "reward_bullet": 300,
     "reward_steel": 300,
     "reward_alum": 300,
-    "reward_other": "家具「煎餅布団」x1",
+    "reward_other": [
+      {"name": "煎餅布団", "category": "家具", "amount": 1}
+    ],
     "prerequisite": [135],
     "requirements": {
       "category": "sortie",
