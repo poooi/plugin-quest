@@ -1,3 +1,81 @@
 {
+  "艦": "艦",
+  "他の艦": "他の艦",
+  "潜水母艦": "潜水母艦(大鲸)",
+
+  "敵補給艦": "補給艦",
+  "敵潜水艦": "潜水艦",
+  "敵空母": "空母",
+  "敵軽母": "軽母",
+
+  "result_S": "S勝利",
+  "result_A": "A勝利以上",
+  "result_B": "B勝利以上",
+  "result_C": "C敗北以上",
+
+  "format_group": "%(lv)s%(ship)s%(select)s%(flagship)s%(amount)s%(note)s",
+  "format_groups_delim": "+",
+  "format_group_lv": "Lv.%sの",
+  "format_group_lvmore": "Lv.%s以上の",
+  "format_group_amount": "%s隻",
+  "format_group_amountonly": "仅%s隻",
+  "format_group_amountmore": "%s隻以上",
+  "format_group_select": "の中から%s隻",
+  "format_group_note": "(%s)",
+  "format_group_flagship": "(旗艦)",
+
+  "format_fleet": "%(fleet)s%(groups)sによる艦隊を編成%(disallowed)s",
+  "format_fleet_fleetid": "第%s艦隊に",
+  "format_fleet_disallowed": "(%sは不可)",
+
+
+  "format_sortie": "%(fleet)s%(groups)s%(map)s%(times)s%(result)s%(disallowed)s",
+  "format_sortie_fleet": "第%s艦隊を",
+  "format_sortie_groups": "%sで",
+  "format_sortie_map": "%(map)s%(boss)sに",
+  "format_sortie_boss": "ボス戦",
+  "format_sortie_times": "%s回",
+  "format_sortie_result": "%s",
+  "format_sortie_!result": "出撃",
+  "format_sortie_disallowed": "(%sは不可)",
+
+  "format_sink": "%(ship)s%(amount)sを撃沈",
+  "format_sink_ship": "%s",
+  "format_sink_amount": "%s隻",
+
+  "format_a_gou": "S勝利6回、ボス戦勝利12回、ボス到達24回、出撃36回",
+
+  "format_expedition": "%s成功",
+  "format_expedition_object": "%(name)sを%(times)s回",
+  "format_expedition_any": "遠征",
+  "format_expedition_id": "遠征%s",
+  "format_expedition_delim": "・",
+
+  "format_simple_equipment": "装備アイテムを%s回開発(失敗も可)",
+  "format_simple_ship": "艦%s隻を建造",
+  "format_simple_scrapequipment": "装備%s%%(batch)s",
+  "format_simple_scrapequipment_batch": "箇を廃棄(まとめて複数廃棄しても可)",
+  "format_simple_scrapequipment_!batch": "回廃棄",
+  "format_simple_scrapship": "艦%s隻を解体",
+  "format_simple_modernization": "近代化改修を%s回成功",
+  "format_simple_improvement": "改修工廠%s回実施(失敗でも可)",
+  "format_simple_resupply": "補給%s回",
+  "format_simple_repair": "入渠%s回",
+  "format_simple_battle": "戦闘%s回",
+
+  "format_excercise": "%(daily)s%(times)s回演習%(victory)s",
+  "format_excercise_victory": "で勝利",
+  "format_excercise_daily": "本日中に",
+
+  "format_modelconversion": "%(secretary_equip)s%(scraps)s廃棄%(note)s",
+  "format_modelconversion_equip": "ロックを解除した%(fullyskilled)s%(equipment)s搭載%(secretary)sを秘書艦にして、",
+  "format_modelconversion_noequip": "%(secretary)sを秘書艦にして",
+  "format_modelconversion_secretarydefault": "空母",
+  "format_modelconversion_scrap": "%(name)sを%(amount)sつ",
+  "format_modelconversion_scrapdelim": "・",
+  "format_modelconversion_fullyskilled": "練度max",
+  "format_modelconversion_useskilledcrew": "(熟練搭乗員がいないと達成不可)",
+  
+  "":""
 
 }

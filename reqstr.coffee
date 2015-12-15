@@ -6,15 +6,13 @@ _.mixin require 'underscore.inflection'
 
 conditions = require './assets/quest.json'
 
-# zh-CN
-#__ = require './assets/etc-zh_CN.json'
-# en-US
-#__ = Object.assign require('./assets/etc-en_US.json'), require('../fetchList/en-US.json'), require('../fetchList/item-en-US.json')
-# ja-JP
-__ = ''
+# Translate: Returns s if not exist. Used for ship/item names
+__ = null
 
-setLanguage = (language) ->
-  __ = require path.join(__dirname, 'assets', "etc-#{language}.json")
+# Translate: Returns null if not exist. Used for format controller
+_$ = (s) ->
+  tr = __(s)
+  if tr == s then null else tr
 
 # Create a function, that exactly runs as f, but allows the elements in the
 # first argument passed to f (which is an object) accessed by @arg_name
@@ -32,28 +30,24 @@ extract_first_arg = (f) ->
 MAX_SHIP_AMOUNT = 6
 MAX_SHIP_LV = 200       # Doesn't matter, usually we use 999. See usage below
 
-# translate
-_$ = (s) ->
-  __[s] or s
-
 reqstr_pluralize = (str, amount)->
-  return str if !__['option_pluralize'] or !amount
+  return str if !_$('option_pluralize') or !amount
   _.pluralize str, amount
 
 reqstr_frequency = (times) ->
-  return times if !__['option_frequency']
+  return times if !_$('option_frequency')
   switch times
     when 1 then 'once'
     when 2 then 'twice'
     else "#{times} times"
 
 reqstr_ordinalize = (num) ->
-  return num if !__['option_ordinalize']
+  return num if !_$('option_ordinalize')
   _.ordinalize num
 
 reqstr_ship = (ship, amount) ->
   if typeof ship == "string"
-    str_one = _$ ship
+    str_one = __ ship
   else if Array.isArray ship
     str_one = (reqstr_ship(_s) for _s in ship).join '/'
   amount = if Array.isArray amount then amount[amount.length-1] else amount
@@ -78,32 +72,32 @@ reqstr_group = extract_first_arg (group) ->
   if @amount
     if Array.isArray @amount
       if @amount[0] == @amount[1]
-        str_amount = sprintf __['format_group_amountonly'], "#{@amount[0]}"
+        str_amount = sprintf _$('format_group_amountonly'), "#{@amount[0]}"
       else if @amount[1] >= MAX_SHIP_AMOUNT
-        str_amount = sprintf __['format_group_amountmore'], "#{@amount[0]}"
+        str_amount = sprintf _$('format_group_amountmore'), "#{@amount[0]}"
       else
-        str_amount = sprintf __['format_group_amount'], "#{@amount[0]}~#{@amount[1]}"
+        str_amount = sprintf _$('format_group_amount'), "#{@amount[0]}~#{@amount[1]}"
     else
-      str_amount = sprintf __['format_group_amount'], "#{@amount}"
+      str_amount = sprintf _$('format_group_amount'), "#{@amount}"
   else
     str_amount = ''
 
   if @lv
     if Array.isArray @lv
       if @lv[1] >= MAX_SHIP_LV
-        str_lv = sprintf __['format_group_lvmore'], "#{@lv[0]}"
+        str_lv = sprintf _$('format_group_lvmore'), "#{@lv[0]}"
       else
-        str_lv = sprintf __['format_group_lv'], "#{@lv[0]}~#{@lv[1]}"
+        str_lv = sprintf _$('format_group_lv'), "#{@lv[0]}~#{@lv[1]}"
     else
-      str_lv = sprintf __['format_group_lv'], "#{@lv}"
+      str_lv = sprintf _$('format_group_lv'), "#{@lv}"
   else
     str_lv = ''
 
-  str_select = if @select then sprintf __['format_group_select'], @select else ''
+  str_select = if @select then sprintf _$('format_group_select'), @select else ''
   str_ship = reqstr_ship @ship, @amount
-  str_flagship = if @flagship then __['format_group_flagship'] else ''
-  str_note = if @note then sprintf __['format_group_note'], _$ @note else ''
-  sprintf __['format_group'],
+  str_flagship = if @flagship then _$('format_group_flagship') else ''
+  str_note = if @note then sprintf _$('format_group_note'), _$ @note else ''
+  sprintf _$('format_group'),
     select: str_select,
     ship: str_ship,
     amount: str_amount,
@@ -113,7 +107,7 @@ reqstr_group = extract_first_arg (group) ->
 
 reqstr_groups = (groups) ->
   delim_join (reqstr_group(group) for group in groups),
-      __['format_groups_delim'], __['format_groups_delim_last']
+      _$('format_groups_delim'), _$('format_groups_delim_last')
 
 reqstr_categories = []
 
@@ -127,9 +121,9 @@ reqstr_categories['fleet'] = extract_first_arg (detail) ->
   # }
 
   str_groups = reqstr_groups @groups
-  str_disallowed = if @disallowed then sprintf __['format_fleet_disallowed'], reqstr_ship @disallowed, 2 else ''
-  str_fleet = if @fleetid then sprintf __['format_fleet_fleetid'], reqstr_ordinalize @fleetid else ''
-  sprintf __['format_fleet'],
+  str_disallowed = if @disallowed then sprintf _$('format_fleet_disallowed'), reqstr_ship @disallowed, 2 else ''
+  str_fleet = if @fleetid then sprintf _$('format_fleet_fleetid'), reqstr_ordinalize @fleetid else ''
+  sprintf _$('format_fleet'),
     groups: str_groups,
     disallowed: str_disallowed,
     fleet: str_fleet
@@ -148,19 +142,19 @@ reqstr_categories['sortie'] = extract_first_arg (detail) ->
   # }
 
   str_boss = if @boss
-      __['format_sortie_boss'] || ''
+      _$('format_sortie_boss') || ''
     else
-      __['format_sortie_!boss'] || ''
-  str_map = if @map then sprintf __['format_sortie_map'], {map: @map, boss: str_boss} else ''
+      _$('format_sortie_!boss') || ''
+  str_map = if @map then sprintf _$('format_sortie_map'), {map: @map, boss: str_boss} else ''
   str_result = if @result
-      sprintf __['format_sortie_result'], __['result_'+@result]
+      sprintf _$('format_sortie_result'), _$('result_'+@result)
     else
-      __['format_sortie_!result'] || ''
-  str_times = sprintf __['format_sortie_times'], reqstr_frequency @times
-  str_groups = if @groups then sprintf __['format_sortie_groups'], reqstr_groups @groups else ''
-  str_fleet = if @fleetid then sprintf __['format_sortie_fleet'], reqstr_ordinalize @fleetid else ''
-  str_disallowed = if @disallowed then sprintf __['format_sortie_disallowed'], reqstr_ship @disallowed, 2 else ''
-  sprintf __['format_sortie'],
+      _$('format_sortie_!result') || ''
+  str_times = sprintf _$('format_sortie_times'), reqstr_frequency @times
+  str_groups = if @groups then sprintf _$('format_sortie_groups'), reqstr_groups @groups else ''
+  str_fleet = if @fleetid then sprintf _$('format_sortie_fleet'), reqstr_ordinalize @fleetid else ''
+  str_disallowed = if @disallowed then sprintf _$('format_sortie_disallowed'), reqstr_ship @disallowed, 2 else ''
+  sprintf _$('format_sortie'),
     map: str_map,
     boss: str_boss,
     result: str_result,
@@ -177,9 +171,9 @@ reqstr_categories['sink'] = extract_first_arg (detail) ->
   #   "ship": (ship),
   # }
 
-  str_amount = sprintf __['format_sink_amount'], @amount
-  str_ship = sprintf __['format_sink_ship'], reqstr_ship(@ship, @amount)
-  sprintf __['format_sink'],
+  str_amount = sprintf _$('format_sink_amount'), @amount
+  str_ship = sprintf _$('format_sink_ship'), reqstr_ship(@ship, @amount)
+  sprintf _$('format_sink'),
     amount: str_amount,
     ship: str_ship
 
@@ -191,20 +185,20 @@ reqstr_categories['expedition'] = extract_first_arg (detail) ->
   #   "times": 2,
   # }
 
-  sprintf __["format_expedition"],
+  sprintf _$("format_expedition"),
   (for object in detail['objects']
     str_name = if object.id
         str_id = if Array.isArray object.id then object.id.join '/' else object.id
-        sprintf __['format_expedition_id'], str_id
+        sprintf _$('format_expedition_id'), str_id
       else
-        __['format_expedition_any']
+        _$('format_expedition_any')
     str_times = reqstr_frequency object.times
-    sprintf __['format_expedition_object'],
+    sprintf _$('format_expedition_object'),
       name: str_name,
-      times: str_times).join __["format_expedition_delim"]
+      times: str_times).join _$("format_expedition_delim")
 
 reqstr_categories['a_gou'] = ->
-  __['format_a_gou']
+  _$('format_a_gou')
 
 reqstr_categories['simple'] = extract_first_arg (detail) ->
   # FORMAT:
@@ -237,7 +231,7 @@ reqstr_categories['simple'] = extract_first_arg (detail) ->
 
   subcat = @subcategory
   basename = "format_simple_#{@subcategory}"
-  quantifier = __["#{basename}_quantifier"] || ''
+  quantifier = _$("#{basename}_quantifier") || ''
   if !quantifier
     str_times = @times
   else if quantifier == 'time'
@@ -247,12 +241,12 @@ reqstr_categories['simple'] = extract_first_arg (detail) ->
   extras = {}
   for extra_name, extra_value of detail
     extra_str = if extra_value
-        __["#{basename}_#{extra_name}"] || ''
+        _$("#{basename}_#{extra_name}") || ''
       else
-        __["#{basename}_!#{extra_name}"] || ''
+        _$("#{basename}_!#{extra_name}") || ''
     extras[extra_name] = extra_str
 
-  sprintf (sprintf __[basename], str_times), extras
+  sprintf (sprintf _$(basename), str_times), extras
 
 reqstr_categories['excercise'] = extract_first_arg (detail) ->
   # FORMAT:
@@ -262,14 +256,14 @@ reqstr_categories['excercise'] = extract_first_arg (detail) ->
   #   <"victory": true,>
   #   <"daily": true,>
   # }
-  quantifier = __['format_excercise_quantifier'] || ''
+  quantifier = _$('format_excercise_quantifier') || ''
   if quantifier
     str_times = @times + ' ' + reqstr_pluralize quantifier, @times
   else
     str_times = @times
-  str_victory = if @victory then __['format_excercise_victory'] else ''
-  str_daily = if @daily then __['format_excercise_daily'] else ''
-  sprintf __['format_excercise'],
+  str_victory = if @victory then _$('format_excercise_victory') else ''
+  str_daily = if @daily then _$('format_excercise_daily') else ''
+  sprintf _$('format_excercise'),
     times: str_times,
     victory: str_victory,
     daily: str_daily
@@ -286,22 +280,22 @@ reqstr_categories['modelconversion'] = extract_first_arg (detail) ->
   #   <"secretary": (ship),>    # Default: "a carrier"
   #   <"use_skilled_crew": true>
   # }
-  str_secretary = if @secretary then reqstr_ship @secretary else __['format_modelconversion_secretarydefault']
+  str_secretary = if @secretary then reqstr_ship @secretary else _$('format_modelconversion_secretarydefault')
   str_secretary_equip = if @equipment
-      str_fullyskilled = if @fullyskilled then __['format_modelconversion_fullyskilled'] else ''
-      sprintf __['format_modelconversion_equip'],
+      str_fullyskilled = if @fullyskilled then _$('format_modelconversion_fullyskilled') else ''
+      sprintf _$('format_modelconversion_equip'),
         secretary: str_secretary,
-        equipment: _$(@equipment),
+        equipment: __(@equipment),
         fullyskilled: str_fullyskilled
     else
-      sprintf __['format_modelconversion_noequip'],
+      sprintf _$('format_modelconversion_noequip'),
         secretary: str_secretary,
   str_scraps = (for scrap in @scraps
-    sprintf __['format_modelconversion_scrap'],
-      name: _$(scrap['name']),
-      amount: scrap['amount']).join __['format_modelconversion_scrapdelim']
-  str_note = if @use_skilled_crew then __['format_modelconversion_useskilledcrew'] else ''
-  sprintf __['format_modelconversion'],
+    sprintf _$('format_modelconversion_scrap'),
+      name: __(scrap['name']),
+      amount: scrap['amount']).join _$('format_modelconversion_scrapdelim')
+  str_note = if @use_skilled_crew then _$('format_modelconversion_useskilledcrew') else ''
+  sprintf _$('format_modelconversion'),
     secretary_equip: str_secretary_equip,
     scraps: str_scraps,
     note: str_note
@@ -314,7 +308,6 @@ reqstr = (requirements) ->
   catch e
     console.log "Invalid requirements: #{requirements} reason: #{e} #{e.stack}"
 
-module.exports = {
-  reqstr: reqstr,
-  setLanguage: setLanguage
-}
+module.exports = (i18n_module) ->
+  __ = i18n_module
+  reqstr

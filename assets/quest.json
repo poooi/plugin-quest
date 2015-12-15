@@ -4889,7 +4889,7 @@
     "reward_steel": 0,
     "reward_bauxite": 50,
     "reward_other": [
-      {"name": "零式艦戦52型丙(付岩井小隊)", "category": "装備", "amount": 1}
+      {"name": "零戦52型丙(付岩井小隊)", "category": "装備", "amount": 1}
     ],
     "prerequisite": [293, 627],
     "requirements": {
@@ -4914,7 +4914,7 @@
     "reward_steel": 0,
     "reward_bauxite": 50,
     "reward_other": [
-      {"name": "零式艦戦62型(爆戦／岩井隊)", "category": "装備", "amount": 1}
+      {"name": "零式艦戦62型(爆戦/岩井隊)", "category": "装備", "amount": 1}
     ],
     "prerequisite": [294, 629],
     "requirements": {
@@ -4939,7 +4939,7 @@
     "reward_steel": 0,
     "reward_bauxite": 50,
     "reward_other": [
-      {"name": "零式艦戦21型(付岩本小隊)", "category": "装備", "amount": 1}
+      {"name": "零戦21型(付岩本小隊)", "category": "装備", "amount": 1}
     ],
     "prerequisite": [626, 166],
     "requirements": {
@@ -4964,7 +4964,7 @@
     "reward_steel": 0,
     "reward_bauxite": 50,
     "reward_other": [
-      {"name": "零式艦戦52型甲(付岩本小隊)", "category": "装備", "amount": 1}
+      {"name": "零戦52型甲(付岩本小隊)", "category": "装備", "amount": 1}
     ],
     "prerequisite": [625, 630],
     "requirements": {

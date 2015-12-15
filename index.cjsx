@@ -1,8 +1,10 @@
 {join} = require 'path-extra'
 {_, $, $$, React, ReactBootstrap, FontAwesome, layout} = window
 {Grid, Row, Col, Input, Panel, OverlayTrigger, Tooltip} = ReactBootstrap
-{reqstr, setLanguage} = require('./reqstr')
 i18n = require './node_modules/i18n'
+_ = require 'underscore'
+_.mixin require 'underscore.inflection'
+
 # i18n configure
 i18n.configure({
     locales: ['en-US', 'ja-JP', 'zh-CN', 'zh-TW'],
@@ -13,22 +15,32 @@ i18n.configure({
     extension: '.json'
 })
 i18n.setLocale window.language
-{__} = i18n
-setLanguage window.language
+
+__ = (s) ->
+  if typeof window.translate == 'undefined'
+    i18n.__ s
+  else
+    tr = i18n.__ s
+    if tr == s 
+      window.translate s
+    else
+      tr
+  
+reqstr = require('./reqstr')(__)
 
 filterNames = [
-  __('Quest Types'),
-  __('Composition Quests'),
-  __('Sortie Quests'),
-  __('Exercise Quests'),
-  __('Expedition Quests'),
-  __('Supply/Docking Quests'),
-  __('Arsenal Quests'),
-  __('Modernization Quests'),
-  __('Marriage Quests'),
-  __('Daily Sortie Quests'),
-  __('Weekly Sortie Quests'),
-  __('Monthly Sortie Quests')
+  __('Quest Type'),
+  __('Composition Quest'),
+  __('Sortie Quest'),
+  __('Exercise Quest'),
+  __('Expedition Quest'),
+  __('Supply/Docking Quest'),
+  __('Arsenal Quest'),
+  __('Modernization Quest'),
+  __('Marriage Quest'),
+  __('Daily Quest'),
+  __('Weekly Quest'),
+  __('Monthly Quest')
 ]
 categoryNames = [
   '',
@@ -42,12 +54,12 @@ categoryNames = [
 ]
 typeNames = [
   '',
-  __('One-time Quests'),
-  __('Daily Quests'),
-  __('Weekly Quests'),
+  __('One-time Quest'),
+  __('Daily Quest'),
+  __('Weekly Quest'),
   __('-3rd/-7th/-0th'),
   __('-2nd/-8th'),
-  __('Monthly Quests')
+  __('Monthly Quest')
 ]
 typeFreqs = [0, 1, 5, 3, 4, 4, 2]
 
@@ -184,14 +196,15 @@ module.exports =
           <Row>
             <Col xs=12>
               <Panel header={__ 'Select Quest'} bsStyle='primary'>
-                <Input type='select' label={__ 'Quest Types'} value={@state.quest_filter} onChange={@handleFilterSelect}>
+                <Input type='select' label={__ 'Quest Type'} value={@state.quest_filter} onChange={@handleFilterSelect}>
                   {
                     for filter, idx in filterNames
+                      filter = _.pluralize filter if __("option_pluralize") == true and idx != 0
                       <option key={idx} value={idx}>{filter}</option>
                   }
                 </Input>
-                <Input type='select' label={__ 'Quest Names'} value={@state.quest_id} onChange={@handleQuestSelect}>
-                  <option key={0}>{__ 'Quest Names'}</option>
+                <Input type='select' label={__ 'Quest Name'} value={@state.quest_id} onChange={@handleQuestSelect}>
+                  <option key={0}>{__ 'Quest Name'}</option>
                   <optgroup label={__ 'Operable'}>
                   {
                     for quest in @state.quests_filtered when @state.quests_status[quest.game_id] is 2
@@ -239,19 +252,19 @@ module.exports =
                           <li key='reward_bullet'>{__ 'Ammo'} {@state.quest_selected.reward_ammo}</li>
                           <li key='reward_steel'>{__ 'Steel'} {@state.quest_selected.reward_steel}</li>
                           <li key='reward_alum'>{__ 'Bauxite'} {@state.quest_selected.reward_bauxite}</li>
-                          <li key='reward_other'>
-                            {
-                              for reward in @state.quest_selected.reward_other
-                                name = reward.name
-                                if reward.category? then category = reward.category else category = ''
-                                if reward.amount?
-                                  amount = 'X ' + reward.amount
-                                  name = '「' + name + '」'
-                                else
-                                  amount = ''
-                                <p>{category}{name}{amount}</p>
-                            }
-                          </li>
+                          {
+                            for reward, i in @state.quest_selected.reward_other
+                              name = __(reward.name)
+                              category = __(reward.category || '')
+                              if reward.amount?
+                                amount = '×' + reward.amount
+                                name = __('「') + name + __('」')
+                              else
+                                amount = ''
+                              <li key={"reward_other_#{i}"}>
+                                {category}{name}{amount}
+                              </li>
+                          }
                         </ul>
                     }
                     </Panel>
@@ -259,7 +272,7 @@ module.exports =
                     {
                       if @state.quest_selected?
                         <div>
-                          <div>{__ 'Requirements'}:</div>
+                          <div>{__ 'Requirement'}:</div>
                           <div className='reqDetail'>
                             <OverlayTrigger placement='left' overlay={<Tooltip id='questReqInfo'>{@state.quest_selected.detail}</Tooltip>}>
                               <div className='tooltipTrigger'>{@state.quest_selected.condition}</div>
