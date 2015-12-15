@@ -1,5 +1,4 @@
 fs = require 'fs-extra'
-fs = require 'fs-extra'
 sprintf = require("sprintf-js").sprintf
 _ = require 'underscore'
 _.mixin require 'underscore.inflection'
@@ -13,9 +12,9 @@ conditions = require './assets/quest.json'
 # ja-JP
 __ = require('./assets/etc-ja_JP.json')
 
-# Create a function, that exactly runs as f, but allows the elements in the 
+# Create a function, that exactly runs as f, but allows the elements in the
 # first argument passed to f (which is an object) accessed by @arg_name
-# Example: 
+# Example:
 #   f = extract_first_arg (a, b) -> console.log @foo + b
 #   f({foo: "bar"}, "baz")     # prints "barbaz"
 extract_first_arg = (f) ->
@@ -97,10 +96,10 @@ reqstr_group = extract_first_arg (group) ->
     str_lv = ''
 
   str_select = if @select then sprintf __['format_group_select'], @select else ''
-  str_ship = reqstr_ship @ship, @amount 
+  str_ship = reqstr_ship @ship, @amount
   str_flagship = if @flagship then __['format_group_flagship'] else ''
   str_note = if @note then sprintf __['format_group_note'], _$ @note else ''
-  sprintf __['format_group'], 
+  sprintf __['format_group'],
     select: str_select,
     ship: str_ship,
     amount: str_amount,
@@ -109,7 +108,7 @@ reqstr_group = extract_first_arg (group) ->
     note: str_note
 
 reqstr_groups = (groups) ->
-  delim_join (reqstr_group(group) for group in groups), 
+  delim_join (reqstr_group(group) for group in groups),
       __['format_groups_delim'], __['format_groups_delim_last']
 
 reqstr_categories = []
@@ -126,7 +125,7 @@ reqstr_categories['fleet'] = extract_first_arg (detail) ->
   str_groups = reqstr_groups @groups
   str_disallowed = if @disallowed then sprintf __['format_fleet_disallowed'], reqstr_ship @disallowed, 2 else ''
   str_fleet = if @fleetid then sprintf __['format_fleet_fleetid'], reqstr_ordinalize @fleetid else ''
-  sprintf __['format_fleet'], 
+  sprintf __['format_fleet'],
     groups: str_groups,
     disallowed: str_disallowed,
     fleet: str_fleet
@@ -149,8 +148,8 @@ reqstr_categories['sortie'] = extract_first_arg (detail) ->
     else
       __['format_sortie_!boss'] || ''
   str_map = if @map then sprintf __['format_sortie_map'], {map: @map, boss: str_boss} else ''
-  str_result = if @result 
-      sprintf __['format_sortie_result'], __['result_'+@result] 
+  str_result = if @result
+      sprintf __['format_sortie_result'], __['result_'+@result]
     else
       __['format_sortie_!result'] || ''
   str_times = sprintf __['format_sortie_times'], reqstr_frequency @times
@@ -187,13 +186,13 @@ reqstr_categories['expedition'] = extract_first_arg (detail) ->
   #   <"id": 39 | [37, 38],>
   #   "times": 2,
   # }
-  
-  sprintf __["format_expedition"], 
+
+  sprintf __["format_expedition"],
   (for object in detail['objects']
-    str_name = if object.id 
+    str_name = if object.id
         str_id = if Array.isArray object.id then object.id.join '/' else object.id
         sprintf __['format_expedition_id'], str_id
-      else 
+      else
         __['format_expedition_any']
     str_times = reqstr_frequency object.times
     sprintf __['format_expedition_object'],
@@ -212,13 +211,13 @@ reqstr_categories['simple'] = extract_first_arg (detail) ->
   #   "times": 2,
   #   <other subcategory-specified terms>
   # }
-  # DEFINITION FORMAT: 
+  # DEFINITION FORMAT:
   #   format_simple_SUBCATEGORYNAME = "......%s.......%%(FOO)s.....%%(BAR)s"
   #     %s : "times"
   #     %%(FOO)s : Subcategory-specifed terms, must be double-"%"ed
-  #   format_simple_SUBCATEGORYNAME_quantifier 
+  #   format_simple_SUBCATEGORYNAME_quantifier
   #     [Optional] Used to be pluralized and inserted to %s
-  #   format_simple_SUBCATEGORYNAME_FOO 
+  #   format_simple_SUBCATEGORYNAME_FOO
   #     [Optional] Used in %(FOO)s when FOO=true
   #   format_simple_SUBCATEGORYNAME_!FOO
   #     [Optional] Used in %(FOO)s when FOO=false
@@ -243,10 +242,10 @@ reqstr_categories['simple'] = extract_first_arg (detail) ->
     str_times = @times + ' ' + reqstr_pluralize quantifier, @times
   extras = {}
   for extra_name, extra_value of detail
-    extra_str = if extra_value 
-        __["#{basename}_#{extra_name}"] || '' 
-      else 
-        __["#{basename}_!#{extra_name}"] || '' 
+    extra_str = if extra_value
+        __["#{basename}_#{extra_name}"] || ''
+      else
+        __["#{basename}_!#{extra_name}"] || ''
     extras[extra_name] = extra_str
 
   sprintf (sprintf __[basename], str_times), extras
@@ -266,7 +265,7 @@ reqstr_categories['excercise'] = extract_first_arg (detail) ->
     str_times = @times
   str_victory = if @victory then __['format_excercise_victory'] else ''
   str_daily = if @daily then __['format_excercise_daily'] else ''
-  sprintf __['format_excercise'], 
+  sprintf __['format_excercise'],
     times: str_times,
     victory: str_victory,
     daily: str_daily
@@ -286,37 +285,27 @@ reqstr_categories['modelconversion'] = extract_first_arg (detail) ->
   str_secretary = if @secretary then reqstr_ship @secretary else __['format_modelconversion_secretarydefault']
   str_secretary_equip = if @equipment
       str_fullyskilled = if @fullyskilled then __['format_modelconversion_fullyskilled'] else ''
-      sprintf __['format_modelconversion_equip'], 
+      sprintf __['format_modelconversion_equip'],
         secretary: str_secretary,
         equipment: _$(@equipment),
         fullyskilled: str_fullyskilled
-    else 
-      sprintf __['format_modelconversion_noequip'], 
+    else
+      sprintf __['format_modelconversion_noequip'],
         secretary: str_secretary,
   str_scraps = (for scrap in @scraps
     sprintf __['format_modelconversion_scrap'],
       name: _$(scrap['name']),
       amount: scrap['amount']).join __['format_modelconversion_scrapdelim']
   str_note = if @use_skilled_crew then __['format_modelconversion_useskilledcrew'] else ''
-  sprintf __['format_modelconversion'], 
+  sprintf __['format_modelconversion'],
     secretary_equip: str_secretary_equip,
     scraps: str_scraps,
     note: str_note
 
-reqstr = (requirements) ->
+module.exports = reqstr = (requirements) ->
   try
     category = requirements['category']
     fn = reqstr_categories[category]
-    console.log fn(requirements)
+    fn(requirements)
   catch e
     console.log "Invalid requirements: #{requirements} reason: #{e} #{e.stack}"
-  
-test_reqstr = ->
-  for quest in conditions
-    if quest['requirements']
-      reqstr quest['requirements']
-      #console.log quest['condition']
-    else
-      console.log "***"+quest['condition']
-
-test_reqstr()

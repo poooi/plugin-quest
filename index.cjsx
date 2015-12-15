@@ -1,7 +1,7 @@
 {join} = require 'path-extra'
 {_, $, $$, React, ReactBootstrap, FontAwesome, layout} = window
 {Grid, Row, Col, Input, Panel, OverlayTrigger, Tooltip} = ReactBootstrap
-
+reqstr = require('./reqstr')
 i18n = require './node_modules/i18n'
 # i18n configure
 i18n.configure({
@@ -54,16 +54,18 @@ module.exports =
   name: 'quest-info'
   priority: 2
   displayName: <span><FontAwesome key={0} name='indent' /> {__('Quest Information')}</span>
-  description: {__ 'Plugin Description'}
+  description: __ 'Plugin Description'
   author: '马里酱'
   link: 'https://github.com/malichan'
   version: '1.3.0'
   reactClass: React.createClass
     getInitialState: ->
       fs = require 'fs-extra'
-      json = fs.readJsonSync join(__dirname, 'assets', "#{window.language}.json")
+      json = fs.readJsonSync join(__dirname, 'assets', 'quest.json')
       quests = []
-      quests[quest.game_id] = quest for quest in json
+      for quest in json
+        quest.condition = reqstr quest['requirements']
+        quests[quest.game_id] = quest
       quests_status = []
       for quest in json
         quest.postquest = []
@@ -233,10 +235,22 @@ module.exports =
                       if @state.quest_selected?
                         <ul>
                           <li key='reward_fuel'>{__ 'Fuel'} {@state.quest_selected.reward_fuel}</li>
-                          <li key='reward_bullet'>{__ 'Ammo'} {@state.quest_selected.reward_bullet}</li>
+                          <li key='reward_bullet'>{__ 'Ammo'} {@state.quest_selected.reward_ammo}</li>
                           <li key='reward_steel'>{__ 'Steel'} {@state.quest_selected.reward_steel}</li>
-                          <li key='reward_alum'>{__ 'Bauxite'} {@state.quest_selected.reward_alum}</li>
-                          <li key='reward_other'>{@state.quest_selected.reward_other}</li>
+                          <li key='reward_alum'>{__ 'Bauxite'} {@state.quest_selected.reward_bauxite}</li>
+                          <li key='reward_other'>
+                            {
+                              for reward in @state.quest_selected.reward_other
+                                name = reward.name
+                                if reward.category? then category = reward.category else category = ''
+                                if reward.amount?
+                                  amount = 'X ' + reward.amount
+                                  name = '「' + name + '」'
+                                else
+                                  amount = ''
+                                <p>{category}{name}{amount}</p>
+                            }
+                          </li>
                         </ul>
                     }
                     </Panel>
