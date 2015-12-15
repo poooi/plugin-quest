@@ -1,7 +1,7 @@
 {join} = require 'path-extra'
 {_, $, $$, React, ReactBootstrap, FontAwesome, layout} = window
 {Grid, Row, Col, Input, Panel, OverlayTrigger, Tooltip} = ReactBootstrap
-reqstr = require('./reqstr')
+{reqstr, setLanguage} = require('./reqstr')
 i18n = require './node_modules/i18n'
 # i18n configure
 i18n.configure({
@@ -14,6 +14,7 @@ i18n.configure({
 })
 i18n.setLocale window.language
 {__} = i18n
+setLanguage window.language
 
 filterNames = [
   __('Quest Types'),
@@ -260,7 +261,7 @@ module.exports =
                         <div>
                           <div>{__ 'Requirements'}:</div>
                           <div className='reqDetail'>
-                            <OverlayTrigger placement='left' overlay={<Tooltip>{@state.quest_selected.detail}</Tooltip>}>
+                            <OverlayTrigger placement='left' overlay={<Tooltip id='questReqInfo'>{@state.quest_selected.detail}</Tooltip>}>
                               <div className='tooltipTrigger'>{@state.quest_selected.condition}</div>
                             </OverlayTrigger>
                           </div>
@@ -273,7 +274,7 @@ module.exports =
                               for qid in @state.quest_selected.prerequisite
                                 <div className='prereqName'>
                                   <OverlayTrigger placement='left' overlay={
-                                    <Tooltip>
+                                    <Tooltip id='preQuestInfo'>
                                       <strong>{@state.quests[qid].name}</strong><br />
                                       {categoryNames[@state.quests[qid].category]}-{typeNames[@state.quests[qid].type]}<br />
                                       {@state.quests[qid].condition}
@@ -295,7 +296,7 @@ module.exports =
                               for qid in @state.quest_selected.postquest
                                 <div className='prereqName'>
                                   <OverlayTrigger placement='left' overlay={
-                                    <Tooltip>
+                                    <Tooltip id='postQuestInfo'>
                                       <strong>{@state.quests[qid].name}</strong><br />
                                       {categoryNames[@state.quests[qid].category]}-{typeNames[@state.quests[qid].type]}<br />
                                       {@state.quests[qid].condition}

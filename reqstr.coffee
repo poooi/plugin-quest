@@ -1,5 +1,6 @@
 fs = require 'fs-extra'
 sprintf = require("sprintf-js").sprintf
+path = require 'path-extra'
 _ = require 'underscore'
 _.mixin require 'underscore.inflection'
 
@@ -10,7 +11,10 @@ conditions = require './assets/quest.json'
 # en-US
 #__ = Object.assign require('./assets/etc-en_US.json'), require('../fetchList/en-US.json'), require('../fetchList/item-en-US.json')
 # ja-JP
-__ = require('./assets/etc-ja_JP.json')
+__ = ''
+
+setLanguage = (language) ->
+  __ = require path.join(__dirname, 'assets', "etc-#{language}.json")
 
 # Create a function, that exactly runs as f, but allows the elements in the
 # first argument passed to f (which is an object) accessed by @arg_name
@@ -302,10 +306,15 @@ reqstr_categories['modelconversion'] = extract_first_arg (detail) ->
     scraps: str_scraps,
     note: str_note
 
-module.exports = reqstr = (requirements) ->
+reqstr = (requirements) ->
   try
     category = requirements['category']
     fn = reqstr_categories[category]
     fn(requirements)
   catch e
     console.log "Invalid requirements: #{requirements} reason: #{e} #{e.stack}"
+
+module.exports = {
+  reqstr: reqstr,
+  setLanguage: setLanguage
+}
