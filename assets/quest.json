@@ -1536,7 +1536,7 @@
     }
   },
   {
-    "game_id": "TODO",
+    "game_id": 168,
     "wiki_id": "A63",
     "category": 1,
     "type": 1,
@@ -1550,7 +1550,7 @@
       {"name": "開発資材", "amount": 2},
       {"name": "高速修復材", "amount": 2}
     ],
-    "prerequisite": ["TODO B52"],
+    "prerequisite": [289],
     "requirements": {
       "category": "fleet",
       "groups": [
@@ -1561,7 +1561,7 @@
     }
   },
   {
-    "game_id": "TODO",
+    "game_id": 169,
     "wiki_id": "A64",
     "category": 1,
     "type": 1,
@@ -1575,7 +1575,7 @@
       {"name": "開発資材", "amount": 2},
       {"name": "改修資材", "amount": 2}
     ],
-    "prerequisite": ["TODO B55 B50"],
+    "prerequisite": [287, 295],
     "requirements": {
       "category": "fleet",
       "groups": [
@@ -1599,7 +1599,7 @@
     "reward_other": [
       {"name": "高速修復材", "amount": 3},
     ],
-    "prerequisite": ["TODO B56"],
+    "prerequisite": [296],
     "requirements": {
       "category": "fleet",
       "groups": [
@@ -3123,7 +3123,7 @@
     },
   },
   {
-    "game_id": "TODO",
+    "game_id": 295,
     "wiki_id": "B55",
     "category": 2,
     "type": 1,
@@ -3137,7 +3137,7 @@
       {"name": "家具箱(大)", "amount": 1},
       {"name": "間宮", "category": "給糧艦", "amount": 1}
     ],
-    "prerequisite": ["TODO A63"],
+    "prerequisite": [168],
     "requirements": {
       "category": "sortie",
       "times": 1,
@@ -3153,7 +3153,7 @@
     },
   },
   {
-    "game_id": "TODO",
+    "game_id": 296,
     "wiki_id": "B56",
     "category": 2,
     "type": 1,
@@ -3167,7 +3167,7 @@
       {"name": "改修資材", "amount": 2},
       {"name": "特注家具職人", "amount": 1}
     ],
-    "prerequisite": ["TODO A64"],
+    "prerequisite": [169],
     "requirements": {
       "category": "sortie",
       "times": 1,
@@ -3196,7 +3196,7 @@
       {"name": "改修資材", "amount": 3},
       {"name": "プレゼント箱", "amount": 1}
     ],
-    "prerequisite": ["TODO A65 Bm05"],
+    "prerequisite": [265, "TODO A65"],
     "requirements": {
       "category": "sortie",
       "times": 1,

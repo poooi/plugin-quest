@@ -21,11 +21,11 @@ __ = (s) ->
     i18n.__ s
   else
     tr = i18n.__ s
-    if tr == s 
+    if tr == s
       window.translate s
     else
       tr
-  
+
 reqstr = require('./reqstr')(__)
 
 filterNames = [
@@ -70,7 +70,7 @@ module.exports =
   description: __ 'Plugin Description'
   author: '马里酱'
   link: 'https://github.com/malichan'
-  version: '1.3.0'
+  version: '2.0.0'
   reactClass: React.createClass
     getInitialState: ->
       fs = require 'fs-extra'
