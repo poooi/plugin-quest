@@ -1536,6 +1536,82 @@
     }
   },
   {
+    "game_id": "TODO",
+    "wiki_id": "A63",
+    "category": 1,
+    "type": 1,
+    "name": "「第十六戦隊(第二次)」を編成せよ！",
+    "detail": "「名取」を旗艦として「五十鈴」「鬼怒」を擁する、第十六戦隊(第二次)を編成せよ！",
+    "reward_fuel": 160,
+    "reward_ammo": 160,
+    "reward_steel": 160,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "高速修復材", "amount": 2}
+    ],
+    "prerequisite": ["TODO B52"],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "名取", "flagship": true},
+        {"ship": "五十鈴"},
+        {"ship": "鬼怒"}
+      ]
+    }
+  },
+  {
+    "game_id": "TODO",
+    "wiki_id": "A64",
+    "category": 1,
+    "type": 1,
+    "name": "「新編成航空戦隊」を編成せよ！",
+    "detail": "空母2隻＋(航空戦艦or航空巡洋艦)2隻＋駆逐艦2隻の新航空戦隊を編成せよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 200,
+    "reward_steel": 0,
+    "reward_bauxite": 200,
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "改修資材", "amount": 2}
+    ],
+    "prerequisite": ["TODO B55 B50"],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "空母", "amount": 2},
+        {"ship": ["航戦", "航巡"], "amount": 2},
+        {"ship": "駆逐", "amount": 2}
+      ]
+    }
+  },
+  {
+    "game_id": "TODO",
+    "wiki_id": "A65",
+    "category": 1,
+    "type": 1,
+    "name": "「精強な「水上反撃部隊」を再編成せよ！",
+    "detail": "駆逐艦「霞」旗艦、「足柄」「大淀」「朝霜」「清霜」他の水上反撃部隊を再編成せよ！",
+    "reward_fuel": 300,
+    "reward_ammo": 300,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "高速修復材", "amount": 3},
+    ],
+    "prerequisite": ["TODO B56"],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "霞", "flagship": true},
+        {"ship": "足柄"},
+        {"ship": "大淀"},
+        {"ship": "朝霜"},
+        {"ship": "清霜"}
+      ]
+    }
+  },
+  {
     "game_id": 202,
     "wiki_id": "B01",
     "category": 2,
@@ -2151,7 +2227,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "1-5", 
+      "map": "1-5",
       "boss": true,
       "result": "C",
       "groups": [
@@ -2181,7 +2257,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "5-2", 
+      "map": "5-2",
       "boss": true,
       "result": "S",
       "groups": [
@@ -2209,7 +2285,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "4-3", 
+      "map": "4-3",
       "boss": true,
       "result": "S",
       "groups": [
@@ -2236,7 +2312,7 @@
     "prerequisite": [248],
     "requirements": {
       "category": "sortie",
-      "map": "5-1", 
+      "map": "5-1",
       "boss": true,
       "result": "S",
       "times": 1,
@@ -2263,7 +2339,7 @@
     "prerequisite": [143],
     "requirements": {
       "category": "sortie",
-      "map": "5-2", 
+      "map": "5-2",
       "boss": true,
       "result": "S",
       "times": 1,
@@ -2291,7 +2367,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "2-1", 
+      "map": "2-1",
       "boss": true,
       "result": "S",
       "groups": [
@@ -2321,7 +2397,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "2-2", 
+      "map": "2-2",
       "boss": true,
       "result": "S",
       "groups": [
@@ -2349,7 +2425,7 @@
     "requirements": {
       "category": "sortie",
       "times": 2,
-      "map": "4-2", 
+      "map": "4-2",
       "boss": true,
       "result": "S",
       "groups": [
@@ -2379,7 +2455,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "3-5", 
+      "map": "3-5",
       "boss": true,
       "result": "S",
       "groups": [
@@ -2408,7 +2484,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "5-1", 
+      "map": "5-1",
       "boss": true,
       "result": "S",
       "groups": [
@@ -2439,7 +2515,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "2-5", 
+      "map": "2-5",
       "boss": true,
       "result": "S",
       "groups": [
@@ -2468,7 +2544,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "2-3", 
+      "map": "2-3",
       "boss": true,
       "result": "B",
       "groups": [
@@ -2498,7 +2574,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "1-5", 
+      "map": "1-5",
       "boss": true,
       "result": "C",
       "groups": [
@@ -2528,7 +2604,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "3-1", 
+      "map": "3-1",
       "boss": true,
       "result": "S",
       "groups": [
@@ -2558,7 +2634,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "2-2", 
+      "map": "2-2",
       "boss": true,
       "result": "S",
       "groups": [
@@ -2590,7 +2666,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "1-4", 
+      "map": "1-4",
       "boss": true,
       "result": "S",
       "groups": [
@@ -2620,7 +2696,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "2-3", 
+      "map": "2-3",
       "boss": true,
       "result": "S",
       "groups": [
@@ -2648,7 +2724,7 @@
     "prerequisite": [307],
     "requirements": {
       "category": "sortie",
-      "map": "5-1", 
+      "map": "5-1",
       "boss": true,
       "result": "S",
       "times": 1,
@@ -2676,7 +2752,7 @@
     "prerequisite": [120],
     "requirements": {
       "category": "sortie",
-      "map": "1-5", 
+      "map": "1-5",
       "boss": true,
       "result": "C",
       "times": 1,
@@ -2707,7 +2783,7 @@
     "prerequisite": [153],
     "requirements": {
       "category": "sortie",
-      "map": "2-3", 
+      "map": "2-3",
       "boss": true,
       "result": "S",
       "times": 1,
@@ -2735,7 +2811,7 @@
     "prerequisite": [154, 243],
     "requirements": {
       "category": "sortie",
-      "map": "5-1", 
+      "map": "5-1",
       "boss": true,
       "result": "S",
       "times": 1,
@@ -2767,7 +2843,7 @@
     "prerequisite": [155, 274],
     "requirements": {
       "category": "sortie",
-      "map": "1-5", 
+      "map": "1-5",
       "boss": true,
       "result": "A",
       "times": 1,
@@ -2798,7 +2874,7 @@
     "prerequisite": [156],
     "requirements": {
       "category": "sortie",
-      "map": "3-2", 
+      "map": "3-2",
       "boss": true,
       "result": "B",
       "times": 1,
@@ -2830,7 +2906,7 @@
     "prerequisite": [157],
     "requirements": {
       "category": "sortie",
-      "map": "3-2", 
+      "map": "3-2",
       "boss": true,
       "result": "S",
       "times": 1,
@@ -2861,7 +2937,7 @@
     "prerequisite": [201],
     "requirements": {
       "category": "sortie",
-      "map": "1-5", 
+      "map": "1-5",
       "boss": true,
       "result": "A",
       "times": 4
@@ -2885,7 +2961,7 @@
     "prerequisite": [260, 230],
     "requirements": {
       "category": "sortie",
-      "map": "3-5", 
+      "map": "3-5",
       "boss": true,
       "result": "S",
       "times": 1,
@@ -2912,7 +2988,7 @@
     "prerequisite": [161],
     "requirements": {
       "category": "sortie",
-      "map": "5-2", 
+      "map": "5-2",
       "boss": true,
       "result": "S",
       "times": 1,
@@ -2943,7 +3019,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "3-1", 
+      "map": "3-1",
       "boss": true,
       "result": "S",
       "groups": [
@@ -2973,7 +3049,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "2-2", 
+      "map": "2-2",
       "boss": true,
       "result": "S",
       "groups": [
@@ -3002,7 +3078,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "1-4", 
+      "map": "1-4",
       "boss": true,
       "result": "S",
       "groups": [
@@ -3033,7 +3109,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "2-4", 
+      "map": "2-4",
       "boss": true,
       "result": "S",
       "groups": [
@@ -3044,7 +3120,98 @@
         {"ship": "伊勢改"},
         {"ship": "日向改"}
       ]
-    }
+    },
+  },
+  {
+    "game_id": "TODO",
+    "wiki_id": "B55",
+    "category": 2,
+    "type": 1,
+    "name": "「第十六戦隊(第二次)」出撃せよ！",
+    "detail": "「第十六戦隊(第二次)」をオリョール海に展開、敵主力艦隊を捕捉、これを撃滅せよ！",
+    "reward_fuel": 320,
+    "reward_ammo": 0,
+    "reward_steel": 320,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "家具箱(大)", "amount": 1},
+      {"name": "間宮", "category": "給糧艦", "amount": 1}
+    ],
+    "prerequisite": ["TODO A63"],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "2-3",
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "名取", "flagship": true},
+        {"ship": "五十鈴"},
+        {"ship": "鬼怒"},
+        {"ship": "艦", "amount": 3}
+      ]
+    },
+  },
+  {
+    "game_id": "TODO",
+    "wiki_id": "B56",
+    "category": 2,
+    "type": 1,
+    "name": "「新編成航空戦隊、北方へ進出せよ！",
+    "detail": "「新編成航空戦隊」をアルフォンシーノ方面へ進出、敵泊地の機動部隊を撃滅せよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 400,
+    "reward_steel": 0,
+    "reward_bauxite": 400,
+    "reward_other": [
+      {"name": "改修資材", "amount": 2},
+      {"name": "特注家具職人", "amount": 1}
+    ],
+    "prerequisite": ["TODO A64"],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "3-3",
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "空母", "amount": 2},
+        {"ship": ["航戦", "航巡"], "amount": 2},
+        {"ship": "駆逐", "amount": 2}
+      ]
+    },
+  },
+  {
+    "game_id": "TODO",
+    "wiki_id": "B57",
+    "category": 2,
+    "type": 1,
+    "name": "「礼号作戦」实施せよ！",
+    "detail": "精強な「水上反撃部隊」で、南西諸島沖ノ島沖に突入！同海域の敵戦力を撃滅せよ！",
+    "reward_fuel": 300,
+    "reward_ammo": 700,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "改修資材", "amount": 3},
+      {"name": "プレゼント箱", "amount": 1}
+    ],
+    "prerequisite": ["TODO A65 Bm05"],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "2-5",
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "霞", "flagship": true},
+        {"ship": "足柄"},
+        {"ship": "大淀"},
+        {"ship": "朝霜"},
+        {"ship": "清霜"},
+        {"ship": "艦", "amount": 1}
+      ]
+    },
   },
   {
     "game_id": 201,
@@ -3192,7 +3359,7 @@
     "requirements": {
       "category": "sortie",
       "times": 5,
-      "map": "2-1 ~ 2-5", 
+      "map": "2-1 ~ 2-5",
       "boss": true,
       "result": "B"
     }
@@ -3340,7 +3507,7 @@
     "prerequisite": [228],
     "requirements": {
       "category": "sortie",
-      "map": "4-1 ~ 4-5", 
+      "map": "4-1 ~ 4-5",
       "boss": true,
       "result": "B",
       "times": 12
@@ -3364,7 +3531,7 @@
     "prerequisite": [228],
     "requirements": {
       "category": "sortie",
-      "map": "3-3 ~ 3-5", 
+      "map": "3-3 ~ 3-5",
       "boss": true,
       "result": "B",
       "times": 5
@@ -3388,7 +3555,7 @@
     "prerequisite": [229],
     "requirements": {
       "category": "sortie",
-      "map": "4-4", 
+      "map": "4-4",
       "boss": true,
       "result": "B",
       "times": 1
@@ -3412,7 +3579,7 @@
     "prerequisite": [242],
     "requirements": {
       "category": "sortie",
-      "map": "5-2", 
+      "map": "5-2",
       "boss": true,
       "result": "S",
       "times": 2
@@ -3435,7 +3602,7 @@
     "prerequisite": [146, 221],
     "requirements": {
       "category": "sortie",
-      "map": "1-5", 
+      "map": "1-5",
       "boss": true,
       "result": "A",
       "times": 3
@@ -3459,7 +3626,7 @@
     "prerequisite": [137],
     "requirements": {
       "category": "sortie",
-      "map": "2-5", 
+      "map": "2-5",
       "boss": true,
       "result": "S",
       "times": 1,
@@ -3488,7 +3655,7 @@
     "prerequisite": [255],
     "requirements": {
       "category": "sortie",
-      "map": "6-1", 
+      "map": "6-1",
       "boss": true,
       "result": "S",
       "times": 3
@@ -3513,7 +3680,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "1-4", 
+      "map": "1-4",
       "boss": true,
       "result": "S",
       "groups": [
@@ -3542,7 +3709,7 @@
     "requirements": {
       "category": "sortie",
       "times": 1,
-      "map": "5-1", 
+      "map": "5-1",
       "boss": true,
       "result": "S",
       "groups": [
@@ -3569,7 +3736,7 @@
     "prerequisite": [240, 249],
     "requirements": {
       "category": "sortie",
-      "map": "1-5", 
+      "map": "1-5",
       "boss": true,
       "result": "A",
       "times": 10
@@ -3593,7 +3760,7 @@
     "prerequisite": [221, 239],
     "requirements": {
       "category": "sortie",
-      "map": "4-2", 
+      "map": "4-2",
       "boss": true,
       "result": "S",
       "times": 1,
@@ -3621,7 +3788,7 @@
     "prerequisite": [148, 264],
     "requirements": {
       "category": "sortie",
-      "map": "2-5", 
+      "map": "2-5",
       "boss": true,
       "result": "S",
       "times": 1,
@@ -3822,7 +3989,7 @@
     ],
     "prerequisite": [105],
     "requirements": {
-      "category": "expedition", 
+      "category": "expedition",
       "objects": [
         {"times": 1}
       ]
@@ -3844,7 +4011,7 @@
     ],
     "prerequisite": [],
     "requirements": {
-      "category": "expedition", 
+      "category": "expedition",
       "objects": [
         {"times": 3}
       ]
@@ -3867,7 +4034,7 @@
     ],
     "prerequisite": [402],
     "requirements": {
-      "category": "expedition", 
+      "category": "expedition",
       "objects": [
         {"times": 10}
       ]
@@ -3890,7 +4057,7 @@
     ],
     "prerequisite": [],
     "requirements": {
-      "category": "expedition", 
+      "category": "expedition",
       "objects": [
         {"times": 30}
       ]
@@ -3912,7 +4079,7 @@
     ],
     "prerequisite": [127],
     "requirements": {
-      "category": "expedition", 
+      "category": "expedition",
       "objects": [
         {"times": 1, "id": 30}
       ]
@@ -3934,7 +4101,7 @@
     ],
     "prerequisite": [405],
     "requirements": {
-      "category": "expedition", 
+      "category": "expedition",
       "objects": [
         {"times": 1, "id": 30}
       ]
@@ -3957,7 +4124,7 @@
     ],
     "prerequisite": [406],
     "requirements": {
-      "category": "expedition", 
+      "category": "expedition",
       "objects": [
         {"times": 2, "id": 30}
       ]
@@ -3979,7 +4146,7 @@
     ],
     "prerequisite": [408],
     "requirements": {
-      "category": "expedition", 
+      "category": "expedition",
       "objects": [
         {"times": 1, "id": 31}
       ]
@@ -4001,7 +4168,7 @@
     ],
     "prerequisite": [130],
     "requirements": {
-      "category": "expedition", 
+      "category": "expedition",
       "objects": [
         {"times": 1, "id": [37, 38]}
       ]
@@ -4023,7 +4190,7 @@
     ],
     "prerequisite": [239],
     "requirements": {
-      "category": "expedition", 
+      "category": "expedition",
       "objects": [
         {"times": 1, "id": 23}
       ]
@@ -4046,7 +4213,7 @@
     ],
     "prerequisite": [410],
     "requirements": {
-      "category": "expedition", 
+      "category": "expedition",
       "objects": [
         {"times": 6, "id": [37, 38]}
       ]
@@ -4068,7 +4235,7 @@
     ],
     "prerequisite": [412],
     "requirements": {
-      "category": "expedition", 
+      "category": "expedition",
       "objects": [
         {"times": 3, "id": 23}
       ]
@@ -4090,7 +4257,7 @@
     ],
     "prerequisite": [139],
     "requirements": {
-      "category": "expedition", 
+      "category": "expedition",
       "objects": [
         {"times": 1, "id": 39}
       ]
@@ -4112,7 +4279,7 @@
     ],
     "prerequisite": [414],
     "requirements": {
-      "category": "expedition", 
+      "category": "expedition",
       "objects": [
         {"times": 2, "id": 39}
       ]
@@ -4135,7 +4302,7 @@
     ],
     "prerequisite": [207],
     "requirements": {
-      "category": "expedition", 
+      "category": "expedition",
       "objects": [
         {"times": 3, "id": 6}
       ]
@@ -4158,7 +4325,7 @@
     ],
     "prerequisite": [272],
     "requirements": {
-      "category": "expedition", 
+      "category": "expedition",
       "objects": [
         {"times": 1, "id": 15}
       ]
@@ -4180,7 +4347,7 @@
     ],
     "prerequisite": [137],
     "requirements": {
-      "category": "expedition", 
+      "category": "expedition",
       "objects": [
         {"times": 2, "id": 7}
       ]
@@ -4203,7 +4370,7 @@
     ],
     "prerequisite": [308],
     "requirements": {
-      "category": "expedition", 
+      "category": "expedition",
       "objects": [
         {"times": 1, "id": 8}
       ]
@@ -4226,7 +4393,7 @@
     ],
     "prerequisite": [287, 410],
     "requirements": {
-      "category": "expedition", 
+      "category": "expedition",
       "objects": [
         {"times": 1, "id": 26},
         {"times": 1, "id": 35}
@@ -4896,7 +5063,7 @@
       "category": "modelconversion",
       "equipment": "零式艦戦52型(熟練)",
       "fullyskilled": true,
-      "secretary": "瑞鶴", 
+      "secretary": "瑞鶴",
       "scraps": [
         {"name": "零戦52型丙(六〇一空)", "amount": 1}
       ]
@@ -4921,7 +5088,7 @@
       "category": "modelconversion",
       "equipment": "零戦52型丙(付岩井小隊)",
       "fullyskilled": true,
-      "secretary": "瑞鶴", 
+      "secretary": "瑞鶴",
       "scraps": [
         {"name": "零式艦戦62型(爆戦)", "amount": 2}
       ]
@@ -4946,7 +5113,7 @@
       "category": "modelconversion",
       "equipment": "零式艦戦21型",
       "fullyskilled": true,
-      "secretary": "瑞鶴", 
+      "secretary": "瑞鶴",
       "scraps": [
         {"name": "零式艦戦21型", "amount": 2}
       ]
@@ -4971,7 +5138,7 @@
       "category": "modelconversion",
       "equipment": "零戦21型(付岩本小隊)",
       "fullyskilled": true,
-      "secretary": "瑞鶴", 
+      "secretary": "瑞鶴",
       "scraps": [
         {"name": "零式艦戦52型", "amount": 2}
       ]
@@ -4996,7 +5163,7 @@
       "category": "modelconversion",
       "equipment": "零戦52型甲(付岩本小隊)",
       "fullyskilled": true,
-      "secretary": "瑞鶴", 
+      "secretary": "瑞鶴",
       "scraps": [
         {"name": "彩雲", "amount": 2}
       ]
@@ -5171,7 +5338,7 @@
     "prerequisite": [134],
     "requirements": {
       "category": "sortie",
-      "map": "2-3", 
+      "map": "2-3",
       "boss": true,
       "result": "S",
       "times": 1,
@@ -5222,7 +5389,7 @@
     "prerequisite": [135],
     "requirements": {
       "category": "sortie",
-      "map": "4-3", 
+      "map": "4-3",
       "boss": true,
       "result": "S",
       "times": 1,
