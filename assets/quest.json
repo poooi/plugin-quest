@@ -1586,7 +1586,7 @@
     }
   },
   {
-    "game_id": "TODO",
+    "game_id": 170,
     "wiki_id": "A65",
     "category": 1,
     "type": 1,
@@ -1597,7 +1597,7 @@
     "reward_steel": 0,
     "reward_bauxite": 0,
     "reward_other": [
-      {"name": "高速修復材", "amount": 3},
+      {"name": "高速修復材", "amount": 3}
     ],
     "prerequisite": [296],
     "requirements": {
@@ -3120,7 +3120,7 @@
         {"ship": "伊勢改"},
         {"ship": "日向改"}
       ]
-    },
+    }
   },
   {
     "game_id": 295,
@@ -3150,7 +3150,7 @@
         {"ship": "鬼怒"},
         {"ship": "艦", "amount": 3}
       ]
-    },
+    }
   },
   {
     "game_id": 296,
@@ -3179,10 +3179,10 @@
         {"ship": ["航戦", "航巡"], "amount": 2},
         {"ship": "駆逐", "amount": 2}
       ]
-    },
+    }
   },
   {
-    "game_id": "TODO",
+    "game_id": 297,
     "wiki_id": "B57",
     "category": 2,
     "type": 1,
@@ -3196,7 +3196,7 @@
       {"name": "改修資材", "amount": 3},
       {"name": "プレゼント箱", "amount": 1}
     ],
-    "prerequisite": [265, "TODO A65"],
+    "prerequisite": [265, 170],
     "requirements": {
       "category": "sortie",
       "times": 1,
@@ -3211,7 +3211,7 @@
         {"ship": "清霜"},
         {"ship": "艦", "amount": 1}
       ]
-    },
+    }
   },
   {
     "game_id": 201,
