@@ -1,5 +1,7 @@
 {
   "Plugin Description": "任务信息查询 & 任务面板强化",
+  "Quest Information": "任务信息",
+
   "Composition Quest": "编成任务",
   "Sortie Quest": "出击任务",
   "Exercise Quest": "演习任务",
@@ -8,11 +10,7 @@
   "Arsenal Quest": "工厂任务",
   "Modernization Quest": "改装任务",
   "Marriage Quest": "结婚任务",
-  "Daily Quest": "日常任务",
-  "Weekly Quest": "周常任务",
-  "Monthly Quest": "月常任务",
-  "Quest Type": "任务类型",
-  "Quest Name": "任务名称",
+
   "Composition": "编成",
   "Sortie": "出击",
   "Exercise": "演习",
@@ -23,21 +21,25 @@
   "One-time Quest": "单次任务",
   "Daily Quest": "每日任务",
   "Weekly Quest": "每周任务",
+  "Monthly Quest": "每月任务",
   "-3rd/-7th/-0th": "3/7/0日任务",
   "-2nd/-8th": "2/8日任务",
-  "Monthly Quest": "每月任务",
+
+  "Quest Type": "任务类型",
+  "Quest Name": "任务名称",
   "Quests": "任务",
   "Select Quest": "任务选择",
-  "Quest Information": "任务信息",
   "Reward": "奖励",
   "Requires": "前置任务",
   "Unlocks": "后续任务",
   "Note": "备注",
   "Requirement": "完成条件",
+
   "Fuel": "燃料",
   "Ammo": "弹药",
   "Steel": "钢材",
   "Bauxite": "铝土",
+
   "Operable": "可执行",
   "Locked": "未开放",
   "Completed": "已完成",
