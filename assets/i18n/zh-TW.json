@@ -67,73 +67,108 @@
   "敵空母": "空母",
   "敵軽母": "輕母",
 
-  "result_S": "S勝",
-  "result_A": "A勝或以上",
-  "result_B": "B勝或以上",
-  "result_C": "C敗或以上",
+  "req": {
+    "option": {
+    },
 
-  "format_group": "%(lv)s%(ship)s%(select)s%(flagship)s%(amount)s%(note)s",
-  "format_groups_delim": "+",
-  "format_group_lv": "Lv.%s",
-  "format_group_lvmore": "Lv.%s或以上",
-  "format_group_amount": "%s只",
-  "format_group_amountonly": "僅%s只",
-  "format_group_amountmore": "%s只或以上",
-  "format_group_select": "任意%s只",
-  "format_group_note": "(%s)",
-  "format_group_flagship": "旗艦",
+    "result": {
+      "S": "S勝",
+      "A": "A勝或以上",
+      "B": "B勝或以上",
+      "C": "C敗或以上"
+    },
 
-  "format_fleet": "編組%(groups)s%(disallowed)s%(fleet)s",
-  "format_fleet_fleetid": "，限第%s艦隊",
-  "format_fleet_disallowed": "，%s不可",
+    "group": {
+      "main": "{{{lv}}}{{{ship}}}{{{select}}}{{{flagship}}}{{{amount}}}{{{note}}}",
+      "lv": "Lv.%s",
+      "lvmore": "Lv.%s或以上",
+      "amount": "%s只",
+      "amountonly": "僅%s只",
+      "amountmore": "%s只或以上",
+      "select": "任意%s只",
+      "note": "(%s)",
+      "flagship": "旗艦"
+    },
+
+    "groups": {
+      "delim": "+"
+    },
+
+    "fleet": {
+      "main": "編組{{{groups}}}{{{disallowed}}}{{{fleet}}}",
+      "fleetid": "，限第%s艦隊",
+      "disallowed": "，%s不可"
+    },
 
 
-  "format_sortie": "%(map)s%(boss)s%(result)s%(times)s%(groups)s%(fleet)s%(disallowed)s",
-  "format_sortie_map": "%(map)s",
-  "format_sortie_boss": "Boss戰",
-  "format_sortie_!boss": "出擊",
-  "format_sortie_result": "獲得%s",
-  "format_sortie_times": "%s次",
-  "format_sortie_groups": "，需要%s",
-  "format_sortie_fleet": "，限第%s艦隊",
-  "format_sortie_disallowed": "，%s不可",
+    "sortie": {
+      "main": "{{{map}}}{{{boss}}}{{{result}}}{{{times}}}{{{groups}}}{{{fleet}}}{{{disallowed}}}",
+      "map": "{{{map}}}",
+      "boss": "Boss戰",
+      "!boss": "出擊",
+      "result": "獲得%s",
+      "times": "%s次",
+      "groups": "，需要%s",
+      "fleet": "，限第%s艦隊",
+      "disallowed": "，%s不可"
+    },
 
-  "format_sink": "擊沉%(ship)s%(amount)s",
-  "format_sink_amount": "%s只",
-  "format_sink_ship": "%s",
+    "sink": {
+      "main": "擊沉{{{ship}}}{{{amount}}}",
+      "amount": "%s只",
+      "ship": "%s"
+    },
 
-  "format_a_gou": "S勝利6次, BOSS戰勝利12次, 進行BOSS戰24次, 出擊36次(一次出擊多次戰鬥算一次)",
+    "a-gou": "S勝利6次, BOSS戰勝利12次, 進行BOSS戰24次, 出擊36次(一次出擊多次戰鬥算一次)",
 
-  "format_expedition": "%s",
-  "format_expedition_object": "%(name)s成功%(times)s次",
-  "format_expedition_any": "遠征",
-  "format_expedition_id": "遠征%s",
-  "format_expedition_delim": "，",
+    "expedition": {
+      "main": "%s",
+      "object": "{{{name}}}成功{{{times}}}次",
+      "any": "遠征",
+      "id": "遠征%s",
+      "delim": "，"
+    },
 
-  "format_simple_equipment": "開發裝備%s次(失敗也可)",
-  "format_simple_ship": "建造艦船%s次",
-  "format_simple_scrapequipment": "廢棄裝備%s%%(batch)s",
-  "format_simple_scrapequipment_batch": "件，可一次性廢棄",
-  "format_simple_scrapequipment_!batch": "次",
-  "format_simple_scrapship": "解體艦船%s次",
-  "format_simple_modernization": "近代化改造成功%s次",
-  "format_simple_improvement": "裝備改修%s次(失敗也可)",
-  "format_simple_resupply": "進行補給%s次",
-  "format_simple_repair": "入渠%s次",
-  "format_simple_battle": "進行%s次戰鬥",
+    "simple": {
+      "equipment": "開發裝備%s次(失敗也可)",
 
-  "format_excercise": "演習%(victory)s%(times)s次%(daily)s",
-  "format_excercise_victory": "勝利",
-  "format_excercise_daily": "，限一日內",
+      "ship": "建造艦船%s次",
 
-  "format_modelconversion": "%(secretary_equip)s，然後廢棄%(scraps)s%(note)s",
-  "format_modelconversion_equip": "祕書艦%(secretary)s搭載未上鎖的%(fullyskilled)s%(equipment)s",
-  "format_modelconversion_noequip": "祕書艦設爲%(secretary)s",
-  "format_modelconversion_secretarydefault": "空母",
-  "format_modelconversion_scrap": "%(name)s%(amount)s只",
-  "format_modelconversion_scrapdelim": "，",
-  "format_modelconversion_fullyskilled": "、滿熟練度的",
-  "format_modelconversion_useskilledcrew": "，同時消耗一個熟練搭乘員",
+      "scrapequipment": "廢棄裝備%s{{{batch}}}",
+      "scrapequipment_batch": "件，可一次性廢棄",
+      "scrapequipment_!batch": "次",
+
+      "scrapship": "解體艦船%s次",
+
+      "modernization": "近代化改造成功%s次",
+
+      "improvement": "裝備改修%s次(失敗也可)",
+
+      "resupply": "進行補給%s次",
+
+      "repair": "入渠%s次",
+
+      "battle": "進行%s次戰鬥"
+    },
+
+    "excercise": {
+      "main": "演習{{{victory}}}{{{times}}}次{{{daily}}}",
+      "victory": "勝利",
+      "daily": "，限一日內"
+    },
+
+    "modelconversion": {
+      "main": "{{{secretary_equip}}}，然後廢棄{{{scraps}}}{{{note}}}",
+      "equip": "祕書艦{{{secretary}}}搭載未上鎖的{{{fullyskilled}}}{{{equipment}}}",
+      "noequip": "祕書艦設為{{{secretary}}}",
+      "secretarydefault": "空母",
+      "scrap": "{{{name}}}{{{amount}}}只",
+      "scrapdelim": "，",
+      "fullyskilled": "、滿熟練度的",
+      "useskilledcrew": "，同時消耗一個熟練搭乘員"
+    }
+
+  },
   
   "":""
 }
