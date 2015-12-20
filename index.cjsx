@@ -19,8 +19,8 @@ i18n.setLocale window.language
 
 __ = (s) ->
   tr = i18n.__.apply this, arguments
-  if typeof window.translate != 'undefined' && tr == s
-    tr = window.translate.apply this, arguments
+  if  tr == s
+    tr = window.i18n.resources.__.apply this, arguments
   tr
 
 reqstr = require('./reqstr')(__)
