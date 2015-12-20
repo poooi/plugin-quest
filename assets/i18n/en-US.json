@@ -26,86 +26,120 @@
   "敵空母": "CV",
   "敵軽母": "CVL",
 
-  "result_S": "an S-Rank",
-  "result_A": "an A-Rank or better",
-  "result_B": "a B-Rank or better",
-  "result_C": "a C-Rank or better",
+  "req": {
+    "option": {
+      "pluralize": true,
+      "ordinalize": true,
+      "frequency": true
+    },
 
-  "option_pluralize": true,
-  "option_ordinalize": true,
-  "option_frequency": true,
+    "result": {
+      "S": "an S-Rank",
+      "A": "an A-Rank or better",
+      "B": "a B-Rank or better",
+      "C": "a C-Rank or better"
+    },
 
-  "format_group": "%(select)s%(amount)s%(ship)s%(lv)s%(flagship)s%(note)s",
-  "format_groups_delim": ", ",
-  "format_groups_delim_last": " and ",
-  "format_group_lv": " of level %s",
-  "format_group_lvmore": " of level %s or more",
-  "format_group_amount": "%s ",
-  "format_group_amountonly": "only %s ",
-  "format_group_amountmore": "%s or more ",
-  "format_group_select": "any %s from ",
-  "format_group_note": " (%s)",
-  "format_group_flagship": " as flagship",
+    "group": {
+      "main": "{{{select}}}{{{amount}}}{{{ship}}}{{{lv}}}{{{flagship}}}{{{note}}}",
+      "lv": " of level %s",
+      "lvmore": " of level %s or more",
+      "amount": "%s ",
+      "amountonly": "only %s ",
+      "amountmore": "%s or more ",
+      "select": "any %s from ",
+      "note": " (%s)",
+      "flagship": " as flagship"
+    },
 
-  "format_fleet": "Have %(groups)s in your%(fleet)s fleet%(disallowed)s",
-  "format_fleet_fleetid": " %s",
-  "format_fleet_disallowed": ", %s not allowed",
+    "groups": {
+      "delim": ", ",
+      "delim_last": " and "
+    },
 
-  
-  "format_sortie": "Sortie%(fleet)s%(map)s%(times)s%(groups)s%(result)s%(boss)s%(disallowed)s",
-  "format_sortie_fleet": " your %s fleet",
-  "format_sortie_times": " %s",
-  "format_sortie_map": " to World %(map)s",
-  "format_sortie_groups": " with %s",
-  "format_sortie_result": " and obtain %s",
-  "format_sortie_boss": " at the boss",
-  "format_sortie_disallowed": ", %s not allowed",
+    "fleet": {
+      "main": "Have {{{groups}}} in your{{{fleet}}} fleet{{{disallowed}}}",
+      "fleetid": " %s",
+      "disallowed": ", %s not allowed"
+    },
 
-  "format_sink": "Sink %(amount)s enemy %(ship)s",
-  "format_sink_amount": "%s",
-  "format_sink_ship": "%s",
+    "sortie": {
+      "main": "Sortie{{{fleet}}}{{{map}}}{{{times}}}{{{groups}}}{{{result}}}{{{boss}}}{{{disallowed}}}",
+      "fleet": " your %s fleet",
+      "times": " %s",
+      "map": " to World {{{map}}}",
+      "groups": " with %s",
+      "result": " and obtain %s",
+      "boss": " at the boss",
+      "disallowed": ", %s not allowed"
+    },
 
-  "format_a_gou": "Launch your fleet 36 times, encounter 24 bosses, kill 12 bosses, and get 6 S-Rank victories",
+    "sink": {
+      "main": "Sink {{{amount}}} enemy {{{ship}}}",
+      "amount": "%s",
+      "ship": "%s"
+    },
 
-  "format_expedition": "%s",
-  "format_expedition_object": "Complete %(name)s %(times)s",
-  "format_expedition_any": "any expeditions",
-  "format_expedition_id": "expedition %s",
-  "format_expedition_delim": ". ",
+    "a-gou": "Launch your fleet 36 times, encounter 24 bosses, kill 12 bosses, and get 6 S-Rank victories",
 
-  "format_simple_equipment": "Craft %s of equipment (failures are ok)",
-  "format_simple_equipment_quantifier": "piece",
-  "format_simple_ship": "Craft %s",
-  "format_simple_ship_quantifier": "ship",
-  "format_simple_scrapequipment": "Scrap equipment %s%%(batch)s",
-  "format_simple_scrapequipment_quantifier": "time",
-  "format_simple_scrapequipment_batch": " (scrapping together is ok)",
-  "format_simple_scrapship": "Scrap %s",
-  "format_simple_scrapship_quantifier": "ship",
-  "format_simple_modernization": "Perform %s",
-  "format_simple_modernization_quantifier": "successful modernization",
-  "format_simple_improvement": "Improve equipment %s",
-  "format_simple_improvement_quantifier": "time",
-  "format_simple_resupply": "Resupply %s",
-  "format_simple_resupply_quantifier": "ship",
-  "format_simple_repair": "Repair %s",
-  "format_simple_repair_quantifier": "ship",
-  "format_simple_battle": "Defeat %s",
-  "format_simple_battle_quantifier": "enemy fleet",
+    "expedition": {
+      "main": "%s",
+      "object": "Complete {{{name}}} {{{times}}}",
+      "any": "any expeditions",
+      "id": "expedition %s",
+      "delim": ". "
+    },
 
-  "format_excercise": "Perform %(times)s%(victory)s%(daily)s",
-  "format_excercise_quantifier": "excercise",
-  "format_excercise_victory": " with victory",
-  "format_excercise_daily": " within one day",
+    "simple": {
+      "equipment": "Craft %s of equipment (failures are ok)",
+      "equipment_quantifier": "piece",
 
-  "format_modelconversion": "%(secretary_equip)s, then scrap %(scraps)s%(note)s",
-  "format_modelconversion_noequip": "Have %(secretary)s as secretary",
-  "format_modelconversion_equip": "Equip an UNLOCKED %(fullyskilled)s%(equipment)s on %(secretary)s as secretary",
-  "format_modelconversion_secretarydefault": "a carrier",
-  "format_modelconversion_scrap": "%(amount)s %(name)s",
-  "format_modelconversion_scrapdelim": ", ",
-  "format_modelconversion_fullyskilled": "Rank 7 ",
-  "format_modelconversion_useskilledcrew": ", consuming a Skilled Crew Member",
+      "ship": "Craft %s",
+      "ship_quantifier": "ship",
+
+      "scrapequipment": "Scrap equipment %s{{{batch}}}",
+      "scrapequipment_quantifier": "time",
+      "scrapequipment_batch": " (scrapping together is ok)",
+
+      "scrapship": "Scrap %s",
+      "scrapship_quantifier": "ship",
+
+      "modernization": "Perform %s",
+      "modernization_quantifier": "successful modernization",
+
+      "improvement": "Improve equipment %s",
+      "improvement_quantifier": "time",
+
+      "resupply": "Resupply %s",
+      "resupply_quantifier": "ship",
+
+      "repair": "Repair %s",
+      "repair_quantifier": "ship",
+
+      "battle": "Defeat %s",
+      "battle_quantifier": "enemy fleet"
+    },
+
+    "excercise": {
+      "main": "Perform {{{times}}}{{{victory}}}{{{daily}}}",
+      "quantifier": "excercise",
+      "victory": " with victory",
+      "daily": " within one day"
+    },
+
+
+    "modelconversion": {
+      "main": "{{{secretary_equip}}}, then scrap {{{scraps}}}{{{note}}}",
+      "noequip": "Have {{{secretary}}} as secretary",
+      "equip": "Equip an UNLOCKED {{{fullyskilled}}}{{{equipment}}} on {{{secretary}}} as secretary",
+      "secretarydefault": "a carrier",
+      "scrap": "{{{amount}}} {{{name}}}",
+      "scrapdelim": ", ",
+      "fullyskilled": "Rank 7 ",
+      "useskilledcrew": ", consuming a Skilled Crew Member"
+    }
+
+  },
   
 
   "装備": "Equipment",

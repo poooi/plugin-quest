@@ -12,19 +12,16 @@ i18n.configure({
     directory: join(__dirname, 'assets', 'i18n'),
     updateFiles: false,
     indent: '\t',
-    extension: '.json'
+    extension: '.json',
+    objectNotation: true
 })
 i18n.setLocale window.language
 
 __ = (s) ->
-  if typeof window.translate == 'undefined'
-    i18n.__ s
-  else
-    tr = i18n.__ s
-    if tr == s
-      window.translate s
-    else
-      tr
+  tr = i18n.__.apply this, arguments
+  if typeof window.translate != 'undefined' && tr == s
+    tr = window.translate.apply this, arguments
+  tr
 
 reqstr = require('./reqstr')(__)
 
@@ -199,7 +196,7 @@ module.exports =
                 <Input type='select' label={__ 'Quest Type'} value={@state.quest_filter} onChange={@handleFilterSelect}>
                   {
                     for filter, idx in filterNames
-                      filter = _.pluralize filter if __("option_pluralize") == true and idx != 0
+                      filter = _.pluralize filter if __("req.option.pluralize") == true and idx != 0
                       <option key={idx} value={idx}>{filter}</option>
                   }
                 </Input>
