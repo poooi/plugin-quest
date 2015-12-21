@@ -281,8 +281,8 @@ module.exports =
                           }
                           {
                             if @state.quest_selected.prerequisite.length > 0
-                              for qid in @state.quest_selected.prerequisite
-                                <div className='prereqName'>
+                              for qid, rqidx in @state.quest_selected.prerequisite
+                                <div className='prereqName' key={rqidx}>
                                   <OverlayTrigger placement='left' overlay={
                                     <Tooltip id='preQuestInfo'>
                                       <strong>{@state.quests[qid].name}</strong><br />
@@ -303,8 +303,8 @@ module.exports =
                           }
                           {
                             if @state.quest_selected.postquest.length > 0
-                              for qid in @state.quest_selected.postquest
-                                <div className='prereqName'>
+                              for qid, uqidx in @state.quest_selected.postquest
+                                <div className='prereqName' key={uqidx}>
                                   <OverlayTrigger placement='left' overlay={
                                     <Tooltip id='postQuestInfo'>
                                       <strong>{@state.quests[qid].name}</strong><br />
