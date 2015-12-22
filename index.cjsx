@@ -1,19 +1,19 @@
-path = require 'path-extra'
+{join} = require 'path-extra'
 {_, $, $$, React, ReactBootstrap, FontAwesome, layout} = window
 {Grid, Row, Col, Input, Panel, OverlayTrigger, Tooltip} = ReactBootstrap
 i18n = require './node_modules/i18n'
 _ = require 'underscore'
 _.mixin require 'underscore.inflection'
 
-window.i18n.quest = new(require 'i18n-2')
+window.i18n.questInfo = new(require 'i18n-2')
   locales: ['en-US', 'ja-JP', 'zh-CN', 'zh-TW']
   defaultLocale: 'zh-CN'
-  directory: path.join(__dirname, 'assets', 'i18n')
+  directory: join(__dirname, 'assets', 'i18n')
   devMode: false
   extension: '.json'
-window.i18n.quest.setLocale(window.language)
-i18n__ = window.i18n.quest.__.bind(window.i18n.quest)
-i18n__n = window.i18n.quest.__n.bind(i18n.others)
+window.i18n.questInfo.setLocale(window.language)
+i18n__ = window.i18n.questInfo.__.bind(window.i18n.questInfo)
+i18n__n = window.i18n.questInfo.__n.bind(i18n.others)
 
 __ = (s) ->
   tr = i18n__.apply this, arguments
@@ -65,11 +65,11 @@ module.exports =
   description: __ 'Plugin Description'
   author: '马里酱'
   link: 'https://github.com/malichan'
-  version: '2.0.0'
+  version: '2.0.1'
   reactClass: React.createClass
     getInitialState: ->
       fs = require 'fs-extra'
-      json = fs.readJsonSync path.join(__dirname, 'assets', 'quest.json')
+      json = fs.readJsonSync join(__dirname, 'assets', 'quest.json')
       quests = []
       for quest in json
         quest.condition = reqstr quest['requirements']
@@ -186,7 +186,7 @@ module.exports =
       window.addEventListener 'game.response', @handleResponse
     render: ->
       <div>
-        <link rel='stylesheet' href={path.join(__dirname, 'assets', 'quest.css')} />
+        <link rel='stylesheet' href={join(__dirname, 'assets', 'quest.css')} />
         <Grid>
           <Row>
             <Col xs=12>
