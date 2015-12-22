@@ -1,17 +1,22 @@
-fs = require 'fs-extra'
-path = require 'path-extra'
 _ = require 'underscore'
 _.mixin require 'underscore.inflection'
+Mustache = require 'mustache'
 
-conditions = require './assets/quest.json'
+i18n_module = null
 
-# Translate: Returns s if not exist. Used for ship/item names
-__ = null
+__ = (s) ->
+  # This part copied from https://github.com/mashpie/i18n-node with MIT license
+  # if the msg string contains {{Mustache}} patterns we render it as a mini tempalate
+  tr = i18n_module.apply this, arguments
+  if (/{{.*}}/).test tr
+    tr = Mustache.render tr, arguments[arguments.length-1]
+  tr
 
 # Translate: Returns null if not exist. Used for format controller
 _$ = (s) ->
   tr = __.apply this, arguments
-  if tr == s then null else tr
+  splits = s.split '.'
+  if tr == splits[splits.length-1] then null else tr
 
 # Create a function, that exactly runs as f, but allows the elements in the
 # first argument passed to f (which is an object) accessed by @arg_name
@@ -312,6 +317,6 @@ reqstr = (requirements) ->
   catch e
     console.log "Invalid requirements: #{requirements} reason: #{e} #{e.stack}"
 
-module.exports = (i18n_module) ->
-  __ = i18n_module
+module.exports = (i18n_module_) ->
+  i18n_module = i18n_module_
   reqstr
