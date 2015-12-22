@@ -64,7 +64,7 @@ module.exports =
   description: __ 'Plugin Description'
   author: '马里酱'
   link: 'https://github.com/malichan'
-  version: '2.0.1'
+  version: '2.0.2'
   reactClass: React.createClass
     getInitialState: ->
       fs = require 'fs-extra'
