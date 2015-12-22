@@ -1,7 +1,6 @@
 {join} = require 'path-extra'
 {_, $, $$, React, ReactBootstrap, FontAwesome, layout} = window
 {Grid, Row, Col, Input, Panel, OverlayTrigger, Tooltip} = ReactBootstrap
-i18n = require './node_modules/i18n'
 _ = require 'underscore'
 _.mixin require 'underscore.inflection'
 
