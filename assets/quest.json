@@ -5011,7 +5011,7 @@
     "reward_other": [
       {"name": "零式艦戦52型(熟練)", "category": "装備", "amount": 1}
     ],
-    "prerequisite": [626],
+    "prerequisite": [164, 626],
     "requirements": {
       "category": "modelconversion",
       "equipment": "零式艦戦21型(熟練)",
