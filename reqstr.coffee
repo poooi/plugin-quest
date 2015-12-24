@@ -1,5 +1,4 @@
-_ = require 'underscore'
-_.mixin require 'underscore.inflection'
+inflection = require 'inflection'
 Mustache = require 'mustache'
 
 i18n_module = null
@@ -36,7 +35,7 @@ MAX_SHIP_LV = 200       # Doesn't matter, usually we use 999. See usage below
 
 reqstr_pluralize = (str, amount)->
   return str if !_$('req.option.pluralize') or !amount
-  _.pluralize str, amount
+  inflection.inflect str, amount
 
 reqstr_frequency = (times) ->
   return times if !_$('req.option.frequency')
@@ -47,7 +46,7 @@ reqstr_frequency = (times) ->
 
 reqstr_ordinalize = (num) ->
   return num if !_$('req.option.ordinalize')
-  _.ordinalize num
+  inflection.ordinalize "#{num}"
 
 reqstr_ship = (ship, amount) ->
   if typeof ship == "string"
@@ -312,7 +311,7 @@ reqstr = (requirements) ->
     category = requirements['category']
     fn = reqstr_categories[category]
     ret = fn(requirements)
-    #console.log ret
+    #onsole.log ret
     ret
   catch e
     console.log "Invalid requirements: #{requirements} reason: #{e} #{e.stack}"

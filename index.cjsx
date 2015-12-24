@@ -2,7 +2,7 @@
 {_, $, $$, React, ReactBootstrap, FontAwesome, layout} = window
 {Grid, Row, Col, Input, Panel, OverlayTrigger, Tooltip} = ReactBootstrap
 _ = require 'underscore'
-_.mixin require 'underscore.inflection'
+inflection = require 'inflection'
 
 window.i18n.questInfo = new(require 'i18n-2')
   locales: ['en-US', 'ja-JP', 'zh-CN', 'zh-TW']
@@ -193,7 +193,7 @@ module.exports =
                 <Input type='select' label={__ 'Quest Type'} value={@state.quest_filter} onChange={@handleFilterSelect}>
                   {
                     for filter, idx in filterNames
-                      filter = _.pluralize filter if __("req.option.pluralize") == true and idx != 0
+                      filter = inflection.pluralize filter if __("req.option.pluralize") == true and idx != 0
                       <option key={idx} value={idx}>{filter}</option>
                   }
                 </Input>
