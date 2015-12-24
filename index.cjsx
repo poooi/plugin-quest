@@ -249,12 +249,9 @@ module.exports =
                           {
                             for reward, i in @state.quest_selected.reward_other
                               name = __(reward.name)
+                              name = __('「') + name + __('」') if reward.category?
+                              amount = if reward.amount? then '×' + reward.amount else ''
                               category = __(reward.category || '')
-                              if reward.amount?
-                                amount = '×' + reward.amount
-                                name = __('「') + name + __('」')
-                              else
-                                amount = ''
                               <li key={"reward_other_#{i}"}>
                                 {category}{name}{amount}
                               </li>
