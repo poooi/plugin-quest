@@ -515,7 +515,7 @@
     "reward_steel": 200,
     "reward_bauxite": 0,
     "reward_other": [
-      {"name": "間宮", "category": "給糧艦", "amount": 1}
+      {"name": "給糧艦「間宮」", "amount": 1}
     ],
     "prerequisite": [121],
     "requirements": {
@@ -564,7 +564,7 @@
     "reward_steel": 300,
     "reward_bauxite": 0,
     "reward_other": [
-      {"name": "間宮", "category": "給糧艦", "amount": 1}
+      {"name": "給糧艦「間宮」", "amount": 1}
     ],
     "prerequisite": [121],
     "requirements": {
@@ -636,7 +636,7 @@
     "reward_steel": 0,
     "reward_bauxite": 0,
     "reward_other": [
-      {"name": "間宮", "category": "給糧艦", "amount": 1}
+      {"name": "給糧艦「間宮」", "amount": 1}
     ],
     "prerequisite": [121],
     "requirements": {
@@ -658,7 +658,7 @@
     "reward_steel": 0,
     "reward_bauxite": 0,
     "reward_other": [
-      {"name": "間宮", "category": "給糧艦", "amount": 1}
+      {"name": "給糧艦「間宮」", "amount": 1}
     ],
     "prerequisite": [120],
     "requirements": {
@@ -1313,7 +1313,7 @@
     "reward_bauxite": 0,
     "reward_other": [
       {"name": "高速修復材", "amount": 2},
-      {"name": "家具箱(中)", "amount": 1}
+      {"name": "家具箱（中）", "amount": 1}
     ],
     "prerequisite": [240],
     "requirements": {
@@ -1341,7 +1341,7 @@
     "reward_bauxite": 0,
     "reward_other": [
       {"name": "高速修復材", "amount": 3},
-      {"name": "家具箱(大)", "amount": 1}
+      {"name": "家具箱（大）", "amount": 1}
     ],
     "prerequisite": [309],
     "requirements": {
@@ -1522,7 +1522,7 @@
     "reward_steel": 300,
     "reward_bauxite": 300,
     "reward_other": [
-      {"name": "伊良湖", "category": "給糧艦", "amount": 1},
+      {"name": "給糧艦「伊良湖」", "amount": 1},
       {"name": "熟練搭乗員", "amount": 1}
     ],
     "prerequisite": [632],
@@ -1934,7 +1934,7 @@
     "reward_bauxite": 0,
     "reward_other": [
       {"name": "高速修復材", "amount": 2},
-      {"name": "家具箱(小)", "amount": 1}
+      {"name": "家具箱（小）", "amount": 1}
     ],
     "prerequisite": [122],
     "requirements": {
@@ -1964,7 +1964,7 @@
     "reward_bauxite": 700,
     "reward_other": [
       {"name": "高速修復材", "amount": 2},
-      {"name": "家具箱(中)", "amount": 1}
+      {"name": "家具箱（中）", "amount": 1}
     ],
     "prerequisite": [123],
     "requirements": {
@@ -2048,7 +2048,7 @@
     "reward_steel": 0,
     "reward_bauxite": 300,
     "reward_other": [
-      {"name": "間宮", "category": "給糧艦", "amount": 1}
+      {"name": "給糧艦「間宮」", "amount": 1}
     ],
     "prerequisite": [126],
     "requirements": {
@@ -2075,7 +2075,7 @@
     "reward_steel": 0,
     "reward_bauxite": 300,
     "reward_other": [
-      {"name": "家具箱(中)", "amount": 1},
+      {"name": "家具箱（中）", "amount": 1},
       {"name": "応急修理要員", "amount": 1}
     ],
     "prerequisite": [128],
@@ -2106,7 +2106,7 @@
     "reward_bauxite": 0,
     "reward_other": [
       {"name": "開発資材", "amount": 1},
-      {"name": "家具箱(中)", "amount": 1}
+      {"name": "家具箱（中）", "amount": 1}
     ],
     "prerequisite": [131],
     "requirements": {
@@ -2136,7 +2136,7 @@
     "reward_bauxite": 400,
     "reward_other": [
       {"name": "開発資材", "amount": 2},
-      {"name": "家具箱(大)", "amount": 1}
+      {"name": "家具箱（大）", "amount": 1}
     ],
     "prerequisite": [132],
     "requirements": {
@@ -2165,7 +2165,7 @@
     "reward_steel": 100,
     "reward_bauxite": 500,
     "reward_other": [
-      {"name": "間宮", "category": "給糧艦", "amount": 1}
+      {"name": "給糧艦「間宮」", "amount": 1}
     ],
     "prerequisite": [133],
     "requirements": {
@@ -2195,7 +2195,7 @@
     "reward_bauxite": 900,
     "reward_other": [
       {"name": "高速修復材", "amount": 3},
-      {"name": "家具箱(大)", "amount": 1}
+      {"name": "家具箱（大）", "amount": 1}
     ],
     "prerequisite": [412],
     "requirements": {
@@ -2251,7 +2251,7 @@
     "reward_steel": 0,
     "reward_bauxite": 500,
     "reward_other": [
-      {"name": "間宮", "category": "給糧艦", "amount": 1}
+      {"name": "給糧艦「間宮」", "amount": 1}
     ],
     "prerequisite": [138],
     "requirements": {
@@ -2333,7 +2333,7 @@
     "reward_steel": 0,
     "reward_bauxite": 300,
     "reward_other": [
-      {"name": "家具箱(大)", "amount": 1},
+      {"name": "家具箱（大）", "amount": 1},
       {"name": "熟練艦載機整備員", "category": "装備", "amount": 1}
     ],
     "prerequisite": [143],
@@ -2390,7 +2390,7 @@
     "reward_steel": 0,
     "reward_bauxite": 0,
     "reward_other": [
-      {"name": "家具箱(大)", "amount": 1},
+      {"name": "家具箱（大）", "amount": 1},
       {"name": "特注家具職人", "amount": 1}
     ],
     "prerequisite": [206],
@@ -2508,7 +2508,7 @@
     "reward_steel": 0,
     "reward_bauxite": 400,
     "reward_other": [
-      {"name": "家具箱(大)", "amount": 1},
+      {"name": "家具箱（大）", "amount": 1},
       {"name": "特注家具職人", "amount": 1}
     ],
     "prerequisite": [233],
@@ -2538,7 +2538,7 @@
     "reward_steel": 300,
     "reward_bauxite": 0,
     "reward_other": [
-      {"name": "間宮", "category": "給糧艦", "amount": 1}
+      {"name": "給糧艦「間宮」", "amount": 1}
     ],
     "prerequisite": [149],
     "requirements": {
@@ -2628,7 +2628,7 @@
     "reward_bauxite": 0,
     "reward_other": [
       {"name": "改修資材", "amount": 2},
-      {"name": "家具箱(大)", "amount": 1}
+      {"name": "家具箱（大）", "amount": 1}
     ],
     "prerequisite": [249, 269],
     "requirements": {
@@ -2659,8 +2659,8 @@
     "reward_steel": 0,
     "reward_bauxite": 400,
     "reward_other": [
-      {"name": "伊良湖", "category": "給糧艦", "amount": 1},
-      {"name": "家具箱(中)", "amount": 1}
+      {"name": "給糧艦「伊良湖」", "amount": 1},
+      {"name": "家具箱（中）", "amount": 1}
     ],
     "prerequisite": [151],
     "requirements": {
@@ -2983,7 +2983,7 @@
     "reward_bauxite": 0,
     "reward_other": [
       {"name": "高速修復材", "amount": 3},
-      {"name": "伊良湖", "category": "給糧艦", "amount": 1}
+      {"name": "給糧艦「伊良湖」", "amount": 1}
     ],
     "prerequisite": [161],
     "requirements": {
@@ -3042,7 +3042,7 @@
     "reward_steel": 200,
     "reward_bauxite": 0,
     "reward_other": [
-      {"name": "家具箱(中)", "amount": 1},
+      {"name": "家具箱（中）", "amount": 1},
       {"name": "プレゼント箱", "amount": 1}
     ],
     "prerequisite": [163],
@@ -3072,7 +3072,7 @@
     "reward_bauxite": 0,
     "reward_other": [
       {"name": "高速修復材", "amount": 2},
-      {"name": "伊良湖", "category": "給糧艦", "amount": 1}
+      {"name": "給糧艦「伊良湖」", "amount": 1}
     ],
     "prerequisite": [164],
     "requirements": {
@@ -3134,8 +3134,8 @@
     "reward_steel": 320,
     "reward_bauxite": 0,
     "reward_other": [
-      {"name": "家具箱(大)", "amount": 1},
-      {"name": "間宮", "category": "給糧艦", "amount": 1}
+      {"name": "家具箱（大）", "amount": 1},
+      {"name": "給糧艦「間宮」", "amount": 1}
     ],
     "prerequisite": [168],
     "requirements": {
@@ -3621,7 +3621,7 @@
     "reward_bauxite": 0,
     "reward_other": [
       {"name": "開発資材", "amount": 5},
-      {"name": "家具箱(大)", "amount": 1}
+      {"name": "家具箱（大）", "amount": 1}
     ],
     "prerequisite": [137],
     "requirements": {
@@ -3649,8 +3649,8 @@
     "reward_steel": 0,
     "reward_bauxite": 0,
     "reward_other": [
-      {"name": "家具箱(大)", "amount": 1},
-      {"name": "伊良湖", "category": "給糧艦", "amount": 1}
+      {"name": "家具箱（大）", "amount": 1},
+      {"name": "給糧艦「伊良湖」", "amount": 1}
     ],
     "prerequisite": [255],
     "requirements": {
@@ -3674,7 +3674,7 @@
     "reward_bauxite": 300,
     "reward_other": [
       {"name": "改修資材", "amount": 3},
-      {"name": "伊良湖", "category": "給糧艦", "amount": 1}
+      {"name": "給糧艦「伊良湖」", "amount": 1}
     ],
     "prerequisite": [221],
     "requirements": {
@@ -3755,7 +3755,7 @@
     "reward_bauxite": 800,
     "reward_other": [
       {"name": "改修資材", "amount": 2},
-      {"name": "家具箱(大)", "amount": 2}
+      {"name": "家具箱（大）", "amount": 2}
     ],
     "prerequisite": [221, 239],
     "requirements": {
@@ -3985,7 +3985,7 @@
     "reward_steel": 30,
     "reward_bauxite": 30,
     "reward_other": [
-      {"name": "家具箱(小)", "amount": 1}
+      {"name": "家具箱（小）", "amount": 1}
     ],
     "prerequisite": [105],
     "requirements": {
@@ -4029,8 +4029,8 @@
     "reward_steel": 300,
     "reward_bauxite": 150,
     "reward_other": [
-      {"name": "家具箱(小)", "amount": 1},
-      {"name": "家具箱(中)", "amount": 1}
+      {"name": "家具箱（小）", "amount": 1},
+      {"name": "家具箱（中）", "amount": 1}
     ],
     "prerequisite": [402],
     "requirements": {
@@ -4053,7 +4053,7 @@
     "reward_bauxite": 300,
     "reward_other": [
       {"name": "開発資材", "amount": 3},
-      {"name": "家具箱(大)", "amount": 1}
+      {"name": "家具箱（大）", "amount": 1}
     ],
     "prerequisite": [],
     "requirements": {
@@ -4164,7 +4164,7 @@
     "reward_steel": 0,
     "reward_bauxite": 0,
     "reward_other": [
-      {"name": "家具箱(小)", "amount": 1}
+      {"name": "家具箱（小）", "amount": 1}
     ],
     "prerequisite": [130],
     "requirements": {
@@ -4389,7 +4389,7 @@
     "reward_bauxite": 0,
     "reward_other": [
       {"name": "改修資材", "amount": 2},
-      {"name": "家具箱(大)", "amount": 1}
+      {"name": "家具箱（大）", "amount": 1}
     ],
     "prerequisite": [287, 410],
     "requirements": {
@@ -4827,7 +4827,7 @@
     "reward_steel": 0,
     "reward_bauxite": 0,
     "reward_other": [
-      {"name": "伊良湖", "category": "給糧艦", "amount": 4}
+      {"name": "給糧艦「伊良湖」", "amount": 4}
     ],
     "prerequisite": [215, 608],
     "requirements": {
@@ -5310,7 +5310,7 @@
     "reward_steel": 88,
     "reward_bauxite": 88,
     "reward_other": [
-      {"name": "家具箱(大)", "amount": 1}
+      {"name": "家具箱（大）", "amount": 1}
     ],
     "prerequisite": [306],
     "requirements": {
@@ -5333,7 +5333,7 @@
     "reward_steel": 0,
     "reward_bauxite": 0,
     "reward_other": [
-      {"name": "書類一式&指輪", "amount": 1}
+      {"name": "書類一式＆指輪", "amount": 1}
     ],
     "prerequisite": [134],
     "requirements": {

@@ -127,7 +127,6 @@
       "daily": " within one day"
     },
 
-
     "modelconversion": {
       "main": "{{{secretary_equip}}}, then scrap {{{scraps}}}{{{note}}}",
       "noequip": "Have {{{secretary}}} as secretary",
@@ -140,34 +139,15 @@
     }
 
   },
-  
 
-  "装備": "Equipment",
-  "艦娘": "Ship",
-  "給糧艦": "Food supply ship",
-  "間宮": "Mamiya",
-  "伊良湖": "Irako",
-  "開発資材": "Development material",
-  "高速建造材": "Instant construction",
-  "高速修復材": "Instant repair",
-  "改修資材": "Improvement materials",
-  "応急修理要員": "Emergency repair personnel",
+  "装備": "Equipment ",
+  "艦娘": "Ship ",
+  "家具": "Furniture ",
   "第2艦隊開放": "Unlocks the second fleet",
   "第3艦隊開放": "Unlocks the third fleet",
   "第4艦隊開放": "Unlocks the fourth fleet",
-  "改修工廠開放": "Unlocks the improvement arsenal",
-  "大型艦建造開放": "Unlocks large ship construction",
-  "家具箱(小)": "Furniture box (small)",
-  "家具箱(中)": "Furniture box (medium)",
-  "家具箱(大)": "Furniture box (large)",
-  "熟練搭乗員": "Skilled crew member",
-  "特注家具職人": "Furniture Fairy",
-  "勲章": "Medal",
-  "プレゼント箱": "Present box",
-  "戦闘糧食": "Combat provisions",
-  "司令部要員": "Headquarters personnel",
-  "試製甲板カタパルト": "Prototype flight deck catapult",
-  "書類一式&指輪": "Marriage ring and documents",
+  "改修工廠開放": "Unlocks the Improvement Arsenal",
+  "大型艦建造開放": "Unlocks Large Ship Construction",
   "煎餅布団": "Thin futon",
 
   "":""
