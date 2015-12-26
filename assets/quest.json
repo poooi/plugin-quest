@@ -5111,7 +5111,7 @@
     "prerequisite": [626, 166],
     "requirements": {
       "category": "modelconversion",
-      "equipment": "零式艦戦21型",
+      "equipment": "零式艦戦21型(熟練)",
       "fullyskilled": true,
       "secretary": "瑞鶴",
       "scraps": [
