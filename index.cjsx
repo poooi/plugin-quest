@@ -183,6 +183,9 @@ module.exports =
     componentDidMount: ->
       window.addEventListener 'task.change', @handleTaskChange
       window.addEventListener 'game.response', @handleResponse
+    componentWillUnmount: ->
+      window.removeEventListener 'task.change', @handleTaskChange
+      window.removeEventListener 'game.response', @handleResponse
     render: ->
       <div>
         <link rel='stylesheet' href={join(__dirname, 'assets', 'quest.css')} />
