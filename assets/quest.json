@@ -3965,7 +3965,7 @@
       {"name": "高速修復材", "amount": 2},
       {"name": "戦闘糧食", "amount": 1}
     ],
-    "prerequisite": [201],
+    "prerequisite": [216],
     "requirements": {
       "category": "excercise",
       "times": 7,
