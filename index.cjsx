@@ -173,7 +173,7 @@ module.exports =
       window.removeEventListener 'task.change', @handleTaskChange
       window.removeEventListener 'game.response', @handleResponse
     render: ->
-      <div id='quest-info' classname='quest-info'>
+      <div id='quest-info' className='quest-info'>
         <link rel='stylesheet' href={join(__dirname, 'assets', 'quest.css')} />
         <Grid>
           <Row>
