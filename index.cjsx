@@ -4,15 +4,8 @@
 _ = require 'underscore'
 inflection = require 'inflection'
 
-window.i18n.questInfo = new(require 'i18n-2')
-  locales: ['en-US', 'ja-JP', 'zh-CN', 'zh-TW']
-  defaultLocale: 'zh-CN'
-  directory: join(__dirname, 'assets', 'i18n')
-  devMode: false
-  extension: '.json'
-window.i18n.questInfo.setLocale(window.language)
-i18n__ = window.i18n.questInfo.__.bind(window.i18n.questInfo)
-i18n__n = window.i18n.questInfo.__n.bind(i18n.others)
+i18n__ = window.i18n["poi-plugin-quest-info"].__.bind(window.i18n["poi-plugin-quest-info"])
+i18n__n = window.i18n["poi-plugin-quest-info"].__n.bind(i18n["poi-plugin-quest-info"])
 
 __ = (s) ->
   tr = i18n__.apply this, arguments
@@ -58,13 +51,6 @@ typeNames = [
 typeFreqs = [0, 1, 5, 3, 4, 4, 2]
 
 module.exports =
-  name: 'quest-info'
-  priority: 2
-  displayName: <span><FontAwesome key={0} name='indent' /> {__('Quest Information')}</span>
-  description: __ 'Plugin Description'
-  author: '马里酱'
-  link: 'https://github.com/malichan'
-  version: '2.0.4'
   reactClass: React.createClass
     getInitialState: ->
       fs = require 'fs-extra'
@@ -187,7 +173,7 @@ module.exports =
       window.removeEventListener 'task.change', @handleTaskChange
       window.removeEventListener 'game.response', @handleResponse
     render: ->
-      <div>
+      <div id='quest-info' classname='quest-info'>
         <link rel='stylesheet' href={join(__dirname, 'assets', 'quest.css')} />
         <Grid>
           <Row>
