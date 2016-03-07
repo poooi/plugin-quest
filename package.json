@@ -10,7 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/poooi/plugin-quest.git"
   },
-  "author": "malichan",
+  "author": {
+    "name": "马里酱",
+    "link": "https://github.com/malichan"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/poooi/plugin-quest/issues"
@@ -22,5 +25,11 @@
     "inflection": "^1.8.0",
     "mustache": "^2.2.1"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "poiPlugin": {
+    "title": "Quest Information",
+    "description": "Plugin Description",
+    "icon": "fa/indent",
+    "priority": 2
+  }
 }
