@@ -176,8 +176,13 @@ module.exports =
         when '/kcsapi/api_req_quest/clearitemget'
           qid = parseInt postBody.api_quest_id
           quests_status[qid] = 1
+          clearflag = true
           for postq in @state.quests[qid].postquest when quests_status[postq] is 3
-            quests_status[postq] = 2
+            for prereq in @state.quests[postq].prerequisite
+              if quests_status[prereq] isnt 1
+                clearflag = false
+            if clearflag
+              quests_status[postq] = 2
       @setState
         quests_status: quests_status
     componentDidMount: ->
