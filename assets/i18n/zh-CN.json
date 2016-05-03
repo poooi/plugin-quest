@@ -72,10 +72,11 @@
     },
 
     "result": {
-      "S": "S胜",
-      "A": "A胜或以上",
-      "B": "B胜或以上",
-      "C": "C败或以上"
+      "クリア": "完成全图",
+      "S": "获得S胜",
+      "A": "获得A胜或以上",
+      "B": "获得B胜或以上",
+      "C": "获得C败或以上"
     },
 
     "group": {
@@ -106,7 +107,7 @@
       "map": "{{{map}}}",
       "boss": "Boss战",
       "!boss": "出击",
-      "result": "获得%s",
+      "result": "%s",
       "times": "%s次",
       "groups": "，需要%s",
       "fleet": "，限第%s舰队",
@@ -166,6 +167,16 @@
       "scrapdelim": "，",
       "fullyskilled": "、满熟练度的",
       "useskilledcrew": "，同时消耗一个熟练搭乘员"
+    },
+
+    "scrapequipment": {
+      "main": "废弃{{{scraps}}}",
+      "scrap": "{{{name}}}{{{amount}}}只",
+      "scrapdelim": "，",
+    },
+
+    "and": {
+      "separator": "；以及"
     }
 
   },

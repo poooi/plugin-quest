@@ -174,6 +174,29 @@
     }
   },
   {
+    "game_id": 'TODO',
+    "wiki_id": "C09",
+    "category": 3,
+    "type": 6,
+    "name": "上陸部隊演習",
+    "detail": "島嶼攻略部隊の練度向上のため、本日中に演習で4回以上「勝利」せよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 200,
+    "reward_steel": 200,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "戦闘糧食", "amount": 1}
+    ],
+    "prerequisite": ['F32', 216],
+    "requirements": {
+      "category": "excercise",
+      "times": 4,
+      "victory": true,
+      "daily": true
+    }
+  },
+  {
     "game_id": 401,
     "wiki_id": "D01",
     "category": 4,
@@ -1366,6 +1389,73 @@
       "secretary": "瑞鶴",
       "scraps": [
         {"name": "彩雲", "amount": 2}
+      ]
+    }
+  },
+  {
+    "game_id": 'TODO',
+    "wiki_id": "F31",
+    "category": 6,
+    "type": 1,
+    "name": "新家具の準備",
+    "detail": "「工廠」で装備アイテムを9つ「廃棄」して、新家具の準備をします。",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 90,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "特注家具職人", "amount": 1}
+    ],
+    "prerequisite": [216],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 9,
+      "batch": true
+    }
+  },
+  {
+    "game_id": 'TODO',
+    "wiki_id": "F32",
+    "category": 6,
+    "type": 1,
+    "name": "新装備の準備",
+    "detail": "「工廠」で装備を5つ「廃棄」して、新装備配備の準備をします。",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 50,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "家具箱(中)", "amount": 1}
+    ],
+    "prerequisite": [240, 220],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 5,
+      "batch": true
+    }
+  },
+  {
+    "game_id": 'TODO',
+    "wiki_id": "F33",
+    "category": 6,
+    "type": 1,
+    "name": "上陸戦用新装備の調達",
+    "detail": "「工廠」で「7.7mm機銃」及び「12.7mm単装機銃」を二つずつ廃棄！",
+    "reward_fuel": 50,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "特二式内火艇", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": ['C09', 278],
+    "requirements": {
+      "category": "scrapequipment",
+      "list": [
+        {"name": "7.7mm機銃", "amount": 2},
+        {"name": "12.7mm単装機銃", "amount": 2}
       ]
     }
   },

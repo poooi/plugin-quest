@@ -1602,6 +1602,350 @@
     }
   },
   {
+    "game_id": 'TODO',
+    "wiki_id": "B58",
+    "category": 2,
+    "type": 1,
+    "name": "旗艦「霞」北方海域を哨戒せよ！",
+    "detail": "旗艦「霞改二」で駆逐艦4隻を含む艦隊を北方海域に投入し、モーレイ海哨戒を実施せよ！",
+    "reward_fuel": 300,
+    "reward_ammo": 0,
+    "reward_steel": 300,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "13号対空電探改", "category": "装備", "amount": 1},
+      {"name": "戦闘糧食", "amount": 1}
+    ],
+    "prerequisite": [132, 303],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "3-1",
+      "boss": true,
+      "result": "B",
+      "groups": [
+        {"ship": "霞改二", "flagship": true},
+        {"ship": "駆逐", "amount": 3},
+        {"ship": "艦", "amount": 2}
+      ]
+    }
+  },
+  {
+    "game_id": 'TODO',
+    "wiki_id": "B59",
+    "category": 2,
+    "type": 1,
+    "name": "旗艦「霞」出撃！敵艦隊を撃滅せよ！",
+    "detail": "旗艦「霞改二」で駆逐艦3隻を含む艦隊で南西諸島沖ノ島沖に突入！敵主力を撃滅せよ！",
+    "reward_fuel": 500,
+    "reward_ammo": 500,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "25mm三連装機銃 集中配備", "category": "装備", "amount": 1},
+      {"name": "戦闘糧食", "amount": 1}
+    ],
+    "prerequisite": ['B58', 402],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "2-5",
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "霞改二", "flagship": true},
+        {"ship": "駆逐", "amount": 2},
+        {"ship": "艦", "amount": 3}
+      ]
+    }
+  },
+  {
+    "game_id": 'TODO',
+    "wiki_id": "B60",
+    "category": 2,
+    "type": 1,
+    "name": "「第三十一戦隊」出撃せよ！",
+    "detail": "第三十一戦隊(第一次)を鎮守府近海航路に出撃させ、同航路の安全確保に努めよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 600,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "改修資材", "amount": 3},
+      {"name": "菱餅", "amount": 1}
+    ],
+    "prerequisite": ['A66', 702],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "1-6",
+      "result": "クリア",
+      "groups": [
+        {"ship": "五十鈴改二", "flagship": true},
+        {"ship": "皐月改二"},
+        {"ship": "卯月改"},
+        {"ship": "艦", "amount": 3}
+      ]
+    }
+  },
+  {
+    "game_id": 'TODO',
+    "wiki_id": "B61",
+    "category": 2,
+    "type": 1,
+    "name": "「第二七駆逐隊」出撃せよ！",
+    "detail": "「白露改」旗艦の第二七戦隊を含む艦隊をオリョール海に展開、同海域の敵艦隊を撃滅せよ！",
+    "reward_fuel": 500,
+    "reward_ammo": 0,
+    "reward_steel": 500,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "「春の一番」掛け軸", "category": "家具"},
+      {"name": "菱餅", "amount": 1}
+    ],
+    "prerequisite": ['A67'],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "2-3",
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "白露改", "flagship": true},
+        {"ship": "時雨"},
+        {"ship": "春雨"},
+        {"ship": "五月雨"},
+        {"ship": "艦", "amount": 2}
+      ]
+    }
+  },
+  {
+    "game_id": 'TODO',
+    "wiki_id": "B62",
+    "category": 2,
+    "type": 1,
+    "name": "強襲上陸作戦用戦力を増強せよ！",
+    "detail": "中部海域における航空偵察「K作戦」を実施しつつ、強襲上陸作戦用戦力の強化を図れ！",
+    "reward_fuel": 0,
+    "reward_ammo": 600,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "大発動艇", "category": "装備"},
+      {"name": "改修資材", "amount": 3}
+    ],
+    "prerequisite": [420, 243],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "6-3",
+      "boss": true,
+      "result": "B"
+    }
+  },
+  {
+    "game_id": 'TODO',
+    "wiki_id": "B63",
+    "category": 2,
+    "type": 1,
+    "name": "製油所地帯を防衛せよ！",
+    "detail": "水雷戦隊を製油所地帯沿岸に展開！同海域に出没する敵艦隊を三回以上撃滅せよ！",
+    "reward_fuel": 400,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "戦闘糧食", "amount": 1},
+      {"name": "勲章", "amount": 1}
+    ],
+    "prerequisite": [216],
+    "requirements": {
+      "category": "sortie",
+      "times": 3,
+      "map": "1-3",
+      "boss": true,
+      "result": "B",
+      "groups": [
+        {"ship": "軽巡", "amount": 1},
+        {"ship": "駆逐"}
+      ],
+      "disallowed": "他の艦"
+    }
+  },
+  {
+    "game_id": 'TODO',
+    "wiki_id": "B64",
+    "category": 2,
+    "type": 1,
+    "name": "南西諸島防衛線を強化せよ！",
+    "detail": "南西諸島防衛線に有力な艦隊を展開、同方面に来襲する敵艦隊を五回以上撃滅せよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 400,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "戦闘糧食", "amount": 1},
+      {"name": "特注家具職人", "amount": 1}
+    ],
+    "prerequisite": ['B63', 'F31'],
+    "requirements": {
+      "category": "sortie",
+      "times": 5,
+      "map": "1-4",
+      "boss": true,
+      "result": "S"
+    }
+  },
+  {
+    "game_id": 'TODO',
+    "wiki_id": "B65",
+    "category": 2,
+    "type": 1,
+    "name": "オリョール海の制海権を確保せよ！",
+    "detail": "大潮を旗艦とする艦隊を東部オリョール海に反復出撃、同方面敵艦隊を完全撃滅せよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 400,
+    "reward_steel": 0,
+    "reward_bauxite": 200,
+    "reward_other": [
+      {"name": "勲章", "amount": 1},
+      {"name": "給糧艦「伊良湖」", "amount": 2},
+    ],
+    "prerequisite": ['B64', 239],
+    "requirements": {
+      "category": "sortie",
+      "times": 6,
+      "map": "2-3",
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "大潮", "flagship": true},
+        {"ship": "艦", "amount": 5}
+      ]
+    }
+  },
+  {
+    "game_id": 'TODO',
+    "wiki_id": "B66",
+    "category": 2,
+    "type": 1,
+    "name": "旗艦「大潮」出撃せよ！",
+    "detail": "「大潮改二」旗艦の有力な艦隊を北方AL海域に展開、北方海域戦闘哨戒を実施せよ！",
+    "reward_fuel": 500,
+    "reward_ammo": 500,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "改修資材", "amount": 3},
+      {"name": "戦闘糧食", "amount": 1},
+    ],
+    "prerequisite": ['B65', 'B59'],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "3-5",
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "大潮改二", "flagship": true},
+        {"ship": "艦", "amount": 5}
+      ]
+    }
+  },
+  {
+    "game_id": 'TODO',
+    "wiki_id": "B67",
+    "category": 2,
+    "type": 1,
+    "name": "艦隊、三周年！",
+    "detail": "三周年を記念しバシー島沖及び東部オリョール海に出撃、同海域の敵艦隊を撃滅せよ！",
+    "reward_fuel": 1000,
+    "reward_ammo": 1000,
+    "reward_steel": 1000,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "「三周年記念」掛け軸", "category": "家具"},
+      {"name": "戦闘糧食", "amount": 1},
+    ],
+    "prerequisite": [208],
+    "requirements": {
+      "category": "and",
+      "list": [{
+        "category": "sortie",
+        "times": 1,
+        "map": "2-2",
+        "boss": true,
+        "result": "S"
+      }, {
+        "category": "sortie",
+        "times": 1,
+        "map": "2-3",
+        "boss": true,
+        "result": "S"
+      }]
+    }
+  },
+  {
+    "game_id": 'TODO',
+    "wiki_id": "B68",
+    "category": 2,
+    "type": 1,
+    "name": "旗艦「大潮」出撃せよ！",
+    "detail": "「江風改二」「時雨改二」「川内改二」他駆逐2隻を含む艦隊で、ジャム島攻略作戦を実施せよ！",
+    "reward_fuel": 500,
+    "reward_ammo": 0,
+    "reward_steel": 500,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "改修資材", "amount": 2},
+      {"name": "給糧艦「伊良湖」", "amount": 1},
+    ],
+    "prerequisite": ['A68'],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "4-1",
+      "boss": true,
+      "result": "A",
+      "groups": [
+        {"ship": "川内改二"},
+        {"ship": "江風改二"},
+        {"ship": "時雨改二"},
+        {"ship": "駆逐", "amount": 2},
+        {"ship": "艦", "amount": 1}
+      ]
+    }
+  },
+  {
+    "game_id": 'TODO',
+    "wiki_id": "B69",
+    "category": 2,
+    "type": 1,
+    "name": "「第一航空戦隊」西へ！",
+    "detail": "旗艦「赤城」同僚艦「加賀」を中核とする艦隊で、深海東洋艦隊漸減作戦を貫徹せよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 800,
+    "reward_steel": 0,
+    "reward_bauxite": 800,
+    "reward_other": [
+      {"name": "熟練搭乗員", "amount": 1},
+      {"name": "改修資材", "amount": 3},
+    ],
+    "prerequisite": ['B68', 'F33'],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "4-5",
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": "赤城", "flagship": true},
+        {"ship": "加賀"},
+        {"ship": "艦", "amount": 4}
+      ]
+    }
+  },
+  {
     "game_id": 201,
     "wiki_id": "Bd01",
     "category": 2,

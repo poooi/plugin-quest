@@ -166,6 +166,16 @@
       "scrapdelim": "，",
       "fullyskilled": "、滿熟練度的",
       "useskilledcrew": "，同時消耗一個熟練搭乘員"
+    },
+
+    "scrapequipment": {
+      "main": "廢棄{{{scraps}}}",
+      "scrap": "{{{name}}}{{{amount}}}只",
+      "scrapdelim": "，",
+    },
+
+    "and": {
+      "separator": "；以及"
     }
 
   },

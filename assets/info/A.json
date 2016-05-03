@@ -1610,5 +1610,84 @@
         {"ship": "清霜"}
       ]
     }
+  },
+  {
+    "game_id": 'TODO',
+    "wiki_id": "A66",
+    "category": 1,
+    "type": 1,
+    "name": "「第三十一戦隊(第一次)」を編成せよ！",
+    "detail": "「五十鈴改二」旗艦、「皐月改二」「卯月改」を含む、対潜機動水上部隊を編成せよ！",
+    "reward_fuel": 310,
+    "reward_ammo": 310,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2},
+      {"name": "給糧艦「伊良湖」", "amount": 1}
+    ],
+    "prerequisite": [295, 216],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "五十鈴改二", "flagship": true},
+        {"ship": "皐月改二"},
+        {"ship": "卯月改"}
+      ]
+    }
+  },
+  {
+    "game_id": 'TODO',
+    "wiki_id": "A67",
+    "category": 1,
+    "type": 1,
+    "name": "「第二七駆逐隊」を編成せよ！",
+    "detail": "「白露改」旗艦、「時雨」「春雨」「五月雨」4隻による第二七駆逐隊を編成せよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 270,
+    "reward_steel": 270,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2},
+      {"name": "開発資材", "amount": 2}
+    ],
+    "prerequisite": [222, 216],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "白露改"},
+        {"ship": "時雨"},
+        {"ship": "春雨"},
+        {"ship": "五月雨"}
+      ],
+      "disallowed": "他の艦"
+    }
+  },
+  {
+    "game_id": 'TODO',
+    "wiki_id": "A68",
+    "category": 1,
+    "type": 1,
+    "name": "強行高速輸送部隊、出撃せよ！",
+    "detail": "「川内改二」旗艦、「江風改二」「時雨改二」他駆逐2隻による水雷戦隊を編成せよ！",
+    "reward_fuel": 100,
+    "reward_ammo": 100,
+    "reward_steel": 100,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "高速修復材", "amount": 2}
+    ],
+    "prerequisite": [293],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "川内改二", "flagship": true},
+        {"ship": "江風改二"},
+        {"ship": "時雨改二"},
+        {"ship": "駆逐", "amount": 2}
+      ],
+      "disallowed": "他の艦"
+    }
   }
 ]
