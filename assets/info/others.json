@@ -1426,7 +1426,7 @@
     "reward_steel": 50,
     "reward_bauxite": 0,
     "reward_other": [
-      {"name": "家具箱(中)", "amount": 1}
+      {"name": "家具箱（中）", "amount": 1}
     ],
     "prerequisite": [240, 220],
     "requirements": {
