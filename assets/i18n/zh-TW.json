@@ -171,7 +171,7 @@
     "scrapequipment": {
       "main": "廢棄{{{scraps}}}",
       "scrap": "{{{name}}}{{{amount}}}只",
-      "scrapdelim": "，",
+      "scrapdelim": "，"
     },
 
     "and": {

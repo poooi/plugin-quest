@@ -120,7 +120,7 @@ reqstr = (requirements) ->
     category = requirements['category']
     fn = reqstr_categories[category]
     ret = fn(requirements)
-    #onsole.log ret
+    console.log ret
     ret
   catch e
     console.log "Invalid requirements: #{requirements} reason: #{e} #{e.stack}"
@@ -161,7 +161,7 @@ reqstr_categories['sortie'] = extract_first_arg (detail) ->
       _$('req.sortie.!boss') || ''
   str_map = if @map then _$ 'req.sortie.map', {map: @map, boss: str_boss} else ''
   str_result = if @result
-      _$ 'req.sortie.result', _$('req.result.'+@result)
+      _$ 'req.sortie.result', __('req.result.'+@result)
     else
       _$('req.sortie.!result') || ''
   str_times = _$ 'req.sortie.times', reqstr_frequency @times
@@ -327,7 +327,7 @@ reqstr_categories['scrapequipment'] = extract_first_arg (detail) ->
   #     {"name": "7.7mm機銃", "amount": 2},
   #   ]
   # }
-  str_scraps = (for scrap in @scraps
+  str_scraps = (for scrap in @list
     _$ 'req.scrapequipment.scrap',
       name: __(scrap['name']),
       amount: scrap['amount']).join _$('req.modelconversion.scrapdelim')

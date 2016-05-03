@@ -174,7 +174,7 @@
     }
   },
   {
-    "game_id": 'TODO',
+    "game_id": "TODO",
     "wiki_id": "C09",
     "category": 3,
     "type": 6,
@@ -188,7 +188,7 @@
       {"name": "開発資材", "amount": 2},
       {"name": "戦闘糧食", "amount": 1}
     ],
-    "prerequisite": ['F32', 216],
+    "prerequisite": ["F32", 216],
     "requirements": {
       "category": "excercise",
       "times": 4,
@@ -1393,7 +1393,7 @@
     }
   },
   {
-    "game_id": 'TODO',
+    "game_id": "TODO",
     "wiki_id": "F31",
     "category": 6,
     "type": 1,
@@ -1415,7 +1415,7 @@
     }
   },
   {
-    "game_id": 'TODO',
+    "game_id": "TODO",
     "wiki_id": "F32",
     "category": 6,
     "type": 1,
@@ -1437,7 +1437,7 @@
     }
   },
   {
-    "game_id": 'TODO',
+    "game_id": "TODO",
     "wiki_id": "F33",
     "category": 6,
     "type": 1,
@@ -1450,7 +1450,7 @@
     "reward_other": [
       {"name": "特二式内火艇", "category": "装備", "amount": 1}
     ],
-    "prerequisite": ['C09', 278],
+    "prerequisite": ["C09", 278],
     "requirements": {
       "category": "scrapequipment",
       "list": [

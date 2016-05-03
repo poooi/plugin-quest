@@ -58,6 +58,9 @@ module.exports =
       quests = []
       for quest in json
         quest.condition = reqstr quest['requirements']
+        if typeof(quest.game_id) != 'number'
+          console.warn "Unexpected quest game_id type \"#{typeof(quest.game_id)}\" for quest \"#{quest.wiki_id}\""
+          quest.game_id = "_UNKNOWN-#{quests.length}"
         quests[quest.game_id] = quest
       quests_status = []
       for quest in json
@@ -65,6 +68,9 @@ module.exports =
         quests_status[quest.game_id] = 1
       for quest in json
         for pid in quest.prerequisite
+          if typeof(pid) != 'number'
+            console.warn "Unexpected quest prerequisite type \"#{typeof(pid)}\" for quest \"#{quest.wiki_id}\". Skipping."
+            continue
           prereq = quests[pid]
           prereq.postquest.push quest.game_id
       {

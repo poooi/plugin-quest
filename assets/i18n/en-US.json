@@ -142,7 +142,7 @@
     "scrapequipment": {
       "main": "Scrap {{{scraps}}}",
       "scrap": "{{{amount}}} {{{name}}}",
-      "scrapdelim": ", ",
+      "scrapdelim": ", "
     },
 
     "and": {
