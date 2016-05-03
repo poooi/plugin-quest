@@ -54,7 +54,7 @@ module.exports =
   reactClass: React.createClass
     getInitialState: ->
       fs = require 'fs-extra'
-      json = fs.readJsonSync join(__dirname, 'assets', 'quest.json')
+      json = require join(__dirname, 'assets', 'info')
       quests = []
       for quest in json
         quest.condition = reqstr quest['requirements']
