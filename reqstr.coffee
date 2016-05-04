@@ -120,7 +120,7 @@ reqstr = (requirements) ->
     category = requirements['category']
     fn = reqstr_categories[category]
     ret = fn(requirements)
-    console.log ret
+    #console.log ret
     ret
   catch e
     console.log "Invalid requirements: #{requirements} reason: #{e} #{e.stack}"

@@ -1309,7 +1309,7 @@
     }
   },
   {
-    "game_id": "286",
+    "game_id": 286,
     "wiki_id": "B48",
     "category": 2,
     "type": 1,
@@ -1602,7 +1602,7 @@
     }
   },
   {
-    "game_id": "TODO",
+    "game_id": 805,
     "wiki_id": "B58",
     "category": 2,
     "type": 1,
@@ -1631,7 +1631,7 @@
     }
   },
   {
-    "game_id": "TODO",
+    "game_id": 806,
     "wiki_id": "B59",
     "category": 2,
     "type": 1,
@@ -1645,7 +1645,7 @@
       {"name": "25mm三連装機銃 集中配備", "category": "装備", "amount": 1},
       {"name": "戦闘糧食", "amount": 1}
     ],
-    "prerequisite": ["B58", 402],
+    "prerequisite": [805, 402],
     "requirements": {
       "category": "sortie",
       "times": 1,
@@ -1660,7 +1660,7 @@
     }
   },
   {
-    "game_id": "TODO",
+    "game_id": 807,
     "wiki_id": "B60",
     "category": 2,
     "type": 1,
@@ -1674,7 +1674,7 @@
       {"name": "改修資材", "amount": 3},
       {"name": "菱餅", "amount": 1}
     ],
-    "prerequisite": ["A66", 702],
+    "prerequisite": [171, 702],
     "requirements": {
       "category": "sortie",
       "times": 1,
@@ -1689,7 +1689,7 @@
     }
   },
   {
-    "game_id": "TODO",
+    "game_id": 172,
     "wiki_id": "B61",
     "category": 2,
     "type": 1,
@@ -1703,7 +1703,7 @@
       {"name": "「春の一番」掛け軸", "category": "家具"},
       {"name": "菱餅", "amount": 1}
     ],
-    "prerequisite": ["A67"],
+    "prerequisite": [172],
     "requirements": {
       "category": "sortie",
       "times": 1,
@@ -1720,7 +1720,7 @@
     }
   },
   {
-    "game_id": "TODO",
+    "game_id": 809,
     "wiki_id": "B62",
     "category": 2,
     "type": 1,
@@ -1744,7 +1744,7 @@
     }
   },
   {
-    "game_id": "TODO",
+    "game_id": 810,
     "wiki_id": "B63",
     "category": 2,
     "type": 1,
@@ -1773,7 +1773,7 @@
     }
   },
   {
-    "game_id": "TODO",
+    "game_id": 811,
     "wiki_id": "B64",
     "category": 2,
     "type": 1,
@@ -1787,7 +1787,7 @@
       {"name": "戦闘糧食", "amount": 1},
       {"name": "特注家具職人", "amount": 1}
     ],
-    "prerequisite": ["B63", "F31"],
+    "prerequisite": [810, 634],
     "requirements": {
       "category": "sortie",
       "times": 5,
@@ -1797,7 +1797,7 @@
     }
   },
   {
-    "game_id": "TODO",
+    "game_id": 812,
     "wiki_id": "B65",
     "category": 2,
     "type": 1,
@@ -1811,7 +1811,7 @@
       {"name": "勲章", "amount": 1},
       {"name": "給糧艦「伊良湖」", "amount": 2}
     ],
-    "prerequisite": ["B64", 239],
+    "prerequisite": [811, 239],
     "requirements": {
       "category": "sortie",
       "times": 6,
@@ -1825,7 +1825,7 @@
     }
   },
   {
-    "game_id": "TODO",
+    "game_id": 813,
     "wiki_id": "B66",
     "category": 2,
     "type": 1,
@@ -1839,7 +1839,7 @@
       {"name": "改修資材", "amount": 3},
       {"name": "戦闘糧食", "amount": 1}
     ],
-    "prerequisite": ["B65", "B59"],
+    "prerequisite": [812, 806],
     "requirements": {
       "category": "sortie",
       "times": 1,
@@ -1853,7 +1853,7 @@
     }
   },
   {
-    "game_id": "TODO",
+    "game_id": 816,
     "wiki_id": "B67",
     "category": 2,
     "type": 1,
@@ -1886,11 +1886,11 @@
     }
   },
   {
-    "game_id": "TODO",
+    "game_id": 814,
     "wiki_id": "B68",
     "category": 2,
     "type": 1,
-    "name": "旗艦「大潮」出撃せよ！",
+    "name": "強行高速輸送部隊、出撃せよ！",
     "detail": "「江風改二」「時雨改二」「川内改二」他駆逐2隻を含む艦隊で、ジャム島攻略作戦を実施せよ！",
     "reward_fuel": 500,
     "reward_ammo": 0,
@@ -1900,7 +1900,7 @@
       {"name": "改修資材", "amount": 2},
       {"name": "給糧艦「伊良湖」", "amount": 1}
     ],
-    "prerequisite": ["A68"],
+    "prerequisite": [173],
     "requirements": {
       "category": "sortie",
       "times": 1,
@@ -1917,7 +1917,7 @@
     }
   },
   {
-    "game_id": "TODO",
+    "game_id": 815,
     "wiki_id": "B69",
     "category": 2,
     "type": 1,
@@ -1931,7 +1931,7 @@
       {"name": "熟練搭乗員", "amount": 1},
       {"name": "改修資材", "amount": 3}
     ],
-    "prerequisite": ["B68", "F33"],
+    "prerequisite": [814, 636],
     "requirements": {
       "category": "sortie",
       "times": 1,
