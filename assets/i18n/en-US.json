@@ -34,10 +34,11 @@
     },
 
     "result": {
-      "S": "an S-Rank",
-      "A": "an A-Rank or better",
-      "B": "a B-Rank or better",
-      "C": "a C-Rank or better"
+      "クリア": "clear",
+      "S": "obtain an S-Rank",
+      "A": "obtain an A-Rank or better",
+      "B": "obtain a B-Rank or better",
+      "C": "obtain a C-Rank or better"
     },
 
     "group": {
@@ -69,7 +70,7 @@
       "times": " %s",
       "map": " to World {{{map}}}",
       "groups": " with %s",
-      "result": " and obtain %s",
+      "result": " and %s",
       "boss": " at the boss",
       "disallowed": ", %s not allowed"
     },
@@ -136,6 +137,16 @@
       "scrapdelim": ", ",
       "fullyskilled": "Rank 7 ",
       "useskilledcrew": ", consuming a Skilled Crew Member"
+    },
+
+    "scrapequipment": {
+      "main": "Scrap {{{scraps}}}",
+      "scrap": "{{{amount}}} {{{name}}}",
+      "scrapdelim": ", "
+    },
+
+    "and": {
+      "separator": "; "
     }
 
   },
@@ -149,6 +160,8 @@
   "改修工廠開放": "Unlocks the Improvement Arsenal",
   "大型艦建造開放": "Unlocks Large Ship Construction",
   "煎餅布団": "Thin futon",
+  "「三周年記念」掛け軸": "\"3rd Anniversary\" wallscroll",
+  "「春の一番」掛け軸": "\"Spring is number 1\" scroll",
 
   "":""
 }

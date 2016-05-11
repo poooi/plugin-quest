@@ -1,0 +1,1692 @@
+[
+  {
+    "game_id": 301,
+    "wiki_id": "C01",
+    "category": 3,
+    "type": 1,
+    "name": "はじめての「演習」！",
+    "detail": "他の提督(プレイヤー)の艦隊と「演習」を行おう！",
+    "reward_fuel": 10,
+    "reward_ammo": 10,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
+    "prerequisite": [],
+    "requirements": {
+      "category": "excercise",
+      "times": 1
+    }
+  },
+  {
+    "game_id": 303,
+    "wiki_id": "C02",
+    "category": 3,
+    "type": 2,
+    "name": "「演習」で練度向上！",
+    "detail": "本日中に他の司令官の艦隊に対して3回「演習」を挑もう！",
+    "reward_fuel": 50,
+    "reward_ammo": 0,
+    "reward_steel": 50,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "高速建造材", "amount": 1}
+    ],
+    "prerequisite": [],
+    "requirements": {
+      "category": "excercise",
+      "times": 3
+    }
+  },
+  {
+    "game_id": 304,
+    "wiki_id": "C03",
+    "category": 3,
+    "type": 2,
+    "name": "「演習」で他提督を圧倒せよ！",
+    "detail": "本日中に他の司令官の艦隊との「演習」で5回以上「勝利」をおさめよう！",
+    "reward_fuel": 0,
+    "reward_ammo": 50,
+    "reward_steel": 0,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
+    "prerequisite": [303],
+    "requirements": {
+      "category": "excercise",
+      "times": 5,
+      "victory": true
+    }
+  },
+  {
+    "game_id": 302,
+    "wiki_id": "C04",
+    "category": 3,
+    "type": 3,
+    "name": "大規模演習",
+    "detail": "今週中に「演習」で他の提督の艦隊に対して20回「勝利」しよう！",
+    "reward_fuel": 200,
+    "reward_ammo": 200,
+    "reward_steel": 200,
+    "reward_bauxite": 200,
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "改修資材", "amount": 1}
+    ],
+    "prerequisite": [303],
+    "requirements": {
+      "category": "excercise",
+      "times": 20,
+      "victory": true
+    }
+  },
+  {
+    "game_id": 307,
+    "wiki_id": "C05",
+    "category": 3,
+    "type": 1,
+    "name": "艦隊の練度向上に努めよ！",
+    "detail": "作戦前に艦隊の練度向上を図る！本日中に「演習」で3回以上「勝利」をおさめよう！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 300,
+    "reward_bauxite": 300,
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2}
+    ],
+    "prerequisite": [152],
+    "requirements": {
+      "category": "excercise",
+      "times": 3,
+      "victory": true,
+      "daily": true
+    }
+  },
+  {
+    "game_id": 308,
+    "wiki_id": "C06",
+    "category": 3,
+    "type": 1,
+    "name": "演習を強化、艦隊の練度向上に努めよ！",
+    "detail": "艦隊のさらなる練度向上を図る！本日中に「演習」で4回以上「勝利」をおさめよう！",
+    "reward_fuel": 0,
+    "reward_ammo": 300,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2},
+      {"name": "改修資材", "amount": 1}
+    ],
+    "prerequisite": [418],
+    "requirements": {
+      "category": "excercise",
+      "times": 4,
+      "victory": true,
+      "daily": true
+    }
+  },
+  {
+    "game_id": 309,
+    "wiki_id": "C07",
+    "category": 3,
+    "type": 1,
+    "name": "北方再突入に備え、練度向上に努めよ！",
+    "detail": "艦隊再突入に備え、艦隊練度向上を図る！本日中に「演習」で4回以上「勝利」せよ！",
+    "reward_fuel": 300,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2},
+      {"name": "改修資材", "amount": 1}
+    ],
+    "prerequisite": [278],
+    "requirements": {
+      "category": "excercise",
+      "times": 4,
+      "victory": true,
+      "daily": true
+    }
+  },
+    {
+    "game_id": 311,
+    "wiki_id": "C08",
+    "category": 3,
+    "type": 6,
+    "name": "精鋭艦隊演習",
+    "detail": "同日中に「演習」で７回以上「勝利」をおさめ、我が精鋭艦隊の練度を示そう！",
+    "reward_fuel": 0,
+    "reward_ammo": 400,
+    "reward_steel": 0,
+    "reward_bauxite": 200,
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2},
+      {"name": "戦闘糧食", "amount": 1}
+    ],
+    "prerequisite": [216],
+    "requirements": {
+      "category": "excercise",
+      "times": 7,
+      "victory": true,
+      "daily": true
+    }
+  },
+  {
+    "game_id": 312,
+    "wiki_id": "C09",
+    "category": 3,
+    "type": 6,
+    "name": "上陸部隊演習",
+    "detail": "島嶼攻略部隊の練度向上のため、本日中に演習で4回以上「勝利」せよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 200,
+    "reward_steel": 200,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "戦闘糧食", "amount": 1}
+    ],
+    "prerequisite": [635, 216],
+    "requirements": {
+      "category": "excercise",
+      "times": 4,
+      "victory": true,
+      "daily": true
+    }
+  },
+  {
+    "game_id": 401,
+    "wiki_id": "D01",
+    "category": 4,
+    "type": 1,
+    "name": "はじめての「遠征」！",
+    "detail": "艦隊を「遠征」に出発させよう！",
+    "reward_fuel": 30,
+    "reward_ammo": 30,
+    "reward_steel": 30,
+    "reward_bauxite": 30,
+    "reward_other": [
+      {"name": "家具箱（小）", "amount": 1}
+    ],
+    "prerequisite": [105],
+    "requirements": {
+      "category": "expedition",
+      "objects": [
+        {"times": 1}
+      ]
+    }
+  },
+  {
+    "game_id": 402,
+    "wiki_id": "D02",
+    "category": 4,
+    "type": 2,
+    "name": "「遠征」を３回成功させよう！",
+    "detail": "本日中に「遠征」３回成功させよう！",
+    "reward_fuel": 100,
+    "reward_ammo": 100,
+    "reward_steel": 100,
+    "reward_bauxite": 100,
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
+    "prerequisite": [],
+    "requirements": {
+      "category": "expedition",
+      "objects": [
+        {"times": 3}
+      ]
+    }
+  },
+  {
+    "game_id": 403,
+    "wiki_id": "D03",
+    "category": 4,
+    "type": 2,
+    "name": "「遠征」を１０回成功させよう！",
+    "detail": "本日中に「遠征」10回成功させよう！",
+    "reward_fuel": 150,
+    "reward_ammo": 300,
+    "reward_steel": 300,
+    "reward_bauxite": 150,
+    "reward_other": [
+      {"name": "家具箱（小）", "amount": 1},
+      {"name": "家具箱（中）", "amount": 1}
+    ],
+    "prerequisite": [402],
+    "requirements": {
+      "category": "expedition",
+      "objects": [
+        {"times": 10}
+      ]
+    }
+  },
+  {
+    "game_id": 404,
+    "wiki_id": "D04",
+    "category": 4,
+    "type": 3,
+    "name": "大規模遠征作戦、発令！",
+    "detail": "今週中に「遠征」30回成功させよう！",
+    "reward_fuel": 300,
+    "reward_ammo": 500,
+    "reward_steel": 500,
+    "reward_bauxite": 300,
+    "reward_other": [
+      {"name": "開発資材", "amount": 3},
+      {"name": "家具箱（大）", "amount": 1}
+    ],
+    "prerequisite": [],
+    "requirements": {
+      "category": "expedition",
+      "objects": [
+        {"times": 30}
+      ]
+    }
+  },
+  {
+    "game_id": 405,
+    "wiki_id": "D05",
+    "category": 4,
+    "type": 1,
+    "name": "第一次潜水艦派遣作戦",
+    "detail": "はじめての潜水艦派遣作戦を成功させよう！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 10,
+    "reward_bauxite": 10,
+    "reward_other": [
+      {"name": "応急修理要員", "amount": 1}
+    ],
+    "prerequisite": [127],
+    "requirements": {
+      "category": "expedition",
+      "objects": [
+        {"times": 1, "id": 30}
+      ]
+    }
+  },
+  {
+    "game_id": 406,
+    "wiki_id": "D06",
+    "category": 4,
+    "type": 1,
+    "name": "第二次潜水艦派遣作戦",
+    "detail": "第二次潜水艦派遣作戦を成功させよう！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 10,
+    "reward_bauxite": 10,
+    "reward_other": [
+      {"name": "Ju87C改", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [405],
+    "requirements": {
+      "category": "expedition",
+      "objects": [
+        {"times": 1, "id": 30}
+      ]
+    }
+  },
+  {
+    "game_id": 408,
+    "wiki_id": "D07",
+    "category": 4,
+    "type": 1,
+    "name": "潜水艦派遣作戦による技術入手の継続！",
+    "detail": "第三次及び第四次潜水艦派遣作戦を成功させ、他国製技術の導入に努めよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 800,
+    "reward_other": [
+      {"name": "特注家具職人", "amount": 1},
+      {"name": "Ju87C改", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [406],
+    "requirements": {
+      "category": "expedition",
+      "objects": [
+        {"times": 2, "id": 30}
+      ]
+    }
+  },
+  {
+    "game_id": 409,
+    "wiki_id": "D08",
+    "category": 4,
+    "type": 1,
+    "name": "潜水艦派遣による海外艦との接触作戦",
+    "detail": "有力な潜水艦隊派遣による海外艦との接触作戦を成功させよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 100,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "Z1", "category": "艦娘", "amount": 1}
+    ],
+    "prerequisite": [408],
+    "requirements": {
+      "category": "expedition",
+      "objects": [
+        {"times": 1, "id": 31}
+      ]
+    }
+  },
+  {
+    "game_id": 410,
+    "wiki_id": "D09",
+    "category": 4,
+    "type": 3,
+    "name": "南方への輸送作戦を成功させよ！",
+    "detail": "激戦海域である南方海域への「東京急行」系遠征を敢行、これを成功させよ！",
+    "reward_fuel": 150,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "家具箱（小）", "amount": 1}
+    ],
+    "prerequisite": [130],
+    "requirements": {
+      "category": "expedition",
+      "objects": [
+        {"times": 1, "id": [37, 38]}
+      ]
+    }
+  },
+  {
+    "game_id": 412,
+    "wiki_id": "D10",
+    "category": 4,
+    "type": 1,
+    "name": "航空火力艦の運用を強化せよ！",
+    "detail": "「航空戦艦運用演習」を実施し、航空火力艦の運用の強化に努めよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 100,
+    "reward_other": [
+      {"name": "瑞雲(六三四空)", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [239],
+    "requirements": {
+      "category": "expedition",
+      "objects": [
+        {"times": 1, "id": 23}
+      ]
+    }
+  },
+  {
+    "game_id": 411,
+    "wiki_id": "D11",
+    "category": 4,
+    "type": 3,
+    "name": "南方への鼠輸送を継続実施せよ！",
+    "detail": "今週中に「東京急行」系遠征を継続的に実施、同種作戦を7回成功させよう！",
+    "reward_fuel": 400,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 400,
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "改修資材", "amount": 1}
+    ],
+    "prerequisite": [410],
+    "requirements": {
+      "category": "expedition",
+      "objects": [
+        {"times": 6, "id": [37, 38]}
+      ]
+    }
+  },
+  {
+    "game_id": 413,
+    "wiki_id": "D12",
+    "category": 4,
+    "type": 1,
+    "name": "(続)航空火力艦の運用を強化せよ！",
+    "detail": "「航空戦艦運用演習」を継続実施し、航空火力艦の運用の強化に引き続き努めよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 200,
+    "reward_other": [
+      {"name": "瑞雲(六三四空)", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [412],
+    "requirements": {
+      "category": "expedition",
+      "objects": [
+        {"times": 3, "id": 23}
+      ]
+    }
+  },
+  {
+    "game_id": 414,
+    "wiki_id": "D13",
+    "category": 4,
+    "type": 1,
+    "name": "遠洋潜水艦作戦を実施せよ！",
+    "detail": "「遠洋潜水艦作戦」を実施し、潜水艦隊の練度向上と敵艦隊漸減に努めよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 200,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "潜水艦53cm艦首魚雷(8門)", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [139],
+    "requirements": {
+      "category": "expedition",
+      "objects": [
+        {"times": 1, "id": 39}
+      ]
+    }
+  },
+  {
+    "game_id": 415,
+    "wiki_id": "D14",
+    "category": 4,
+    "type": 1,
+    "name": "遠洋潜水艦作戦の成果を拡大せよ！",
+    "detail": "「遠洋潜水艦作戦」を継続実施し、潜水艦隊の練度向上と敵艦隊漸減に努めよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 400,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "潜水艦53cm艦首魚雷(8門)", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [414],
+    "requirements": {
+      "category": "expedition",
+      "objects": [
+        {"times": 2, "id": 39}
+      ]
+    }
+  },
+  {
+    "game_id": 416,
+    "wiki_id": "D15",
+    "category": 4,
+    "type": 1,
+    "name": "防空射撃演習を実施せよ！",
+    "detail": "「防空射撃演習」を複数回実施し、艦隊の防空能力を高めよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 200,
+    "reward_steel": 0,
+    "reward_bauxite": 200,
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "25mm三連装機銃", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [207],
+    "requirements": {
+      "category": "expedition",
+      "objects": [
+        {"times": 3, "id": 6}
+      ]
+    }
+  },
+  {
+    "game_id": 417,
+    "wiki_id": "D16",
+    "category": 4,
+    "type": 1,
+    "name": "囮機動部隊支援作戦を実施せよ！",
+    "detail": "「囮機動部隊支援作戦」を実施し、これを成功させよ！",
+    "reward_fuel": 400,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 400,
+    "reward_other": [
+      {"name": "開発資材", "amount": 2},
+      {"name": "91式高射装置", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [272],
+    "requirements": {
+      "category": "expedition",
+      "objects": [
+        {"times": 1, "id": 15}
+      ]
+    }
+  },
+  {
+    "game_id": 418,
+    "wiki_id": "D17",
+    "category": 4,
+    "type": 1,
+    "name": "観艦式予行を実施せよ！",
+    "detail": "観艦式を実施する。予行として「観艦式予行」を複数回実施し、これを2回成功させよ！",
+    "reward_fuel": 150,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 150,
+    "reward_other": [
+      {"name": "開発資材", "amount": 3}
+    ],
+    "prerequisite": [137],
+    "requirements": {
+      "category": "expedition",
+      "objects": [
+        {"times": 2, "id": 7}
+      ]
+    }
+  },
+  {
+    "game_id": 419,
+    "wiki_id": "D18",
+    "category": 4,
+    "type": 1,
+    "name": "観艦式を敢行せよ！",
+    "detail": "練度の高い艦隊で観艦式本番を実施する。「観艦式」を実施し、これを成功させよ！",
+    "reward_fuel": 300,
+    "reward_ammo": 300,
+    "reward_steel": 300,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "改修資材", "amount": 1},
+      {"name": "司令部要員", "amount": 1}
+    ],
+    "prerequisite": [308],
+    "requirements": {
+      "category": "expedition",
+      "objects": [
+        {"times": 1, "id": 8}
+      ]
+    }
+  },
+  {
+    "game_id": 420,
+    "wiki_id": "D19",
+    "category": 4,
+    "type": 1,
+    "name": "機動部隊の運用を強化せよ！",
+    "detail": "機動部隊遠征を実施、「MO作戦」及び「敵母港空襲作戦」を展開、これを成功させよ！",
+    "reward_fuel": 200,
+    "reward_ammo": 200,
+    "reward_steel": 400,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "改修資材", "amount": 2},
+      {"name": "家具箱（大）", "amount": 1}
+    ],
+    "prerequisite": [287, 410],
+    "requirements": {
+      "category": "expedition",
+      "objects": [
+        {"times": 1, "id": 26},
+        {"times": 1, "id": 35}
+      ]
+    }
+  },
+  {
+    "game_id": 501,
+    "wiki_id": "E01",
+    "category": 5,
+    "type": 1,
+    "name": "はじめての「補給」！",
+    "detail": "補給は大事です！燃料・弾薬を艦に「補給」しよう！",
+    "reward_fuel": 20,
+    "reward_ammo": 20,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1}
+    ],
+    "prerequisite": [203],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "resupply",
+      "times": 1
+    }
+  },
+  {
+    "game_id": 502,
+    "wiki_id": "E02",
+    "category": 5,
+    "type": 1,
+    "name": "はじめての「入渠」！",
+    "detail": "戦闘で傷ついた艦を「入渠」させて修理して、次の出撃に備えよう！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 30,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
+    "prerequisite": [203],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "repair",
+      "times": 1
+    }
+  },
+  {
+    "game_id": 503,
+    "wiki_id": "E03",
+    "category": 5,
+    "type": 2,
+    "name": "艦隊大整備！",
+    "detail": "各艦隊から整備が必要な艦を5隻以上ドック入りさせ、大規模な整備をしよう！",
+    "reward_fuel": 30,
+    "reward_ammo": 30,
+    "reward_steel": 30,
+    "reward_bauxite": 30,
+    "reward_other": [
+      {"name": "高速修復材", "amount": 2}
+    ],
+    "prerequisite": [],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "repair",
+      "times": 5
+    }
+  },
+  {
+    "game_id": 504,
+    "wiki_id": "E04",
+    "category": 5,
+    "type": 2,
+    "name": "艦隊酒保祭り！",
+    "detail": "艦隊酒保祭り！各艦に延べ15回以上の補給を実施しよう！",
+    "reward_fuel": 50,
+    "reward_ammo": 50,
+    "reward_steel": 50,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "開発資材", "amount": 1},
+      {"name": "高速建造材", "amount": 1}
+    ],
+    "prerequisite": [503],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "resupply",
+      "times": 15
+    }
+  },
+  {
+    "game_id": 601,
+    "wiki_id": "F01",
+    "category": 6,
+    "type": 1,
+    "name": "はじめての「建造」！",
+    "detail": "「工廠」で鋼材などの資材を使って新しい艦を「建造」しよう！",
+    "reward_fuel": 50,
+    "reward_ammo": 50,
+    "reward_steel": 50,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
+    "prerequisite": [],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "ship",
+      "times": 1
+    }
+  },
+  {
+    "game_id": 602,
+    "wiki_id": "F02",
+    "category": 6,
+    "type": 1,
+    "name": "はじめての「開発」！",
+    "detail": "「工廠」でボーキサイトなどの資材を使って新しい装備アイテムを「開発」しよう！",
+    "reward_fuel": 100,
+    "reward_ammo": 100,
+    "reward_steel": 100,
+    "reward_bauxite": 100,
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
+    "prerequisite": [],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "equipment",
+      "times": 1
+    }
+  },
+  {
+    "game_id": 603,
+    "wiki_id": "F03",
+    "category": 6,
+    "type": 1,
+    "name": "はじめての「解体」！",
+    "detail": "「工廠」で不要な艦を「解体」してみよう！",
+    "reward_fuel": 60,
+    "reward_ammo": 60,
+    "reward_steel": 60,
+    "reward_bauxite": 60,
+    "reward_other": [
+      {"name": "高速建造材", "amount": 1},
+      {"name": "開発資材", "amount": 1}
+    ],
+    "prerequisite": [],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapship",
+      "times": 1
+    }
+  },
+  {
+    "game_id": 604,
+    "wiki_id": "F04",
+    "category": 6,
+    "type": 1,
+    "name": "はじめての「廃棄」！",
+    "detail": "「工廠」で装備アイテムを「廃棄」してみよう！",
+    "reward_fuel": 80,
+    "reward_ammo": 80,
+    "reward_steel": 80,
+    "reward_bauxite": 80,
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1},
+      {"name": "開発資材", "amount": 1}
+    ],
+    "prerequisite": [],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 1,
+      "batch": false
+    }
+  },
+  {
+    "game_id": 605,
+    "wiki_id": "F05",
+    "category": 6,
+    "type": 2,
+    "name": "新装備「開発」指令",
+    "detail": "「工廠」で装備アイテムを新たに「開発」しよう(失敗もOK)！",
+    "reward_fuel": 40,
+    "reward_ammo": 40,
+    "reward_steel": 40,
+    "reward_bauxite": 40,
+    "reward_other": [
+      {"name": "高速建造材", "amount": 1},
+      {"name": "開発資材", "amount": 1}
+    ],
+    "prerequisite": [],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "equipment",
+      "times": 1
+    }
+  },
+  {
+    "game_id": 606,
+    "wiki_id": "F06",
+    "category": 6,
+    "type": 2,
+    "name": "新造艦「建造」指令",
+    "detail": "「工廠」で艦娘を本日中に新たに「建造」しよう！",
+    "reward_fuel": 50,
+    "reward_ammo": 50,
+    "reward_steel": 50,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1},
+      {"name": "開発資材", "amount": 1}
+    ],
+    "prerequisite": [605],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "ship",
+      "times": 1
+    }
+  },
+  {
+    "game_id": 607,
+    "wiki_id": "F07",
+    "category": 6,
+    "type": 2,
+    "name": "装備「開発」集中強化！",
+    "detail": "「工廠」で装備アイテムを本日中に3回「開発」しよう(失敗もOK)！",
+    "reward_fuel": 100,
+    "reward_ammo": 100,
+    "reward_steel": 100,
+    "reward_bauxite": 100,
+    "reward_other": [
+      {"name": "開発資材", "amount": 2}
+    ],
+    "prerequisite": [606],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "equipment",
+      "times": 3
+    }
+  },
+  {
+    "game_id": 608,
+    "wiki_id": "F08",
+    "category": 6,
+    "type": 2,
+    "name": "艦娘「建造」艦隊強化！",
+    "detail": "艦隊強化のため、「工廠」で艦娘を本日中に3隻「建造」しよう！",
+    "reward_fuel": 200,
+    "reward_ammo": 200,
+    "reward_steel": 300,
+    "reward_bauxite": 100,
+    "reward_other": [
+      {"name": "高速建造材", "amount": 1},
+      {"name": "開発資材", "amount": 2}
+    ],
+    "prerequisite": [607],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "ship",
+      "times": 3
+    }
+  },
+  {
+    "game_id": 609,
+    "wiki_id": "F09",
+    "category": 6,
+    "type": 2,
+    "name": "軍縮条約対応！",
+    "detail": "少し艦隊規模が大きくなりすぎました！「工廠」で不要な艦を2隻「解体」してください！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1}
+    ],
+    "prerequisite": [608],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapship",
+      "times": 2
+    }
+  },
+  {
+    "game_id": 610,
+    "wiki_id": "F10",
+    "category": 6,
+    "type": 1,
+    "name": "「大型艦建造」の準備！(その弐)",
+    "detail": "大型艦建造の準備をします！「工廠」で装備アイテムを4回「廃棄」してみてください！",
+    "reward_fuel": 800,
+    "reward_ammo": 800,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "大型艦建造開放"}
+    ],
+    "prerequisite": [704],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 4,
+      "batch": false
+    }
+  },
+  {
+    "game_id": 612,
+    "wiki_id": "F11",
+    "category": 6,
+    "type": 1,
+    "name": "輸送用ドラム缶の準備",
+    "detail": "「工廠」で装備アイテムを3回「廃棄」して、輸送用のドラム缶を準備します。",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 30,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "ドラム缶(輸送用)", "category": "装備", "amount": 3}
+    ],
+    "prerequisite": [105],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 3,
+      "batch": false
+    }
+  },
+  {
+    "game_id": 613,
+    "wiki_id": "F12",
+    "category": 6,
+    "type": 3,
+    "name": "資源の再利用",
+    "detail": "「工廠」で余剰の装備アイテムをなるべく多く「廃棄」して、鋼材の再利用に努めよう！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 100,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "ドラム缶(輸送用)", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [228],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 24,
+      "batch": false
+    }
+  },
+  {
+    "game_id": 614,
+    "wiki_id": "F13",
+    "category": 6,
+    "type": 1,
+    "name": "機種転換",
+    "detail": "「九七式艦攻(友永隊)」搭載空母を秘書艦にした状態で新たに「天山」を2つ廃棄！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "天山一二型(友永隊)", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [250],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "九七式艦攻(友永隊)",
+      "scraps": [
+        {"name": "天山", "amount": 2}
+      ]
+    }
+  },
+  {
+    "game_id": 615,
+    "wiki_id": "F14",
+    "category": 6,
+    "type": 1,
+    "name": "機種転換",
+    "detail": "「九九式艦爆(江草隊)」搭載空母を秘書艦にした状態で新たに「彗星」を2つ廃棄！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "彗星(江草隊)", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [250],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "九九式艦爆(江草隊)",
+      "scraps": [
+        {"name": "彗星", "amount": 2}
+      ]
+    }
+  },
+  {
+    "game_id": 616,
+    "wiki_id": "F15",
+    "category": 6,
+    "type": 1,
+    "name": "機種転換",
+    "detail": "「零戦52型丙(六〇一空)」搭載空母を秘書艦にした状態で新たに「烈風」を2つ廃棄！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "烈風(六〇一空)", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [253],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "零戦52型丙(六〇一空)",
+      "scraps": [
+        {"name": "烈風", "amount": 2}
+      ]
+    }
+  },
+  {
+    "game_id": 617,
+    "wiki_id": "F16",
+    "category": 6,
+    "type": 1,
+    "name": "「伊良湖」の準備",
+    "detail": "「工廠」で不要な装備アイテムをいくつか「廃棄」して、新型給糧艦召喚の準備をしましょう！",
+    "reward_fuel": 100,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "給糧艦「伊良湖」", "amount": 4}
+    ],
+    "prerequisite": [215, 608],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 10,
+      "batch": false
+    }
+  },
+  {
+    "game_id": 618,
+    "wiki_id": "F17",
+    "category": 6,
+    "type": 1,
+    "name": "はじめての「装備改修」！",
+    "detail": "「改修工廠」で「装備」を改修してみましょう！明石さん、お願いします！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 100,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "改修資材", "amount": 7}
+    ],
+    "prerequisite": [146],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "improvement",
+      "times": 1
+    }
+  },
+  {
+    "game_id": 619,
+    "wiki_id": "F18",
+    "category": 6,
+    "type": 2,
+    "name": "装備の改修強化",
+    "detail": "「改修工廠」で「装備」の改修強化に努めます。",
+    "reward_fuel": 0,
+    "reward_ammo": 50,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "改修資材", "amount": 1}
+    ],
+    "prerequisite": [608, 618],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "improvement",
+      "times": 1
+    }
+  },
+  {
+    "game_id": 622,
+    "wiki_id": "F19",
+    "category": 6,
+    "type": 1,
+    "name": "機種転換",
+    "detail": "「九七式艦攻(村田隊)」搭載「翔鶴」を秘書艦にして、新たに「天山」を2つ廃棄！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "天山(村田隊)", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [287],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "九七式艦攻(村田隊)",
+      "secretary": "翔鶴",
+      "scraps": [
+        {"name": "天山", "amount": 2}
+      ]
+    }
+  },
+  {
+    "game_id": 623,
+    "wiki_id": "F20",
+    "category": 6,
+    "type": 1,
+    "name": "精鋭「九七式艦攻」部隊の編成",
+    "detail": "「翔鶴」または「赤城」を秘書艦にした状態で新たに「九七式艦攻」を3つ破棄",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "九七式艦攻(村田隊)", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [287],
+    "requirements": {
+      "category": "modelconversion",
+      "secretary": ["翔鶴", "赤城"],
+      "scraps": [
+        {"name": "九七式艦攻", "amount": 3}
+      ]
+    }
+  },
+  {
+    "game_id": 624,
+    "wiki_id": "F21",
+    "category": 6,
+    "type": 1,
+    "name": "試作艤装の準備",
+    "detail": "「工廠」で装備アイテムを7つ「廃棄」して、「試製甲板カタパルト」を準備します。",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 100,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "試製甲板カタパルト", "amount": 1}
+    ],
+    "prerequisite": [420],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 7,
+      "batch": true
+    }
+  },
+  {
+    "game_id": 626,
+    "wiki_id": "F22",
+    "category": 6,
+    "type": 6,
+    "name": "精鋭「艦戦」隊の新編成",
+    "detail": "要熟練搭乗員：練度max「零戦21型」搭載「鳳翔」秘書艦で「零戦21型」×2「九六艦戦」×1廃棄！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "零式艦戦21型(熟練)", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [264, 114],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "零式艦戦21型",
+      "secretary": "鳳翔",
+      "fullyskilled": true,
+      "scraps": [
+        {"name": "零式艦戦21型", "amount": 2},
+        {"name": "九六式艦戦", "amount": 1}
+      ],
+      "use_skilled_crew": true
+    }
+  },
+  {
+    "game_id": 625,
+    "wiki_id": "F23",
+    "category": 6,
+    "type": 1,
+    "name": "試製航空艤装の追加試作",
+    "detail": "「工廠」で装備アイテムを9つ「廃棄」して、「試製甲板カタパルト」を追加試作します。",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 100,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "試製甲板カタパルト", "amount": 1}
+    ],
+    "prerequisite": [294],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 9,
+      "batch": true
+    }
+  },
+  {
+    "game_id": 627,
+    "wiki_id": "F24",
+    "category": 6,
+    "type": 1,
+    "name": "機種転換",
+    "detail": "「零戦21型(熟練)」搭載空母を秘書艦にして、新たに「零戦52型」を2つ廃棄！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "零式艦戦52型(熟練)", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [164, 626],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "零式艦戦21型(熟練)",
+      "scraps": [
+        {"name": "零式艦戦52型", "amount": 2}
+      ]
+    }
+  },
+  {
+    "game_id": 628,
+    "wiki_id": "F25",
+    "category": 6,
+    "type": 6,
+    "name": "機種転換",
+    "detail": "練度max「零戦21型(熟練)」搭載空母を秘書艦にして、新たに「零戦52型」を2つ廃棄！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "零式艦戦52型(熟練)", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [264, 265, 627],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "零式艦戦21型(熟練)",
+      "fullyskilled": true,
+      "scraps": [
+        {"name": "零式艦戦52型", "amount": 2}
+      ]
+    }
+  },
+  {
+    "game_id": 629,
+    "wiki_id": "F26",
+    "category": 6,
+    "type": 1,
+    "name": "「艦戦」隊の再編成",
+    "detail": "練度max「零戦52型(熟練)」搭載「瑞鶴」が秘書艦で「零戦52型丙(六〇一空)」を廃棄！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "零戦52型丙(付岩井小隊)", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [293, 627],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "零式艦戦52型(熟練)",
+      "fullyskilled": true,
+      "secretary": "瑞鶴",
+      "scraps": [
+        {"name": "零戦52型丙(六〇一空)", "amount": 1}
+      ]
+    }
+  },
+  {
+    "game_id": 631,
+    "wiki_id": "F27",
+    "category": 6,
+    "type": 1,
+    "name": "機種転換＆部隊再編",
+    "detail": "練度max「零戦52型丙(付岩井小隊)」搭載瑞鶴秘書艦で「零戦62型(爆戦)」を2つ廃棄！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "零式艦戦62型(爆戦/岩井隊)", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [294, 629],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "零戦52型丙(付岩井小隊)",
+      "fullyskilled": true,
+      "secretary": "瑞鶴",
+      "scraps": [
+        {"name": "零式艦戦62型(爆戦)", "amount": 2}
+      ]
+    }
+  },
+  {
+    "game_id": 630,
+    "wiki_id": "F28",
+    "category": 6,
+    "type": 1,
+    "name": "「艦戦」隊の再編成",
+    "detail": "練度max「零戦21型(熟練)」搭載「瑞鶴」が秘書の状態で「零戦21型」を2つ廃棄！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "零戦21型(付岩本小隊)", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [626, 166],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "零式艦戦21型(熟練)",
+      "fullyskilled": true,
+      "secretary": "瑞鶴",
+      "scraps": [
+        {"name": "零式艦戦21型", "amount": 2}
+      ]
+    }
+  },
+  {
+    "game_id": 632,
+    "wiki_id": "F29",
+    "category": 6,
+    "type": 1,
+    "name": "機種転換",
+    "detail": "練度max「零戦21型(付岩本小隊)」搭載「瑞鶴」秘書艦で「零戦52型」を2つ廃棄！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "零戦52型甲(付岩本小隊)", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [625, 630],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "零戦21型(付岩本小隊)",
+      "fullyskilled": true,
+      "secretary": "瑞鶴",
+      "scraps": [
+        {"name": "零式艦戦52型", "amount": 2}
+      ]
+    }
+  },
+  {
+    "game_id": 633,
+    "wiki_id": "F30",
+    "category": 6,
+    "type": 1,
+    "name": "機種転換＆部隊再編",
+    "detail": "部隊を再編する！練度max「零戦52型甲(付岩本小隊)」搭載「瑞鶴」秘書艦で、「彩雲」を2つ廃棄！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "零式艦戦53型(岩本隊)", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [167],
+    "requirements": {
+      "category": "modelconversion",
+      "equipment": "零戦52型甲(付岩本小隊)",
+      "fullyskilled": true,
+      "secretary": "瑞鶴",
+      "scraps": [
+        {"name": "彩雲", "amount": 2}
+      ]
+    }
+  },
+  {
+    "game_id": 634,
+    "wiki_id": "F31",
+    "category": 6,
+    "type": 1,
+    "name": "新家具の準備",
+    "detail": "「工廠」で装備アイテムを9つ「廃棄」して、新家具の準備をします。",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 90,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "特注家具職人", "amount": 1}
+    ],
+    "prerequisite": [216],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 9,
+      "batch": true
+    }
+  },
+  {
+    "game_id": 635,
+    "wiki_id": "F32",
+    "category": 6,
+    "type": 1,
+    "name": "新装備の準備",
+    "detail": "「工廠」で装備を5つ「廃棄」して、新装備配備の準備をします。",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 50,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "家具箱（中）", "amount": 1}
+    ],
+    "prerequisite": [240, 220],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 5,
+      "batch": true
+    }
+  },
+  {
+    "game_id": 636,
+    "wiki_id": "F33",
+    "category": 6,
+    "type": 1,
+    "name": "上陸戦用新装備の調達",
+    "detail": "「工廠」で「7.7mm機銃」及び「12.7mm単装機銃」を二つずつ廃棄！",
+    "reward_fuel": 50,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "特二式内火艇", "category": "装備", "amount": 1}
+    ],
+    "prerequisite": [312, 278],
+    "requirements": {
+      "category": "scrapequipment",
+      "list": [
+        {"name": "7.7mm機銃", "amount": 2},
+        {"name": "12.7mm単装機銃", "amount": 2}
+      ]
+    }
+  },
+  {
+    "game_id": 701,
+    "wiki_id": "G01",
+    "category": 7,
+    "type": 1,
+    "name": "はじめての「近代化改修」！",
+    "detail": "任意の艦を近代化改修(合成)して、強化せよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 50,
+    "reward_bauxite": 50,
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
+    "prerequisite": [],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "modernization",
+      "times": 1
+    }
+  },
+  {
+    "game_id": 702,
+    "wiki_id": "G02",
+    "category": 7,
+    "type": 2,
+    "name": "艦の「近代化改修」を実施せよ！",
+    "detail": "近代化改修を実施して、２回以上これを成功させよ！",
+    "reward_fuel": 20,
+    "reward_ammo": 20,
+    "reward_steel": 50,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "高速修復材", "amount": 1}
+    ],
+    "prerequisite": [],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "modernization",
+      "times": 2
+    }
+  },
+  {
+    "game_id": 703,
+    "wiki_id": "G03",
+    "category": 7,
+    "type": 3,
+    "name": "「近代化改修」を進め、戦備を整えよ！",
+    "detail": "一週間の間に、近代化改修を１5回成功させよ！",
+    "reward_fuel": 200,
+    "reward_ammo": 200,
+    "reward_steel": 300,
+    "reward_bauxite": 100,
+    "reward_other": [
+      {"name": "高速建造材", "amount": 1},
+      {"name": "開発資材", "amount": 2}
+    ],
+    "prerequisite": [702],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "modernization",
+      "times": 15
+    }
+  },
+  {
+    "game_id": 704,
+    "wiki_id": "G04",
+    "category": 7,
+    "type": 1,
+    "name": "「大型艦建造」の準備！(その壱)",
+    "detail": "大型艦/新型艦建造のための準備を行う。任意の艦で近代化改修を4回成功させよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 400,
+    "reward_bauxite": 400,
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
+    "prerequisite": [109],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "modernization",
+      "times": 4
+    }
+  },
+  {
+    "game_id": 611,
+    "wiki_id": "WF01",
+    "category": 6,
+    "type": 1,
+    "name": "式の準備！(その壱)",
+    "detail": "式の準備をします！「工廠」で装備アイテムを2回「廃棄」して身の回りの整理を！",
+    "reward_fuel": 88,
+    "reward_ammo": 88,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
+    "prerequisite": [118],
+    "requirements": {
+      "category": "simple",
+      "subcategory": "scrapequipment",
+      "times": 2,
+      "batch": false
+    }
+  },
+  {
+    "game_id": 306,
+    "wiki_id": "WC01",
+    "category": 3,
+    "type": 1,
+    "name": "式の準備！(その弐)",
+    "detail": "本日中に「演習」で2回以上「勝利」をおさめ、式への気持ちを整理しよう！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 88,
+    "reward_bauxite": 88,
+    "reward_other": [
+      {"name": "開発資材", "amount": 1}
+    ],
+    "prerequisite": [611],
+    "requirements": {
+      "category": "excercise",
+      "times": 2,
+      "victory": true,
+      "daily": true
+    }
+  },
+  {
+    "game_id": 134,
+    "wiki_id": "WA01",
+    "category": 1,
+    "type": 1,
+    "name": "式の準備！(その参)",
+    "detail": "第一艦隊旗艦に練度の高い(Lv.90以上～99以下)艦娘を配備して気持ちを整理せよ！",
+    "reward_fuel": 88,
+    "reward_ammo": 88,
+    "reward_steel": 88,
+    "reward_bauxite": 88,
+    "reward_other": [
+      {"name": "家具箱（大）", "amount": 1}
+    ],
+    "prerequisite": [306],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "艦", "flagship": true, "lv": [90, 99]}
+      ],
+      "fleetid": 1
+    }
+  },
+  {
+    "game_id": 245,
+    "wiki_id": "WB01",
+    "category": 2,
+    "type": 1,
+    "name": "式の準備！(最終)",
+    "detail": "練度の高い(Lv.90～99)第一艦隊旗艦で出撃し、オリョール海の暁に勝利を刻め！",
+    "reward_fuel": 0,
+    "reward_ammo": 0,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "書類一式＆指輪", "amount": 1}
+    ],
+    "prerequisite": [134],
+    "requirements": {
+      "category": "sortie",
+      "map": "2-3",
+      "boss": true,
+      "result": "S",
+      "times": 1,
+      "groups": [
+        {"ship": "艦", "flagship": true, "lv": [90, 99]}
+      ],
+      "fleetid": 1
+    }
+  },
+  {
+    "game_id": 135,
+    "wiki_id": "WA02",
+    "category": 1,
+    "type": 1,
+    "name": "新たなる旅立ち！",
+    "detail": "第一艦隊旗艦に強い絆を結んだLv.100以上の艦娘を配備した6隻の艦隊を編成せよ！",
+    "reward_fuel": 200,
+    "reward_ammo": 200,
+    "reward_steel": 200,
+    "reward_bauxite": 200,
+    "reward_other": [
+      {"name": "応急修理要員", "amount": 1}
+    ],
+    "prerequisite": [245],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {"ship": "艦", "flagship": true, "lv": [100, 999]},
+        {"ship": "艦", "amount": 5}
+      ],
+      "fleetid": 1
+    }
+  },
+  {
+    "game_id": 246,
+    "wiki_id": "WB02",
+    "category": 2,
+    "type": 1,
+    "name": "二人でする初めての任務！",
+    "detail": "強い絆を結んだ艦娘を旗艦とした第一艦隊でリランカ島へ出撃、敵中枢を撃滅せよ！",
+    "reward_fuel": 300,
+    "reward_ammo": 300,
+    "reward_steel": 300,
+    "reward_bauxite": 300,
+    "reward_other": [
+      {"name": "煎餅布団", "category": "家具", "amount": 1}
+    ],
+    "prerequisite": [135],
+    "requirements": {
+      "category": "sortie",
+      "map": "4-3",
+      "boss": true,
+      "result": "S",
+      "times": 1,
+      "groups": [
+        {"ship": "艦", "flagship": true, "lv": [100, 999]}
+      ],
+      "fleetid": 1
+    }
+  }
+]

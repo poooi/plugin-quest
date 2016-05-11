@@ -59,6 +59,7 @@
     },
 
     "result": {
+      "クリア": "クリア",
       "S": "S勝利",
       "A": "A勝利以上",
       "B": "B勝利以上",
@@ -152,6 +153,16 @@
       "scrapdelim": "・",
       "fullyskilled": "練度max",
       "useskilledcrew": "(熟練搭乗員がいないと達成不可)"
+    },
+
+    "scrapequipment": {
+      "main": "{{{scraps}}}廃棄",
+      "scrap": "{{{name}}}を{{{amount}}}つ",
+      "scrapdelim": "・"
+    },
+
+    "and": {
+      "separator": "。また"
     }
 
   },

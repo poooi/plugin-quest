@@ -115,6 +115,16 @@ reqstr_groups = (groups) ->
 
 reqstr_categories = []
 
+reqstr = (requirements) ->
+  try
+    category = requirements['category']
+    fn = reqstr_categories[category]
+    ret = fn(requirements)
+    #console.log ret
+    ret
+  catch e
+    console.log "Invalid requirements: #{requirements} reason: #{e} #{e.stack}"
+
 reqstr_categories['fleet'] = extract_first_arg (detail) ->
   # FORMAT:
   # "requirements": {
@@ -138,7 +148,7 @@ reqstr_categories['sortie'] = extract_first_arg (detail) ->
   #   "category": "sortie",
   #   "times": 2,
   #   <"map": 2,>
-  #   <"result": "C",>
+  #   <"result": "S" | "A" | "B" | "C" | "クリア" (for 1-6) | undefined,>
   #   <"boss": true,>
   #   <"groups": [(group), ...]>,
   #   <"fleetid": 2,>
@@ -151,7 +161,7 @@ reqstr_categories['sortie'] = extract_first_arg (detail) ->
       _$('req.sortie.!boss') || ''
   str_map = if @map then _$ 'req.sortie.map', {map: @map, boss: str_boss} else ''
   str_result = if @result
-      _$ 'req.sortie.result', _$('req.result.'+@result)
+      _$ 'req.sortie.result', __('req.result.'+@result)
     else
       _$('req.sortie.!result') || ''
   str_times = _$ 'req.sortie.times', reqstr_frequency @times
@@ -306,15 +316,33 @@ reqstr_categories['modelconversion'] = extract_first_arg (detail) ->
     scraps: str_scraps,
     note: str_note
 
-reqstr = (requirements) ->
-  try
-    category = requirements['category']
-    fn = reqstr_categories[category]
-    ret = fn(requirements)
-    #onsole.log ret
-    ret
-  catch e
-    console.log "Invalid requirements: #{requirements} reason: #{e} #{e.stack}"
+reqstr_categories['scrapequipment'] = extract_first_arg (detail) ->
+  # NOTICE: 
+  #   This is not "Scrap any X piece of equipment". (see "simple")
+  #   This is "Scrap XXX, YYY (specific) equipment"
+  # FORMAT:
+  # "requirements": {
+  #   "category": "scrapequipment",
+  #   "list": [
+  #     {"name": "7.7mm機銃", "amount": 2},
+  #   ]
+  # }
+  str_scraps = (for scrap in @list
+    _$ 'req.scrapequipment.scrap',
+      name: __(scrap['name']),
+      amount: scrap['amount']).join _$('req.modelconversion.scrapdelim')
+  _$ 'req.scrapequipment.main',
+    scraps: str_scraps
+
+reqstr_categories['and'] = extract_first_arg (detail) ->
+  # FORMAT:
+  # "requirements": {
+  #   "category": "and",
+  #   "list": [
+  #     <other_requirement_object>
+  #   ]
+  # }
+  @list.map(reqstr).join(_$ 'req.and.separator')
 
 module.exports = (i18n_module_) ->
   i18n_module = i18n_module_
