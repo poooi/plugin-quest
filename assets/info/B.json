@@ -1158,7 +1158,7 @@
     "wiki_id": "B43",
     "category": 2,
     "type": 1,
-    "name": "第十八戦隊", "category": "抜錨！",
+    "name": "抜錨！第十八戦隊",
     "detail": "「天龍」「龍田」を基幹戦力とした「第十八戦隊」で出撃し、オリョール海の敵主力を撃滅せよ！",
     "reward_fuel": 350,
     "reward_ammo": 0,
@@ -1689,7 +1689,7 @@
     }
   },
   {
-    "game_id": 172,
+    "game_id": 808,
     "wiki_id": "B61",
     "category": 2,
     "type": 1,

@@ -61,6 +61,8 @@ module.exports =
         if typeof(quest.game_id) != 'number'
           console.warn "Unexpected quest game_id type \"#{typeof(quest.game_id)}\" for quest \"#{quest.wiki_id}\""
           quest.game_id = "_UNKNOWN-#{quests.length}"
+        if quests[quest.game_id]?
+          console.warn "Duplicate game_id for quest \"#{quests[quest.wiki_id]}\" and \"#{quest.wiki_id}\""
         quests[quest.game_id] = quest
       quests_status = []
       for quest in json
