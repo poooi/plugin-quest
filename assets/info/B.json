@@ -1946,6 +1946,62 @@
     }
   },
   {
+    "game_id": 817,
+    "wiki_id": "B70",
+    "category": 2,
+    "type": 1,
+    "name": "新編艦隊、南西諸島防衛線へ急行せよ！",
+    "detail": "水雷戦隊を含む新編艦隊を南西諸島防衛線に展開、同方面に来襲する敵艦隊を撃破せよ！",
+    "reward_fuel": 300,
+    "reward_ammo": 300,
+    "reward_steel": 300,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {"name": "給糧艦「間宮」", "amount": 1},
+      {"name": "高速修復材", "amount": 3}
+    ],
+    "prerequisite": [174],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "1-4",
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {"ship": ["軽巡", "雷巡", "練巡"], "flagship": true},
+        {"ship": "駆逐", "amount": 4},
+        {"ship": "艦", "amount": 1}
+      ]
+    }
+  },
+  {
+    "game_id": 818,
+    "wiki_id": "B71",
+    "category": 2,
+    "type": 1,
+    "name": "鎮守府近海航路の安全確保を強化せよ！",
+    "detail": "水雷戦隊を含む新編戦隊を鎮守府近海航路に出撃させ、同航路の安全確保に努めよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 900,
+    "reward_steel": 900,
+    "reward_bauxite": 900,
+    "reward_other": [
+      {"name": "開発資材", "amount": 4},
+      {"name": "特注家具職人", "amount": 1}
+    ],
+    "prerequisite": [817],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": "1-6",
+      "result": "クリア",
+      "groups": [
+        {"ship": ["軽巡", "雷巡", "練巡"], "flagship": true},
+        {"ship": "駆逐", "amount": 4}
+      ]
+    }
+  },
+  {
     "game_id": 201,
     "wiki_id": "Bd01",
     "category": 2,
