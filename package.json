@@ -1,6 +1,6 @@
 {
   "name": "poi-plugin-quest-info",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "show quest info",
   "main": "index.cjsx",
   "scripts": {
@@ -30,6 +30,9 @@
     "title": "Quest Information",
     "description": "Plugin Description",
     "icon": "fa/indent",
-    "priority": 2
+    "priority": 2,
+    "apiVer": {
+      "6.99.99": "2.2.1"
+    }
   }
 }
