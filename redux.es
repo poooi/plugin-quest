@@ -19,17 +19,17 @@ const [COMPLETED, AVAILABLE, UNAVAILABLE] = range(1, 4)
 const typeFreqs = [0, 1, 5, 3, 4, 4, 2]
 
 // Will modify `status`
-function updateQuestStatus(qid, status) {
-  const quest = this.props.quests[qid]
+function updateQuestStatus(quests, qid, status) {
+  const quest = quests[qid]
   if (!quest)
     return
   quest.postquest.forEach((pid) => {
-    const postq = this.props.quests[pid]
+    const postq = quests[pid]
     if (!postq)
       return
     if (typeFreqs[quest.type] <= typeFreqs[postq.type] && status[postq.game_id] !== UNAVAILABLE) {
       status[postq.game_id] = UNAVAILABLE
-      updateQuestStatus(postq.game_id, status)
+      updateQuestStatus(quests, postq.game_id, status)
     }
   })
 }
@@ -74,6 +74,7 @@ export default function reducer(state=initState, action) {
 
   case '@@Response/kcsapi/api_get_member/questlist': {
     let quests_status = state.quests_status
+    const quests = state.quests
     const statusBackup = quests_status
     ;(body.api_list || []).forEach((quest) => {
       // `quest` may be -1
@@ -82,7 +83,7 @@ export default function reducer(state=initState, action) {
       if (state.quests_status[quest.api_no] !== AVAILABLE) {
         quests_status = copyIfSame(quests_status, statusBackup)
         quests_status[quest.api_no] = AVAILABLE
-        updateQuestStatus(quest.api_no, quests_status)
+        updateQuestStatus(quests, quest.api_no, quests_status)
       }
     })
     if (quests_status !== statusBackup) {
