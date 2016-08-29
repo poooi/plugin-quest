@@ -32,6 +32,7 @@ const filterNames = [
   'Daily Quest',
   'Weekly Quest',
   'Monthly Quest',
+  'Quarterly Quest',
 ].map(__)
 
 const categoryNames = [
@@ -53,6 +54,7 @@ const typeNames = [
   '-3rd/-7th/-0th',
   '-2nd/-8th',
   'Monthly Quest',
+  'Quarterly Quest',
 ].map(__)
 
 export const reactClass = connect(
@@ -80,6 +82,7 @@ export const reactClass = connect(
     filterFuncs[9] = (quest) => [2, 4, 5].includes(quest.type)
     filterFuncs[10] = (quest) => quest.type === 3
     filterFuncs[11] = (quest) => quest.type === 6
+    filterFuncs[12] = (quest) => quest.type === 7
     return filterFuncs
   }
 
@@ -106,6 +109,7 @@ export const reactClass = connect(
       [2, 4, 5].includes(quest.type) ? 9 :
       quest.type === 3 ? 10 :
       quest.type === 6 ? 11 :
+      quest.type === 7 ? 12 :
       quest.wiki_id.charAt(0) === 'W' ? 8 :
       quest.category
     this.setState({
