@@ -129,13 +129,18 @@
     },
 
     "modelconversion": {
-      "main": "{{{secretary_equip}}}, then scrap {{{scraps}}}{{{note}}}",
+      "main": "{{{secretary_equip}}}, then {{{objects}}}{{{note}}}",
       "noequip": "Have {{{secretary}}} as secretary",
-      "equip": "Equip an UNLOCKED {{{fullyskilled}}}{{{equipment}}} on {{{secretary}}} as secretary",
+      "equip": "Equip an UNLOCKED {{{fullyskilled}}}{{{maxmodified}}}{{{equipment}}} on {{{secretary}}} as secretary",
       "secretarydefault": "a carrier",
+      "scraps": "scrap {{{scraps}}}",
       "scrap": "{{{amount}}} {{{name}}}",
+      "consumptions": "consuming {{{consumptions}}}",
+      "consumption": "{{{amount}}} {{{name}}}",
+      "equipmentdelim": ", ",
       "scrapdelim": ", ",
       "fullyskilled": "Rank 7 ",
+      "maxmodified": "maxed modified ",
       "useskilledcrew": ", consuming a Skilled Crew Member"
     },
 
