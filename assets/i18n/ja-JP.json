@@ -22,6 +22,7 @@
   "Daily Quest": "デイリー",
   "Weekly Quest": "ウィークリー",
   "Monthly Quest": "マンスリー",
+  "Quarterly Quest": "クォータリー",
   "-3rd/-7th/-0th": "デイリー(3/7/0日限定)",
   "-2nd/-8th": "デイリー(2/8日限定)",
 
@@ -145,13 +146,18 @@
     },
 
     "modelconversion": {
-      "main": "{{{secretary_equip}}}{{{scraps}}}廃棄{{{note}}}",
-      "equip": "ロックを解除した{{{fullyskilled}}}{{{equipment}}}搭載{{{secretary}}}を秘書艦にして、",
+      "main": "{{{secretary_equip}}}{{{objects}}}{{{note}}}",
+      "equip": "ロックを解除した{{{fullyskilled}}}{{{maxmodified}}}{{{equipment}}}搭載{{{secretary}}}を秘書艦にして、",
       "noequip": "{{{secretary}}}を秘書艦にして",
       "secretarydefault": "空母",
+      "scraps": "{{{scraps}}}廃棄",
       "scrap": "{{{name}}}を{{{amount}}}つ",
+      "consumptions": "{{{consumptions}}}消費",
+      "consumption": "{{{name}}}を{{{amount}}}個",
+      "equipmentdelim": "・",
       "scrapdelim": "・",
       "fullyskilled": "練度max",
+      "maxmodified": "改修max",
       "useskilledcrew": "(熟練搭乗員がいないと達成不可)"
     },
 

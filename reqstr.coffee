@@ -288,32 +288,46 @@ reqstr_categories['modelconversion'] = extract_first_arg (detail) ->
   # FORMAT:
   # "requirements": {
   #   "category": "modelconversion",
-  #   <"equipment": "零式艦戦21型(熟練)">,
+  #   <"equipment": "零式艦戦21型(熟練)",>
   #   <"fullyskilled": true,>
-  #   "scraps": [
+  #   <"maxmodified": true,>
+  #   <"scraps": [
   #     {"name": "零式艦戦52型", "amount": 2}
-  #   ],
+  #   ],>
+  #   <"consumptions": [
+  #     {"name": "勲章", "amount": 2}
+  #   ],>
   #   <"secretary": (ship),>    # Default: "a carrier"
   #   <"use_skilled_crew": true>
   # }
   str_secretary = if @secretary then reqstr_ship @secretary else _$('req.modelconversion.secretarydefault')
   str_secretary_equip = if @equipment
       str_fullyskilled = if @fullyskilled then _$('req.modelconversion.fullyskilled') else ''
+      str_maxmodified = if @maxmodified then _$('req.modelconversion.maxmodified') else ''
       _$ 'req.modelconversion.equip',
         secretary: str_secretary,
-        equipment: __(@equipment),
-        fullyskilled: str_fullyskilled
+        equipment: if Array.isArray @equipment then (for equip in @equipment
+          __(equip)).join _$('req.modelconversion.equipmentdelim') else __(@equipment),
+        fullyskilled: str_fullyskilled,
+        maxmodified: str_maxmodified
     else
       _$ 'req.modelconversion.noequip',
         secretary: str_secretary,
-  str_scraps = (for scrap in @scraps
-    _$ 'req.modelconversion.scrap',
-      name: __(scrap['name']),
-      amount: scrap['amount']).join _$('req.modelconversion.scrapdelim')
+  str_scraps = if @scraps then _$ 'req.modelconversion.scraps',
+    scraps: (for scrap in @scraps
+      _$ 'req.modelconversion.scrap',
+        name: __(scrap['name']),
+        amount: scrap['amount']).join _$('req.modelconversion.scrapdelim')
+  str_consumptions = if @consumptions then _$ 'req.modelconversion.consumptions',
+    consumptions: (for consumption in @consumptions
+      _$ 'req.modelconversion.consumption',
+        name: __(consumption['name']),
+        amount: consumption['amount']).join _$('req.modelconversion.scrapdelim')
   str_note = if @use_skilled_crew then _$('req.modelconversion.useskilledcrew') else ''
+  str_objects = ([str_scraps, str_consumptions].filter (str) -> str?).join _$('req.modelconversion.scrapdelim')
   _$ 'req.modelconversion.main',
     secretary_equip: str_secretary_equip,
-    scraps: str_scraps,
+    objects: str_objects,
     note: str_note
 
 reqstr_categories['scrapequipment'] = extract_first_arg (detail) ->

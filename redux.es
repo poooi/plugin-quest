@@ -16,7 +16,7 @@ const initState = {
 const [COMPLETED, AVAILABLE, UNAVAILABLE] = range(1, 4)
 
 
-const typeFreqs = [0, 1, 5, 3, 4, 4, 2]
+const typeFreqs = [0, 1, 6, 4, 5, 5, 3, 2]
 
 // Will modify `status`
 function updateQuestStatus(quests, qid, status) {

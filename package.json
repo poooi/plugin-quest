@@ -4,6 +4,7 @@
   "description": "show quest info",
   "main": "index.cjsx",
   "scripts": {
+    "fetch": "node fetch.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
