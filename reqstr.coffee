@@ -348,6 +348,29 @@ reqstr_categories['scrapequipment'] = extract_first_arg (detail) ->
   _$ 'req.scrapequipment.main',
     scraps: str_scraps
 
+reqstr_categories['equipexchange'] = extract_first_arg (detail) ->
+  # FORMAT:
+  # "requirements": {
+  #   "category": "equipexchange",
+  #   "equipments": [
+  #     {"name": "一式陸攻", "amount": 1}
+  #   ],
+  #   <"scraps": [
+  #     {"name": "零式艦戦21型", "amount": 2}
+  #   ]>
+  # }
+  str_equipments = (for equipment in @equipments
+    _$ 'req.equipexchange.equipment',
+      name: __(equipment['name']),
+      amount: equipment['amount']).join _$('req.equipexchange.delim')
+  str_scraps = if @scraps then (for scrap in @scraps
+    _$ 'req.equipexchange.scrap',
+      name: __(scrap['name']),
+      amount: scrap['amount']).join _$('req.equipexchange.delim')
+  _$ 'req.equipexchange.main',
+    equipments: str_equipments,
+    scraps: if str_scraps then _$ 'req.equipexchange.scraps', {scraps: str_scraps} else ''
+
 reqstr_categories['and'] = extract_first_arg (detail) ->
   # FORMAT:
   # "requirements": {
