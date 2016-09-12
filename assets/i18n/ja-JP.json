@@ -167,6 +167,14 @@
       "scrapdelim": "・"
     },
 
+    "equipexchange": {
+      "main": "{{{scraps}}}{{{equipments}}}準備せよ！",
+      "equipment": "{{{name}}}を{{{amount}}}つ",
+      "scraps": "{{{scraps}}}廃棄、",
+      "scrap": "{{{name}}}を{{{amount}}}つ",
+      "delim": "・"
+    },
+
     "and": {
       "separator": "。また"
     }

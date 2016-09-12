@@ -180,6 +180,14 @@
       "scrapdelim": "，"
     },
 
+    "equipexchange": {
+      "main": "{{{scraps}}}準備{{{equipments}}}",
+      "equipment": "{{{name}}}{{{amount}}}只",
+      "scraps": "廢棄{{{scraps}}}，",
+      "scrap": "{{{name}}}{{{amount}}}只",
+      "delim": "，"
+    },
+
     "and": {
       "separator": "；以及"
     }

@@ -150,6 +150,14 @@
       "scrapdelim": ", "
     },
 
+    "equipexchange": {
+      "main": "{{{scraps}}}Have{{{equipments}}}",
+      "equipment": "{{{amount}}} {{{name}}}",
+      "scraps": "Scrap {{{scraps}}}. ",
+      "scrap": "{{{amount}}} {{{name}}}",
+      "delim": ", "
+    },
+
     "and": {
       "separator": "; "
     }
