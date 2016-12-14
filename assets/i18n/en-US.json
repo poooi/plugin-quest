@@ -151,10 +151,13 @@
     },
 
     "equipexchange": {
-      "main": "{{{scraps}}}Have{{{equipments}}}",
+      "main": "{{{scraps}}}{{{equipments}}}{{{delim}}}{{{consumptions}}}",
+      "equipments": "Have{{{equipments}}}",
       "equipment": "{{{amount}}} {{{name}}}",
       "scraps": "Scrap {{{scraps}}}. ",
       "scrap": "{{{amount}}} {{{name}}}",
+      "consumptions": "consuming {{{consumptions}}}",
+      "consumption": "{{{amount}}} {{{name}}}",
       "delim": ", "
     },
 

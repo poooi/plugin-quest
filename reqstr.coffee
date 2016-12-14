@@ -352,14 +352,18 @@ reqstr_categories['equipexchange'] = extract_first_arg (detail) ->
   # FORMAT:
   # "requirements": {
   #   "category": "equipexchange",
-  #   "equipments": [
+  #   <"equipments": [
   #     {"name": "一式陸攻", "amount": 1}
-  #   ],
+  #   ],>
   #   <"scraps": [
   #     {"name": "零式艦戦21型", "amount": 2}
+  #   ],>
+  #   <"resources": [油, 弹, 钢, 铝],>
+  #   <"consumptions": [
+  #     {"name": "勲章", "amount": 2}
   #   ]>
   # }
-  str_equipments = (for equipment in @equipments
+  str_equipments = if @equipments then (for equipment in @equipments
     _$ 'req.equipexchange.equipment',
       name: __(equipment['name']),
       amount: equipment['amount']).join _$('req.equipexchange.delim')
@@ -367,9 +371,18 @@ reqstr_categories['equipexchange'] = extract_first_arg (detail) ->
     _$ 'req.equipexchange.scrap',
       name: __(scrap['name']),
       amount: scrap['amount']).join _$('req.equipexchange.delim')
+  str_res = ['Fuel', 'Ammo', 'Steel', 'Bauxite']
+  str_consumptions = if @resources then (for i in [0..3]
+    if @resources[i] then _$(str_res[i]) + @resources[i]).filter((str) -> str?).join _$('req.equipexchange.delim') else ''
+  str_consumptions += if @consumptions then (for consumption in @consumptions
+    _$ 'req.equipexchange.consumption',
+      name: __(consumption['name']),
+      amount: consumption['amount']).join _$('req.equipexchange.delim') else ''
   _$ 'req.equipexchange.main',
-    equipments: str_equipments,
+    equipments: if str_equipments then _$ 'req.equipexchange.equipments', {equipments: str_equipments} else '',
     scraps: if str_scraps then _$ 'req.equipexchange.scraps', {scraps: str_scraps} else ''
+    consumptions: if str_consumptions then _$ 'req.equipexchange.consumptions', {consumptions: str_consumptions} else ''
+    delim: if str_equipments && str_consumptions then _$ 'req.equipexchange.delim' else ''
 
 reqstr_categories['and'] = extract_first_arg (detail) ->
   # FORMAT:

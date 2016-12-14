@@ -182,10 +182,13 @@
     },
 
     "equipexchange": {
-      "main": "{{{scraps}}}准备{{{equipments}}}",
+      "main": "{{{scraps}}}{{{equipments}}}{{{delim}}}{{{consumptions}}}",
+      "equipments": "准备{{{equipments}}}",
       "equipment": "{{{name}}}{{{amount}}}只",
       "scraps": "废弃{{{scraps}}}，",
       "scrap": "{{{name}}}{{{amount}}}只",
+      "consumptions": "消耗{{{consumptions}}}",
+      "consumption": "{{{name}}}{{{amount}}}个",
       "delim": "，"
     },
 
