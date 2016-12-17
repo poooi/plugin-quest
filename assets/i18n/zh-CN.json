@@ -124,10 +124,11 @@
     "a-gou": "S胜利6次, BOSS战胜利12次, 进行BOSS战24次, 出击36次(一次出击多次战斗算一次)",
 
     "expedition": {
-      "main": "%s",
+      "main": "{{{objects}}}{{{resources}}}",
       "object": "{{{name}}}成功{{{times}}}次",
       "any": "远征",
       "id": "远征%s",
+      "resources": "，消耗{{{resources}}}",
       "delim": "，"
     },
 
@@ -150,7 +151,10 @@
 
       "repair": "入渠%s次",
 
-      "battle": "进行%s次战斗"
+      "battle": "进行%s次战斗",
+
+      "resource": "{{{name}}}{{{amount}}}",
+      "resource_delim": "、"
     },
 
     "excercise": {
@@ -189,6 +193,14 @@
       "scrap": "{{{name}}}{{{amount}}}只",
       "consumptions": "消耗{{{consumptions}}}",
       "consumption": "{{{name}}}{{{amount}}}个",
+      "delim": "，"
+    },
+
+    "modernization": {
+      "main": "{{{resources}}}对{{{ship}}}近代化改造成功{{{times}}}次{{{consumptions}}}",
+      "consumptions": "，每次消耗{{{consumptions}}}",
+      "consumption": "{{{ship}}}{{{amount}}}艘",
+      "resources": "准备{{{resources}}}，",
       "delim": "，"
     },
 
