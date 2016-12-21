@@ -1,8 +1,8 @@
 {
   "name": "poi-plugin-quest-info",
-  "version": "3.1.3",
+  "version": "3.2.0",
   "description": "show quest info",
-  "main": "index.cjsx",
+  "main": "index",
   "scripts": {
     "fetch": "node fetch.js",
     "test": "echo \"Error: no test specified\" && exit 1"
