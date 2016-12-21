@@ -84,10 +84,11 @@
     "a-gou": "Launch your fleet 36 times, encounter 24 bosses, kill 12 bosses, and get 6 S-Rank victories",
 
     "expedition": {
-      "main": "%s",
+      "main": "{{{objects}}}{{{resources}}}",
       "object": "Complete {{{name}}} {{{times}}}",
       "any": "any expeditions",
       "id": "expedition %s",
+      "resources": ", consuming {{{resources}}}",
       "delim": ". "
     },
 
@@ -118,7 +119,10 @@
       "repair_quantifier": "ship",
 
       "battle": "Defeat %s",
-      "battle_quantifier": "enemy fleet"
+      "battle_quantifier": "enemy fleet",
+
+      "resource": "{{{amount}}} {{{name}}}",
+      "resource_delim": ","
     },
 
     "excercise": {
@@ -151,11 +155,22 @@
     },
 
     "equipexchange": {
-      "main": "{{{scraps}}}Have{{{equipments}}}",
+      "main": "{{{scraps}}}{{{equipments}}}{{{delim}}}{{{consumptions}}}",
+      "equipments": "Have{{{equipments}}}",
       "equipment": "{{{amount}}} {{{name}}}",
       "scraps": "Scrap {{{scraps}}}. ",
       "scrap": "{{{amount}}} {{{name}}}",
+      "consumptions": "consuming {{{consumptions}}}",
+      "consumption": "{{{amount}}} {{{name}}}",
       "delim": ", "
+    },
+
+    "modernization": {
+      "main": "{{{resources}}}make modernization improvement to {{{ship}}} {{{times}}} {{{consumptions}}}",
+      "consumptions": "using {{{consumptions}}}",
+      "consumption": "{{{amount}}} {{{ship}}}",
+      "resources": "Prepare {{{resources}}} and ",
+      "delim": ","
     },
 
     "and": {
@@ -172,9 +187,12 @@
   "第4艦隊開放": "Unlocks the fourth fleet",
   "改修工廠開放": "Unlocks the Improvement Arsenal",
   "大型艦建造開放": "Unlocks Large Ship Construction",
+  "中部海域「基地航空隊」開放": "Access to LBAS for 6-4 and 6-5",
   "煎餅布団": "Thin futon",
   "「三周年記念」掛け軸": "\"3rd Anniversary\" wallscroll",
   "「春の一番」掛け軸": "\"Spring is number 1\" scroll",
+  "手編みとフローリング": "Hand-Knitting & Flooring",
+  "艦娘座布団の床": "Floor of Kanmusu Cushions",
 
   "":""
 }

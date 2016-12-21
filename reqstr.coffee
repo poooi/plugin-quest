@@ -113,6 +113,13 @@ reqstr_groups = (groups) ->
   delim_join (reqstr_group(group) for group in groups),
       _$('req.groups.delim'), _$('req.groups.delim_last')
 
+reqstr_resources = (resources) ->
+  res_name = ['Fuel', 'Ammo', 'Steel', 'Bauxite']
+  delim_join (for i in [0..3]
+    if resources[i] then _$('req.simple.resource',
+      name: _$(res_name[i]),
+      amount: resources[i])).filter((str) -> str?), _$('req.simple.resource_delim')
+
 reqstr_categories = []
 
 reqstr = (requirements) ->
@@ -197,19 +204,20 @@ reqstr_categories['expedition'] = extract_first_arg (detail) ->
   #   "category": "expedition",
   #   <"id": 39 | [37, 38],>
   #   "times": 2,
+  #   <"resources": [0, 0, 0, 0],>
   # }
-
   _$ 'req.expedition.main',
-  (for object in detail['objects']
-    str_name = if object.id
-        str_id = if Array.isArray object.id then object.id.join '/' else object.id
-        _$ 'req.expedition.id', str_id
-      else
-        _$('req.expedition.any')
-    str_times = reqstr_frequency object.times
-    _$ 'req.expedition.object',
-      name: str_name,
-      times: str_times).join _$ 'req.expedition.delim'
+    objects: (for object in detail['objects']
+      str_name = if object.id
+          str_id = if Array.isArray object.id then object.id.join '/' else object.id
+          _$ 'req.expedition.id', str_id
+        else
+          _$('req.expedition.any')
+      str_times = reqstr_frequency object.times
+      _$ 'req.expedition.object',
+        name: str_name,
+        times: str_times).join _$ 'req.expedition.delim'
+    resources: if @resources then _$ 'req.expedition.resources', resources: reqstr_resources(@resources) else ''
 
 reqstr_categories['a-gou'] = ->
   _$ 'req.a-gou'
@@ -352,14 +360,18 @@ reqstr_categories['equipexchange'] = extract_first_arg (detail) ->
   # FORMAT:
   # "requirements": {
   #   "category": "equipexchange",
-  #   "equipments": [
+  #   <"equipments": [
   #     {"name": "一式陸攻", "amount": 1}
-  #   ],
+  #   ],>
   #   <"scraps": [
   #     {"name": "零式艦戦21型", "amount": 2}
+  #   ],>
+  #   <"resources": [油, 弹, 钢, 铝],>
+  #   <"consumptions": [
+  #     {"name": "勲章", "amount": 2}
   #   ]>
   # }
-  str_equipments = (for equipment in @equipments
+  str_equipments = if @equipments then (for equipment in @equipments
     _$ 'req.equipexchange.equipment',
       name: __(equipment['name']),
       amount: equipment['amount']).join _$('req.equipexchange.delim')
@@ -367,9 +379,16 @@ reqstr_categories['equipexchange'] = extract_first_arg (detail) ->
     _$ 'req.equipexchange.scrap',
       name: __(scrap['name']),
       amount: scrap['amount']).join _$('req.equipexchange.delim')
+  str_consumptions = if @resources then reqstr_resources(@resources) else ''
+  str_consumptions += if @consumptions then (for consumption in @consumptions
+    _$ 'req.equipexchange.consumption',
+      name: __(consumption['name']),
+      amount: consumption['amount']).join _$('req.equipexchange.delim') else ''
   _$ 'req.equipexchange.main',
-    equipments: str_equipments,
+    equipments: if str_equipments then _$ 'req.equipexchange.equipments', {equipments: str_equipments} else '',
     scraps: if str_scraps then _$ 'req.equipexchange.scraps', {scraps: str_scraps} else ''
+    consumptions: if str_consumptions then _$ 'req.equipexchange.consumptions', {consumptions: str_consumptions} else ''
+    delim: if str_equipments && str_consumptions then _$ 'req.equipexchange.delim' else ''
 
 reqstr_categories['and'] = extract_first_arg (detail) ->
   # FORMAT:
@@ -380,6 +399,26 @@ reqstr_categories['and'] = extract_first_arg (detail) ->
   #   ]
   # }
   @list.map(reqstr).join(_$ 'req.and.separator')
+
+reqstr_categories['modernization'] = extract_first_arg (detail) ->
+  # FORMAT:
+  # "requirements": {
+  #   "category": "modernization",
+  #   "times": 1,
+  #   "ship": "Bep",
+  #   <"consumptions": [
+  #     {"ship": ["cvl", "cv"], "amount": 2}
+  #   ]>
+  # }
+  str_consumptions = if @consumptions then (for consumption in @consumptions
+    _$ 'req.modernization.consumption',
+      ship: __(consumption['ship']),
+      amount: consumption['amount']).join _$('req.modernization.delim')
+  _$ 'req.modernization.main',
+    ship: @ship,
+    times: reqstr_frequency(@times),
+    consumptions: if str_consumptions then _$ 'req.modernization.consumptions', consumptions: str_consumptions else '',
+    resources: if @resources then _$ 'req.modernization.resources', resources: reqstr_resources(@resources) else ''
 
 module.exports = (i18n_module_) ->
   i18n_module = i18n_module_
