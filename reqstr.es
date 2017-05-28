@@ -132,7 +132,7 @@ const parseResources = (resources) => {
   return delimJoin(resources.map((resource, i) =>
     resource
     ? _$('req.simple.resource', {
-      name: _$(name[i]),
+      name: __(name[i]),
       amount: resource,
     })
     : null
