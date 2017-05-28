@@ -137,8 +137,8 @@ export const reactClass = connect(
   static renderQuestOption(quest) {
     return <option key={quest.game_id} value={quest.game_id}>{quest.wiki_id} - {quest.name}</option>
   }
-  static filterQuestByStatus(quests, quests_status, status) {
-    return values(quests).filter((quest) => quest && quests_status[quest.game_id] === status)
+  static filterQuestByStatus(quests, questStatus, status) {
+    return values(quests).filter((quest) => quest && questStatus[quest.game_id] === status)
   }
   renderQuestLink = (qid) => {
     const quest = this.props.quests[qid] || {}
@@ -159,7 +159,7 @@ export const reactClass = connect(
   }
 
   render() {
-    const {quests, quests_status} = this.props
+    const {quests, questStatus} = this.props
     const {quest_id, quest_filter} = this.state
     const filterFunc = this.filterFuncs[quest_filter] || (() => false)
     const quests_filtered = sortBy(
@@ -193,19 +193,19 @@ export const reactClass = connect(
                   <option key={0}>{__('Quest Name')}</option>
                   <optgroup label={__('Operable')}>
                   {
-                    this.constructor.filterQuestByStatus(quests_filtered, quests_status, 2)
+                    this.constructor.filterQuestByStatus(quests_filtered, questStatus, 2)
                     .map(this.constructor.renderQuestOption)
                   }
                   </optgroup>
                   <optgroup label={__('Locked')}>
                   {
-                    this.constructor.filterQuestByStatus(quests_filtered, quests_status, 3)
+                    this.constructor.filterQuestByStatus(quests_filtered, questStatus, 3)
                     .map(this.constructor.renderQuestOption)
                   }
                   </optgroup>
                   <optgroup label={__('Completed')}>
                   {
-                    this.constructor.filterQuestByStatus(quests_filtered, quests_status, 1)
+                    this.constructor.filterQuestByStatus(quests_filtered, questStatus, 1)
                     .map(this.constructor.renderQuestOption)
                   }
                   </optgroup>
