@@ -205,10 +205,10 @@ export const reactClass = connect(
                 >
                   {
                     filterNames.map((name, idx) => (
-                      // Please keep '=== false' as normally it will return the string itself
+                      // Please keep '=== true' as normally it will return the string itself
                       <option key={name} value={idx}>
                         {
-                          (__('req.option.pluralize') === false && idx !== 0)
+                          (__('req.option.pluralize') === true && idx !== 0)
                           ? pluralize(name)
                           : name
                         }
