@@ -20,7 +20,7 @@ module.exports = {
 		'semi': ['error', 'never'],
 		'import/no-unresolved': [2, { 'ignore': ['views/.*'] }],
     'react/jsx-filename-extension': 'off',
-    'no-underscore-dangle': ['error', { 'allowAfterThis': true }],
+    'no-underscore-dangle': 'off',
     'import/extensions': ['error', { 'es': 'never' }],
     'import/no-extraneous-dependencies': 'off',
     'comma-dangle': ['error', 'always-multiline'],
