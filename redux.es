@@ -34,7 +34,7 @@ function updateQuestStatus(quests, qid, status) {
   })
 }
 
-export default function reducer(state = initState, action) {
+export function reducer(state = initState, action) {
   const { type, body, postBody } = action
   switch (type) {
     case '@@poi-plugin-quest-info@init': {

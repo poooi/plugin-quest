@@ -4,9 +4,10 @@ import { Grid, Row, Col, Input, Panel, OverlayTrigger, Tooltip } from 'react-boo
 import { sortBy, range, values } from 'lodash'
 import { pluralize } from 'inflection'
 import { connect } from 'react-redux'
-
-import reducer, { readQuestInfo } from './redux'
 import { extensionSelectorFactory } from 'views/utils/selectors'
+
+import { reducer, readQuestInfo } from './redux'
+
 const i18n__ = window.i18n["poi-plugin-quest-info"].__.bind(window.i18n["poi-plugin-quest-info"])
 
 const EXTENSION_KEY = 'poi-plugin-quest-info'
@@ -212,7 +213,7 @@ export const reactClass = connect(
               </Panel>
             </Col>
           </Row>
-          {quest_selected && 
+          {quest_selected &&
             <Row>
               <Col xs={12}>
                 <Panel header={__('Quest Information')} bsStyle='danger'>
