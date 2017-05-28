@@ -8,21 +8,18 @@ let i18n_module = null
 
 // This part copied from https://github.com/mashpie/i18n-node with MIT license
 // if the msg string contains {{Mustache}} patterns we render it as a mini tempalate
-const __ = function (s) {
-  let tr
-  tr = i18n_module.apply(this, arguments)
+const __ = (...args) => {
+  let tr = i18n_module(...args)
   if (/{{.*}}/.test(tr)) {
-    tr = Mustache.render(tr, arguments[arguments.length - 1])
+    tr = Mustache.render(tr, args[args.length - 1])
   }
   return tr
 }
 
 // Translate: Returns null if not exist. Used for format controller
-const _$ = function (s) {
-  let splits
-  let tr
-  tr = __.apply(this, arguments)
-  splits = s.split('.')
+const _$ = (s, ...args) => {
+  const tr = __(s, ...args)
+  const splits = s.split('.')
   if (tr === splits[splits.length - 1]) {
     return null
   }
@@ -32,7 +29,7 @@ const _$ = function (s) {
 // Create a function, that exactly runs as f, but allows the elements in the
 // first argument passed to f (which is an object) accessed by @arg_name
 // Example:
-//   f = extract_first_arg (a, b) -> console.log @foo + b
+//   f = extract_first_arg((a, b) => console.log(this.foo + b))
 //   f({foo: "bar"}, "baz")     // prints "barbaz"
 const extractFirstArg = f => function (local_args) {
   let new_f
@@ -70,33 +67,22 @@ const reqstrOrdinalize = (num) => {
   return inflection.ordinalize(`${num}`)
 }
 
-const reqstrShip = (ship, amount) => {
-  let _s
-  let str_one
+const reqstrShip = (ship, _amount) => {
+  let shipStr
   if (typeof ship === 'string') {
-    str_one = __(ship)
+    shipStr = __(ship)
   } else if (Array.isArray(ship)) {
-    str_one = (((() => {
-      let j
-      let len
-      let results
-      results = []
-      for (j = 0, len = ship.length; j < len; j++) {
-        _s = ship[j]
-        results.push(reqstrShip(_s))
-      }
-      return results
-    }))()).join('/')
+    shipStr = ship.map(_ship => reqstrShip(_ship)).join('/')
   }
-  amount = Array.isArray(amount) ? amount[amount.length - 1] : amount
-  return reqstrPluralize(str_one, amount)
+  const amount = Array.isArray(_amount) ? _amount[_amount.length - 1] : _amount
+  return reqstrPluralize(shipStr, amount)
 }
 
-const delimJoin = (strs, delim, delim_last) => {
-  if (typeof delim_last === 'undefined' || delim_last === null || strs.length <= 1) {
+const delimJoin = (strs, delim, last) => {
+  if (typeof last === 'undefined' || last === null || strs.length <= 1) {
     return strs.join(delim)
   }
-  return strs.slice(0, -1).join(delim) + delim_last + strs[strs.length - 1]
+  return strs.slice(0, -1).join(delim) + last + strs[strs.length - 1]
 }
 
 //     {
@@ -147,8 +133,7 @@ const reqstrGroups = (groups) => {
   return delimJoin(((() => {
     let j
     let len
-    let results
-    results = []
+    const results = []
     for (j = 0, len = groups.length; j < len; j++) {
       group = groups[j]
       results.push(reqstrGroup(group))
@@ -179,20 +164,15 @@ const reqstrResources = (resources) => {
   }))()).filter(str => str != null), _$('req.simple.resource_delim'))
 }
 
-const reqstrCategories = []
+const reqstrCategories = {}
 
 const reqstr = (requirements) => {
-  let category
-  let e
-  let fn
-  let ret
   try {
-    category = requirements.category
-    fn = reqstrCategories[category]
-    ret = fn(requirements)
-    return ret
-  } catch (error) {
-    e = error
+    const category = requirements.category
+    const fn = reqstrCategories[category]
+    const result = fn(requirements)
+    return result
+  } catch (e) {
     return console.log(`Invalid requirements: ${requirements} reason: ${e} ${e.stack}`)
   }
 }
