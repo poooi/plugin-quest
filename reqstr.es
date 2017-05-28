@@ -27,27 +27,14 @@ const _$ = (s, ...args) => {
   return tr
 }
 
-// Create a function, that exactly runs as f, but allows the elements in the
-// first argument passed to f (which is an object) accessed by @arg_name
-// Example:
-//   f = extract_first_arg((a, b) => console.log(this.foo + b))
-//   f({foo: "bar"}, "baz")     // prints "barbaz"
-// const extractFirstArg = f => function (local_args) {
-//   let new_f
-//   new_f = function () {
-//     return f.apply(Object.assign(this, local_args), arguments)
-//   }
-//   return new_f.apply(new_f, arguments)
-// }
-
-const reqstrPluralize = (str, amount) => {
+const parsePluralize = (str, amount) => {
   if (!_$('req.option.pluralize') || !amount) {
     return str
   }
   return inflection.inflect(str, amount)
 }
 
-const reqstrFrequency = (times) => {
+const parseFrequency = (times) => {
   if (!_$('req.option.frequency')) {
     return times
   }
@@ -61,22 +48,22 @@ const reqstrFrequency = (times) => {
   }
 }
 
-const reqstrOrdinalize = (num) => {
+const parseOrdinalize = (num) => {
   if (!_$('req.option.ordinalize')) {
     return num
   }
   return inflection.ordinalize(`${num}`)
 }
 
-const reqstrShip = (ship, _amount) => {
+const parseShip = (ship, _amount) => {
   let shipStr
   if (typeof ship === 'string') {
     shipStr = __(ship)
   } else if (Array.isArray(ship)) {
-    shipStr = ship.map(_ship => reqstrShip(_ship)).join('/')
+    shipStr = ship.map(_ship => parseShip(_ship)).join('/')
   }
   const amount = Array.isArray(_amount) ? _amount[_amount.length - 1] : _amount
-  return reqstrPluralize(shipStr, amount)
+  return parsePluralize(shipStr, amount)
 }
 
 const delimJoin = (strs, delim, last) => {
@@ -94,7 +81,7 @@ const delimJoin = (strs, delim, last) => {
 //       <"select": 5,>    // "any 5 of xxx/xxx ships"
 //       <"lv": 99 | [95, 99] | [100, 999],>   // 999 == 'inf'
 //     }, ...
-const reqstrGroup = (group) => {
+const parseGroup = (group) => {
   let amount = ''
   if (group.amount) {
     if (Array.isArray(group.amount)) {
@@ -124,9 +111,9 @@ const reqstrGroup = (group) => {
   }
 
   const select = group.select ? _$('req.group.select', group.select) : ''
-  const ship = reqstrShip(group.ship, group.amount)
+  const ship = parseShip(group.ship, group.amount)
   const flagship = group.flagship ? _$('req.group.flagship') : ''
-  const note = group.note ? _$('req.group.note', reqstrShip(group.note)) : ''
+  const note = group.note ? _$('req.group.note', parseShip(group.note)) : ''
   return _$('req.group.main', {
     select,
     ship,
@@ -137,11 +124,10 @@ const reqstrGroup = (group) => {
   })
 }
 
-const reqstrGroups = groups =>
-  delimJoin(groups.map(reqstrGroup), _$('req.groups.delim'), _$('req.groups.delim_last'))
+const parseGroups = groups =>
+  delimJoin(groups.map(parseGroup), _$('req.groups.delim'), _$('req.groups.delim_last'))
 
-const reqstrResources = (resources) => {
-
+const parseResources = (resources) => {
   const name = ['Fuel', 'Ammo', 'Steel', 'Bauxite']
   return delimJoin(resources.map((resource, i) =>
     resource
@@ -155,7 +141,7 @@ const reqstrResources = (resources) => {
 
 // const reqstrCategories = {}
 
-const reqstr = (requirements) => {
+const parseRequirement = (requirements) => {
   try {
     const category = requirements.category
     const req = new Requirement(requirements)
@@ -180,9 +166,9 @@ class Requirement {
   //   <"disallowed": "其它舰船",>
   // }
   get fleet() {
-    const groups = reqstrGroups(this.groups)
-    const disallowed = this.disallowed ? _$('req.fleet.disallowed', reqstrShip(this.disallowed, 2)) : ''
-    const fleet = this.fleetid ? _$('req.fleet.fleetid', reqstrOrdinalize(this.fleetid)) : ''
+    const groups = parseGroups(this.groups)
+    const disallowed = this.disallowed ? _$('req.fleet.disallowed', parseShip(this.disallowed, 2)) : ''
+    const fleet = this.fleetid ? _$('req.fleet.fleetid', parseOrdinalize(this.fleetid)) : ''
     return _$('req.fleet.main', {
       groups,
       disallowed,
@@ -208,10 +194,10 @@ class Requirement {
       boss,
     }) : ''
     const result = this.result ? _$('req.sortie.result', __(`req.result.${this.result}`)) : _$('req.sortie.!result') || ''
-    const times = _$('req.sortie.times', reqstrFrequency(this.times))
-    const groups = this.groups ? _$('req.sortie.groups', reqstrGroups(this.groups)) : ''
-    const fleet = this.fleetid ? _$('req.sortie.fleet', reqstrOrdinalize(this.fleetid)) : ''
-    const disallowed = this.disallowed ? _$('req.sortie.disallowed', reqstrShip(this.disallowed, 2)) : ''
+    const times = _$('req.sortie.times', parseFrequency(this.times))
+    const groups = this.groups ? _$('req.sortie.groups', parseGroups(this.groups)) : ''
+    const fleet = this.fleetid ? _$('req.sortie.fleet', parseOrdinalize(this.fleetid)) : ''
+    const disallowed = this.disallowed ? _$('req.sortie.disallowed', parseShip(this.disallowed, 2)) : ''
     return _$('req.sortie.main', {
       map,
       boss,
@@ -231,7 +217,7 @@ class Requirement {
   // }
   get sink() {
     const amount = _$('req.sink.amount', this.amount)
-    const ship = _$('req.sink.ship', reqstrShip(this.ship, this.amount))
+    const ship = _$('req.sink.ship', parseShip(this.ship, this.amount))
     return _$('req.sink.main', {
       amount,
       ship,
@@ -254,7 +240,7 @@ class Requirement {
       } else {
         name = _$('req.expedition.any')
       }
-      const times = reqstrFrequency(object.times)
+      const times = parseFrequency(object.times)
       return _$('req.expedition.object', {
         name,
         times,
@@ -263,7 +249,7 @@ class Requirement {
 
     const resources = this.resources
       ? _$('req.expedition.resources', {
-        resources: reqstrResources(this.resources),
+        resources: parseResources(this.resources),
       })
       : ''
 
@@ -313,9 +299,9 @@ class Requirement {
     if (!quantifier) {
       times = this.times
     } else if (quantifier === 'time') {
-      times = reqstrFrequency(this.times)
+      times = parseFrequency(this.times)
     } else {
-      times = `${this.times} ${reqstrPluralize(quantifier, this.times)}`
+      times = `${this.times} ${parsePluralize(quantifier, this.times)}`
     }
     const extras = fromPairs(toPairs(this.detail).map(([name, value]) =>
       [name, value ? _$(`${basename}_${name}`) || '' : _$(`${basename}_!${name}`) || '']
@@ -334,7 +320,7 @@ class Requirement {
     const quantifier = _$('req.excercise.quantifier') || ''
     let times
     if (quantifier) {
-      times = `${this.times} ${reqstrPluralize(quantifier, this.times)}`
+      times = `${this.times} ${parsePluralize(quantifier, this.times)}`
     } else {
       times = this.times
     }
@@ -363,7 +349,7 @@ class Requirement {
   //   <"use_skilled_crew": true>
   // }
   get modelconversion() {
-    const secretary = this.secretary ? reqstrShip(this.secretary) : _$('req.modelconversion.secretarydefault')
+    const secretary = this.secretary ? parseShip(this.secretary) : _$('req.modelconversion.secretarydefault')
     let secretaryEquip
     if (this.equipment) {
       const fullyskilled = this.fullyskilled ? _$('req.modelconversion.fullyskilled') : ''
@@ -458,7 +444,7 @@ class Requirement {
     })).join(_$('req.equipexchange.delim'))
     : null
 
-    let consumptions = this.resources ? reqstrResources(this.resources) : ''
+    let consumptions = this.resources ? parseResources(this.resources) : ''
     consumptions += this.consumptions
     ? this.consumptions.map(consumption => _$('req.equipexchange.consumption', {
       name: __(consumption.name),
@@ -488,7 +474,7 @@ class Requirement {
   //   ]
   // }
   get and() {
-    return this.list.map(reqstr).join(_$('req.and.separator'))
+    return this.list.map(parseRequirement).join(_$('req.and.separator'))
   }
 
   // FORMAT:
@@ -508,12 +494,12 @@ class Requirement {
     })).join(_$('req.modernization.delim')) : null
     return _$('req.modernization.main', {
       ship: this.ship,
-      times: reqstrFrequency(this.times),
+      times: parseFrequency(this.times),
       consumptions: consumptions ? _$('req.modernization.consumptions', {
         consumptions,
       }) : '',
       resources: this.resources ? _$('req.modernization.resources', {
-        resources: reqstrResources(this.resources),
+        resources: parseResources(this.resources),
       }) : '',
     })
   }
@@ -521,5 +507,5 @@ class Requirement {
 
 export default (i18n_module_) => {
   i18n_module = i18n_module_
-  return reqstr
+  return parseRequirement
 }
