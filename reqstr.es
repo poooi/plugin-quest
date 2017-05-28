@@ -1,10 +1,11 @@
 import inflection from 'inflection'
 import Mustache from 'mustache'
+import { fromPairs, toPairs } from 'lodash'
 
 const MAX_SHIP_AMOUNT = 6
 const MAX_SHIP_LV = 200 // Doesn't matter, usually we use 999. See usage below
 
-let i18n_module = null
+let i18n_module = str => str
 
 // This part copied from https://github.com/mashpie/i18n-node with MIT license
 // if the msg string contains {{Mustache}} patterns we render it as a mini tempalate
@@ -31,13 +32,13 @@ const _$ = (s, ...args) => {
 // Example:
 //   f = extract_first_arg((a, b) => console.log(this.foo + b))
 //   f({foo: "bar"}, "baz")     // prints "barbaz"
-const extractFirstArg = f => function (local_args) {
-  let new_f
-  new_f = function () {
-    return f.apply(Object.assign(this, local_args), arguments)
-  }
-  return new_f.apply(new_f, arguments)
-}
+// const extractFirstArg = f => function (local_args) {
+//   let new_f
+//   new_f = function () {
+//     return f.apply(Object.assign(this, local_args), arguments)
+//   }
+//   return new_f.apply(new_f, arguments)
+// }
 
 const reqstrPluralize = (str, amount) => {
   if (!_$('req.option.pluralize') || !amount) {
@@ -93,150 +94,134 @@ const delimJoin = (strs, delim, last) => {
 //       <"select": 5,>    // "any 5 of xxx/xxx ships"
 //       <"lv": 99 | [95, 99] | [100, 999],>   // 999 == 'inf'
 //     }, ...
-const reqstrGroup = extractFirstArg(function (group) {
-  let str_amount
-  let str_flagship
-  let str_lv
-  let str_note
-  let str_select
-  let str_ship
-  str_amount = this.amount ? Array.isArray(this.amount) ? this.amount[0] === this.amount[1] ? _$('req.group.amountonly', `${this.amount[0]}`) : this.amount[1] >= MAX_SHIP_AMOUNT ? _$('req.group.amountmore', `${this.amount[0]}`) : _$('req.group.amount', `${this.amount[0]}~${this.amount[1]}`) : _$('req.group.amount', `${this.amount}`) : ''
-  if (this.lv) {
-    if (Array.isArray(this.lv)) {
-      if (this.lv[1] >= MAX_SHIP_LV) {
-        str_lv = _$('req.group.lvmore', `${this.lv[0]}`)
+const reqstrGroup = (group) => {
+  let amount = ''
+  if (group.amount) {
+    if (Array.isArray(group.amount)) {
+      if (group.amount[0] === group.amount[1]) {
+        amount = _$('req.group.amountonly', `${group.amount[0]}`)
+      } else if (group.amount[1] >= MAX_SHIP_AMOUNT) {
+        amount = _$('req.group.amountmore', `${group.amount[0]}`)
       } else {
-        str_lv = _$('req.group.lv', `${this.lv[0]}~${this.lv[1]}`)
+        amount = _$('req.group.amount', `${group.amount[0]}~${group.amount[1]}`)
       }
     } else {
-      str_lv = _$('req.group.lv', `${this.lv}`)
+      amount = _$('req.group.amount', `${group.amount}`)
     }
-  } else {
-    str_lv = ''
   }
-  str_select = this.select ? _$('req.group.select', this.select) : ''
-  str_ship = reqstrShip(this.ship, this.amount)
-  str_flagship = this.flagship ? _$('req.group.flagship') : ''
-  str_note = this.note ? _$('req.group.note', reqstrShip(this.note)) : ''
-  return _$('req.group.main', {
-    select: str_select,
-    ship: str_ship,
-    amount: str_amount,
-    lv: str_lv,
-    flagship: str_flagship,
-    note: str_note,
-  })
-})
 
-const reqstrGroups = (groups) => {
-  let group
-  return delimJoin(((() => {
-    let j
-    let len
-    const results = []
-    for (j = 0, len = groups.length; j < len; j++) {
-      group = groups[j]
-      results.push(reqstrGroup(group))
+  let lv = ''
+  if (group.lv) {
+    if (Array.isArray(group.lv)) {
+      if (group.lv[1] >= MAX_SHIP_LV) {
+        lv = _$('req.group.lvmore', `${group.lv[0]}`)
+      } else {
+        lv = _$('req.group.lv', `${group.lv[0]}~${group.lv[1]}`)
+      }
+    } else {
+      lv = _$('req.group.lv', `${group.lv}`)
     }
-    return results
-  }))(), _$('req.groups.delim'), _$('req.groups.delim_last'))
+  }
+
+  const select = group.select ? _$('req.group.select', group.select) : ''
+  const ship = reqstrShip(group.ship, group.amount)
+  const flagship = group.flagship ? _$('req.group.flagship') : ''
+  const note = group.note ? _$('req.group.note', reqstrShip(group.note)) : ''
+  return _$('req.group.main', {
+    select,
+    ship,
+    amount,
+    lv,
+    flagship,
+    note,
+  })
 }
+
+const reqstrGroups = groups =>
+  delimJoin(groups.map(reqstrGroup), _$('req.groups.delim'), _$('req.groups.delim_last'))
 
 const reqstrResources = (resources) => {
-  let i
-  let res_name
-  res_name = ['Fuel', 'Ammo', 'Steel', 'Bauxite']
-  return delimJoin((((() => {
-    let j
-    let results
-    results = []
-    for (i = j = 0; j <= 3; i = ++j) {
-      if (resources[i]) {
-        results.push(_$('req.simple.resource', {
-          name: _$(res_name[i]),
-          amount: resources[i],
-        }))
-      } else {
-        results.push(void 0)
-      }
-    }
-    return results
-  }))()).filter(str => str != null), _$('req.simple.resource_delim'))
+
+  const name = ['Fuel', 'Ammo', 'Steel', 'Bauxite']
+  return delimJoin(resources.map((resource, i) =>
+    resource
+    ? _$('req.simple.resource', {
+      name: _$(name[i]),
+      amount: resource,
+    })
+    : null
+  ).filter(str => str != null), _$('req.simple.resource_delim'))
 }
 
-const reqstrCategories = {}
+// const reqstrCategories = {}
 
 const reqstr = (requirements) => {
   try {
     const category = requirements.category
-    const fn = reqstrCategories[category]
-    const result = fn(requirements)
+    const req = new Requirement(requirements)
+    const result = req[category]
     return result
   } catch (e) {
     return console.log(`Invalid requirements: ${requirements} reason: ${e} ${e.stack}`)
   }
 }
 
-// FORMAT:
-// "requirements": {
-//   "category": "fleet",
-//   "groups": [(group), ...],
-//   <"fleetid": 2,>
-//   <"disallowed": "其它舰船",>
-// }
-reqstrCategories.fleet = extractFirstArg(function (detail) {
-  let str_disallowed
-  let str_fleet
-  let str_groups
-  str_groups = reqstrGroups(this.groups)
-  str_disallowed = this.disallowed ? _$('req.fleet.disallowed', reqstrShip(this.disallowed, 2)) : ''
-  str_fleet = this.fleetid ? _$('req.fleet.fleetid', reqstrOrdinalize(this.fleetid)) : ''
-  return _$('req.fleet.main', {
-    groups: str_groups,
-    disallowed: str_disallowed,
-    fleet: str_fleet,
-  })
-})
+class Requirement {
+  constructor(requirement) {
+    Object.assign(this, requirement)
+    this.detail = requirement
+  }
 
-// FORMAT:
-// "requirements": {
-//   "category": "sortie",
-//   "times": 2,
-//   <"map": 2,>
-//   <"result": "S" | "A" | "B" | "C" | "クリア" (for 1-6) | undefined,>
-//   <"boss": true,>
-//   <"groups": [(group), ...]>,
-//   <"fleetid": 2,>
-//   <"disallowed": "其它舰船" | "正规航母",>
-// }
-reqstrCategories.sortie = extractFirstArg(function (detail) {
-  let str_boss
-  let str_disallowed
-  let str_fleet
-  let str_groups
-  let str_map
-  let str_result
-  let str_times
-  str_boss = this.boss ? _$('req.sortie.boss') || '' : _$('req.sortie.!boss') || ''
-  str_map = this.map ? _$('req.sortie.map', {
-    map: this.map,
-    boss: str_boss,
-  }) : ''
-  str_result = this.result ? _$('req.sortie.result', __(`req.result.${this.result}`)) : _$('req.sortie.!result') || ''
-  str_times = _$('req.sortie.times', reqstrFrequency(this.times))
-  str_groups = this.groups ? _$('req.sortie.groups', reqstrGroups(this.groups)) : ''
-  str_fleet = this.fleetid ? _$('req.sortie.fleet', reqstrOrdinalize(this.fleetid)) : ''
-  str_disallowed = this.disallowed ? _$('req.sortie.disallowed', reqstrShip(this.disallowed, 2)) : ''
-  return _$('req.sortie.main', {
-    map: str_map,
-    boss: str_boss,
-    result: str_result,
-    times: str_times,
-    groups: str_groups,
-    fleet: str_fleet,
-    disallowed: str_disallowed,
-  })
-})
+  // FORMAT:
+  // "requirements": {
+  //   "category": "fleet",
+  //   "groups": [(group), ...],
+  //   <"fleetid": 2,>
+  //   <"disallowed": "其它舰船",>
+  // }
+  get fleet() {
+    const groups = reqstrGroups(this.groups)
+    const disallowed = this.disallowed ? _$('req.fleet.disallowed', reqstrShip(this.disallowed, 2)) : ''
+    const fleet = this.fleetid ? _$('req.fleet.fleetid', reqstrOrdinalize(this.fleetid)) : ''
+    return _$('req.fleet.main', {
+      groups,
+      disallowed,
+      fleet,
+    })
+  }
+
+  // FORMAT:
+  // "requirements": {
+  //   "category": "sortie",
+  //   "times": 2,
+  //   <"map": 2,>
+  //   <"result": "S" | "A" | "B" | "C" | "クリア" (for 1-6) | undefined,>
+  //   <"boss": true,>
+  //   <"groups": [(group), ...]>,
+  //   <"fleetid": 2,>
+  //   <"disallowed": "其它舰船" | "正规航母",>
+  // }
+  get sortie() {
+    const boss = this.boss ? _$('req.sortie.boss') || '' : _$('req.sortie.!boss') || ''
+    const map = this.map ? _$('req.sortie.map', {
+      map: this.map,
+      boss,
+    }) : ''
+    const result = this.result ? _$('req.sortie.result', __(`req.result.${this.result}`)) : _$('req.sortie.!result') || ''
+    const times = _$('req.sortie.times', reqstrFrequency(this.times))
+    const groups = this.groups ? _$('req.sortie.groups', reqstrGroups(this.groups)) : ''
+    const fleet = this.fleetid ? _$('req.sortie.fleet', reqstrOrdinalize(this.fleetid)) : ''
+    const disallowed = this.disallowed ? _$('req.sortie.disallowed', reqstrShip(this.disallowed, 2)) : ''
+    return _$('req.sortie.main', {
+      map,
+      boss,
+      result,
+      times,
+      groups,
+      fleet,
+      disallowed,
+    })
+  }
 
   // FORMAT:
   // "requirements": {
@@ -244,17 +229,14 @@ reqstrCategories.sortie = extractFirstArg(function (detail) {
   //   "amount": 2,
   //   "ship": (ship),
   // }
-
-reqstrCategories.sink = extractFirstArg(function (detail) {
-  let str_amount
-  let str_ship
-  str_amount = _$('req.sink.amount', this.amount)
-  str_ship = _$('req.sink.ship', reqstrShip(this.ship, this.amount))
-  return _$('req.sink.main', {
-    amount: str_amount,
-    ship: str_ship,
-  })
-})
+  get sink() {
+    const amount = _$('req.sink.amount', this.amount)
+    const ship = _$('req.sink.ship', reqstrShip(this.ship, this.amount))
+    return _$('req.sink.main', {
+      amount,
+      ship,
+    })
+  }
 
   // FORMAT:
   // "requirements": {
@@ -263,38 +245,37 @@ reqstrCategories.sink = extractFirstArg(function (detail) {
   //   "times": 2,
   //   <"resources": [0, 0, 0, 0],>
   // }
-
-reqstrCategories.expedition = extractFirstArg(function (detail) {
-  let object
-  let str_id
-  let str_name
-  let str_times
-  return _$('req.expedition.main', {
-    objects: (((() => {
-      let j
-      let len
-      let ref
-      let results
-      ref = detail.objects
-      results = []
-      for (j = 0, len = ref.length; j < len; j++) {
-        object = ref[j]
-        str_name = object.id ? (str_id = Array.isArray(object.id) ? object.id.join('/') : object.id, _$('req.expedition.id', str_id)) : _$('req.expedition.any')
-        str_times = reqstrFrequency(object.times)
-        results.push(_$('req.expedition.object', {
-          name: str_name,
-          times: str_times,
-        }))
+  get expedition() {
+    const objects = this.objects.map((object) => {
+      let name
+      if (object.id) {
+        const id = Array.isArray(object.id) ? object.id.join('/') : object.id
+        name = _$('req.expedition.id', id)
+      } else {
+        name = _$('req.expedition.any')
       }
-      return results
-    }))()).join(_$('req.expedition.delim')),
-    resources: this.resources ? _$('req.expedition.resources', {
-      resources: reqstrResources(this.resources),
-    }) : '',
-  })
-})
+      const times = reqstrFrequency(object.times)
+      return _$('req.expedition.object', {
+        name,
+        times,
+      })
+    }).join(_$('req.expedition.delim'))
 
-reqstrCategories['a-gou'] = () => _$('req.a-gou')
+    const resources = this.resources
+      ? _$('req.expedition.resources', {
+        resources: reqstrResources(this.resources),
+      })
+      : ''
+
+    return _$('req.expedition.main', {
+      objects,
+      resources,
+    })
+  }
+
+  get ['a-gou']() {
+    return _$('req.a-gou')
+  }
 
   // FORMAT:
   // "requirements": {
@@ -325,35 +306,22 @@ reqstrCategories['a-gou'] = () => _$('req.a-gou')
   //     "batch": true       // Must be present even if false
   //   }
   //   => "Scrap equipment 5 times (scrapping together is ok)"
-
-reqstrCategories.simple = extractFirstArg(function (detail) {
-  let basename
-  let extra_name
-  let extra_str
-  let extra_value
-  let extras
-  let quantifier
-  let str_times
-  let subcat
-  subcat = this.subcategory
-  basename = `req.simple.${this.subcategory}`
-  quantifier = _$(`${basename}_quantifier`) || ''
-  if (!quantifier) {
-    str_times = this.times
-  } else if (quantifier === 'time') {
-    str_times = reqstrFrequency(this.times)
-  } else {
-    str_times = `${this.times} ${reqstrPluralize(quantifier, this.times)}`
+  get simple() {
+    const basename = `req.simple.${this.subcategory}`
+    const quantifier = _$(`${basename}_quantifier`) || ''
+    let times
+    if (!quantifier) {
+      times = this.times
+    } else if (quantifier === 'time') {
+      times = reqstrFrequency(this.times)
+    } else {
+      times = `${this.times} ${reqstrPluralize(quantifier, this.times)}`
+    }
+    const extras = fromPairs(toPairs(this.detail).map(([name, value]) =>
+      [name, value ? _$(`${basename}_${name}`) || '' : _$(`${basename}_!${name}`) || '']
+    ))
+    return _$(`${basename}`, times, extras)
   }
-  extras = {}
-  for (extra_name in detail) {
-    extra_value = detail[extra_name]
-    extra_str = extra_value ? _$(`${basename}_${extra_name}`) || '' : _$(`${basename}_!${extra_name}`) || ''
-    extras[extra_name] = extra_str
-  }
-  return _$(`${basename}`, str_times, extras)
-})
-
 
   // FORMAT:
   // "requirements": {
@@ -362,27 +330,24 @@ reqstrCategories.simple = extractFirstArg(function (detail) {
   //   <"victory": true,>
   //   <"daily": true,>
   // }
-reqstrCategories.excercise = extractFirstArg(function (detail) {
-  let quantifier
-  let str_daily
-  let str_times
-  let str_victory
-  quantifier = _$('req.excercise.quantifier') || ''
-  if (quantifier) {
-    str_times = `${this.times} ${reqstrPluralize(quantifier, this.times)}`
-  } else {
-    str_times = this.times
+  get excercise() {
+    const quantifier = _$('req.excercise.quantifier') || ''
+    let times
+    if (quantifier) {
+      times = `${this.times} ${reqstrPluralize(quantifier, this.times)}`
+    } else {
+      times = this.times
+    }
+    const victory = this.victory ? _$('req.excercise.victory') : ''
+    const daily = this.daily ? _$('req.excercise.daily') : ''
+    return _$('req.excercise.main', {
+      times,
+      victory,
+      daily,
+    })
   }
-  str_victory = this.victory ? _$('req.excercise.victory') : ''
-  str_daily = this.daily ? _$('req.excercise.daily') : ''
-  return _$('req.excercise.main', {
-    times: str_times,
-    victory: str_victory,
-    daily: str_daily,
-  })
-})
 
-  // FORMAT:
+    // FORMAT:
   // "requirements": {
   //   "category": "modelconversion",
   //   <"equipment": "零式艦戦21型(熟練)",>
@@ -397,83 +362,52 @@ reqstrCategories.excercise = extractFirstArg(function (detail) {
   //   <"secretary": (ship),>    // Default: "a carrier"
   //   <"use_skilled_crew": true>
   // }
-reqstrCategories.modelconversion = extractFirstArg(function (detail) {
-  let consumption
-  let equip
-  let scrap
-  let str_consumptions
-  let str_fullyskilled
-  let str_maxmodified
-  let str_note
-  let str_objects
-  let str_scraps
-  let str_secretary
-  let str_secretary_equip
-  str_secretary = this.secretary ? reqstrShip(this.secretary) : _$('req.modelconversion.secretarydefault')
-  str_secretary_equip = this.equipment ? (str_fullyskilled = this.fullyskilled ? _$('req.modelconversion.fullyskilled') : '', str_maxmodified = this.maxmodified ? _$('req.modelconversion.maxmodified') : '', _$('req.modelconversion.equip', {
-    secretary: str_secretary,
-    equipment: Array.isArray(this.equipment) ? ((function () {
-      let j
-      let len
-      let ref
-      let results
-      ref = this.equipment
-      results = []
-      for (j = 0, len = ref.length; j < len; j++) {
-        equip = ref[j]
-        results.push(__(equip))
-      }
-      return results
-    }).call(this)).join(_$('req.modelconversion.equipmentdelim')) : __(this.equipment),
-    fullyskilled: str_fullyskilled,
-    maxmodified: str_maxmodified,
-  })) : _$('req.modelconversion.noequip', {
-    secretary: str_secretary,
-  })
-  str_scraps = this.scraps ? _$('req.modelconversion.scraps', {
-    scraps: ((function () {
-      let j
-      let len
-      let ref
-      let results
-      ref = this.scraps
-      results = []
-      for (j = 0, len = ref.length; j < len; j++) {
-        scrap = ref[j]
-        results.push(_$('req.modelconversion.scrap', {
-          name: __(scrap.name),
-          amount: scrap.amount,
-        }))
-      }
-      return results
-    }).call(this)).join(_$('req.modelconversion.scrapdelim')),
-  }) : void 0
-  str_consumptions = this.consumptions ? _$('req.modelconversion.consumptions', {
-    consumptions: ((function () {
-      let j
-      let len
-      let ref
-      let results
-      ref = this.consumptions
-      results = []
-      for (j = 0, len = ref.length; j < len; j++) {
-        consumption = ref[j]
-        results.push(_$('req.modelconversion.consumption', {
-          name: __(consumption.name),
-          amount: consumption.amount,
-        }))
-      }
-      return results
-    }).call(this)).join(_$('req.modelconversion.scrapdelim')),
-  }) : void 0
-  str_note = this.use_skilled_crew ? _$('req.modelconversion.useskilledcrew') : ''
-  str_objects = ([str_scraps, str_consumptions].filter(str => str != null)).join(_$('req.modelconversion.scrapdelim'))
-  return _$('req.modelconversion.main', {
-    secretary_equip: str_secretary_equip,
-    objects: str_objects,
-    note: str_note,
-  })
-})
+  get modelconversion() {
+    const secretary = this.secretary ? reqstrShip(this.secretary) : _$('req.modelconversion.secretarydefault')
+    let secretaryEquip
+    if (this.equipment) {
+      const fullyskilled = this.fullyskilled ? _$('req.modelconversion.fullyskilled') : ''
+      const maxmodified = this.maxmodified ? _$('req.modelconversion.maxmodified') : ''
+      const equipment = Array.isArray(this.equipment)
+        ? this.equipment.map(__).join(_$('req.modelconversion.equipmentdelim'))
+        : __(this.equipment)
+      secretaryEquip = _$('req.modelconversion.equip', {
+        secretary,
+        equipment,
+        fullyskilled,
+        maxmodified,
+      })
+    } else {
+      secretaryEquip = _$('req.modelconversion.noequip', {
+        secretary,
+      })
+    }
+
+    const scraps = this.scraps
+    ? _$('req.modelconversion.scraps', {
+      scraps: this.scraps.map(scrap => _$('req.modelconversion.scrap', {
+        name: __(scrap.name),
+        amount: scrap.amount,
+      })).join(_$('req.modelconversion.scrapdelim')),
+    })
+    : null
+    const consumptions = this.consumptions
+    ? _$('req.modelconversion.consumptions', {
+      consumptions: this.consumptions.map(consumption => _$('req.modelconversion.consumption', {
+        name: __(consumption.name),
+        amount: consumption.amount,
+      })).join(_$('req.modelconversion.scrapdelim')),
+    })
+    : null
+
+    const note = this.use_skilled_crew ? _$('req.modelconversion.useskilledcrew') : ''
+    const objects = ([scraps, consumptions].filter(str => str != null)).join(_$('req.modelconversion.scrapdelim'))
+    return _$('req.modelconversion.main', {
+      secretary_equip: secretaryEquip,
+      objects,
+      note,
+    })
+  }
 
   // NOTICE:
   //   This is not "Scrap any X piece of equipment". (see "simple")
@@ -485,31 +419,17 @@ reqstrCategories.modelconversion = extractFirstArg(function (detail) {
   //     {"name": "7.7mm機銃", "amount": 2},
   //   ]
   // }
-reqstrCategories.scrapequipment = extractFirstArg(function (detail) {
-  let scrap
-  let str_scraps
-  str_scraps = ((function () {
-    let j
-    let len
-    let ref
-    let results
-    ref = this.list
-    results = []
-    for (j = 0, len = ref.length; j < len; j++) {
-      scrap = ref[j]
-      results.push(_$('req.scrapequipment.scrap', {
-        name: __(scrap.name),
-        amount: scrap.amount,
-      }))
-    }
-    return results
-  }).call(this)).join(_$('req.modelconversion.scrapdelim'))
-  return _$('req.scrapequipment.main', {
-    scraps: str_scraps,
-  })
-})
+  get scrapequipment() {
+    const scraps = this.list.map(scrap => _$('req.scrapequipment.scrap', {
+      name: __(scrap.name),
+      amount: scrap.amount,
+    })).join(_$('req.modelconversion.scrapdelim'))
+    return _$('req.scrapequipment.main', {
+      scraps,
+    })
+  }
 
-  // FORMAT:
+    // FORMAT:
   // "requirements": {
   //   "category": "equipexchange",
   //   <"equipments": [
@@ -523,75 +443,42 @@ reqstrCategories.scrapequipment = extractFirstArg(function (detail) {
   //     {"name": "勲章", "amount": 2}
   //   ]>
   // }
-reqstrCategories.equipexchange = extractFirstArg(function (detail) {
-  let consumption
-  let equipment
-  let scrap
-  let str_consumptions
-  let str_equipments
-  let str_scraps
-  str_equipments = this.equipments ? ((function () {
-    let j
-    let len
-    let ref
-    let results
-    ref = this.equipments
-    results = []
-    for (j = 0, len = ref.length; j < len; j++) {
-      equipment = ref[j]
-      results.push(_$('req.equipexchange.equipment', {
-        name: __(equipment.name),
-        amount: equipment.amount,
-      }))
-    }
-    return results
-  }).call(this)).join(_$('req.equipexchange.delim')) : void 0
-  str_scraps = this.scraps ? ((function () {
-    let j
-    let len
-    let ref
-    let results
-    ref = this.scraps
-    results = []
-    for (j = 0, len = ref.length; j < len; j++) {
-      scrap = ref[j]
-      results.push(_$('req.equipexchange.scrap', {
-        name: __(scrap.name),
-        amount: scrap.amount,
-      }))
-    }
-    return results
-  }).call(this)).join(_$('req.equipexchange.delim')) : void 0
-  str_consumptions = this.resources ? reqstrResources(this.resources) : ''
-  str_consumptions += this.consumptions ? ((function () {
-    let j
-    let len
-    let ref
-    let results
-    ref = this.consumptions
-    results = []
-    for (j = 0, len = ref.length; j < len; j++) {
-      consumption = ref[j]
-      results.push(_$('req.equipexchange.consumption', {
-        name: __(consumption.name),
-        amount: consumption.amount,
-      }))
-    }
-    return results
-  }).call(this)).join(_$('req.equipexchange.delim')) : ''
-  return _$('req.equipexchange.main', {
-    equipments: str_equipments ? _$('req.equipexchange.equipments', {
-      equipments: str_equipments,
-    }) : '',
-    scraps: str_scraps ? _$('req.equipexchange.scraps', {
-      scraps: str_scraps,
-    }) : '',
-    consumptions: str_consumptions ? _$('req.equipexchange.consumptions', {
-      consumptions: str_consumptions,
-    }) : '',
-    delim: str_equipments && str_consumptions ? _$('req.equipexchange.delim') : '',
-  })
-})
+  get equipexchange() {
+    const equipments = this.equipments
+    ? this.equipments.map(equipment => _$('req.equipexchange.equipment', {
+      name: __(equipment.name),
+      amount: equipment.amount,
+    })).join(_$('req.equipexchange.delim'))
+    : null
+
+    const scraps = this.scraps
+    ? this.scraps.map(scrap => _$('req.equipexchange.scrap', {
+      name: __(scrap.name),
+      amount: scrap.amount,
+    })).join(_$('req.equipexchange.delim'))
+    : null
+
+    let consumptions = this.resources ? reqstrResources(this.resources) : ''
+    consumptions += this.consumptions
+    ? this.consumptions.map(consumption => _$('req.equipexchange.consumption', {
+      name: __(consumption.name),
+      amount: consumption.amount,
+    })).join(_$('req.equipexchange.delim'))
+    : ''
+
+    return _$('req.equipexchange.main', {
+      equipments: equipments ? _$('req.equipexchange.equipments', {
+        equipments,
+      }) : '',
+      scraps: scraps ? _$('req.equipexchange.scraps', {
+        scraps,
+      }) : '',
+      consumptions: consumptions ? _$('req.equipexchange.consumptions', {
+        consumptions,
+      }) : '',
+      delim: equipments && consumptions ? _$('req.equipexchange.delim') : '',
+    })
+  }
 
   // FORMAT:
   // "requirements": {
@@ -600,9 +487,9 @@ reqstrCategories.equipexchange = extractFirstArg(function (detail) {
   //     <other_requirement_object>
   //   ]
   // }
-reqstrCategories.and = extractFirstArg(function (detail) {
-  return this.list.map(reqstr).join(_$('req.and.separator'))
-})
+  get and() {
+    return this.list.map(reqstr).join(_$('req.and.separator'))
+  }
 
   // FORMAT:
   // "requirements": {
@@ -613,36 +500,24 @@ reqstrCategories.and = extractFirstArg(function (detail) {
   //     {"ship": ["cvl", "cv"], "amount": 2}
   //   ]>
   // }
-reqstrCategories.modernization = extractFirstArg(function (detail) {
-  let consumption
-  let str_consumptions
-  str_consumptions = this.consumptions ? ((function () {
-    let j
-    let len
-    let ref
-    let results
-    ref = this.consumptions
-    results = []
-    for (j = 0, len = ref.length; j < len; j++) {
-      consumption = ref[j]
-      results.push(_$('req.modernization.consumption', {
-        ship: __(consumption.ship),
-        amount: consumption.amount,
-      }))
-    }
-    return results
-  }).call(this)).join(_$('req.modernization.delim')) : void 0
-  return _$('req.modernization.main', {
-    ship: this.ship,
-    times: reqstrFrequency(this.times),
-    consumptions: str_consumptions ? _$('req.modernization.consumptions', {
-      consumptions: str_consumptions,
-    }) : '',
-    resources: this.resources ? _$('req.modernization.resources', {
-      resources: reqstrResources(this.resources),
-    }) : '',
-  })
-})
+  get modernization() {
+    const consumptions = this.consumptions
+    ? this.consumptions.map(consumption => _$('req.modernization.consumption', {
+      ship: __(consumption.ship),
+      amount: consumption.amount,
+    })).join(_$('req.modernization.delim')) : null
+    return _$('req.modernization.main', {
+      ship: this.ship,
+      times: reqstrFrequency(this.times),
+      consumptions: consumptions ? _$('req.modernization.consumptions', {
+        consumptions,
+      }) : '',
+      resources: this.resources ? _$('req.modernization.resources', {
+        resources: reqstrResources(this.resources),
+      }) : '',
+    })
+  }
+}
 
 export default (i18n_module_) => {
   i18n_module = i18n_module_
