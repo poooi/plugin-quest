@@ -1,6 +1,6 @@
 import inflection from 'inflection'
 import Mustache from 'mustache'
-import { fromPairs, toPairs } from 'lodash'
+import { mapValues } from 'lodash'
 
 const MAX_SHIP_AMOUNT = 6
 const MAX_SHIP_LV = 200 // Doesn't matter, usually we use 999. See usage below
@@ -303,9 +303,9 @@ class Requirement {
     } else {
       times = `${this.times} ${parsePluralize(quantifier, this.times)}`
     }
-    const extras = fromPairs(toPairs(this.detail).map(([name, value]) =>
-      [name, value ? _$(`${basename}_${name}`) || '' : _$(`${basename}_!${name}`) || '']
-    ))
+    const extras = mapValues(this.detail, (value, name) =>
+      value ? (_$(`${basename}_${name}`) || '') : (_$(`${basename}_!${name}`) || '')
+    )
     return _$(`${basename}`, times, extras)
   }
 
