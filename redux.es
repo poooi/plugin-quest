@@ -46,12 +46,12 @@ export function reducer(state = initState, action) {
         quest.postquest = quest.postquest || []
         quest.condition = reqstr(quest.requirements)
         if (typeof (quest.game_id) !== 'number') {
-          console.warn(`Unexpected quest game_id type \"${typeof (quest.game_id)}\" for quest \"${quest.wiki_id}\"`)
+          console.warn(`Unexpected quest game_id type "${typeof (quest.game_id)}" for quest "${quest.wiki_id}"`)
           quest.game_id = `_UNKNOWN-${quests.length}`
         }
         quest.prerequisite.forEach((pid) => {
           if (typeof (pid) !== 'number') {
-            console.warn(`Unexpected quest prerequisite type \"${typeof (pid)}\" for quest \"${quest.wiki_id}\". Skipping.`)
+            console.warn(`Unexpected quest prerequisite type "${typeof (pid)}" for quest "${quest.wiki_id}". Skipping.`)
             return
           }
           const prereq = quests[pid]
