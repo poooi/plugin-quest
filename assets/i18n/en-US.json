@@ -156,7 +156,7 @@
 
     "equipexchange": {
       "main": "{{{scraps}}}{{{equipments}}}{{{delim}}}{{{consumptions}}}",
-      "equipments": "Have{{{equipments}}}",
+      "equipments": "Have {{{equipments}}}",
       "equipment": "{{{amount}}} {{{name}}}",
       "scraps": "Scrap {{{scraps}}}. ",
       "scrap": "{{{amount}}} {{{name}}}",
