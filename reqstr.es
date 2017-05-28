@@ -5,12 +5,12 @@ import { fromPairs, toPairs } from 'lodash'
 const MAX_SHIP_AMOUNT = 6
 const MAX_SHIP_LV = 200 // Doesn't matter, usually we use 999. See usage below
 
-let i18n_module = str => str
+let translate = str => str
 
 // This part copied from https://github.com/mashpie/i18n-node with MIT license
 // if the msg string contains {{Mustache}} patterns we render it as a mini tempalate
 const __ = (...args) => {
-  let tr = i18n_module(...args)
+  let tr = translate(...args)
   if (/{{.*}}/.test(tr)) {
     tr = Mustache.render(tr, args[args.length - 1])
   }
@@ -505,7 +505,7 @@ class Requirement {
   }
 }
 
-export default (i18n_module_) => {
-  i18n_module = i18n_module_
+export default (_translate) => {
+  translate = _translate
   return parseRequirement
 }
