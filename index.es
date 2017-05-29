@@ -185,8 +185,8 @@ export const reactClass = connect(
 
   handleRequest = (e) => {
     if (e.detail.path === '/kcsapi/api_req_quest/start') {
-      const {api_quest_id} = e.detail.body
-      this.handlePrereqClick(+api_quest_id)
+      const { api_quest_id } = e.detail.body
+      this.handlePrereqClick(+api_quest_id)()
     }
   }
 
