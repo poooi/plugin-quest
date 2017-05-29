@@ -1,6 +1,6 @@
 import { join } from 'path-extra'
 import React, { Component } from 'react'
-import { Grid, Row, Col, Input, Panel, OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { Grid, Row, Col, Input, Panel, OverlayTrigger, Tooltip, Dropdown, MenuItem } from 'react-bootstrap'
 import { sortBy, range, values } from 'lodash'
 import { pluralize } from 'inflection'
 import { connect } from 'react-redux'
@@ -48,6 +48,18 @@ const categoryNames = [
   'Modernization',
 ].map(__)
 
+const categoryColors = [
+  '',
+  '#19BB2E',
+  '#e73939',
+  '#87da61',
+  '#16C2A3',
+  '#E2C609',
+  '#805444',
+  '#c792e8',
+  '#e73939',
+]
+
 const typeNames = [
   '',
   'One-time Quest',
@@ -58,6 +70,20 @@ const typeNames = [
   'Monthly Quest',
   'Quarterly Quest',
 ].map(__)
+
+const FilterItem = ({ index }) => (
+  <span>
+    {
+      categoryColors[index] &&
+      <span className="cat-indicator" style={{ backgroundColor: categoryColors[index] }}></span>
+    }
+    {
+      (__('req.option.pluralize') === true && index !== 0)
+      ? pluralize(filterNames[index])
+      : filterNames[index]
+    }
+  </span>
+)
 
 export const reactClass = connect(
   pluginDataSelector,
@@ -100,10 +126,10 @@ export const reactClass = connect(
     window.removeEventListener('game.request', this.handleRequest)
   }
 
-  handleFilterSelect = (e) => {
+  handleFileterSelect = (eventKey) => {
     this.setState({
       questId: 0,
-      questFilter: parseInt(e.target.value, 10),
+      questFilter: parseInt(eventKey, 10),
     })
   }
 
@@ -196,26 +222,24 @@ export const reactClass = connect(
           <Row>
             <Col xs={12}>
               <Panel header={__('Select Quest')} bsStyle="primary">
-                <Input
-                  type="select"
-                  label={__('Quest Type')}
-                  value={questFilter}
-                  onChange={this.handleFilterSelect}
-                  style={{ marginBottom: 8 }}
+                <Dropdown
+                  id="quest-type-filter"
+                  onSelect={this.handleFileterSelect}
                 >
-                  {
-                    filterNames.map((name, idx) => (
-                      // Please keep '=== true' as normally it will return the string itself
-                      <option key={name} value={idx}>
-                        {
-                          (__('req.option.pluralize') === true && idx !== 0)
-                          ? pluralize(name)
-                          : name
-                        }
-                      </option>
-                    ))
-                  }
-                </Input>
+                  <Dropdown.Toggle>
+                    <FilterItem index={questFilter} />
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    {
+                      filterNames.map((name, idx) => (
+                        // Please keep '=== true' as normally it will return the string itself
+                        <MenuItem key={name} eventKey={idx}>
+                          <FilterItem index={idx} />
+                        </MenuItem>
+                      ))
+                    }
+                  </Dropdown.Menu>
+                </Dropdown>
                 <Input type="select" label={__('Quest Name')} value={questId} onChange={this.handleQuestSelect}>
                   <option key={0}>{__('Quest Name')}</option>
                   <optgroup label={__('Operable')}>
