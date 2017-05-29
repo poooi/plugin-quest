@@ -90,6 +90,14 @@ export const reactClass = connect(
     this.props.readQuestInfo(join(__dirname, 'assets', 'info'), __)
   }
 
+  componentDidMount() {
+    window.addEventListener('game.request', this.handleRequest)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('game.request', this.handleRequest)
+  }
+
   handleFilterSelect = (e) => {
     this.setState({
       quest_id: 0,
@@ -116,6 +124,13 @@ export const reactClass = connect(
       quest_filter,
       quest_id: quest_id,
     })
+  }
+
+  handleRequest = (e) => {
+    if (e.detail.path === '/kcsapi/api_req_quest/start') {
+      const {api_quest_id} = e.detail.body
+      this.handlePrereqClick(+api_quest_id)
+    }
   }
 
   static renderQuestOption(quest) {
@@ -277,4 +292,8 @@ export const reactClass = connect(
   }
 })
 
-export {reducer}
+const switchPluginPath = [
+  '/kcsapi/api_get_member/questlist'
+]
+
+export {reducer, switchPluginPath}
