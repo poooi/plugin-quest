@@ -1,7 +1,7 @@
 import { join } from 'path-extra'
 import React, { Component } from 'react'
-import { Grid, Row, Col, Input, Panel, OverlayTrigger, Tooltip, Dropdown, MenuItem, ButtonGroup } from 'react-bootstrap'
-import { sortBy, range, values } from 'lodash'
+import { Grid, Row, Col, Panel, OverlayTrigger, Tooltip, Dropdown, MenuItem, ButtonGroup } from 'react-bootstrap'
+import { sortBy, range, values, get } from 'lodash'
 import { pluralize } from 'inflection'
 import { connect } from 'react-redux'
 import { extensionSelectorFactory } from 'views/utils/selectors'
@@ -22,7 +22,6 @@ const __ = (s, ...args) => {
 }
 
 const filterNames = [
-  'Quest Type',
   'Composition Quest',
   'Sortie Quest',
   'Exercise Quest',
@@ -38,7 +37,6 @@ const filterNames = [
 ].map(__)
 
 const categoryNames = [
-  '',
   'Composition',
   'Sortie',
   'Exercise',
@@ -49,7 +47,6 @@ const categoryNames = [
 ].map(__)
 
 const categoryColors = [
-  '',
   '#19BB2E',
   '#e73939',
   '#87da61',
@@ -57,11 +54,9 @@ const categoryColors = [
   '#E2C609',
   '#805444',
   '#c792e8',
-  '#e73939',
 ]
 
 const typeNames = [
-  '',
   'One-time Quest',
   'Daily Quest',
   'Weekly Quest',
@@ -85,6 +80,13 @@ const FilterItem = ({ index }) => (
   </span>
 )
 
+const QuestItem = ({ quest = {} }) => (
+  <span>
+    <span className="cat-indicator" style={{ backgroundColor: categoryColors[quest.category - 1] }}></span>
+    {quest.wiki_id} - {quest.name}
+  </span>
+)
+
 export const reactClass = connect(
   pluginDataSelector,
   ({
@@ -93,24 +95,24 @@ export const reactClass = connect(
 )(class PluginQuest extends Component {
   constructor(props) {
     super(props)
+    this.filterFuncs = this.constructor.initFilterFuncs()
     this.state = {
       questFilter: 0,
-      questId: 0,
+      questId: 101,
     }
-    this.filterFuncs = this.constructor.initFilterFuncs()
   }
 
   static initFilterFuncs = () => {
     const filterFuncs = {}
-    range(1, 8).forEach((i) => {
+    range(0, 7).forEach((i) => {
       filterFuncs[i] =
-        quest => quest.category === i && quest.wiki_id.charAt(0) !== 'W'
+        quest => quest.category === i + 1 && quest.wiki_id.charAt(0) !== 'W'
     })
-    filterFuncs[8] = quest => quest.wiki_id.charAt(0) === 'W'
-    filterFuncs[9] = quest => [2, 4, 5].includes(quest.type)
-    filterFuncs[10] = quest => quest.type === 3
-    filterFuncs[11] = quest => quest.type === 6
-    filterFuncs[12] = quest => quest.type === 7
+    filterFuncs[7] = quest => quest.wiki_id.charAt(0) === 'W'
+    filterFuncs[8] = quest => [2, 4, 5].includes(quest.type)
+    filterFuncs[9] = quest => quest.type === 3
+    filterFuncs[10] = quest => quest.type === 6
+    filterFuncs[11] = quest => quest.type === 7
     return filterFuncs
   }
 
@@ -126,10 +128,18 @@ export const reactClass = connect(
     window.removeEventListener('game.request', this.handleRequest)
   }
 
+  getDefaultQuestId(questFilter = 0) {
+    return get(sortBy(
+      values(this.props.quests).filter(quest => quest && this.filterFuncs[questFilter](quest)),
+      'wiki_id'), '0.game_id', 0)
+  }
+
   handleFileterSelect = (eventKey) => {
+    const questFilter = parseInt(eventKey, 10)
+    const questId = this.getDefaultQuestId(questFilter)
     this.setState({
-      questId: 0,
-      questFilter: parseInt(eventKey, 10),
+      questId,
+      questFilter,
     })
   }
 
@@ -180,7 +190,7 @@ export const reactClass = connect(
   }
 
   static renderQuestOption(quest) {
-    return <MenuItem eventKey={quest.game_id}>{quest.wiki_id} - {quest.name}</MenuItem>
+    return <MenuItem key={quest.game_id} eventKey={quest.game_id}><QuestItem quest={quest} /></MenuItem>
   }
   static filterQuestByStatus(quests, questStatus, status) {
     return values(quests).filter(quest => quest && questStatus[quest.game_id] === status)
@@ -199,7 +209,7 @@ export const reactClass = connect(
       >
         <div className="tooltipTrigger">
           <a onClick={this.handlePrereqClick(qid)}>
-            {quest.wiki_id} - {quest.name}
+            <QuestItem quest={quest} />
           </a>
         </div>
       </OverlayTrigger>
@@ -213,8 +223,7 @@ export const reactClass = connect(
     const questsFiltered = sortBy(
       values(quests).filter(quest => quest && filterFunc(quest)),
       'wiki_id')
-    const questSelected = questId ? quests[questId] : questsFiltered[0]
-    console.log(questSelected)
+    const questSelected = (questId ? quests[questId] : questsFiltered[0]) || {}
 
     return (
       <div id="quest-info" className="quest-info">
@@ -246,11 +255,7 @@ export const reactClass = connect(
                   onSelect={this.handleQuestSelect}
                 >
                   <Dropdown.Toggle>
-                    {
-                      questId
-                      ? <span>{questSelected.wiki_id} - {questSelected.name}</span>
-                      : <span>{__('Quest Name')}</span>
-                    }
+                    <QuestItem quest={questSelected} />
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <MenuItem header>{__('Operable')}</MenuItem>
@@ -276,7 +281,7 @@ export const reactClass = connect(
           {questSelected &&
             <Row>
               <Col xs={12}>
-                <Panel header={__('Quest Information')} bsStyle="danger">
+                <Panel>
                   <div>
                     <div className="questTitle">{questSelected.name}</div>
                     <div className="questType">
