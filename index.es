@@ -284,7 +284,7 @@ export const reactClass = connect(
               <Col xs={12}>
                 <Panel>
                   <div>
-                    <div className="questTitle">{questSelected.name}</div>
+                    <div className="questTitle">{questSelected.name || __('Undocumented quest, please wait for updates')}</div>
                     <div className="questType">
                       {categoryNames[questSelected.category]} - {typeNames[questSelected.type - 1]}
                     </div>

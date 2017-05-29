@@ -54,6 +54,7 @@
   "敵空母": "空母",
   "敵軽母": "軽母",
 
+  "Undocumented quest, please wait for updates": "記載されていないクエスト、更新をお待ちください",
 
   "req": {
     "option": {
@@ -195,7 +196,7 @@
     }
 
   },
-  
+
   "":""
 
 }
