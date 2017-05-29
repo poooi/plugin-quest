@@ -204,7 +204,7 @@ export const reactClass = connect(
         overlay={
           <Tooltip id={`quest-link-${qid}`}>
             <strong>{quest.name}</strong><br />
-            {categoryNames[quest.category]}-{typeNames[quest.type]}<br />
+            {categoryNames[quest.category]}-{typeNames[quest.type - 1]}<br />
             {quest.condition}
           </Tooltip>}
       >
@@ -286,7 +286,7 @@ export const reactClass = connect(
                   <div>
                     <div className="questTitle">{questSelected.name}</div>
                     <div className="questType">
-                      {categoryNames[questSelected.category]} - {typeNames[questSelected.type]}
+                      {categoryNames[questSelected.category]} - {typeNames[questSelected.type - 1]}
                     </div>
                   </div>
                   <Row>
