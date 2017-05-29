@@ -68,6 +68,8 @@
   "敵空母": "空母",
   "敵軽母": "輕母",
 
+  "Undocumented quest, please wait for updates": "任務未收錄，請等待更新",
+
   "req": {
     "option": {
     },
@@ -208,6 +210,6 @@
     }
 
   },
-  
+
   "":""
 }

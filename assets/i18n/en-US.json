@@ -122,7 +122,7 @@
       "battle_quantifier": "enemy fleet",
 
       "resource": "{{{amount}}} {{{name}}}",
-      "resource_delim": ","
+      "resource_delim": ", "
     },
 
     "excercise": {
@@ -156,7 +156,7 @@
 
     "equipexchange": {
       "main": "{{{scraps}}}{{{equipments}}}{{{delim}}}{{{consumptions}}}",
-      "equipments": "Have{{{equipments}}}",
+      "equipments": "Have {{{equipments}}}",
       "equipment": "{{{amount}}} {{{name}}}",
       "scraps": "Scrap {{{scraps}}}. ",
       "scrap": "{{{amount}}} {{{name}}}",
@@ -170,7 +170,7 @@
       "consumptions": "using {{{consumptions}}}",
       "consumption": "{{{amount}}} {{{ship}}}",
       "resources": "Prepare {{{resources}}} and ",
-      "delim": ","
+      "delim": ", "
     },
 
     "and": {

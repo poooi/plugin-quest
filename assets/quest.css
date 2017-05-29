@@ -2,6 +2,10 @@
   cursor: default !important;
 }
 
+#quest-info .container {
+  min-height: 25em;
+}
+
 #quest-info .tooltipTrigger {
   display: inline-block;
 }
@@ -82,4 +86,23 @@
 
 #quest-info .questInfo .prereqName a span {
   cursor: pointer !important;
+}
+
+#quest-info .cat-indicator {
+    display: inline-block;
+    height: 1em;
+    width: 4px;
+    vertical-align: middle;
+    margin-right: 4px;
+    flex: 0 0 auto;
+}
+
+#quest-info .dropdown-menu {
+  max-height: 20em;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+#quest-info .dropdown-menu::-webkit-scrollbar {
+  width: 1em;
 }

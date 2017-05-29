@@ -1,26 +1,27 @@
 import { join } from 'path-extra'
 import React, { Component } from 'react'
-import { Grid, Row, Col, Input, Panel, OverlayTrigger, Tooltip } from 'react-bootstrap'
-import { sortBy, range, values } from 'lodash'
+import { Grid, Row, Col, Panel, OverlayTrigger, Tooltip, Dropdown, MenuItem, ButtonGroup } from 'react-bootstrap'
+import { sortBy, range, values, get } from 'lodash'
 import { pluralize } from 'inflection'
 import { connect } from 'react-redux'
-
-import reducer, { readQuestInfo } from './redux'
 import { extensionSelectorFactory } from 'views/utils/selectors'
-const i18n__ = window.i18n["poi-plugin-quest-info"].__.bind(window.i18n["poi-plugin-quest-info"])
+
+import { reducer, readQuestInfo } from './redux'
+
+const i18n__ = window.i18n['poi-plugin-quest-info'].__.bind(window.i18n['poi-plugin-quest-info'])
 
 const EXTENSION_KEY = 'poi-plugin-quest-info'
 const pluginDataSelector = extensionSelectorFactory(EXTENSION_KEY)
 
-function __(s) {
-  let tr = i18n__.apply(this, arguments)
-  if (tr === s)
-    tr = window.i18n.resources.__.apply(this, arguments)
+const __ = (s, ...args) => {
+  let tr = i18n__(s, ...args)
+  if (tr === s) {
+    tr = window.i18n.resources.__(s, ...args)
+  }
   return tr
 }
 
 const filterNames = [
-  'Quest Type',
   'Composition Quest',
   'Sortie Quest',
   'Exercise Quest',
@@ -36,7 +37,6 @@ const filterNames = [
 ].map(__)
 
 const categoryNames = [
-  '',
   'Composition',
   'Sortie',
   'Exercise',
@@ -46,8 +46,17 @@ const categoryNames = [
   'Modernization',
 ].map(__)
 
+const categoryColors = [
+  '#19BB2E',
+  '#e73939',
+  '#87da61',
+  '#16C2A3',
+  '#E2C609',
+  '#805444',
+  '#c792e8',
+]
+
 const typeNames = [
-  '',
   'One-time Quest',
   'Daily Quest',
   'Weekly Quest',
@@ -57,6 +66,28 @@ const typeNames = [
   'Quarterly Quest',
 ].map(__)
 
+const FilterItem = ({ index }) => (
+  <span>
+    {
+      categoryColors[index] &&
+      <span className="cat-indicator" style={{ backgroundColor: categoryColors[index] }}></span>
+    }
+    {
+      (__('req.option.pluralize') === true && index !== 0)
+      ? pluralize(filterNames[index])
+      : filterNames[index]
+    }
+  </span>
+)
+
+const QuestItem = ({ quest = {} }) => (
+  <span>
+    <span className="cat-indicator" style={{ backgroundColor: categoryColors[quest.category - 1] }}></span>
+    {quest.wiki_id} - {quest.name}
+  </span>
+)
+
+// 'W' represents wedding/marriage
 export const reactClass = connect(
   pluginDataSelector,
   ({
@@ -65,24 +96,24 @@ export const reactClass = connect(
 )(class PluginQuest extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      quest_filter: 0,
-      quest_id: 0,
-    }
     this.filterFuncs = this.constructor.initFilterFuncs()
+    this.state = {
+      questFilter: 0,
+      questId: 101,
+    }
   }
 
   static initFilterFuncs = () => {
     const filterFuncs = {}
-    range(1, 8).forEach((i) => {
+    range(0, 7).forEach((i) => {
       filterFuncs[i] =
-        (quest) => quest.category === i && quest.wiki_id.charAt(0) !== 'W'
+        quest => quest.category === i + 1 && quest.wiki_id.charAt(0) !== 'W'
     })
-    filterFuncs[8] = (quest) => quest.wiki_id.charAt(0) === 'W'
-    filterFuncs[9] = (quest) => [2, 4, 5].includes(quest.type)
-    filterFuncs[10] = (quest) => quest.type === 3
-    filterFuncs[11] = (quest) => quest.type === 6
-    filterFuncs[12] = (quest) => quest.type === 7
+    filterFuncs[7] = quest => quest.wiki_id.charAt(0) === 'W'
+    filterFuncs[8] = quest => [2, 4, 5].includes(quest.type)
+    filterFuncs[9] = quest => quest.type === 3
+    filterFuncs[10] = quest => quest.type === 6
+    filterFuncs[11] = quest => quest.type === 7
     return filterFuncs
   }
 
@@ -98,59 +129,88 @@ export const reactClass = connect(
     window.removeEventListener('game.request', this.handleRequest)
   }
 
-  handleFilterSelect = (e) => {
+  getDefaultQuestId(questFilter = 0) {
+    return get(sortBy(
+      values(this.props.quests).filter(quest => quest && this.filterFuncs[questFilter](quest)),
+      'wiki_id'), '0.game_id', 0)
+  }
+
+  handleFileterSelect = (eventKey) => {
+    const questFilter = parseInt(eventKey, 10)
+    const questId = this.getDefaultQuestId(questFilter)
     this.setState({
-      quest_id: 0,
-      quest_filter: parseInt(e.target.value),
+      questId,
+      questFilter,
     })
   }
 
-  handleQuestSelect = (e) => {
+  handleQuestSelect = (eventKey) => {
     this.setState({
-      quest_id: parseInt(e.target.value),
+      questId: parseInt(eventKey, 10),
     })
   }
 
-  handlePrereqClick = (quest_id) => {
-    const quest = this.props.quests[quest_id]
-    const quest_filter = !quest ? 0 :
-      [2, 4, 5].includes(quest.type) ? 9 :
-      quest.type === 3 ? 10 :
-      quest.type === 6 ? 11 :
-      quest.type === 7 ? 12 :
-      quest.wiki_id.charAt(0) === 'W' ? 8 :
-      quest.category
+  handlePrereqClick = questId => () => {
+    const quest = this.props.quests[questId]
+    let questFilter
+
+    switch (true) {
+      case !quest:
+        questFilter = 0
+        break
+      case [2, 4, 5].includes(quest.type):
+        questFilter = 8
+        break
+      case quest.type === 3:
+        questFilter = 9
+        break
+      case quest.type === 6:
+        questFilter = 10
+        break
+      case quest.type === 7:
+        questFilter = 11
+        break
+      case quest.wiki_id.charAt(0) === 'W':
+        questFilter = 7
+        break
+      default:
+        questFilter = quest.category - 1
+    }
+
     this.setState({
-      quest_filter,
-      quest_id: quest_id,
+      questFilter,
+      questId,
     })
   }
 
   handleRequest = (e) => {
     if (e.detail.path === '/kcsapi/api_req_quest/start') {
-      const {api_quest_id} = e.detail.body
-      this.handlePrereqClick(+api_quest_id)
+      const { api_quest_id } = e.detail.body
+      this.handlePrereqClick(+api_quest_id)()
     }
   }
 
   static renderQuestOption(quest) {
-    return <option key={quest.game_id} value={quest.game_id}>{quest.wiki_id} - {quest.name}</option>
+    return <MenuItem key={quest.game_id} eventKey={quest.game_id}><QuestItem quest={quest} /></MenuItem>
   }
-  static filterQuestByStatus(quests, quests_status, status) {
-    return values(quests).filter((quest) => quest && quests_status[quest.game_id] === status)
+  static filterQuestByStatus(quests, questStatus, status) {
+    return values(quests).filter(quest => quest && questStatus[quest.game_id] === status)
   }
   renderQuestLink = (qid) => {
     const quest = this.props.quests[qid] || {}
     return (
-      <OverlayTrigger placement='left' overlay={
-        <Tooltip id={`quest-link-${qid}`}>
-          <strong>{quest.name}</strong><br />
-          {categoryNames[quest.category]}-{typeNames[quest.type]}<br />
-          {quest.condition}
-        </Tooltip>}>
-        <div className='tooltipTrigger'>
-          <a onClick={this.handlePrereqClick.bind(this, qid)}>
-            {quest.wiki_id} - {quest.name}
+      <OverlayTrigger
+        placement="left"
+        overlay={
+          <Tooltip id={`quest-link-${qid}`}>
+            <strong>{quest.name}</strong><br />
+            {categoryNames[quest.category]}-{typeNames[quest.type - 1]}<br />
+            {quest.condition}
+          </Tooltip>}
+      >
+        <div className="tooltipTrigger">
+          <a onClick={this.handlePrereqClick(qid)}>
+            <QuestItem quest={quest} />
           </a>
         </div>
       </OverlayTrigger>
@@ -158,122 +218,128 @@ export const reactClass = connect(
   }
 
   render() {
-    const {quests, quests_status} = this.props
-    const {quest_id, quest_filter} = this.state
-    const filterFunc = this.filterFuncs[quest_filter] || (() => false)
-    const quests_filtered = sortBy(
-      values(quests).filter((quest) => quest && filterFunc(quest)),
+    const { quests, questStatus } = this.props
+    const { questId, questFilter } = this.state
+    const filterFunc = this.filterFuncs[questFilter] || (() => false)
+    const questsFiltered = sortBy(
+      values(quests).filter(quest => quest && filterFunc(quest)),
       'wiki_id')
-    const quest_selected = quest_id ? quests[quest_id] : quests_filtered[0]
+    const questSelected = (questId ? quests[questId] : questsFiltered[0]) || {}
 
     return (
-      <div id='quest-info' className='quest-info'>
-        <link rel='stylesheet' href={join(__dirname, 'assets', 'quest.css')} />
+      <div id="quest-info" className="quest-info">
+        <link rel="stylesheet" href={join(__dirname, 'assets', 'quest.css')} />
         <Grid>
           <Row>
             <Col xs={12}>
-              <Panel header={__('Select Quest')} bsStyle='primary'>
-                <Input type='select'
-                  label={__('Quest Type')}
-                  value={quest_filter}
-                  onChange={this.handleFilterSelect}
-                  style={{marginBottom: 8}}
+              <ButtonGroup vertical block>
+                <Dropdown
+                  id="quest-type-filter"
+                  onSelect={this.handleFileterSelect}
                 >
-                  {
-                    filterNames.map((filter, idx) => {
-                      // Please keep '=== false' as normally it will return the string itself
-                      if (__("req.option.pluralize") === false && idx != 0)
-                        filter = pluralize(filter)
-                      return <option key={idx} value={idx}>{filter}</option>
-                    })
-                  }
-                </Input>
-                <Input type='select' label={__('Quest Name')} value={quest_id} onChange={this.handleQuestSelect}>
-                  <option key={0}>{__('Quest Name')}</option>
-                  <optgroup label={__('Operable')}>
-                  {
-                    this.constructor.filterQuestByStatus(quests_filtered, quests_status, 2)
+                  <Dropdown.Toggle>
+                    <FilterItem index={questFilter} />
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    {
+                      filterNames.map((name, idx) => (
+                        // Please keep '=== true' as normally it will return the string itself
+                        <MenuItem key={name} eventKey={idx}>
+                          <FilterItem index={idx} />
+                        </MenuItem>
+                      ))
+                    }
+                  </Dropdown.Menu>
+                </Dropdown>
+                <Dropdown
+                  id="quest-name-select"
+                  onSelect={this.handleQuestSelect}
+                >
+                  <Dropdown.Toggle>
+                    <QuestItem quest={questSelected} />
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <MenuItem header>{__('Operable')}</MenuItem>
+                    {
+                    this.constructor.filterQuestByStatus(questsFiltered, questStatus, 2)
                     .map(this.constructor.renderQuestOption)
-                  }
-                  </optgroup>
-                  <optgroup label={__('Locked')}>
-                  {
-                    this.constructor.filterQuestByStatus(quests_filtered, quests_status, 3)
+                    }
+                    <MenuItem header>{__('Locked')}</MenuItem>
+                    {
+                    this.constructor.filterQuestByStatus(questsFiltered, questStatus, 3)
                     .map(this.constructor.renderQuestOption)
-                  }
-                  </optgroup>
-                  <optgroup label={__('Completed')}>
-                  {
-                    this.constructor.filterQuestByStatus(quests_filtered, quests_status, 1)
+                    }
+                    <MenuItem header>{__('Completed')}</MenuItem>
+                    {
+                    this.constructor.filterQuestByStatus(questsFiltered, questStatus, 1)
                     .map(this.constructor.renderQuestOption)
-                  }
-                  </optgroup>
-                </Input>
-              </Panel>
+                    }
+                  </Dropdown.Menu>
+                </Dropdown>
+              </ButtonGroup>
             </Col>
           </Row>
-          {quest_selected && 
+          {questSelected &&
             <Row>
               <Col xs={12}>
-                <Panel header={__('Quest Information')} bsStyle='danger'>
+                <Panel>
                   <div>
-                    <div className='questTitle'>{quest_selected.name}</div>
-                    <div className='questType'>
-                      {categoryNames[quest_selected.category]} - {typeNames[quest_selected.type]}
+                    <div className="questTitle">{questSelected.name || __('Undocumented quest, please wait for updates')}</div>
+                    <div className="questType">
+                      {categoryNames[questSelected.category]} - {typeNames[questSelected.type - 1]}
                     </div>
                   </div>
                   <Row>
-                    <div className='questInfo'>
-                      <Panel header={__('Reward')} bsStyle='info'>
+                    <div className="questInfo">
+                      <Panel header={__('Reward')} bsStyle="info">
                         <ul>
-                          <li key='reward_fuel'>{__('Fuel')} {quest_selected.reward_fuel}</li>
-                          <li key='reward_bullet'>{__('Ammo')} {quest_selected.reward_ammo}</li>
-                          <li key='reward_steel'>{__('Steel')} {quest_selected.reward_steel}</li>
-                          <li key='reward_alum'>{__('Bauxite')} {quest_selected.reward_bauxite}</li>
+                          <li key="reward_fuel">{__('Fuel')} {questSelected.reward_fuel}</li>
+                          <li key="reward_bullet">{__('Ammo')} {questSelected.reward_ammo}</li>
+                          <li key="reward_steel">{__('Steel')} {questSelected.reward_steel}</li>
+                          <li key="reward_alum">{__('Bauxite')} {questSelected.reward_bauxite}</li>
                           {
-                            (quest_selected.reward_other || []).map((reward, i) => {
+                            (questSelected.reward_other || []).map((reward) => {
                               let name = __(reward.name)
-                              if (reward.category)
-                                name = __('「') + name + __('」')
-                              const amount = reward.amount ? (' × ' + reward.amount) : ''
+                              if (reward.category) { name = __('「') + name + __('」') }
+                              const amount = reward.amount ? (` × ${reward.amount}`) : ''
                               const category = __(reward.category || '')
                               return (
-                                <li key={`reward_other_${i}`}>
+                                <li key={`reward_other_${reward.name}`}>
                                   {category}{name}{amount}
                                 </li>
-                               )
+                              )
                             })
                           }
                         </ul>
                       </Panel>
-                      <Panel header={__('Note')} bsStyle='success'>
+                      <Panel header={__('Note')} bsStyle="success">
                         <div>
                           <div>{__('Requirement')}:</div>
-                          <div className='reqDetail'>
-                            <OverlayTrigger placement='left' overlay={<Tooltip id='questReqInfo'>{quest_selected.detail}</Tooltip>}>
-                              <div className='tooltipTrigger'>{quest_selected.condition}</div>
+                          <div className="reqDetail">
+                            <OverlayTrigger placement="left" overlay={<Tooltip id="questReqInfo">{questSelected.detail}</Tooltip>}>
+                              <div className="tooltipTrigger">{questSelected.condition}</div>
                             </OverlayTrigger>
                           </div>
-                          {(quest_selected.prerequisite || []).length !== 0 &&
+                          {(questSelected.prerequisite || []).length !== 0 &&
                             <div>
                               <div>{__('Requires')}:</div>
                               {
-                                quest_selected.prerequisite.map((qid, rqidx) =>
-                                  <div className='prereqName' key={rqidx}>
+                                questSelected.prerequisite.map(qid =>
+                                  (<div className="prereqName" key={qid}>
                                     {this.renderQuestLink(qid)}
-                                  </div>
+                                  </div>)
                                 )
                               }
                             </div>
                           }
-                          {(quest_selected.postquest || []).length !== 0 &&
+                          {(questSelected.postquest || []).length !== 0 &&
                             <div>
                               <div>{__('Unlocks')}:</div>
                               {
-                                quest_selected.postquest.map((qid, uqidx) =>
-                                  <div className='prereqName' key={uqidx}>
+                                questSelected.postquest.map(qid =>
+                                  (<div className="prereqName" key={qid}>
                                     {this.renderQuestLink(qid)}
-                                  </div>
+                                  </div>)
                                 )
                               }
                             </div>
@@ -293,7 +359,7 @@ export const reactClass = connect(
 })
 
 const switchPluginPath = [
-  '/kcsapi/api_get_member/questlist'
+  '/kcsapi/api_get_member/questlist',
 ]
 
-export {reducer, switchPluginPath}
+export { reducer, switchPluginPath }
