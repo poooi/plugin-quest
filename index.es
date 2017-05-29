@@ -87,6 +87,7 @@ const QuestItem = ({ quest = {} }) => (
   </span>
 )
 
+// 'W' represents wedding/marriage
 export const reactClass = connect(
   pluginDataSelector,
   ({
