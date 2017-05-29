@@ -358,8 +358,5 @@ export const reactClass = connect(
   }
 })
 
-const switchPluginPath = [
-  '/kcsapi/api_get_member/questlist',
-]
 
-export { reducer, switchPluginPath }
+export { reducer }
