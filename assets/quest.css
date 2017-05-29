@@ -96,3 +96,13 @@
     margin-right: 4px;
     flex: 0 0 auto;
 }
+
+#quest-info .dropdown-menu {
+  max-height: 20em;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+#quest-info .dropdown-menu::-webkit-scrollbar {
+  width: 1em;
+}

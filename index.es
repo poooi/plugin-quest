@@ -1,6 +1,6 @@
 import { join } from 'path-extra'
 import React, { Component } from 'react'
-import { Grid, Row, Col, Input, Panel, OverlayTrigger, Tooltip, Dropdown, MenuItem } from 'react-bootstrap'
+import { Grid, Row, Col, Input, Panel, OverlayTrigger, Tooltip, Dropdown, MenuItem, ButtonGroup } from 'react-bootstrap'
 import { sortBy, range, values } from 'lodash'
 import { pluralize } from 'inflection'
 import { connect } from 'react-redux'
@@ -133,9 +133,9 @@ export const reactClass = connect(
     })
   }
 
-  handleQuestSelect = (e) => {
+  handleQuestSelect = (eventKey) => {
     this.setState({
-      questId: parseInt(e.target.value, 10),
+      questId: parseInt(eventKey, 10),
     })
   }
 
@@ -180,7 +180,7 @@ export const reactClass = connect(
   }
 
   static renderQuestOption(quest) {
-    return <option key={quest.game_id} value={quest.game_id}>{quest.wiki_id} - {quest.name}</option>
+    return <MenuItem eventKey={quest.game_id}>{quest.wiki_id} - {quest.name}</MenuItem>
   }
   static filterQuestByStatus(quests, questStatus, status) {
     return values(quests).filter(quest => quest && questStatus[quest.game_id] === status)
@@ -214,6 +214,7 @@ export const reactClass = connect(
       values(quests).filter(quest => quest && filterFunc(quest)),
       'wiki_id')
     const questSelected = questId ? quests[questId] : questsFiltered[0]
+    console.log(questSelected)
 
     return (
       <div id="quest-info" className="quest-info">
@@ -221,7 +222,7 @@ export const reactClass = connect(
         <Grid>
           <Row>
             <Col xs={12}>
-              <Panel header={__('Select Quest')} bsStyle="primary">
+              <ButtonGroup vertical block>
                 <Dropdown
                   id="quest-type-filter"
                   onSelect={this.handleFileterSelect}
@@ -240,28 +241,36 @@ export const reactClass = connect(
                     }
                   </Dropdown.Menu>
                 </Dropdown>
-                <Input type="select" label={__('Quest Name')} value={questId} onChange={this.handleQuestSelect}>
-                  <option key={0}>{__('Quest Name')}</option>
-                  <optgroup label={__('Operable')}>
+                <Dropdown
+                  id="quest-name-select"
+                  onSelect={this.handleQuestSelect}
+                >
+                  <Dropdown.Toggle>
+                    {
+                      questId
+                      ? <span>{questSelected.wiki_id} - {questSelected.name}</span>
+                      : <span>{__('Quest Name')}</span>
+                    }
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <MenuItem header>{__('Operable')}</MenuItem>
                     {
                     this.constructor.filterQuestByStatus(questsFiltered, questStatus, 2)
                     .map(this.constructor.renderQuestOption)
-                  }
-                  </optgroup>
-                  <optgroup label={__('Locked')}>
+                    }
+                    <MenuItem header>{__('Locked')}</MenuItem>
                     {
                     this.constructor.filterQuestByStatus(questsFiltered, questStatus, 3)
                     .map(this.constructor.renderQuestOption)
-                  }
-                  </optgroup>
-                  <optgroup label={__('Completed')}>
+                    }
+                    <MenuItem header>{__('Completed')}</MenuItem>
                     {
                     this.constructor.filterQuestByStatus(questsFiltered, questStatus, 1)
                     .map(this.constructor.renderQuestOption)
-                  }
-                  </optgroup>
-                </Input>
-              </Panel>
+                    }
+                  </Dropdown.Menu>
+                </Dropdown>
+              </ButtonGroup>
             </Col>
           </Row>
           {questSelected &&
