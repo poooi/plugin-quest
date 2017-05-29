@@ -158,22 +158,22 @@ export const reactClass = connect(
         questFilter = 0
         break
       case [2, 4, 5].includes(quest.type):
-        questFilter = 9
-        break
-      case quest.type === 3:
-        questFilter = 10
-        break
-      case quest.type === 6:
-        questFilter = 11
-        break
-      case quest.type === 7:
-        questFilter = 12
-        break
-      case quest.wiki_id.charAt(0) === 'W':
         questFilter = 8
         break
+      case quest.type === 3:
+        questFilter = 9
+        break
+      case quest.type === 6:
+        questFilter = 10
+        break
+      case quest.type === 7:
+        questFilter = 11
+        break
+      case quest.wiki_id.charAt(0) === 'W':
+        questFilter = 7
+        break
       default:
-        questFilter = quest.category
+        questFilter = quest.category - 1
     }
 
     this.setState({
