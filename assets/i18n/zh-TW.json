@@ -125,12 +125,14 @@
     "a-gou": "S勝利6次, BOSS戰勝利12次, 進行BOSS戰24次, 出擊36次(一次出擊多次戰鬥算一次)",
 
     "expedition": {
-      "main": "{{{objects}}}{{{resources}}}",
+      "main": "{{{objects}}}{{{resources}}}{{{groups}}}{{{disallowed}}}",
       "object": "{{{name}}}成功{{{times}}}次",
       "any": "遠征",
       "id": "遠征%s",
       "resources": "，消耗{{{resources}}}",
-      "delim": "，"
+      "delim": "，",
+      "groups": "，需要%s",
+      "disallowed": "，%s不可"
     },
 
     "simple": {

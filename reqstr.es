@@ -230,6 +230,8 @@ class Requirement {
   //   <"id": 39 | [37, 38],>
   //   "times": 2,
   //   <"resources": [0, 0, 0, 0],>
+  //   <"groups": [(group), ...],>
+  //   <"disallowed": "其它舰船",>
   // }
   get expedition() {
     const objects = this.objects.map((object) => {
@@ -253,9 +255,14 @@ class Requirement {
       })
       : ''
 
+    const groups = this.groups ? _$('req.expedition.groups', parseGroups(this.groups)) : ''
+    const disallowed = this.disallowed ? _$('req.expedition.disallowed', parseShip(this.disallowed, 2)) : ''
+
     return _$('req.expedition.main', {
       objects,
       resources,
+      groups,
+      disallowed,
     })
   }
 

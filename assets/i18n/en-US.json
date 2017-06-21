@@ -84,12 +84,14 @@
     "a-gou": "Launch your fleet 36 times, encounter 24 bosses, kill 12 bosses, and get 6 S-Rank victories",
 
     "expedition": {
-      "main": "{{{objects}}}{{{resources}}}",
+      "main": "{{{objects}}}{{{resources}}}{{{groups}}}{{{disallowed}}}",
       "object": "Complete {{{name}}} {{{times}}}",
       "any": "any expeditions",
       "id": "expedition %s",
       "resources": ", consuming {{{resources}}}",
-      "delim": ". "
+      "delim": ". ",
+      "groups": " with %s",
+      "disallowed": ", %s not allowed"
     },
 
     "simple": {
