@@ -100,9 +100,35 @@
 #quest-info .dropdown-menu {
   max-height: 20em;
   overflow-y: scroll;
-  width: 100%;
 }
 
 #quest-info .dropdown-menu::-webkit-scrollbar {
   width: 1em;
+}
+
+#quest-info .quest-select {
+  display: flex;
+  align-items: baseline;
+  align-content: center;
+}
+
+#quest-info .quest-select > div:last-child {
+  width: calc(100% - 12em);
+}
+
+#quest-info .quest-select > div:first-child button{
+  width: 12em;
+}
+
+#quest-info #quest-name-select {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#quest-info .quest-item {
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

@@ -1,6 +1,6 @@
 import { join } from 'path-extra'
 import React, { Component } from 'react'
-import { Grid, Row, Col, Panel, OverlayTrigger, Tooltip, Dropdown, MenuItem, ButtonGroup } from 'react-bootstrap'
+import { Grid, Row, Col, Panel, OverlayTrigger, Tooltip, Dropdown, MenuItem, ButtonGroup, ButtonToolbar } from 'react-bootstrap'
 import { sortBy, range, values, get } from 'lodash'
 import { pluralize } from 'inflection'
 import { connect } from 'react-redux'
@@ -81,7 +81,7 @@ const FilterItem = ({ index }) => (
 )
 
 const QuestItem = ({ quest = {} }) => (
-  <span>
+  <span className="quest-item">
     <span className="cat-indicator" style={{ backgroundColor: categoryColors[quest.category - 1] }}></span>
     {quest.wiki_id} - {quest.name}
   </span>
@@ -232,7 +232,7 @@ export const reactClass = connect(
         <Grid>
           <Row>
             <Col xs={12}>
-              <ButtonGroup vertical block>
+              <ButtonToolbar className="quest-select">
                 <Dropdown
                   id="quest-type-filter"
                   onSelect={this.handleFileterSelect}
@@ -252,6 +252,7 @@ export const reactClass = connect(
                   </Dropdown.Menu>
                 </Dropdown>
                 <Dropdown
+                  pullRight
                   id="quest-name-select"
                   onSelect={this.handleQuestSelect}
                 >
@@ -276,7 +277,7 @@ export const reactClass = connect(
                     }
                   </Dropdown.Menu>
                 </Dropdown>
-              </ButtonGroup>
+              </ButtonToolbar>
             </Col>
           </Row>
           {questSelected &&
