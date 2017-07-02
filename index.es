@@ -190,8 +190,12 @@ export const reactClass = connect(
     }
   }
 
-  static renderQuestOption(quest) {
-    return <MenuItem key={quest.game_id} eventKey={quest.game_id}><QuestItem quest={quest} /></MenuItem>
+  static renderQuestOption(quest, activeQuestId) {
+    return (
+      <MenuItem key={quest.game_id} eventKey={quest.game_id} active={quest.game_id === activeQuestId}>
+        <QuestItem quest={quest} />
+      </MenuItem>
+    )
   }
   static filterQuestByStatus(quests, questStatus, status) {
     return values(quests).filter(quest => quest && questStatus[quest.game_id] === status)
@@ -244,7 +248,7 @@ export const reactClass = connect(
                     {
                       filterNames.map((name, idx) => (
                         // Please keep '=== true' as normally it will return the string itself
-                        <MenuItem key={name} eventKey={idx}>
+                        <MenuItem key={name} eventKey={idx} active={idx === questFilter}>
                           <FilterItem index={idx} />
                         </MenuItem>
                       ))
@@ -263,17 +267,17 @@ export const reactClass = connect(
                     <MenuItem header>{__('Operable')}</MenuItem>
                     {
                     this.constructor.filterQuestByStatus(questsFiltered, questStatus, 2)
-                    .map(this.constructor.renderQuestOption)
+                    .map(quest => this.constructor.renderQuestOption(quest, questId))
                     }
                     <MenuItem header>{__('Locked')}</MenuItem>
                     {
                     this.constructor.filterQuestByStatus(questsFiltered, questStatus, 3)
-                    .map(this.constructor.renderQuestOption)
+                    .map(quest => this.constructor.renderQuestOption(quest, questId))
                     }
                     <MenuItem header>{__('Completed')}</MenuItem>
                     {
                     this.constructor.filterQuestByStatus(questsFiltered, questStatus, 1)
-                    .map(this.constructor.renderQuestOption)
+                    .map(quest => this.constructor.renderQuestOption(quest, questId))
                     }
                   </Dropdown.Menu>
                 </Dropdown>
