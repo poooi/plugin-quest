@@ -168,7 +168,7 @@
 
     "modelconversion": {
       "main": "{{{secretary_equip}}}，然後{{{objects}}}{{{note}}}",
-      "equip": "祕書艦{{{secretary}}}在搭載未上鎖的{{{fullyskilled}}}{{{maxmodified}}}{{{equipment}}}",
+      "equip": "祕書艦{{{secretary}}}在{{{slot}}}搭載未上鎖的{{{fullyskilled}}}{{{maxmodified}}}{{{equipment}}}",
       "noequip": "祕書艦設為{{{secretary}}}",
       "secretarydefault": "空母",
       "scraps": "廢棄{{{scraps}}}",

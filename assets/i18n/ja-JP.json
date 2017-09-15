@@ -154,7 +154,7 @@
 
     "modelconversion": {
       "main": "{{{secretary_equip}}}{{{objects}}}{{{note}}}",
-      "equip": "ロックを解除した{{{fullyskilled}}}{{{maxmodified}}}{{{equipment}}}{{{slot}}}に搭載する{{{secretary}}}を秘書艦にして、",
+      "equip": "ロックを解除した{{{fullyskilled}}}{{{maxmodified}}}{{{equipment}}}を{{{slot}}}に搭載する{{{secretary}}}を秘書艦にして、",
       "noequip": "{{{secretary}}}を秘書艦にして",
       "secretarydefault": "空母",
       "scraps": "{{{scraps}}}廃棄",
