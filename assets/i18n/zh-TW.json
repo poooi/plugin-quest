@@ -168,7 +168,7 @@
 
     "modelconversion": {
       "main": "{{{secretary_equip}}}，然後{{{objects}}}{{{note}}}",
-      "equip": "祕書艦{{{secretary}}}搭載未上鎖的{{{fullyskilled}}}{{{maxmodified}}}{{{equipment}}}",
+      "equip": "祕書艦{{{secretary}}}在搭載未上鎖的{{{fullyskilled}}}{{{maxmodified}}}{{{equipment}}}",
       "noequip": "祕書艦設為{{{secretary}}}",
       "secretarydefault": "空母",
       "scraps": "廢棄{{{scraps}}}",
@@ -179,7 +179,14 @@
       "scrapdelim": "，",
       "fullyskilled": "、滿熟練度的",
       "maxmodified": "、改修Max的",
-      "useskilledcrew": "，同時消耗一個熟練搭乘員"
+      "useskilledcrew": "，同時消耗一個熟練搭乘員",
+      "slot": {
+        "0": "任意格",
+        "1": "第一格",
+        "2": "第二格",
+        "3": "第三格",
+        "4": "第四格"
+      }
     },
 
     "scrapequipment": {
@@ -208,7 +215,8 @@
     },
 
     "and": {
-      "separator": "；以及"
+      "separator": "；以及",
+      "word": "和"
     }
 
   },

@@ -154,7 +154,7 @@
 
     "modelconversion": {
       "main": "{{{secretary_equip}}}{{{objects}}}{{{note}}}",
-      "equip": "ロックを解除した{{{fullyskilled}}}{{{maxmodified}}}{{{equipment}}}搭載{{{secretary}}}を秘書艦にして、",
+      "equip": "ロックを解除した{{{fullyskilled}}}{{{maxmodified}}}{{{equipment}}}{{{slot}}}に搭載する{{{secretary}}}を秘書艦にして、",
       "noequip": "{{{secretary}}}を秘書艦にして",
       "secretarydefault": "空母",
       "scraps": "{{{scraps}}}廃棄",
@@ -165,7 +165,14 @@
       "scrapdelim": "・",
       "fullyskilled": "練度max",
       "maxmodified": "改修max",
-      "useskilledcrew": "(熟練搭乗員がいないと達成不可)"
+      "useskilledcrew": "(熟練搭乗員がいないと達成不可)",
+      "slot": {
+        "0": "任意のスロット",
+        "1": "一番スロット",
+        "2": "二番スロット",
+        "3": "三番スロット",
+        "4": "四番スロット"
+      }
     },
 
     "scrapequipment": {
@@ -194,7 +201,8 @@
     },
 
     "and": {
-      "separator": "。また"
+      "separator": "。また",
+      "word": "と"
     }
 
   },

@@ -169,7 +169,7 @@
 
     "modelconversion": {
       "main": "{{{secretary_equip}}}，然后{{{objects}}}{{{note}}}",
-      "equip": "秘书舰{{{secretary}}}搭载未上锁的{{{fullyskilled}}}{{{maxmodified}}}{{{equipment}}}",
+      "equip": "秘书舰{{{secretary}}}在{{{slot}}}搭载未上锁的{{{fullyskilled}}}{{{maxmodified}}}{{{equipment}}}",
       "noequip": "秘书舰设为{{{secretary}}}",
       "secretarydefault": "空母",
       "scraps": "废弃{{{scraps}}}",
@@ -180,7 +180,14 @@
       "scrapdelim": "，",
       "fullyskilled": "、满熟练度的",
       "maxmodified": "、改修Max的",
-      "useskilledcrew": "，同时消耗一个熟练搭乘员"
+      "useskilledcrew": "，同时消耗一个熟练搭乘员",
+      "slot": {
+        "0": "任意格",
+        "1": "第一格",
+        "2": "第二格",
+        "3": "第三格",
+        "4": "第四格"
+      }
     },
 
     "scrapequipment": {
@@ -209,7 +216,8 @@
     },
 
     "and": {
-      "separator": "；以及"
+      "separator": "；以及",
+      "word": "和"
     }
 
   },

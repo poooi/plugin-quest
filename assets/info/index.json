@@ -9296,6 +9296,7 @@
     ],
     "requirements": {
       "category": "modelconversion",
+      "slots": [1, 2],
       "equipment": [
         "試製晴嵐",
         "瑞雲(六三一空)"
@@ -9428,6 +9429,7 @@
     "requirements": {
       "category": "modelconversion",
       "secretary":"艦",
+      "slots": [1],
       "equipment": "二式水戦改",
       "scraps": [
         {
@@ -9468,6 +9470,8 @@
     ],
     "requirements": {
       "category": "modelconversion",
+      "secretary":"艦",
+      "slots": [1],
       "equipment": "二式水戦改",
       "scraps": [
         {

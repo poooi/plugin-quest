@@ -343,6 +343,7 @@ class Requirement {
     // FORMAT:
   // "requirements": {
   //   "category": "modelconversion",
+  //   <"slots": [1],>
   //   <"equipment": "零式艦戦21型(熟練)",>
   //   <"fullyskilled": true,>
   //   <"maxmodified": true,>
@@ -357,6 +358,7 @@ class Requirement {
   // }
   get modelconversion() {
     const secretary = this.secretary ? parseShip(this.secretary) : _$('req.modelconversion.secretarydefault')
+    const slot = this.slots ? this.slots.map(slot => _$('req.modelconversion.slot.' + slot)).join(_$('req.and.word')) : _$('req.modelconversion.slot.0')
     let secretaryEquip
     if (this.equipment) {
       const fullyskilled = this.fullyskilled ? _$('req.modelconversion.fullyskilled') : ''
@@ -366,6 +368,7 @@ class Requirement {
         : __(this.equipment)
       secretaryEquip = _$('req.modelconversion.equip', {
         secretary,
+        slot,
         equipment,
         fullyskilled,
         maxmodified,
