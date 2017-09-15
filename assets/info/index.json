@@ -9427,6 +9427,7 @@
     ],
     "requirements": {
       "category": "modelconversion",
+      "secretary":"艦",
       "equipment": "二式水戦改",
       "scraps": [
         {
