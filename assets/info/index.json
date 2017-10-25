@@ -9296,7 +9296,10 @@
     ],
     "requirements": {
       "category": "modelconversion",
-      "slots": [1, 2],
+      "slots": [
+        1,
+        2
+      ],
       "equipment": [
         "試製晴嵐",
         "瑞雲(六三一空)"
@@ -9428,8 +9431,10 @@
     ],
     "requirements": {
       "category": "modelconversion",
-      "secretary":"艦",
-      "slots": [1],
+      "secretary": "艦",
+      "slots": [
+        1
+      ],
       "equipment": "二式水戦改",
       "scraps": [
         {
@@ -9470,8 +9475,10 @@
     ],
     "requirements": {
       "category": "modelconversion",
-      "secretary":"艦",
-      "slots": [1],
+      "secretary": "艦",
+      "slots": [
+        1
+      ],
       "equipment": "二式水戦改",
       "scraps": [
         {
@@ -9505,7 +9512,7 @@
         "amount": 2
       },
       {
-        "name": "新型砲墳兵装資材",
+        "name": "新型砲熕兵装資材",
         "amount": 1
       }
     ],
@@ -9546,7 +9553,7 @@
         "amount": 2
       },
       {
-        "name": "勲章 / 新型砲墳兵装資材",
+        "name": "勲章 / 新型砲熕兵装資材",
         "amount": 1
       }
     ],
@@ -9586,7 +9593,7 @@
         "amount": 3
       },
       {
-        "name": "勲章 / 新型砲墳兵装資材",
+        "name": "勲章 / 新型砲熕兵装資材",
         "amount": 1
       }
     ],
@@ -11993,7 +12000,7 @@
         "amount": 3
       },
       {
-        "name": "勲章 / 新型砲墳兵装資材",
+        "name": "勲章 / 新型砲熕兵装資材",
         "amount": 1
       }
     ],
@@ -12132,7 +12139,7 @@
         "amount": 4
       },
       {
-        "name": "勲章 / 新型砲墳兵装資材 / 零式艦戦63型(爆戦)",
+        "name": "勲章 / 新型砲熕兵装資材 / 零式艦戦63型(爆戦)",
         "amount": 1
       }
     ],
