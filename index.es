@@ -1,11 +1,12 @@
 import { join } from 'path-extra'
 import React, { Component } from 'react'
-import { Grid, Row, Col, Panel, OverlayTrigger, Tooltip, Dropdown, MenuItem, ButtonGroup, ButtonToolbar } from 'react-bootstrap'
+import { Grid, Row, Col, OverlayTrigger, Tooltip, Dropdown, MenuItem, ButtonGroup, ButtonToolbar } from 'react-bootstrap'
 import { sortBy, range, values, get } from 'lodash'
 import { pluralize } from 'inflection'
 import { connect } from 'react-redux'
 import { extensionSelectorFactory } from 'views/utils/selectors'
 
+import Panel from './compat-panel'
 import { reducer, readQuestInfo } from './redux'
 
 const i18n__ = window.i18n['poi-plugin-quest-info'].__.bind(window.i18n['poi-plugin-quest-info'])
