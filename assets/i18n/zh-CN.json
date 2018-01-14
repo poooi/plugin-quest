@@ -171,6 +171,7 @@
 
     "modelconversion": {
       "main": "{{{secretary_equip}}}，然后{{{objects}}}{{{note}}}",
+      "noextra": "{{{secretary_equip}}}",
       "equip": "秘书舰{{{secretary}}}在{{{slot}}}搭载未上锁的{{{fullyskilled}}}{{{maxmodified}}}{{{equipment}}}",
       "noequip": "秘书舰设为{{{secretary}}}",
       "secretarydefault": "空母",

@@ -9294,12 +9294,16 @@
     "requirements": {
       "category": "modelconversion",
       "slots": [
-        1,
-        2
-      ],
-      "equipment": [
-        "試製晴嵐",
-        "瑞雲(六三一空)"
+        {
+          "slot": 1,
+          "equipment": "試製晴嵐",
+          "convert": false
+        },
+        {
+          "slot": 2,
+          "equipment": "瑞雲(六三一空)",
+          "convert": true
+        }
       ],
       "secretary": "伊401 / 伊14 / 伊13"
     }
@@ -9429,9 +9433,12 @@
       "category": "modelconversion",
       "secretary": "艦",
       "slots": [
-        1
+        {
+          "slot": 1,
+          "equipment": "二式水戦改",
+          "convert": true
+        }
       ],
-      "equipment": "二式水戦改",
       "scraps": [
         {
           "name": "零式艦戦21型",
@@ -9473,9 +9480,12 @@
       "category": "modelconversion",
       "secretary": "艦",
       "slots": [
-        1
+        {
+          "slot": 1,
+          "equipment": "二式水戦改",
+          "convert": true
+        }
       ],
-      "equipment": "二式水戦改",
       "scraps": [
         {
           "name": "零式艦戦21型",

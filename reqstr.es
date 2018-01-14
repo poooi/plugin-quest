@@ -152,6 +152,15 @@ const parseRequirement = (requirements) => {
   }
 }
 
+const parseSlotEuipment = (secretary, slot = 0, equipment, fullyskilled, maxmodified) => _$('req.modelconversion.equip', {
+  secretary,
+  slot: _$(`req.modelconversion.slot.${slot}`),
+  equipment: __(equipment),
+  fullyskilled: fullyskilled ? _$('req.modelconversion.fullyskilled') : '',
+  maxmodified: maxmodified ? _$('req.modelconversion.maxmodified') : '',
+})
+
+
 class Requirement {
   constructor(requirement) {
     Object.assign(this, requirement)
@@ -340,11 +349,12 @@ class Requirement {
     })
   }
 
-    // FORMAT:
+  // FORMAT:
   // "requirements": {
   //   "category": "modelconversion",
-  //   <"slots": [1],>
-  //   <"equipment": "零式艦戦21型(熟練)",>
+  //   <"slots": [
+  //     {"slot": 1, "equipment": "零式艦戦21型(熟練)"}
+  //  ],>
   //   <"fullyskilled": true,>
   //   <"maxmodified": true,>
   //   <"scraps": [
@@ -358,21 +368,17 @@ class Requirement {
   // }
   get modelconversion() {
     const secretary = this.secretary ? parseShip(this.secretary) : _$('req.modelconversion.secretarydefault')
-    const slot = this.slots ? this.slots.map(slot => _$('req.modelconversion.slot.' + slot)).join(_$('req.and.word')) : _$('req.modelconversion.slot.0')
     let secretaryEquip
-    if (this.equipment) {
-      const fullyskilled = this.fullyskilled ? _$('req.modelconversion.fullyskilled') : ''
-      const maxmodified = this.maxmodified ? _$('req.modelconversion.maxmodified') : ''
-      const equipment = Array.isArray(this.equipment)
-        ? this.equipment.map(__).join(_$('req.modelconversion.equipmentdelim'))
-        : __(this.equipment)
-      secretaryEquip = _$('req.modelconversion.equip', {
-        secretary,
-        slot,
-        equipment,
-        fullyskilled,
-        maxmodified,
-      })
+    if (this.slots) {
+      secretaryEquip = this.slots
+        .map(({
+          slot, equipment, fullyskilled, maxmodified,
+        }) =>
+          parseSlotEuipment(secretary, slot, equipment, maxmodified, fullyskilled))
+        .join(_$('req.and.word'))
+    } else if (this.equipment) {
+      secretaryEquip =
+        parseSlotEuipment(secretary, this.slot, this.equipment, this.maxmodified, this.fullyskilled)
     } else {
       secretaryEquip = _$('req.modelconversion.noequip', {
         secretary,
@@ -398,6 +404,11 @@ class Requirement {
 
     const note = this.use_skilled_crew ? _$('req.modelconversion.useskilledcrew') : ''
     const objects = ([scraps, consumptions].filter(str => str != null)).join(_$('req.modelconversion.scrapdelim'))
+    if (!objects && !note) {
+      return _$('req.modelconversion.noextra', {
+        secretary_equip: secretaryEquip,
+      })
+    }
     return _$('req.modelconversion.main', {
       secretary_equip: secretaryEquip,
       objects,

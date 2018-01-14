@@ -136,6 +136,7 @@
 
     "modelconversion": {
       "main": "{{{secretary_equip}}}, then {{{objects}}}{{{note}}}",
+      "noextra": "{{{secretary_equip}}}",
       "noequip": "Have {{{secretary}}} and as secretary",
       "equip": "Equip an UNLOCKED {{{fullyskilled}}}{{{maxmodified}}}{{{equipment}}} on {{{secretary}}}'s{{{slot}}} and as secretary",
       "secretarydefault": "a carrier",
