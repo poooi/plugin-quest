@@ -240,7 +240,11 @@ export const reactClass = connect(
     const filterFunc = this.filterFuncs[questFilter] || (() => false)
     const questsFiltered = sortBy(
       values(quests).filter(quest => quest && filterFunc(quest)),
-      'wiki_id')
+      [
+        quest => (quest.wiki_id || '').replace(/\d/g, ''),
+        quest => parseInt((quest.wiki_id || '').replace(/\D/g, ''), 10),
+      ],
+    )
     const questSelected = (questId ? quests[questId] : questsFiltered[0]) || {}
 
     return (
