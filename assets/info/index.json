@@ -12138,8 +12138,20 @@
         "amount": 4
       },
       {
-        "name": "勲章 / 新型砲熕兵装資材 / 零式艦戦63型(爆戦)",
-        "amount": 1
+        "choices": [
+          {
+            "name": "勲章",
+            "amount": 1
+          },
+          {
+            "name": "新型砲熕兵装資材",
+            "amount": 1
+          },
+          {
+            "name": "零式艦戦63型(爆戦)",
+            "amount": 1
+          }
+        ]
       }
     ],
     "prerequisite": [

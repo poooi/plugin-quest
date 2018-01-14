@@ -88,6 +88,18 @@ const QuestItem = ({ quest = {} }) => (
   </span>
 )
 
+const RewardItem = ({ reward }) => {
+  let name = __(reward.name)
+  if (reward.category) { name = __('「') + name + __('」') }
+  const amount = reward.amount ? (` × ${reward.amount}`) : ''
+  const category = __(reward.category || '')
+  return (
+    <li>
+      {category}{name}{amount}
+    </li>
+  )
+}
+
 // 'W' represents wedding/marriage
 export const reactClass = connect(
   pluginDataSelector,
@@ -305,15 +317,19 @@ export const reactClass = connect(
                           <li key="reward_alum">{__('Bauxite')} {questSelected.reward_bauxite}</li>
                           {
                             (questSelected.reward_other || []).map((reward) => {
-                              let name = __(reward.name)
-                              if (reward.category) { name = __('「') + name + __('」') }
-                              const amount = reward.amount ? (` × ${reward.amount}`) : ''
-                              const category = __(reward.category || '')
-                              return (
-                                <li key={`reward_other_${reward.name}`}>
-                                  {category}{name}{amount}
-                                </li>
-                              )
+                              if (reward.choices) {
+                                return (
+                                  <li key={`reward_other_${JSON.stringify(reward.choices)}`}>
+                                    {__('Choose 1 of the following %s', reward.choices.length)}
+                                    <ul>
+                                      {
+                                        reward.choices.map(choice => <RewardItem reward={choice} key={choice.name} />)
+                                      }
+                                    </ul>
+                                  </li>
+                                )
+                              }
+                              return <RewardItem reward={reward} key={`reward_other_${reward.name}`} />
                             })
                           }
                         </ul>
