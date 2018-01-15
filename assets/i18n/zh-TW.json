@@ -92,7 +92,8 @@
       "amountmore": "%s只或以上",
       "select": "任意%s只",
       "note": "(%s)",
-      "flagship": "旗艦"
+      "flagship": "旗艦",
+      "class": "%s級"
     },
 
     "groups": {
@@ -163,9 +164,10 @@
     },
 
     "excercise": {
-      "main": "演習{{{victory}}}{{{times}}}次{{{daily}}}",
+      "main": "演習{{{victory}}}{{{times}}}次{{{daily}}}{{{groups}}}",
       "victory": "勝利",
-      "daily": "，限一日內"
+      "daily": "，限一日內",
+      "groups": "，需要%s"
     },
 
     "modelconversion": {

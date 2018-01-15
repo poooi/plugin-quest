@@ -79,7 +79,8 @@
       "amountmore": "%s隻以上",
       "select": "の中から%s隻",
       "note": "(%s)",
-      "flagship": "(旗艦)"
+      "flagship": "(旗艦)",
+      "class": "%s型"
     },
 
     "groups": {
@@ -151,7 +152,8 @@
     "excercise": {
       "main": "{{{daily}}}{{{times}}}回演習{{{victory}}}",
       "victory": "で勝利",
-      "daily": "本日中に"
+      "daily": "本日中に",
+      "groups": "、%sで"
     },
 
     "modelconversion": {

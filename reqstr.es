@@ -66,6 +66,17 @@ const parseShip = (ship, _amount) => {
   return parsePluralize(shipStr, amount)
 }
 
+const parseShipClass = (shipClass, _amount) => {
+  let shipClassStr
+  if (typeof shipClass === 'string') {
+    shipClassStr = _$('req.group.class', __(shipClass))
+  } else if (Array.isArray(shipClass)) {
+    shipClassStr = shipClass.map(_shipClass => parseShipClass(_shipClass)).join('/')
+  }
+  const amount = Array.isArray(_amount) ? _amount[_amount.length - 1] : _amount
+  return parsePluralize(shipClassStr, amount)
+}
+
 const delimJoin = (strs, delim, last) => {
   if (typeof last === 'undefined' || last === null || strs.length <= 1) {
     return strs.join(delim)
@@ -111,7 +122,9 @@ const parseGroup = (group) => {
   }
 
   const select = group.select ? _$('req.group.select', group.select) : ''
-  const ship = parseShip(group.ship, group.amount)
+  const ship = group.shipclass
+    ? parseShipClass(group.shipclass, group.amount)
+    : parseShip(group.ship, group.amount)
   const flagship = group.flagship ? _$('req.group.flagship') : ''
   const note = group.note ? _$('req.group.note', parseShip(group.note)) : ''
   return _$('req.group.main', {
@@ -334,6 +347,7 @@ class Requirement {
   // }
   get excercise() {
     const quantifier = _$('req.excercise.quantifier') || ''
+    const groups = this.groups ? _$('req.excercise.groups', parseGroups(this.groups)) : ''
     let times
     if (quantifier) {
       times = `${this.times} ${parsePluralize(quantifier, this.times)}`
@@ -346,6 +360,7 @@ class Requirement {
       times,
       victory,
       daily,
+      groups,
     })
   }
 

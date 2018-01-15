@@ -93,7 +93,8 @@
       "amountmore": "%s只或以上",
       "select": "任意%s只",
       "note": "(%s)",
-      "flagship": "旗舰"
+      "flagship": "旗舰",
+      "class": "%s级"
     },
 
     "groups": {
@@ -164,9 +165,10 @@
     },
 
     "excercise": {
-      "main": "演习{{{victory}}}{{{times}}}次{{{daily}}}",
+      "main": "演习{{{victory}}}{{{times}}}次{{{daily}}}{{{groups}}}",
       "victory": "胜利",
-      "daily": "，限一日内"
+      "daily": "，限一日内",
+      "groups": "，需要%s"
     },
 
     "modelconversion": {

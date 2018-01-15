@@ -50,7 +50,8 @@
       "amountmore": "%s or more ",
       "select": "any %s from ",
       "note": " (%s)",
-      "flagship": " as flagship"
+      "flagship": " as flagship",
+      "class": " Class"
     },
 
     "groups": {
@@ -128,10 +129,11 @@
     },
 
     "excercise": {
-      "main": "Perform {{{times}}}{{{victory}}}{{{daily}}}",
+      "main": "Perform {{{times}}}{{{victory}}}{{{daily}}}{{{groups}}}",
       "quantifier": "excercise",
       "victory": " with victory",
-      "daily": " within one day"
+      "daily": " within one day",
+      "groups": " with %s"
     },
 
     "modelconversion": {
