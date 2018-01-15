@@ -237,6 +237,9 @@ export const reactClass = connect(
   render() {
     const { quests, questStatus } = this.props
     const { questId, questFilter } = this.state
+    if (!quests || !questStatus) {
+      return (<div>Now Loading...</div>)
+    }
     const filterFunc = this.filterFuncs[questFilter] || (() => false)
     const questsFiltered = sortBy(
       values(quests).filter(quest => quest && filterFunc(quest)),
