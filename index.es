@@ -5,6 +5,7 @@ import { sortBy, range, values, get } from 'lodash'
 import { pluralize } from 'inflection'
 import { connect } from 'react-redux'
 import { extensionSelectorFactory } from 'views/utils/selectors'
+import { MaterialIcon } from 'views/components/etc/icon'
 
 import Panel from './compat-panel'
 import { reducer, readQuestInfo } from './redux'
@@ -318,10 +319,16 @@ export const reactClass = connect(
                     <div className="questInfo">
                       <Panel header={__('Reward')} bsStyle="info">
                         <ul>
-                          <li key="reward_fuel">{__('Fuel')} {questSelected.reward_fuel}</li>
-                          <li key="reward_bullet">{__('Ammo')} {questSelected.reward_ammo}</li>
-                          <li key="reward_steel">{__('Steel')} {questSelected.reward_steel}</li>
-                          <li key="reward_alum">{__('Bauxite')} {questSelected.reward_bauxite}</li>
+                          <li>
+                            {
+                              ['reward_fuel', 'reward_bullet', 'reward_steel', 'reward_bauxite'].map((name, i) => (
+                                questSelected[name] > 0 &&
+                                <span key={name} style={{ marginRight: '1em' }}>
+                                  <MaterialIcon materialId={i + 1} className="material-icon" /> {questSelected[name]}
+                                </span>
+                              ))
+                            }
+                          </li>
                           {
                             (questSelected.reward_other || []).map((reward) => {
                               if (reward.choices) {
