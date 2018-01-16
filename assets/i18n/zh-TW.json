@@ -72,6 +72,8 @@
 
   "Choose 1 of the following %s": "從以下 %s 項中選擇一項",
 
+  "The info for this quest is incorrect, report it": "這個任務的信息有錯誤，我要報錯",
+
   "req": {
     "option": {
     },

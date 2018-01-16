@@ -58,6 +58,8 @@
 
   "Choose 1 of the following %s": "以下の %s つのオプションから 1 つを選択",
 
+  "The info for this quest is incorrect, report it": "このクエストの情報が正しくない、報告する",
+
   "req": {
     "option": {
     },

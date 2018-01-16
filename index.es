@@ -1,9 +1,11 @@
 import { join } from 'path-extra'
 import React, { Component } from 'react'
-import { Grid, Row, Col, OverlayTrigger, Tooltip, Dropdown, MenuItem, ButtonGroup, ButtonToolbar } from 'react-bootstrap'
+import { Grid, Row, Col, OverlayTrigger, Tooltip, Dropdown, MenuItem, Button, ButtonToolbar } from 'react-bootstrap'
 import { sortBy, range, values, get } from 'lodash'
 import { pluralize } from 'inflection'
 import { connect } from 'react-redux'
+import FA from 'react-fontawesome'
+import { shell } from 'electron'
 import { extensionSelectorFactory } from 'views/utils/selectors'
 import { MaterialIcon } from 'views/components/etc/icon'
 
@@ -204,6 +206,19 @@ export const reactClass = connect(
     }
   }
 
+  handleReport = () => {
+    const { quests } = this.props
+    const { questId } = this.state
+
+    const quest = quests[questId]
+
+    const title = quest
+      ? `[Wrong Data] Quest ${quest.wiki_id} / ${questId}`
+      : `[Wrong data] Quest ${questId}`
+
+    shell.openExternal(`https://github.com/kcwikizh/kcdata/issues/new?title=${title}`)
+  }
+
   static renderQuestOption(quest, activeQuestId) {
     return (
       <MenuItem key={quest.game_id} eventKey={quest.game_id} active={quest.game_id === activeQuestId}>
@@ -310,13 +325,13 @@ export const reactClass = connect(
               <Col xs={12}>
                 <Panel>
                   <div>
-                    <div className="questTitle">{questSelected.name || __('Undocumented quest, please wait for updates')}</div>
-                    <div className="questType">
+                    <div className="quest-title">{questSelected.name || __('Undocumented quest, please wait for updates')}</div>
+                    <div className="quest-type">
                       {categoryNames[questSelected.category - 1]} - {typeNames[questSelected.type - 1]}
                     </div>
                   </div>
                   <Row>
-                    <div className="questInfo">
+                    <div className="quest-info">
                       <Panel header={__('Reward')} bsStyle="info">
                         <ul>
                           <li>
@@ -385,6 +400,11 @@ export const reactClass = connect(
                     </div>
                   </Row>
                 </Panel>
+                <div className="report">
+                  <Button bsStyle="link" onClick={this.handleReport}>
+                    <FA name="exclamation-circle" /> {i18n__('The info for this quest is incorrect, report it')}
+                  </Button>
+                </div>
               </Col>
             </Row>
           }
