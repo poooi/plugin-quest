@@ -131,7 +131,7 @@ export const reactClass = connect(
   }
 
   componentWillMount() {
-    this.props.readQuestInfo(join(__dirname, 'assets', 'info'), __)
+    this.props.readQuestInfo(join(__dirname, 'assets', 'data.json'), __)
   }
 
   componentDidMount() {

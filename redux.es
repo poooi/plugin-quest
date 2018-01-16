@@ -1,4 +1,5 @@
-import { forEach, range, get, keyBy } from 'lodash'
+import fs from 'fs-extra'
+import { forEach, range, get, keyBy, mapValues } from 'lodash'
 
 import generateReqstr from './reqstr'
 
@@ -38,33 +39,7 @@ export function reducer(state = initState, action) {
   const { type, body, postBody } = action
   switch (type) {
     case '@@poi-plugin-quest-info@init': {
-      const reqstr = generateReqstr(action.__)
-      const quests = keyBy(require(action.path), 'game_id')
-      const questStatus = {}
-      forEach(quests, (quest) => {
-      // Initialize `quests`
-        quest.postquest = quest.postquest || []
-        quest.condition = reqstr(quest.requirements)
-        if (typeof (quest.game_id) !== 'number') {
-          console.warn(`Unexpected quest game_id type "${typeof (quest.game_id)}" for quest "${quest.wiki_id}"`)
-          quest.game_id = `_UNKNOWN-${quests.length}`
-        }
-        quest.prerequisite.forEach((pid) => {
-          if (typeof (pid) !== 'number') {
-            console.warn(`Unexpected quest prerequisite type "${typeof (pid)}" for quest "${quest.wiki_id}". Skipping.`)
-            return
-          }
-          const prereq = quests[pid]
-          if (!prereq) {
-            console.warn(`Prereq ${pid} defined by quest ${quest.game_id} does not exist.`)
-            return
-          }
-          prereq.postquest = prereq.postquest || []
-          prereq.postquest.push(quest.game_id)
-        })
-      // Initialize `questStatus`
-        questStatus[quest.game_id] = COMPLETED
-      })
+      const { quests, questStatus } = action
       return {
         ...state,
         quests,
@@ -106,8 +81,8 @@ export function reducer(state = initState, action) {
           return
         }
         const clearflag = get(quests, [postq, 'prerequisite'], []).every(prereq =>
-        questStatus[prereq] === COMPLETED
-      )
+          questStatus[prereq] === COMPLETED
+        )
         if (clearflag) { questStatus[postq] = AVAILABLE }
       })
       return {
@@ -115,14 +90,47 @@ export function reducer(state = initState, action) {
         questStatus,
       }
     }
+    default:
   }
   return state
 }
 
-export function readQuestInfo(path, __) {
-  return {
-    type: '@@poi-plugin-quest-info@init',
-    __,
-    path,
+export const readQuestInfo = (path, __) => async (dispatch) => {
+  let data
+  try {
+    data = await fs.readJSON(path)
+  } catch (e) {
+    console.warn('Error in reading', path, e)
   }
+  const reqstr = generateReqstr(__)
+  const quests = keyBy(data, 'game_id')
+  forEach(quests, (quest) => {
+  // Initialize `quests`
+    quest.postquest = quest.postquest || []
+    quest.condition = reqstr(quest.requirements)
+    if (typeof (quest.game_id) !== 'number') {
+      console.warn(`Unexpected quest game_id type "${typeof (quest.game_id)}" for quest "${quest.wiki_id}"`)
+      quest.game_id = `_UNKNOWN-${quests.length}`
+    }
+    quest.prerequisite.forEach((pid) => {
+      if (typeof (pid) !== 'number') {
+        console.warn(`Unexpected quest prerequisite type "${typeof (pid)}" for quest "${quest.wiki_id}". Skipping.`)
+        return
+      }
+      const prereq = quests[pid]
+      if (!prereq) {
+        console.warn(`Prereq ${pid} defined by quest ${quest.game_id} does not exist.`)
+        return
+      }
+      prereq.postquest = [...(prereq.postquest || []), quest.game_id]
+    })
+  })
+  // Initialize `questStatus`
+  const questStatus = mapValues(quests, () => COMPLETED)
+
+  dispatch({
+    type: '@@poi-plugin-quest-info@init',
+    quests,
+    questStatus,
+  })
 }

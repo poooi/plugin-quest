@@ -15,7 +15,7 @@ const main = async () => {
     })
     console.log('fetched')
     const content = await resp.json()
-    await fs.outputJSON(path.resolve(__dirname, './assets/info/index.json'), content, { spaces: 2 })
+    await fs.outputJSON(path.resolve(__dirname, './assets/data.json'), content, { spaces: 2 })
   } catch (e) {
     console.warn(e, e.stack)
   }
