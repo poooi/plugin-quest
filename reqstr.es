@@ -165,7 +165,9 @@ const parseRequirement = (requirements) => {
   }
 }
 
-const parseSlotEuipment = (secretary, slot = 0, equipment, fullyskilled, maxmodified) => _$('req.modelconversion.equip', {
+const parseSlotEuipment = (secretary, {
+  slot = 0, equipment, maxmodified, fullyskilled,
+}) => _$('req.modelconversion.equip', {
   secretary,
   slot: _$(`req.modelconversion.slot.${slot}`),
   equipment: __(equipment),
@@ -386,14 +388,12 @@ class Requirement {
     let secretaryEquip
     if (this.slots) {
       secretaryEquip = this.slots
-        .map(({
-          slot, equipment, fullyskilled, maxmodified,
-        }) =>
-          parseSlotEuipment(secretary, slot, equipment, maxmodified, fullyskilled))
+        .map(equip =>
+          parseSlotEuipment(secretary, equip))
         .join(_$('req.and.word'))
     } else if (this.equipment) {
       secretaryEquip =
-        parseSlotEuipment(secretary, this.slot, this.equipment, this.maxmodified, this.fullyskilled)
+        parseSlotEuipment(secretary, this)
     } else {
       secretaryEquip = _$('req.modelconversion.noequip', {
         secretary,
