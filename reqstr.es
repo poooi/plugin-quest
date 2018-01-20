@@ -1,6 +1,6 @@
 import inflection from 'inflection'
 import Mustache from 'mustache'
-import { mapValues } from 'lodash'
+import { mapValues, isArray } from 'lodash'
 
 const MAX_SHIP_AMOUNT = 6
 const MAX_SHIP_LV = 200 // Doesn't matter, usually we use 999. See usage below
@@ -167,13 +167,21 @@ const parseRequirement = (requirements) => {
 
 const parseSlotEuipment = (secretary, {
   slot = 0, equipment, maxmodified, fullyskilled,
-}) => _$('req.modelconversion.equip', {
-  secretary,
-  slot: _$(`req.modelconversion.slot.${slot}`),
-  equipment: __(equipment),
-  fullyskilled: fullyskilled ? _$('req.modelconversion.fullyskilled') : '',
-  maxmodified: maxmodified ? _$('req.modelconversion.maxmodified') : '',
-})
+}) => isArray(equipment)
+  ? equipment.map(eq =>
+    parseSlotEuipment(secretary, {
+      slot,
+      equipment: eq,
+      maxmodified,
+      fullyskilled,
+    })).join(_$('req.and.word'))
+  : _$('req.modelconversion.equip', {
+    secretary,
+    slot: _$(`req.modelconversion.slot.${slot}`),
+    equipment: __(equipment),
+    fullyskilled: fullyskilled ? _$('req.modelconversion.fullyskilled') : '',
+    maxmodified: maxmodified ? _$('req.modelconversion.maxmodified') : '',
+  })
 
 
 class Requirement {
@@ -370,8 +378,9 @@ class Requirement {
   // "requirements": {
   //   "category": "modelconversion",
   //   <"slots": [
-  //     {"slot": 1, "equipment": "零式艦戦21型(熟練)"}
+  //     {"slot": 1, "equipment": "零式艦戦21型(熟練)", <"fullyskilled": true,>, <"maxmodified": true,>, <"count": 1>}
   //  ],>
+  //   <"equipment": ["零式艦戦21型(熟練)", "零式艦戦21型(熟練)"]>
   //   <"fullyskilled": true,>
   //   <"maxmodified": true,>
   //   <"scraps": [
@@ -511,6 +520,10 @@ class Requirement {
   // }
   get and() {
     return this.list.map(parseRequirement).join(_$('req.and.separator'))
+  }
+
+  get then() {
+    return this.list.map(parseRequirement).join(_$('req.then.separator'))
   }
 
   // FORMAT:

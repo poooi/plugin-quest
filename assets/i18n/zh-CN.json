@@ -225,6 +225,11 @@
     "and": {
       "separator": "；以及",
       "word": "和"
+    },
+
+    "then": {
+      "separator": "；之后",
+      "word": "，再"
     }
 
   },

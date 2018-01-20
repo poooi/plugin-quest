@@ -188,6 +188,11 @@
     "and": {
       "separator": "; ",
       "word": " and "
+    },
+
+    "then": {
+      "separator": "; then",
+      "word": " then "
     }
 
   },

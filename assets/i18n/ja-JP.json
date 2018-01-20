@@ -209,6 +209,11 @@
     "and": {
       "separator": "。また",
       "word": "と"
+    },
+
+    "then": {
+      "separator": "；次に",
+      "word": "，再び"
     }
 
   },
