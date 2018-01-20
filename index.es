@@ -334,16 +334,19 @@ export const reactClass = connect(
                     <div className="quest-info">
                       <Panel header={__('Reward')} bsStyle="info">
                         <ul>
-                          <li>
-                            {
-                              ['reward_fuel', 'reward_bullet', 'reward_steel', 'reward_bauxite'].map((name, i) => (
-                                questSelected[name] > 0 &&
-                                <span key={name} style={{ marginRight: '1em' }}>
-                                  <MaterialIcon materialId={i + 1} className="material-icon" /> {questSelected[name]}
-                                </span>
-                              ))
-                            }
-                          </li>
+                          {
+                            ['reward_fuel', 'reward_ammo', 'reward_steel', 'reward_bauxite'].some(name => questSelected[name] > 0) &&
+                            <li>
+                              {
+                                ['reward_fuel', 'reward_ammo', 'reward_steel', 'reward_bauxite'].map((name, i) => (
+                                  questSelected[name] > 0 &&
+                                  <span key={name} style={{ marginRight: '1em' }}>
+                                    <MaterialIcon materialId={i + 1} className="material-icon" /> {questSelected[name]}
+                                  </span>
+                                ))
+                              }
+                            </li>
+                          }
                           {
                             (questSelected.reward_other || []).map((reward) => {
                               if (reward.choices) {
