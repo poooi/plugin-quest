@@ -134,7 +134,8 @@ export const reactClass = connect(
   }
 
   componentWillMount() {
-    this.props.readQuestInfo(join(__dirname, 'assets', 'data.json'), __)
+    const dataPath = window.config.get('plugin.quest.path', join(__dirname, 'assets', 'data.json'))
+    this.props.readQuestInfo(dataPath, __)
   }
 
   componentDidMount() {
