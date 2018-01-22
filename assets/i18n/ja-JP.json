@@ -160,6 +160,7 @@
 
     "modelconversion": {
       "main": "{{{secretary_equip}}}{{{objects}}}{{{note}}}",
+      "noextra": "{{{secretary_equip}}}",
       "equip": "ロックを解除した{{{fullyskilled}}}{{{maxmodified}}}{{{equipment}}}を{{{slot}}}に搭載する{{{secretary}}}を秘書艦にして、",
       "noequip": "{{{secretary}}}を秘書艦にして",
       "secretarydefault": "空母",
