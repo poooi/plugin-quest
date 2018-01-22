@@ -7304,9 +7304,9 @@
           "category": "modelconversion",
           "secretary": "艦",
           "equipment": [
-            "戦闘糧食*2"
-          ],
-          "consumptions": []
+            "戦闘糧食",
+            "戦闘糧食"
+          ]
         }
       ]
     }
@@ -10221,7 +10221,7 @@
           "equipment": "二式水戦改",
           "convert": true,
           "fullyskilled": true,
-          "maxmodified": true 
+          "maxmodified": true
         }
       ],
       "scraps": [
@@ -15150,61 +15150,11 @@
       "list": [
         {
           "category": "sortie",
-          "map": "5-1",
-          "times": 1,
-          "boss": true,
-          "result": "A",
-          "groups": [
-            {
-              "ship": "村雨改二",
-              "flagship": true
-            },
-            {
-              "ship": [
-                "由良改二",
-                "夕立改二",
-                "春雨改",
-                "五月雨改",
-                "秋月改"
-              ],
-              "amount": 3
-            },
-            {
-              "ship": "艦",
-              "amount": 2
-            }
-          ]
-        },
-        {
-          "category": "sortie",
-          "map": "5-3",
-          "times": 1,
-          "boss": true,
-          "result": "A",
-          "groups": [
-            {
-              "ship": "村雨改二",
-              "flagship": true
-            },
-            {
-              "ship": [
-                "由良改二",
-                "夕立改二",
-                "春雨改",
-                "五月雨改",
-                "秋月改"
-              ],
-              "amount": 3
-            },
-            {
-              "ship": "艦",
-              "amount": 2
-            }
-          ]
-        },
-        {
-          "category": "sortie",
-          "map": "5-4",
+          "map": [
+            "5-1",
+            "5-3",
+            "5-4"
+          ],
           "times": 1,
           "boss": true,
           "result": "A",
