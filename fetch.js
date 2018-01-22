@@ -18,6 +18,8 @@ const i18n2 = require('i18n-2')
 
 
 const proxy = process.env.https_proxy || process.env.http_proxy || ''
+const { local } = process.env
+console.log(local)
 if (proxy) {
   console.log('using proxy', proxy)
 }
@@ -36,12 +38,18 @@ const getTranslate = async (namespace) => {
 
 const main = async () => {
   try {
-    const resp = await fetch('https://kcwikizh.github.io/kcdata/quest/poi.json', {
-      agent: proxy ? new HttpsProxyAgent(proxy) : null,
-    })
-    console.log('fetched')
-    const content = await resp.json()
-    await fs.outputJSON(path.resolve(__dirname, './assets/data.json'), content, { spaces: 2 })
+    let content
+    if (local) {
+      content = await fs.readJSON(path.resolve(__dirname, './assets/data.json'))
+      console.log('read from local file')
+    } else {
+      const resp = await fetch('https://kcwikizh.github.io/kcdata/quest/poi.json', {
+        agent: proxy ? new HttpsProxyAgent(proxy) : null,
+      })
+      console.log('fetched')
+      content = await resp.json()
+      await fs.outputJSON(path.resolve(__dirname, './assets/data.json'), content, { spaces: 2 })
+    }
 
     await Promise.each(['zh-CN', 'zh-TW', 'ja-JP', 'en-US'], async (ns) => {
       const translate = await getTranslate(ns)
