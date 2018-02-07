@@ -85,6 +85,7 @@
   "187": "Have (第三艦隊)最上, 時雨, 満潮, 朝雲 and 山雲 in your fleet",
   "188": "Have 長波改二 as flagship and any 1 from 高波改/沖波改/朝霜改 in your fleet",
   "189": "Have 村雨改二 as flagship, any 3 from 由良改二/夕立改二/春雨改/五月雨改/秋月改 and 2 any ships in your fleet",
+  "190": "Have 若葉改, 初春改二, 初霜改二 and 0~1 DD in your fleet",
   "201": "Sortie once and obtain a B-Rank or better",
   "202": "Sortie once",
   "203": "Sortie to World 1-1 once and obtain a B-Rank or better at the boss",
@@ -184,6 +185,7 @@
   "316": "Perform 4 excercises with victory within one day",
   "317": "Perform 3 excercises with victory within one day with 2  Class/ Classes; Sortie to World 2-2 once with 2 夕雲型/陽炎型s and obtain an A-Rank or better at the boss; Sortie to World 2-3 once with 2 夕雲型/陽炎型s and obtain an A-Rank or better at the boss; Sortie to World 2-4 once with 2 夕雲型/陽炎型s and obtain an A-Rank or better at the boss; Sortie to World 2-5 once with 2 夕雲型/陽炎型s and obtain an A-Rank or better at the boss",
   "318": "Perform 3 excercises with victory within one day with 2 CLs; Equip an UNLOCKED 戦闘糧食 on any ship's any slot and as secretary and Equip an UNLOCKED 戦闘糧食 on any ship's any slot and as secretary",
+  "319": "Perform 4 excercises with victory within one day with 若葉改, 初春改二 and 初霜改二",
   "401": "Complete any expeditions once",
   "402": "Complete any expeditions 3 times",
   "403": "Complete any expeditions 10 times",
@@ -286,6 +288,8 @@
   "675": "Scrap 6 艦上戦闘機, 4 機銃. consuming 800 Bauxite",
   "676": "Scrap 3 中口径主砲, 3 副砲, 1 ドラム缶(輸送用). consuming 2400 Steel",
   "677": "Scrap 4 大口径主砲, 2 水上偵察機, 3 魚雷. consuming 3600 Steel",
+  "678": "Equip an UNLOCKED 零式艦戦52型 on any ship's 1st slot and as secretary and Equip an UNLOCKED 零式艦戦52型 on any ship's 2nd slot and as secretary, then scrap 3 九六式艦戦, 5 零式艦戦21型; consuming 4000 Bauxite",
+  "679": "Scrap 6 中口径主砲, 3 副砲. consuming 900 Bauxite",
   "701": "Perform 1 successful modernization",
   "702": "Perform 2 successful modernizations",
   "703": "Perform 15 successful modernizations",
@@ -356,5 +360,7 @@
   "874": "Sortie to World 3-5 twice with 1 軽空母, 1 水上機母艦 and 1 CL and obtain an S-Rank at the boss",
   "875": "Sortie to World 5-4 twice with 長波改二 as flagship and any 1 from 高波改/沖波改/朝霜改 and obtain an S-Rank at the boss",
   "876": "Sortie to World 1-4 twice with 龍田改/龍田改二 as flagship, 3 駆逐艦/海防艦s and 2 any ships and obtain an A-Rank or better at the boss; Sortie to World 1-6 twice with 龍田改/龍田改二 as flagship, 3 駆逐艦/海防艦s and 2 any ships and clear",
-  "877": "Sortie to World 5-1,5-3,5-4 once with 村雨改二 as flagship, any 3 from 由良改二/夕立改二/春雨改/五月雨改/秋月改 and 2 any ships and obtain an A-Rank or better at the boss"
+  "877": "Sortie to World 5-1,5-3,5-4 once with 村雨改二 as flagship, any 3 from 由良改二/夕立改二/春雨改/五月雨改/秋月改 and 2 any ships and obtain an A-Rank or better at the boss",
+  "878": "Sortie to World 1-4 3 times with CL/DD as flagship and 3 or more DD/海防s and obtain an S-Rank at the boss; Sortie to World 1-6 3 times with CL/DD as flagship and 3 or more DD/海防s and clear",
+  "879": "Sortie to World 1-6 once with 伊勢改, 日向改, 大淀改 and 1 or more DDs and clear; Sortie to World 2-5,3-5,4-5 once with 伊勢改, 日向改, 大淀改 and 1 or more DDs and obtain an A-Rank or better at the boss"
 }
