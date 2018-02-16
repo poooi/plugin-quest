@@ -1,5 +1,5 @@
+import i18next from 'i18next'
 import inflection from 'inflection'
-import Mustache from 'mustache'
 import { mapValues, isArray } from 'lodash'
 
 const MAX_SHIP_AMOUNT = 6
@@ -9,23 +9,11 @@ let translate = str => str
 
 // This part copied from https://github.com/mashpie/i18n-node with MIT license
 // if the msg string contains {{Mustache}} patterns we render it as a mini tempalate
-const __ = (...args) => {
-  let tr = translate(...args)
-  if (/{{.*}}/.test(tr)) {
-    tr = Mustache.render(tr, args[args.length - 1])
-  }
-  return tr
-}
+const __ = (...args) => translate(...args)
+
 
 // Translate: Returns null if not exist. Used for format controller
-const _$ = (s, ...args) => {
-  const tr = __(s, ...args)
-  const splits = s.split('.')
-  if (tr === splits[splits.length - 1]) {
-    return null
-  }
-  return tr
-}
+const _$ = __
 
 const parsePluralize = (str, amount) => {
   if (!_$('req.option.pluralize') || !amount) {
@@ -144,12 +132,11 @@ const parseResources = (resources) => {
   const name = ['Fuel', 'Ammo', 'Steel', 'Bauxite']
   return delimJoin(resources.map((resource, i) =>
     resource
-    ? _$('req.simple.resource', {
-      name: __(name[i]),
-      amount: resource,
-    })
-    : null
-  ).filter(str => str != null), _$('req.simple.resource_delim'))
+      ? _$('req.simple.resource', {
+        name: __(name[i]),
+        amount: resource,
+      })
+      : null).filter(str => str != null), _$('req.simple.resource_delim'))
 }
 
 // const reqstrCategories = {}
@@ -311,17 +298,17 @@ class Requirement {
   //   <other subcategory-specified terms>
   // }
   // DEFINITION FORMAT:
-  //   req.simple.SUBCATEGORYNAME = "......%s.......{{{FOO}}}.....{{{BAR}}}"
+  //   req.simple.SUBCATEGORYNAME = "......%s.......{{FOO}}.....{{BAR}}"
   //     %s : "times"
-  //     {{{FOO}}} : Subcategory-specifed terms
+  //     {{FOO}} : Subcategory-specifed terms
   //   req.simple.SUBCATEGORYNAME_quantifier
   //     [Optional] Used to be pluralized and inserted to %s
   //   req.simple.SUBCATEGORYNAME_FOO
-  //     [Optional] Used in place of {{{FOO}}} when FOO=true
+  //     [Optional] Used in place of {{FOO}} when FOO=true
   //   req.simple.SUBCATEGORYNAME_!FOO
-  //     [Optional] Used in place of {{{FOO}}} when FOO=false
+  //     [Optional] Used in place of {{FOO}} when FOO=false
   // Example:
-  //     "req.simple.scrapequipment": "Scrap equipment %s{{{batch}}}",
+  //     "req.simple.scrapequipment": "Scrap equipment %s{{batch}}",
   //     "req.simple.scrapequipment_quantifier": "time",
   //     "req.simple.scrapequipment_batch": " (scrapping together is ok)",
   //   "requirements": {
@@ -343,8 +330,7 @@ class Requirement {
       times = `${this.times} ${parsePluralize(quantifier, this.times)}`
     }
     const extras = mapValues(this.detail, (value, name) =>
-      value ? (_$(`${basename}_${name}`) || '') : (_$(`${basename}_!${name}`) || '')
-    )
+      value ? (_$(`${basename}_${name}`) || '') : (_$(`${basename}_!${name}`) || ''))
     return _$(`${basename}`, times, extras)
   }
 
@@ -410,21 +396,21 @@ class Requirement {
     }
 
     const scraps = this.scraps
-    ? _$('req.modelconversion.scraps', {
-      scraps: this.scraps.map(scrap => _$('req.modelconversion.scrap', {
-        name: __(scrap.name),
-        amount: scrap.amount,
-      })).join(_$('req.modelconversion.scrapdelim')),
-    })
-    : null
+      ? _$('req.modelconversion.scraps', {
+        scraps: this.scraps.map(scrap => _$('req.modelconversion.scrap', {
+          name: __(scrap.name),
+          amount: scrap.amount,
+        })).join(_$('req.modelconversion.scrapdelim')),
+      })
+      : null
     const consumptions = this.consumptions
-    ? _$('req.modelconversion.consumptions', {
-      consumptions: this.consumptions.map(consumption => _$('req.modelconversion.consumption', {
-        name: __(consumption.name),
-        amount: consumption.amount,
-      })).join(_$('req.modelconversion.scrapdelim')),
-    })
-    : null
+      ? _$('req.modelconversion.consumptions', {
+        consumptions: this.consumptions.map(consumption => _$('req.modelconversion.consumption', {
+          name: __(consumption.name),
+          amount: consumption.amount,
+        })).join(_$('req.modelconversion.scrapdelim')),
+      })
+      : null
 
     const note = this.use_skilled_crew ? _$('req.modelconversion.useskilledcrew') : ''
     const objects = ([scraps, consumptions].filter(str => str != null)).join(_$('req.modelconversion.scrapdelim'))
@@ -460,7 +446,7 @@ class Requirement {
     })
   }
 
-    // FORMAT:
+  // FORMAT:
   // "requirements": {
   //   "category": "equipexchange",
   //   <"equipments": [
@@ -476,26 +462,26 @@ class Requirement {
   // }
   get equipexchange() {
     const equipments = this.equipments
-    ? this.equipments.map(equipment => _$('req.equipexchange.equipment', {
-      name: __(equipment.name),
-      amount: equipment.amount,
-    })).join(_$('req.equipexchange.delim'))
-    : null
+      ? this.equipments.map(equipment => _$('req.equipexchange.equipment', {
+        name: __(equipment.name),
+        amount: equipment.amount,
+      })).join(_$('req.equipexchange.delim'))
+      : null
 
     const scraps = this.scraps
-    ? this.scraps.map(scrap => _$('req.equipexchange.scrap', {
-      name: __(scrap.name),
-      amount: scrap.amount,
-    })).join(_$('req.equipexchange.delim'))
-    : null
+      ? this.scraps.map(scrap => _$('req.equipexchange.scrap', {
+        name: __(scrap.name),
+        amount: scrap.amount,
+      })).join(_$('req.equipexchange.delim'))
+      : null
 
     let consumptions = this.resources ? parseResources(this.resources) : ''
     consumptions += this.consumptions
-    ? this.consumptions.map(consumption => _$('req.equipexchange.consumption', {
-      name: __(consumption.name),
-      amount: consumption.amount,
-    })).join(_$('req.equipexchange.delim'))
-    : ''
+      ? this.consumptions.map(consumption => _$('req.equipexchange.consumption', {
+        name: __(consumption.name),
+        amount: consumption.amount,
+      })).join(_$('req.equipexchange.delim'))
+      : ''
 
     return _$('req.equipexchange.main', {
       equipments: equipments ? _$('req.equipexchange.equipments', {
@@ -537,10 +523,10 @@ class Requirement {
   // }
   get modernization() {
     const consumptions = this.consumptions
-    ? this.consumptions.map(consumption => _$('req.modernization.consumption', {
-      ship: __(consumption.ship),
-      amount: consumption.amount,
-    })).join(_$('req.modernization.delim')) : null
+      ? this.consumptions.map(consumption => _$('req.modernization.consumption', {
+        ship: __(consumption.ship),
+        amount: consumption.amount,
+      })).join(_$('req.modernization.delim')) : null
     return _$('req.modernization.main', {
       ship: this.ship,
       times: parseFrequency(this.times),

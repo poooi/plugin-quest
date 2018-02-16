@@ -86,7 +86,7 @@
     },
 
     "group": {
-      "main": "{{{lv}}}{{{ship}}}{{{select}}}{{{flagship}}}{{{amount}}}{{{note}}}",
+      "main": "{{lv}}{{ship}}{{select}}{{flagship}}{{amount}}{{note}}",
       "lv": "Lv.%s",
       "lvmore": "Lv.%s或以上",
       "amount": "%s只",
@@ -103,15 +103,15 @@
     },
 
     "fleet": {
-      "main": "編組{{{groups}}}{{{disallowed}}}{{{fleet}}}",
+      "main": "編組{{groups}}{{disallowed}}{{fleet}}",
       "fleetid": "，限第%s艦隊",
       "disallowed": "，%s不可"
     },
 
 
     "sortie": {
-      "main": "{{{map}}}{{{boss}}}{{{result}}}{{{times}}}{{{groups}}}{{{fleet}}}{{{disallowed}}}",
-      "map": "{{{map}}}",
+      "main": "{{map}}{{boss}}{{result}}{{times}}{{groups}}{{fleet}}{{disallowed}}",
+      "map": "{{map}}",
       "boss": "Boss戰",
       "!boss": "出擊",
       "result": "獲得%s",
@@ -122,7 +122,7 @@
     },
 
     "sink": {
-      "main": "擊沉{{{ship}}}{{{amount}}}",
+      "main": "擊沉{{ship}}{{amount}}",
       "amount": "%s只",
       "ship": "%s"
     },
@@ -130,11 +130,11 @@
     "a-gou": "S勝利6次, BOSS戰勝利12次, 進行BOSS戰24次, 出擊36次(一次出擊多次戰鬥算一次)",
 
     "expedition": {
-      "main": "{{{objects}}}{{{resources}}}{{{groups}}}{{{disallowed}}}",
-      "object": "{{{name}}}成功{{{times}}}次",
+      "main": "{{objects}}{{resources}}{{groups}}{{disallowed}}",
+      "object": "{{name}}成功{{times}}次",
       "any": "遠征",
       "id": "遠征%s",
-      "resources": "，消耗{{{resources}}}",
+      "resources": "，消耗{{resources}}",
       "delim": "，",
       "groups": "，需要%s",
       "disallowed": "，%s不可"
@@ -145,7 +145,7 @@
 
       "ship": "建造艦船%s次",
 
-      "scrapequipment": "廢棄裝備%s{{{batch}}}",
+      "scrapequipment": "廢棄裝備%s{{batch}}",
       "scrapequipment_batch": "件，可一次性廢棄",
       "scrapequipment_!batch": "次",
 
@@ -161,27 +161,27 @@
 
       "battle": "進行%s次戰鬥",
 
-      "resource": "{{{name}}}{{{amount}}}",
+      "resource": "{{name}}{{amount}}",
       "resource_delim": "、"
     },
 
     "excercise": {
-      "main": "演習{{{victory}}}{{{times}}}次{{{daily}}}{{{groups}}}",
+      "main": "演習{{victory}}{{times}}次{{daily}}{{groups}}",
       "victory": "勝利",
       "daily": "，限一日內",
       "groups": "，需要%s"
     },
 
     "modelconversion": {
-      "main": "{{{secretary_equip}}}，然後{{{objects}}}{{{note}}}",
-      "noextra": "{{{secretary_equip}}}",
-      "equip": "祕書艦{{{secretary}}}在{{{slot}}}搭載未上鎖的{{{fullyskilled}}}{{{maxmodified}}}{{{equipment}}}",
-      "noequip": "祕書艦設為{{{secretary}}}",
+      "main": "{{secretary_equip}}，然後{{objects}}{{note}}",
+      "noextra": "{{secretary_equip}}",
+      "equip": "祕書艦{{secretary}}在{{slot}}搭載未上鎖的{{fullyskilled}}{{maxmodified}}{{equipment}}",
+      "noequip": "祕書艦設為{{secretary}}",
       "secretarydefault": "空母",
-      "scraps": "廢棄{{{scraps}}}",
-      "scrap": "{{{name}}}{{{amount}}}只",
-      "consumptions": "消耗{{{consumptions}}}",
-      "consumption": "{{{name}}}{{{amount}}}個",
+      "scraps": "廢棄{{scraps}}",
+      "scrap": "{{name}}{{amount}}只",
+      "consumptions": "消耗{{consumptions}}",
+      "consumption": "{{name}}{{amount}}個",
       "equipmentdelim": "、",
       "scrapdelim": "，",
       "fullyskilled": "、滿熟練度的",
@@ -197,27 +197,27 @@
     },
 
     "scrapequipment": {
-      "main": "廢棄{{{scraps}}}",
-      "scrap": "{{{name}}}{{{amount}}}只",
+      "main": "廢棄{{scraps}}",
+      "scrap": "{{name}}{{amount}}只",
       "scrapdelim": "，"
     },
 
     "equipexchange": {
-      "main": "{{{scraps}}}{{{equipments}}}{{{delim}}}{{{consumptions}}}",
-      "equipments": "準備{{{equipments}}}",
-      "equipment": "{{{name}}}{{{amount}}}只",
-      "scraps": "廢棄{{{scraps}}}，",
-      "scrap": "{{{name}}}{{{amount}}}只",
-      "consumptions": "消耗{{{consumptions}}}",
-      "consumption": "{{{name}}}{{{amount}}}個",
+      "main": "{{scraps}}{{equipments}}{{delim}}{{consumptions}}",
+      "equipments": "準備{{equipments}}",
+      "equipment": "{{name}}{{amount}}只",
+      "scraps": "廢棄{{scraps}}，",
+      "scrap": "{{name}}{{amount}}只",
+      "consumptions": "消耗{{consumptions}}",
+      "consumption": "{{name}}{{amount}}個",
       "delim": "，"
     },
 
     "modernization": {
-      "main": "{{{resources}}}对{{{ship}}}近代化改造成功{{{times}}}次{{{consumptions}}}",
-      "consumptions": "，每次消耗{{{consumptions}}}",
-      "consumption": "{{{ship}}}{{{amount}}}艘",
-      "resources": "準備{{{resources}}}，",
+      "main": "{{resources}}对{{ship}}近代化改造成功{{times}}次{{consumptions}}",
+      "consumptions": "，每次消耗{{consumptions}}",
+      "consumption": "{{ship}}{{amount}}艘",
+      "resources": "準備{{resources}}，",
       "delim": "，"
     },
 

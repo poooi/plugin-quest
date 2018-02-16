@@ -8,22 +8,15 @@ import FA from 'react-fontawesome'
 import { shell } from 'electron'
 import { extensionSelectorFactory } from 'views/utils/selectors'
 import { MaterialIcon } from 'views/components/etc/icon'
+import i18next from 'views/env-parts/i18next'
 
 import Panel from './compat-panel'
 import { reducer, readQuestInfo } from './redux'
 
-const i18n__ = window.i18n['poi-plugin-quest-info'].__.bind(window.i18n['poi-plugin-quest-info'])
-
 const EXTENSION_KEY = 'poi-plugin-quest-info'
 const pluginDataSelector = extensionSelectorFactory(EXTENSION_KEY)
 
-const __ = (s, ...args) => {
-  let tr = i18n__(s, ...args)
-  if (tr === s) {
-    tr = window.i18n.resources.__(s, ...args)
-  }
-  return tr
-}
+const __ = i18next.getFixedT(window.language, 'poi-plugin-quest-info')
 
 const filterNames = [
   'Composition Quest',
@@ -406,7 +399,7 @@ export const reactClass = connect(
                 </Panel>
                 <div className="report">
                   <Button bsStyle="link" onClick={this.handleReport}>
-                    <FA name="exclamation-circle" /> {i18n__('The info for this quest is incorrect, report it')}
+                    <FA name="exclamation-circle" /> {__('The info for this quest is incorrect, report it')}
                   </Button>
                 </div>
               </Col>

@@ -42,7 +42,7 @@
     },
 
     "group": {
-      "main": "{{{select}}}{{{amount}}}{{{ship}}}{{{lv}}}{{{flagship}}}{{{note}}}",
+      "main": "{{select}}{{amount}}{{ship}}{{lv}}{{flagship}}{{note}}",
       "lv": " of level %s",
       "lvmore": " of level %s or more",
       "amount": "%s ",
@@ -60,16 +60,16 @@
     },
 
     "fleet": {
-      "main": "Have {{{groups}}} in your{{{fleet}}} fleet{{{disallowed}}}",
+      "main": "Have {{groups}} in your{{fleet}} fleet{{disallowed}}",
       "fleetid": " %s",
       "disallowed": ", %s not allowed"
     },
 
     "sortie": {
-      "main": "Sortie{{{fleet}}}{{{map}}}{{{times}}}{{{groups}}}{{{result}}}{{{boss}}}{{{disallowed}}}",
+      "main": "Sortie{{fleet}}{{map}}{{times}}{{groups}}{{result}}{{boss}}{{disallowed}}",
       "fleet": " your %s fleet",
       "times": " %s",
-      "map": " to World {{{map}}}",
+      "map": " to World {{map}}",
       "groups": " with %s",
       "result": " and %s",
       "boss": " at the boss",
@@ -77,7 +77,7 @@
     },
 
     "sink": {
-      "main": "Sink {{{amount}}} enemy {{{ship}}}",
+      "main": "Sink {{amount}} enemy {{ship}}",
       "amount": "%s",
       "ship": "%s"
     },
@@ -85,11 +85,11 @@
     "a-gou": "Launch your fleet 36 times, encounter 24 bosses, kill 12 bosses, and get 6 S-Rank victories",
 
     "expedition": {
-      "main": "{{{objects}}}{{{resources}}}{{{groups}}}{{{disallowed}}}",
-      "object": "Complete {{{name}}} {{{times}}}",
+      "main": "{{objects}}{{resources}}{{groups}}{{disallowed}}",
+      "object": "Complete {{name}} {{times}}",
       "any": "any expeditions",
       "id": "expedition %s",
-      "resources": ", consuming {{{resources}}}",
+      "resources": ", consuming {{resources}}",
       "delim": ". ",
       "groups": " with %s",
       "disallowed": ", %s not allowed"
@@ -102,7 +102,7 @@
       "ship": "Craft %s",
       "ship_quantifier": "ship",
 
-      "scrapequipment": "Scrap equipment %s{{{batch}}}",
+      "scrapequipment": "Scrap equipment %s{{batch}}",
       "scrapequipment_quantifier": "time",
       "scrapequipment_batch": " (scrapping together is ok)",
 
@@ -124,12 +124,12 @@
       "battle": "Defeat %s",
       "battle_quantifier": "enemy fleet",
 
-      "resource": "{{{amount}}} {{{name}}}",
+      "resource": "{{amount}} {{name}}",
       "resource_delim": ", "
     },
 
     "excercise": {
-      "main": "Perform {{{times}}}{{{victory}}}{{{daily}}}{{{groups}}}",
+      "main": "Perform {{times}}{{victory}}{{daily}}{{groups}}",
       "quantifier": "excercise",
       "victory": " with victory",
       "daily": " within one day",
@@ -137,15 +137,15 @@
     },
 
     "modelconversion": {
-      "main": "{{{secretary_equip}}}, then {{{objects}}}{{{note}}}",
-      "noextra": "{{{secretary_equip}}}",
-      "noequip": "Have {{{secretary}}} and as secretary",
-      "equip": "Equip an UNLOCKED {{{fullyskilled}}}{{{maxmodified}}}{{{equipment}}} on {{{secretary}}}'s{{{slot}}} and as secretary",
+      "main": "{{secretary_equip}}, then {{objects}}{{note}}",
+      "noextra": "{{secretary_equip}}",
+      "noequip": "Have {{secretary}} and as secretary",
+      "equip": "Equip an UNLOCKED {{fullyskilled}}{{maxmodified}}{{equipment}} on {{secretary}}'s{{slot}} and as secretary",
       "secretarydefault": "a carrier",
-      "scraps": "scrap {{{scraps}}}",
-      "scrap": "{{{amount}}} {{{name}}}",
-      "consumptions": "consuming {{{consumptions}}}",
-      "consumption": "{{{amount}}} {{{name}}}",
+      "scraps": "scrap {{scraps}}",
+      "scrap": "{{amount}} {{name}}",
+      "consumptions": "consuming {{consumptions}}",
+      "consumption": "{{amount}} {{name}}",
       "equipmentdelim": ", ",
       "scrapdelim": ", ",
       "fullyskilled": "Rank 7 ",
@@ -161,27 +161,27 @@
     },
 
     "scrapequipment": {
-      "main": "Scrap {{{scraps}}}",
-      "scrap": "{{{amount}}} {{{name}}}",
+      "main": "Scrap {{scraps}}",
+      "scrap": "{{amount}} {{name}}",
       "scrapdelim": ", "
     },
 
     "equipexchange": {
-      "main": "{{{scraps}}}{{{equipments}}}{{{delim}}}{{{consumptions}}}",
-      "equipments": "Have {{{equipments}}}",
-      "equipment": "{{{amount}}} {{{name}}}",
-      "scraps": "Scrap {{{scraps}}}. ",
-      "scrap": "{{{amount}}} {{{name}}}",
-      "consumptions": "consuming {{{consumptions}}}",
-      "consumption": "{{{amount}}} {{{name}}}",
+      "main": "{{scraps}}{{equipments}}{{delim}}{{consumptions}}",
+      "equipments": "Have {{equipments}}",
+      "equipment": "{{amount}} {{name}}",
+      "scraps": "Scrap {{scraps}}. ",
+      "scrap": "{{amount}} {{name}}",
+      "consumptions": "consuming {{consumptions}}",
+      "consumption": "{{amount}} {{name}}",
       "delim": ", "
     },
 
     "modernization": {
-      "main": "{{{resources}}}make modernization improvement to {{{ship}}} {{{times}}} {{{consumptions}}}",
-      "consumptions": "using {{{consumptions}}}",
-      "consumption": "{{{amount}}} {{{ship}}}",
-      "resources": "Prepare {{{resources}}} and ",
+      "main": "{{resources}}make modernization improvement to {{ship}} {{times}} {{consumptions}}",
+      "consumptions": "using {{consumptions}}",
+      "consumption": "{{amount}} {{ship}}",
+      "resources": "Prepare {{resources}} and ",
       "delim": ", "
     },
 
