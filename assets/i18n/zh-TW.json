@@ -141,25 +141,25 @@
     },
 
     "simple": {
-      "equipment": "開發裝備%s次(失敗也可)",
+      "equipment": "開發裝備{{times}}次(失敗也可)",
 
-      "ship": "建造艦船%s次",
+      "ship": "建造艦船{{times}}次",
 
-      "scrapequipment": "廢棄裝備%s{{batch}}",
+      "scrapequipment": "廢棄裝備{{times}}{{batch}}",
       "scrapequipment_batch": "件，可一次性廢棄",
       "scrapequipment_!batch": "次",
 
-      "scrapship": "解體艦船%s次",
+      "scrapship": "解體艦船{{times}}次",
 
-      "modernization": "近代化改造成功%s次",
+      "modernization": "近代化改造成功{{times}}次",
 
-      "improvement": "裝備改修%s次(失敗也可)",
+      "improvement": "裝備改修{{times}}次(失敗也可)",
 
-      "resupply": "進行補給%s次",
+      "resupply": "進行補給{{times}}次",
 
-      "repair": "入渠%s次",
+      "repair": "入渠{{times}}次",
 
-      "battle": "進行%s次戰鬥",
+      "battle": "進行{{times}}次戰鬥",
 
       "resource": "{{name}}{{amount}}",
       "resource_delim": "、"

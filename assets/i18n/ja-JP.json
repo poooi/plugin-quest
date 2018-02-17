@@ -127,25 +127,25 @@
     },
 
     "simple": {
-      "equipment": "装備アイテムを%s回開発(失敗も可)",
+      "equipment": "装備アイテムを{{times}}回開発(失敗も可)",
 
-      "ship": "艦%s隻を建造",
+      "ship": "艦{{times}}隻を建造",
 
-      "scrapequipment": "装備%s{{batch}}",
+      "scrapequipment": "装備{{times}}{{batch}}",
       "scrapequipment_batch": "箇を廃棄(まとめて複数廃棄しても可)",
       "scrapequipment_!batch": "回廃棄",
 
-      "scrapship": "艦%s隻を解体",
+      "scrapship": "艦{{times}}隻を解体",
 
-      "modernization": "近代化改修を%s回成功",
+      "modernization": "近代化改修を{{times}}回成功",
 
-      "improvement": "改修工廠%s回実施(失敗でも可)",
+      "improvement": "改修工廠{{times}}回実施(失敗でも可)",
 
-      "resupply": "補給%s回",
+      "resupply": "補給{{times}}回",
 
-      "repair": "入渠%s回",
+      "repair": "入渠{{times}}回",
 
-      "battle": "戦闘%s回",
+      "battle": "戦闘{{times}}回",
 
       "resource": "{{name}}{{amount}}",
       "resource_delim": "、"

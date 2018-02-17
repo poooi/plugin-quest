@@ -346,7 +346,7 @@ class Requirement {
     }
     const extras = mapValues(this.detail, (value, name) =>
       value ? (_$(`${basename}_${name}`) || '') : (_$(`${basename}_!${name}`) || ''))
-    return _$(`${basename}`, times, extras)
+    return _$(`${basename}`, { ...extras, times })
   }
 
   // FORMAT:

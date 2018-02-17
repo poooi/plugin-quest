@@ -96,32 +96,32 @@
     },
 
     "simple": {
-      "equipment": "Craft %s of equipment (failures are ok)",
+      "equipment": "Craft {{times}} of equipment (failures are ok)",
       "equipment_quantifier": "piece",
 
-      "ship": "Craft %s",
+      "ship": "Craft {{times}}",
       "ship_quantifier": "ship",
 
-      "scrapequipment": "Scrap equipment %s{{batch}}",
+      "scrapequipment": "Scrap equipment {{times}}{{batch}}",
       "scrapequipment_quantifier": "time",
       "scrapequipment_batch": " (scrapping together is ok)",
 
-      "scrapship": "Scrap %s",
+      "scrapship": "Scrap {{times}}",
       "scrapship_quantifier": "ship",
 
-      "modernization": "Perform %s",
+      "modernization": "Perform {{times}}",
       "modernization_quantifier": "successful modernization",
 
-      "improvement": "Improve equipment %s",
+      "improvement": "Improve equipment {{times}}",
       "improvement_quantifier": "time",
 
-      "resupply": "Resupply %s",
+      "resupply": "Resupply {{times}}",
       "resupply_quantifier": "ship",
 
-      "repair": "Repair %s",
+      "repair": "Repair {{times}}",
       "repair_quantifier": "ship",
 
-      "battle": "Defeat %s",
+      "battle": "Defeat {{times}}",
       "battle_quantifier": "enemy fleet",
 
       "resource": "{{amount}} {{name}}",
