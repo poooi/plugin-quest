@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/poooi/plugin-quest#readme",
   "dependencies": {
-    "i18next": "^10.4.1",
     "inflection": "^1.12.0"
   },
   "devDependencies": {
@@ -39,6 +38,7 @@
     "fs-extra": "^5.0.0",
     "https-proxy-agent": "^2.1.1",
     "i18n-2": "^0.7.2",
+    "i18next": "^10.4.1",
     "lodash": "^4.17.4",
     "node-fetch": "^1.7.3",
     "poi-util-transpile": "^8.0.0"
