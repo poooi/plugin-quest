@@ -1,6 +1,6 @@
-import i18next from 'i18next'
 import inflection from 'inflection'
 import { mapValues, isArray } from 'lodash'
+import { format } from 'util'
 
 const MAX_SHIP_AMOUNT = 6
 const MAX_SHIP_LV = 200 // Doesn't matter, usually we use 999. See usage below
@@ -9,11 +9,26 @@ let translate = str => str
 
 // This part copied from https://github.com/mashpie/i18n-node with MIT license
 // if the msg string contains {{Mustache}} patterns we render it as a mini tempalate
-const __ = (...args) => translate(...args)
+const __ = (str, ...args) => {
+  const res = translate(str, ...args, {
+    interpolation: {
+      escapeValue: false,
+    },
+  })
+  return /%s/.test(res) ? format(res, ...args) : res
+}
 
 
 // Translate: Returns null if not exist. Used for format controller
-const _$ = __
+const _$ = (str, ...args) => {
+  const res = translate(str, ...args, {
+    defaultValue: null,
+    interpolation: {
+      escapeValue: false,
+    },
+  })
+  return /%s/.test(res) ? format(res, ...args) : res
+}
 
 const parsePluralize = (str, amount) => {
   if (!_$('req.option.pluralize') || !amount) {
