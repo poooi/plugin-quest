@@ -2,7 +2,6 @@ import { join } from 'path-extra'
 import React, { Component } from 'react'
 import { Grid, Row, Col, OverlayTrigger, Tooltip, Dropdown, MenuItem, Button, ButtonToolbar } from 'react-bootstrap'
 import { sortBy, range, values, get } from 'lodash'
-import { pluralize } from 'inflection'
 import { connect } from 'react-redux'
 import FA from 'react-fontawesome'
 import { shell } from 'electron'
@@ -31,7 +30,7 @@ const filterNames = [
   'Weekly Quest',
   'Monthly Quest',
   'Quarterly Quest',
-].map(__)
+]
 
 const categoryNames = [
   'Composition',
@@ -41,7 +40,7 @@ const categoryNames = [
   'Supply/Docking',
   'Arsenal',
   'Modernization',
-].map(__)
+]
 
 const categoryColors = [
   '#19BB2E',
@@ -61,7 +60,7 @@ const typeNames = [
   '-2nd/-8th',
   'Monthly Quest',
   'Quarterly Quest',
-].map(__)
+]
 
 const FilterItem = ({ index }) => (
   <span>
@@ -70,9 +69,7 @@ const FilterItem = ({ index }) => (
       <span className="cat-indicator" style={{ backgroundColor: categoryColors[index] }}></span>
     }
     {
-      (__('req.option.pluralize') === true && index !== 0)
-      ? pluralize(filterNames[index])
-      : filterNames[index]
+      __(filterNames[index])
     }
   </span>
 )
@@ -231,7 +228,7 @@ export const reactClass = connect(
         overlay={
           <Tooltip id={`quest-link-${qid}`}>
             <strong>{quest.name}</strong><br />
-            {categoryNames[quest.category - 1]}-{typeNames[quest.type - 1]}<br />
+            {__(categoryNames[quest.category - 1])}-{__(typeNames[quest.type - 1])}<br />
             {quest.condition}
           </Tooltip>}
       >
@@ -321,7 +318,7 @@ export const reactClass = connect(
                   <div>
                     <div className="quest-title">{questSelected.name || __('Undocumented quest, please wait for updates')}</div>
                     <div className="quest-type">
-                      {categoryNames[questSelected.category - 1]} - {typeNames[questSelected.type - 1]}
+                      {__(categoryNames[questSelected.category - 1])} - {__(typeNames[questSelected.type - 1])}
                     </div>
                   </div>
                   <Row>
