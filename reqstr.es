@@ -390,6 +390,7 @@ class Requirement {
   //   <"consumptions": [
   //     {"name": "勲章", "amount": 2}
   //   ],>
+  //   <"resources": [0, 0, 0, 0],>
   //   <"secretary": (ship),>    // Default: "a carrier"
   //   <"use_skilled_crew": true>
   // }
@@ -418,12 +419,13 @@ class Requirement {
         })).join(_$('req.modelconversion.scrapdelim')),
       })
       : null
-    const consumptions = this.consumptions
+
+    const consumptions = this.consumptions || this.resources
       ? _$('req.modelconversion.consumptions', {
-        consumptions: this.consumptions.map(consumption => _$('req.modelconversion.consumption', {
+        consumptions: [...(this.consumptions ? this.consumptions.map(consumption => _$('req.modelconversion.consumption', {
           name: __(consumption.name),
           amount: consumption.amount,
-        })).join(_$('req.modelconversion.scrapdelim')),
+        })) : []), this.resources && parseResources(this.resources)].filter(str => str != null).join(_$('req.modelconversion.scrapdelim')),
       })
       : null
 
