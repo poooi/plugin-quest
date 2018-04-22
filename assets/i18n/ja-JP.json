@@ -73,7 +73,7 @@
     },
 
     "group": {
-      "main": "{{{lv}}}{{{ship}}}{{{select}}}{{{flagship}}}{{{amount}}}{{{note}}}",
+      "main": "{{lv}}{{ship}}{{select}}{{flagship}}{{amount}}{{note}}",
       "lv": "Lv.%sの",
       "lvmore": "Lv.%s以上の",
       "amount": "%s隻",
@@ -90,16 +90,16 @@
     },
 
     "fleet": {
-      "main": "{{{fleet}}}{{{groups}}}による艦隊を編成{{{disallowed}}}",
+      "main": "{{fleet}}{{groups}}による艦隊を編成{{disallowed}}",
       "fleetid": "第%s艦隊に",
       "disallowed": "(%sは不可)"
     },
 
     "sortie": {
-      "main": "{{{fleet}}}{{{groups}}}{{{map}}}{{{times}}}{{{result}}}{{{disallowed}}}",
+      "main": "{{fleet}}{{groups}}{{map}}{{times}}{{result}}{{disallowed}}",
       "fleet": "第%s艦隊を",
       "groups": "%sで",
-      "map": "{{{map}}}{{{boss}}}に",
+      "map": "{{map}}{{boss}}に",
       "boss": "ボス戦",
       "times": "%s回",
       "result": "%s",
@@ -108,7 +108,7 @@
     },
 
     "sink": {
-      "main": "{{{ship}}}{{{amount}}}を撃沈",
+      "main": "{{ship}}{{amount}}を撃沈",
       "ship": "%s",
       "amount": "%s隻"
     },
@@ -116,58 +116,58 @@
     "a-gou": "S勝利6回、ボス戦勝利12回、ボス到達24回、出撃36回",
 
     "expedition": {
-      "main": "{{{objects}}}成功{{{resources}}}{{{groups}}}{{{disallowed}}}",
-      "object": "{{{name}}}を{{{times}}}回",
+      "main": "{{objects}}成功{{resources}}{{groups}}{{disallowed}}",
+      "object": "{{name}}を{{times}}回",
       "any": "遠征",
       "id": "遠征%s",
-      "resources": "{{{resources}}}を準備して、",
+      "resources": "{{resources}}を準備して、",
       "delim": "・",
       "groups": "、%sで",
       "disallowed": "(%sは不可)"
     },
 
     "simple": {
-      "equipment": "装備アイテムを%s回開発(失敗も可)",
+      "equipment": "装備アイテムを{{times}}回開発(失敗も可)",
 
-      "ship": "艦%s隻を建造",
+      "ship": "艦{{times}}隻を建造",
 
-      "scrapequipment": "装備%s{{{batch}}}",
+      "scrapequipment": "装備{{times}}{{batch}}",
       "scrapequipment_batch": "箇を廃棄(まとめて複数廃棄しても可)",
       "scrapequipment_!batch": "回廃棄",
 
-      "scrapship": "艦%s隻を解体",
+      "scrapship": "艦{{times}}隻を解体",
 
-      "modernization": "近代化改修を%s回成功",
+      "modernization": "近代化改修を{{times}}回成功",
 
-      "improvement": "改修工廠%s回実施(失敗でも可)",
+      "improvement": "改修工廠{{times}}回実施(失敗でも可)",
 
-      "resupply": "補給%s回",
+      "resupply": "補給{{times}}回",
 
-      "repair": "入渠%s回",
+      "repair": "入渠{{times}}回",
 
-      "battle": "戦闘%s回",
+      "battle": "戦闘{{times}}回",
 
-      "resource": "{{{name}}}{{{amount}}}",
+      "resource": "{{name}}{{amount}}",
       "resource_delim": "、"
     },
 
     "excercise": {
-      "main": "{{{daily}}}{{{times}}}回演習{{{victory}}}",
+      "main": "{{daily}}{{times}}回演習{{victory}}",
       "victory": "で勝利",
       "daily": "本日中に",
       "groups": "、%sで"
     },
 
     "modelconversion": {
-      "main": "{{{secretary_equip}}}{{{objects}}}{{{note}}}",
-      "noextra": "{{{secretary_equip}}}",
-      "equip": "ロックを解除した{{{fullyskilled}}}{{{maxmodified}}}{{{equipment}}}を{{{slot}}}に搭載する{{{secretary}}}を秘書艦にして、",
-      "noequip": "{{{secretary}}}を秘書艦にして",
+      "main": "{{secretary_equip}}{{objects}}{{note}}",
+      "noextra": "{{secretary_equip}}",
+      "equip": "ロックを解除した{{fullyskilled}}{{maxmodified}}{{equipment}}を{{slot}}に搭載する{{secretary}}を秘書艦にして、",
+      "noequip": "{{secretary}}を秘書艦にして",
       "secretarydefault": "空母",
-      "scraps": "{{{scraps}}}廃棄",
-      "scrap": "{{{name}}}を{{{amount}}}つ",
-      "consumptions": "{{{consumptions}}}消費",
-      "consumption": "{{{name}}}を{{{amount}}}個",
+      "scraps": "{{scraps}}廃棄",
+      "scrap": "{{name}}を{{amount}}つ",
+      "consumptions": "{{consumptions}}消費",
+      "consumption": "{{name}}を{{amount}}個",
       "equipmentdelim": "・",
       "scrapdelim": "・",
       "fullyskilled": "練度max",
@@ -183,27 +183,27 @@
     },
 
     "scrapequipment": {
-      "main": "{{{scraps}}}廃棄",
-      "scrap": "{{{name}}}を{{{amount}}}つ",
+      "main": "{{scraps}}廃棄",
+      "scrap": "{{name}}を{{amount}}つ",
       "scrapdelim": "・"
     },
 
     "equipexchange": {
-      "main": "{{{scraps}}}{{{equipments}}}{{{delim}}}{{{consumptions}}}準備せよ！",
-      "equipments": "{{{equipments}}}",
-      "equipment": "{{{name}}}を{{{amount}}}つ",
-      "scraps": "{{{scraps}}}廃棄、",
-      "scrap": "{{{name}}}を{{{amount}}}つ",
-      "consumptions": "{{{consumptions}}}",
-      "consumption": "{{{name}}}を{{{amount}}}つ",
+      "main": "{{scraps}}{{equipments}}{{delim}}{{consumptions}}準備せよ！",
+      "equipments": "{{equipments}}",
+      "equipment": "{{name}}を{{amount}}つ",
+      "scraps": "{{scraps}}廃棄、",
+      "scrap": "{{name}}を{{amount}}つ",
+      "consumptions": "{{consumptions}}",
+      "consumption": "{{name}}を{{amount}}つ",
       "delim": "・"
     },
 
     "modernization": {
-      "main": "{{{resources}}}{{{ship}}}の近代化改修を{{{consumptions}}}{{{times}}}回成功させよ！",
-      "consumptions": "{{{consumptions}}}同時使用により",
-      "consumption": "{{{ship}}}{{{amount}}}隻",
-      "resources": "{{{resources}}}を準備して、",
+      "main": "{{resources}}{{ship}}の近代化改修を{{consumptions}}{{times}}回成功させよ！",
+      "consumptions": "{{consumptions}}同時使用により",
+      "consumption": "{{ship}}{{amount}}隻",
+      "resources": "{{resources}}を準備して、",
       "delim": "・"
     },
 

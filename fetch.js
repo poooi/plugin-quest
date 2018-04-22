@@ -14,7 +14,7 @@ const HttpsProxyAgent = require('https-proxy-agent')
 const { map, fromPairs } = require('lodash')
 const Promise = require('bluebird')
 const generateReqstr = require('./reqstr.es')
-const i18n2 = require('i18n-2')
+const i18next = require('i18next')
 
 
 const proxy = process.env.https_proxy || process.env.http_proxy || ''
@@ -24,17 +24,19 @@ if (proxy) {
   console.log('using proxy', proxy)
 }
 
-const getTranslate = async (namespace) => {
-  const locale = await fs.readJSON(path.resolve(__dirname, `./assets/i18n/${namespace}.json`))
-  const i18n = new i18n2({
-    locales: {
-      [namespace]: locale,
-    },
-    defaultLocale: namespace,
-    devMode: false,
+const LOCALES = ['zh-CN', 'zh-TW', 'ja-JP', 'en-US']
+
+const initI18n = async () => {
+  const res = await Promise.map(LOCALES, async (locale) => {
+    const data = await fs.readJSON(path.resolve(__dirname, `./assets/i18n/${locale}.json`))
+    return [locale, { 'poi-plugin-quest-info': data }]
   })
-  return i18n.__.bind(i18n)
+
+  i18next.init({
+    resources: fromPairs(res),
+  })
 }
+
 
 const main = async () => {
   try {
@@ -51,8 +53,10 @@ const main = async () => {
       await fs.outputJSON(path.resolve(__dirname, './assets/data.json'), content, { spaces: 2 })
     }
 
-    await Promise.each(['zh-CN', 'zh-TW', 'ja-JP', 'en-US'], async (ns) => {
-      const translate = await getTranslate(ns)
+    await initI18n()
+
+    await Promise.each(['zh-CN', 'zh-TW', 'ja-JP', 'en-US'], async (lng) => {
+      const translate = i18next.getFixedT(lng, 'poi-plugin-quest-info')
       const reqstr = generateReqstr(translate)
       const result = map(content, (quest) => {
         try {
@@ -61,7 +65,7 @@ const main = async () => {
           return [quest.game_id, '']
         }
       })
-      await fs.outputJSON(path.resolve(__dirname, `./result/${ns}.json`), fromPairs(result), { spaces: 2 })
+      await fs.outputJSON(path.resolve(__dirname, `./result/${lng}.json`), fromPairs(result), { spaces: 2 })
     })
   } catch (e) {
     console.warn(e, e.stack)

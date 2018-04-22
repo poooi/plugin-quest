@@ -1,6 +1,6 @@
 {
   "name": "poi-plugin-quest-info",
-  "version": "4.4.12",
+  "version": "5.0.1",
   "description": "show quest info",
   "main": "index",
   "scripts": {
@@ -24,8 +24,7 @@
   },
   "homepage": "https://github.com/poooi/plugin-quest#readme",
   "dependencies": {
-    "inflection": "^1.12.0",
-    "mustache": "^2.3.0"
+    "inflection": "^1.12.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
@@ -39,6 +38,7 @@
     "fs-extra": "^5.0.0",
     "https-proxy-agent": "^2.1.1",
     "i18n-2": "^0.7.2",
+    "i18next": "^10.4.1",
     "lodash": "^4.17.4",
     "node-fetch": "^1.7.3",
     "poi-util-transpile": "^8.0.0"
@@ -50,7 +50,8 @@
     "priority": 2,
     "apiVer": {
       "6.99.99": "2.2.1",
-      "7.0.0-beta.1": "2.2.1"
+      "7.0.0-beta.1": "2.2.1",
+      "8.1.99": "4.4.12"
     }
   }
 }
