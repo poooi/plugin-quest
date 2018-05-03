@@ -1,5 +1,6 @@
 import { join } from 'path-extra'
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Grid, Row, Col, OverlayTrigger, Tooltip, Dropdown, MenuItem, Button, ButtonToolbar } from 'react-bootstrap'
 import { sortBy, range, values, get } from 'lodash'
 import { connect } from 'react-redux'
@@ -66,7 +67,7 @@ const FilterItem = ({ index }) => (
   <span>
     {
       categoryColors[index] &&
-      <span className="cat-indicator" style={{ backgroundColor: categoryColors[index] }}></span>
+      <span className="cat-indicator" style={{ backgroundColor: categoryColors[index] }} />
     }
     {
       __(filterNames[index])
@@ -74,12 +75,22 @@ const FilterItem = ({ index }) => (
   </span>
 )
 
+FilterItem.propTypes = {
+  index: PropTypes.number.isRequired,
+}
+
 const QuestItem = ({ quest = {} }) => (
   <span className="quest-item">
-    <span className="cat-indicator" style={{ backgroundColor: categoryColors[quest.category - 1] }}></span>
+    <span className="cat-indicator" style={{ backgroundColor: categoryColors[quest.category - 1] }} />
     {quest.wiki_id} - {quest.name}
   </span>
 )
+
+QuestItem.propTypes = {
+  quest: PropTypes.shape({
+    category: PropTypes.number.isRequired,
+  }).isRequired,
+}
 
 const RewardItem = ({ reward }) => {
   let name = __(reward.name)
@@ -93,6 +104,14 @@ const RewardItem = ({ reward }) => {
   )
 }
 
+RewardItem.propTypes = {
+  reward: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    amount: PropTypes.number.isRequired,
+    category: PropTypes.number.isRequired,
+  }).isRequired,
+}
+
 // 'W' represents wedding/marriage
 export const reactClass = connect(
   pluginDataSelector,
@@ -100,15 +119,6 @@ export const reactClass = connect(
     readQuestInfo,
   }),
 )(class PluginQuest extends Component {
-  constructor(props) {
-    super(props)
-    this.filterFuncs = this.constructor.initFilterFuncs()
-    this.state = {
-      questFilter: 0,
-      questId: 101,
-    }
-  }
-
   static initFilterFuncs = () => {
     const filterFuncs = {}
     range(0, 7).forEach((i) => {
@@ -121,6 +131,37 @@ export const reactClass = connect(
     filterFuncs[10] = quest => quest.type === 6
     filterFuncs[11] = quest => quest.type === 7
     return filterFuncs
+  }
+
+  static renderQuestOption(quest, activeQuestId) {
+    return (
+      <MenuItem
+        key={quest.game_id}
+        eventKey={quest.game_id}
+        active={quest.game_id === activeQuestId}
+      >
+        <QuestItem quest={quest} />
+      </MenuItem>
+    )
+  }
+
+  static filterQuestByStatus(quests, questStatus, status) {
+    return values(quests).filter(quest => quest && questStatus[quest.game_id] === status)
+  }
+
+  static propTypes = {
+    readQuestInfo: PropTypes.func.isRequired,
+    quests: PropTypes.arrayOf(PropTypes.object).isRequired,
+    questStatus: PropTypes.objectOf(PropTypes.object).isRequired,
+  }
+
+  constructor(props) {
+    super(props)
+    this.filterFuncs = this.constructor.initFilterFuncs()
+    this.state = {
+      questFilter: 0,
+      questId: 101,
+    }
   }
 
   componentWillMount() {
@@ -137,9 +178,7 @@ export const reactClass = connect(
   }
 
   getDefaultQuestId(questFilter = 0) {
-    return get(sortBy(
-      values(this.props.quests).filter(quest => quest && this.filterFuncs[questFilter](quest)),
-      'wiki_id'), '0.game_id', 0)
+    return get(sortBy(values(this.props.quests).filter(quest => quest && this.filterFuncs[questFilter](quest)), 'wiki_id'), '0.game_id', 0)
   }
 
   handleFileterSelect = (eventKey) => {
@@ -192,8 +231,8 @@ export const reactClass = connect(
 
   handleRequest = (e) => {
     if (e.detail.path === '/kcsapi/api_req_quest/start') {
-      const { api_quest_id } = e.detail.body
-      this.handlePrereqClick(+api_quest_id)()
+      const { api_quest_id: questId } = e.detail.body
+      this.handlePrereqClick(+questId)()
     }
   }
 
@@ -210,16 +249,9 @@ export const reactClass = connect(
     shell.openExternal(`https://github.com/kcwikizh/kcdata/issues/new?title=${title}`)
   }
 
-  static renderQuestOption(quest, activeQuestId) {
-    return (
-      <MenuItem key={quest.game_id} eventKey={quest.game_id} active={quest.game_id === activeQuestId}>
-        <QuestItem quest={quest} />
-      </MenuItem>
-    )
-  }
-  static filterQuestByStatus(quests, questStatus, status) {
-    return values(quests).filter(quest => quest && questStatus[quest.game_id] === status)
-  }
+  /* eslint-disable jsx-a11y/click-events-have-key-events,
+  jsx-a11y/no-static-element-interactions,
+  jsx-a11y/anchor-is-valid */
   renderQuestLink = (qid) => {
     const quest = this.props.quests[qid] || {}
     return (
@@ -316,9 +348,11 @@ export const reactClass = connect(
               <Col xs={12}>
                 <Panel>
                   <div>
-                    <div className="quest-title">{questSelected.name || __('Undocumented quest, please wait for updates')}</div>
+                    <div className="quest-title">
+                      {questSelected.name || __('Undocumented quest, please wait for updates')}
+                    </div>
                     <div className="quest-type">
-                      {__(categoryNames[questSelected.category - 1])} - {__(typeNames[questSelected.type - 1])}
+                      {`${__(categoryNames[questSelected.category - 1])} - ${__(typeNames[questSelected.type - 1])}`}
                     </div>
                   </div>
                   <Row>
@@ -346,7 +380,9 @@ export const reactClass = connect(
                                     {__('Choose 1 of the following %s', reward.choices.length)}
                                     <ul>
                                       {
-                                        reward.choices.map(choice => <RewardItem reward={choice} key={choice.name} />)
+                                        reward.choices.map(choice => (
+                                          <RewardItem reward={choice} key={choice.name} />
+                                        ))
                                       }
                                     </ul>
                                   </li>
@@ -369,11 +405,11 @@ export const reactClass = connect(
                             <div>
                               <div>{__('Requires')}:</div>
                               {
-                                questSelected.prerequisite.map(qid =>
-                                  (<div className="prereqName" key={qid}>
+                                questSelected.prerequisite.map(qid => (
+                                  <div className="prereqName" key={qid}>
                                     {this.renderQuestLink(qid)}
-                                  </div>)
-                                )
+                                  </div>
+                                ))
                               }
                             </div>
                           }
@@ -381,11 +417,11 @@ export const reactClass = connect(
                             <div>
                               <div>{__('Unlocks')}:</div>
                               {
-                                questSelected.postquest.map(qid =>
-                                  (<div className="prereqName" key={qid}>
+                                questSelected.postquest.map(qid => (
+                                  <div className="prereqName" key={qid}>
                                     {this.renderQuestLink(qid)}
-                                  </div>)
-                                )
+                                  </div>
+                                ))
                               }
                             </div>
                           }

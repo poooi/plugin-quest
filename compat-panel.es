@@ -21,8 +21,8 @@ const CompatPanel = ({ header, children, ...props }) => {
 }
 
 CompatPanel.propTypes = {
-  header: PropTypes.node,
-  children: PropTypes.node,
+  header: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 }
 
 export default CompatPanel

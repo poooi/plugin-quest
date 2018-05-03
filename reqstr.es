@@ -155,11 +155,10 @@ const parseResources = (resources) => {
 }
 
 // const reqstrCategories = {}
-
 const parseRequirement = (requirements) => {
   try {
-    const category = requirements.category
-    const req = new Requirement(requirements)
+    const { category } = requirements
+    const req = new Requirement(requirements) // eslint-disable-line no-use-before-define
     const result = req[category]
     return result
   } catch (e) {
@@ -300,7 +299,7 @@ class Requirement {
     })
   }
 
-  get ['a-gou']() {
+  get ['a-gou']() { // eslint-disable-line class-methods-use-this
     return _$('req.a-gou')
   }
 
@@ -338,7 +337,7 @@ class Requirement {
     const quantifier = _$(`${basename}_quantifier`) || ''
     let times
     if (!quantifier) {
-      times = this.times
+      ({ times } = this)
     } else if (quantifier === 'time') {
       times = parseFrequency(this.times)
     } else {
@@ -363,7 +362,7 @@ class Requirement {
     if (quantifier) {
       times = `${this.times} ${parsePluralize(quantifier, this.times)}`
     } else {
-      times = this.times
+      ({ times } = this)
     }
     const victory = this.victory ? _$('req.excercise.victory') : ''
     const daily = this.daily ? _$('req.excercise.daily') : ''
@@ -379,7 +378,12 @@ class Requirement {
   // "requirements": {
   //   "category": "modelconversion",
   //   <"slots": [
-  //     {"slot": 1, "equipment": "零式艦戦21型(熟練)", <"fullyskilled": true,>, <"maxmodified": true,>, <"count": 1>}
+  //     {"
+  //        slot": 1,
+  //        "equipment": "零式艦戦21型(熟練)",
+  //        <"fullyskilled": true,>,
+  //        <"maxmodified": true,>,
+  //        <"count": 1>}
   //  ],>
   //   <"equipment": ["零式艦戦21型(熟練)", "零式艦戦21型(熟練)"]>
   //   <"fullyskilled": true,>

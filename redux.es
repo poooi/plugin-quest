@@ -29,7 +29,7 @@ function updateQuestStatus(quests, qid, status) {
       return
     }
     if (typeFreqs[quest.type] <= typeFreqs[postq.type] && status[postq.game_id] !== UNAVAILABLE) {
-      status[postq.game_id] = UNAVAILABLE
+      status[postq.game_id] = UNAVAILABLE // eslint-disable-line no-param-reassign
       updateQuestStatus(quests, postq.game_id, status)
     }
   })
@@ -48,8 +48,8 @@ export function reducer(state = initState, action) {
     }
 
     case '@@Response/kcsapi/api_get_member/questlist': {
-      let questStatus = state.questStatus
-      const quests = state.quests
+      let { questStatus } = state
+      const { quests } = state
       const statusBackup = questStatus
       forEach(body.api_list, (quest) => {
         // `quest` may be -1
@@ -73,7 +73,7 @@ export function reducer(state = initState, action) {
 
     case '@@Response/kcsapi/api_req_quest/clearitemget': {
       const qid = parseInt(postBody.api_quest_id, 10)
-      const quests = state.quests
+      const { quests } = state
       const questStatus = { ...state.questStatus }
       questStatus[qid] = 1
       get(quests, [qid, 'postquest'], []).forEach((postq) => {
@@ -81,8 +81,7 @@ export function reducer(state = initState, action) {
           return
         }
         const clearflag = get(quests, [postq, 'prerequisite'], []).every(prereq =>
-          questStatus[prereq] === COMPLETED
-        )
+          questStatus[prereq] === COMPLETED)
         if (clearflag) { questStatus[postq] = AVAILABLE }
       })
       return {
@@ -106,11 +105,11 @@ export const readQuestInfo = (path, __) => async (dispatch) => {
   const quests = keyBy(data, 'game_id')
   forEach(quests, (quest) => {
   // Initialize `quests`
-    quest.postquest = quest.postquest || []
-    quest.condition = reqstr(quest.requirements)
+    quest.postquest = quest.postquest || [] // eslint-disable-line no-param-reassign
+    quest.condition = reqstr(quest.requirements) // eslint-disable-line no-param-reassign
     if (typeof (quest.game_id) !== 'number') {
       console.warn(`Unexpected quest game_id type "${typeof (quest.game_id)}" for quest "${quest.wiki_id}"`)
-      quest.game_id = `_UNKNOWN-${quests.length}`
+      quest.game_id = `_UNKNOWN-${quests.length}` // eslint-disable-line no-param-reassign
     }
     quest.prerequisite.forEach((pid) => {
       if (typeof (pid) !== 'number') {

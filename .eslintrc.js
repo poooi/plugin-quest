@@ -1,22 +1,20 @@
 module.exports = {
-	'extends': 'airbnb',
-	'plugins': [
+	extends: [
+    'airbnb',
+    'poi-plugin',
+  ],
+	plugins: [
 		'react',
 		'jsx-a11y',
 		'import'
 	],
-	'env': {
-		'browser': true,
-		'es6': true,
-		'node': true,
+	env: {
+		browser: true,
+		es6: true,
+		node: true,
 	},
-  'parserOptions': {
-    'ecmaFeatures': {
-      'jsx': true
-    }
-  },
-  'parser': 'babel-eslint',
-	'rules': {
+  parser: 'babel-eslint',
+	rules: {
 		'semi': ['error', 'never'],
 		'import/no-unresolved': [2, { 'ignore': ['views/.*'] }],
     'react/jsx-filename-extension': 'off',
@@ -26,32 +24,14 @@ module.exports = {
     'comma-dangle': ['error', 'always-multiline'],
     'no-confusing-arrow': ['error', {'allowParens': true}],
     'no-confusing-arrow': 'off',
+    'no-console': 'off',
 	},
-  'settings': {
+  settings: {
     'import/resolver': {
-      'node': {
-        'extensions': ['.js', '.jsx', '.es'],
-        'paths': [__dirname],
+      node: {
+        extensions: ['.js', '.jsx', '.es'],
+        paths: [__dirname],
       },
     },
-    'import/core-modules': [
-      'bluebird',
-      'electron',
-      'react',
-      'react-redux',
-      'redux-observers',
-      'reselect',
-      'react-bootstrap',
-      'react-fontawesome',
-      'path-extra',
-      'fs-extra',
-      'lodash',
-      'cson',
-      'react-dom',
-      'redux',
-      'semver',
-      'i18n-2',
-      'fast-memoize',
-    ],
   },
 }
