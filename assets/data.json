@@ -3507,6 +3507,10 @@
           "amount": 1
         },
         {
+          "ship": "磯風乙改",
+          "amount": 1
+        },
+        {
           "ship": "浜風乙改",
           "amount": 1
         }
@@ -3538,7 +3542,9 @@
         ]
       }
     ],
-    "prerequisite": [],
+    "prerequisite": [
+      805
+    ],
     "requirements": {
       "category": "fleet",
       "groups": [
@@ -11542,10 +11548,6 @@
           {
             "name": "開発資材",
             "amount": 6
-          },
-          {
-            "name": "補強増設",
-            "amount": 1
           }
         ]
       }
