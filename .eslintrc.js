@@ -2,11 +2,14 @@ module.exports = {
 	extends: [
     'airbnb',
     'poi-plugin',
+    'prettier',
+    'prettier/react',
   ],
 	plugins: [
 		'react',
 		'jsx-a11y',
-		'import'
+    'import',
+    'prettier',
 	],
 	env: {
 		browser: true,
@@ -25,13 +28,6 @@ module.exports = {
     'no-confusing-arrow': ['error', {'allowParens': true}],
     'no-confusing-arrow': 'off',
     'no-console': 'off',
+    'prettier/prettier': 'error',
 	},
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.es'],
-        paths: [__dirname],
-      },
-    },
-  },
 }
