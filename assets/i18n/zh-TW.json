@@ -70,7 +70,7 @@
 
   "Undocumented quest, please wait for updates": "任務未收錄，請等待更新",
 
-  "Choose 1 of the following %s": "從以下 %s 項中選擇一項",
+  "Choose 1 of the following": "從以下 {{amount}} 項中選擇一項",
 
   "The info for this quest is incorrect, report it": "這個任務的信息有錯誤，我要報錯",
 
@@ -88,15 +88,15 @@
 
     "group": {
       "main": "{{lv}}{{ship}}{{select}}{{flagship}}{{amount}}{{note}}",
-      "lv": "Lv.%s",
-      "lvmore": "Lv.%s或以上",
-      "amount": "%s只",
-      "amountonly": "僅%s只",
-      "amountmore": "%s只或以上",
-      "select": "任意%s只",
-      "note": "(%s)",
+      "lv": "Lv.{{lv}}",
+      "lvmore": "Lv.{{lv}}或以上",
+      "amount": "{{amount}}只",
+      "amountonly": "僅{{amount}}只",
+      "amountmore": "{{amount}}只或以上",
+      "select": "任意{{amount}}只",
+      "note": "({{note}})",
       "flagship": "旗艦",
-      "class": "%s級"
+      "class": "{{class}}級"
     },
 
     "groups": {
@@ -105,8 +105,8 @@
 
     "fleet": {
       "main": "編組{{groups}}{{disallowed}}{{fleet}}",
-      "fleetid": "，限第%s艦隊",
-      "disallowed": "，%s不可"
+      "fleetid": "，限第{{id}}艦隊",
+      "disallowed": "，{{disallowed}}不可"
     },
 
 
@@ -115,30 +115,30 @@
       "map": "{{map}}",
       "boss": "Boss戰",
       "!boss": "出擊",
-      "result": "%s",
-      "times": "%s次",
-      "groups": "，需要%s",
-      "fleet": "，限第%s艦隊",
-      "disallowed": "，%s不可"
+      "result": "{{result}}",
+      "times": "{{times}}次",
+      "groups": "，需要{{groups}}",
+      "fleet": "，限第{{id}}艦隊",
+      "disallowed": "，{{disallowed}}不可"
     },
 
     "sink": {
       "main": "擊沉{{ship}}{{amount}}",
-      "amount": "%s只",
-      "ship": "%s"
+      "amount": "{{amount}}只",
+      "ship": "{{ship}}"
     },
 
-    "a-gou": "S勝利6次, BOSS戰勝利12次, 進行BOSS戰24次, 出擊36次(一次出擊多次戰鬥算一次)",
+    "a-gou": "S勝利6次，BOSS戰勝利12次，進行BOSS戰24次，出擊36次(一次出擊多次戰鬥算一次)",
 
     "expedition": {
       "main": "{{objects}}{{resources}}{{groups}}{{disallowed}}",
       "object": "{{name}}成功{{times}}次",
       "any": "遠征",
-      "id": "遠征%s",
+      "id": "遠征{{id}}",
       "resources": "，消耗{{resources}}",
       "delim": "，",
-      "groups": "，需要%s",
-      "disallowed": "，%s不可"
+      "groups": "，需要{{groups}}",
+      "disallowed": "，{{disallowed}}不可"
     },
 
     "simple": {
@@ -170,14 +170,14 @@
       "main": "演習{{victory}}{{times}}次{{daily}}{{groups}}",
       "victory": "勝利",
       "daily": "，限一日內",
-      "groups": "，需要%s"
+      "groups": "，需要{{groups}}"
     },
 
     "modelconversion": {
       "main": "{{secretary_equip}}，然後{{objects}}{{note}}",
       "noextra": "{{secretary_equip}}",
       "equip": "祕書艦{{secretary}}在{{slot}}搭載未上鎖的{{fullyskilled}}{{maxmodified}}{{equipment}}",
-      "noequip": "祕書艦設為{{secretary}}",
+      "noequip": "祕書艦設爲{{secretary}}",
       "secretarydefault": "空母",
       "scraps": "廢棄{{scraps}}",
       "scrap": "{{name}}{{amount}}只",
@@ -215,7 +215,7 @@
     },
 
     "modernization": {
-      "main": "{{resources}}对{{ship}}近代化改造成功{{times}}次{{consumptions}}",
+      "main": "{{resources}}對{{ship}}近代化改造成功{{times}}次{{consumptions}}",
       "consumptions": "，每次消耗{{consumptions}}",
       "consumption": "{{ship}}{{amount}}艘",
       "resources": "準備{{resources}}，",

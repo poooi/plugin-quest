@@ -1,33 +1,26 @@
 import inflection from 'inflection'
 import { mapValues, isArray } from 'lodash'
-import { format } from 'util'
 
-const MAX_SHIP_AMOUNT = 6
+const MAX_SHIP_AMOUNT = 7
 const MAX_SHIP_LV = 200 // Doesn't matter, usually we use 999. See usage below
 
 let translate = str => str
 
-// This part copied from https://github.com/mashpie/i18n-node with MIT license
-// if the msg string contains {{Mustache}} patterns we render it as a mini tempalate
-const __ = (str, ...args) => {
-  const res = translate(str, ...args, {
+const __ = (str, ...args) =>
+  translate(str, ...args, {
     interpolation: {
       escapeValue: false,
     },
   })
-  return /%s/.test(res) ? format(res, ...args) : res
-}
 
 // Translate: Returns null if not exist. Used for format controller
-const _$ = (str, ...args) => {
-  const res = translate(str, ...args, {
+const _$ = (str, ...args) =>
+  translate(str, ...args, {
     defaultValue: null,
     interpolation: {
       escapeValue: false,
     },
   })
-  return /%s/.test(res) ? format(res, ...args) : res
-}
 
 const parsePluralize = (str, amount) => {
   if (!_$('req.option.pluralize') || !amount) {
@@ -71,7 +64,7 @@ const parseShip = (ship, _amount) => {
 const parseShipClass = (shipClass, _amount) => {
   let shipClassStr
   if (typeof shipClass === 'string') {
-    shipClassStr = _$('req.group.class', __(shipClass))
+    shipClassStr = _$('req.group.class', { class: __(shipClass) })
   } else if (Array.isArray(shipClass)) {
     shipClassStr = shipClass
       .map(_shipClass => parseShipClass(_shipClass))
@@ -101,14 +94,16 @@ const parseGroup = group => {
   if (group.amount) {
     if (Array.isArray(group.amount)) {
       if (group.amount[0] === group.amount[1]) {
-        amount = _$('req.group.amountonly', `${group.amount[0]}`)
+        amount = _$('req.group.amountonly', { amount: group.amount[0] })
       } else if (group.amount[1] >= MAX_SHIP_AMOUNT) {
-        amount = _$('req.group.amountmore', `${group.amount[0]}`)
+        amount = _$('req.group.amountmore', { amount: group.amount[0] })
       } else {
-        amount = _$('req.group.amount', `${group.amount[0]}~${group.amount[1]}`)
+        amount = _$('req.group.amount', {
+          amount: `${group.amount[0]}~${group.amount[1]}`,
+        })
       }
     } else {
-      amount = _$('req.group.amount', `${group.amount}`)
+      amount = _$('req.group.amount', { amount: group.amount })
     }
   }
 
@@ -116,21 +111,25 @@ const parseGroup = group => {
   if (group.lv) {
     if (Array.isArray(group.lv)) {
       if (group.lv[1] >= MAX_SHIP_LV) {
-        lv = _$('req.group.lvmore', `${group.lv[0]}`)
+        lv = _$('req.group.lvmore', { lv: group.lv[0] })
       } else {
-        lv = _$('req.group.lv', `${group.lv[0]}~${group.lv[1]}`)
+        lv = _$('req.group.lv', { lv: `${group.lv[0]}~${group.lv[1]}` })
       }
     } else {
-      lv = _$('req.group.lv', `${group.lv}`)
+      lv = _$('req.group.lv', { lv: group.lv })
     }
   }
 
-  const select = group.select ? _$('req.group.select', group.select) : ''
+  const select = group.select
+    ? _$('req.group.select', { amount: group.select })
+    : ''
   const ship = group.shipclass
     ? parseShipClass(group.shipclass, group.amount)
     : parseShip(group.ship, group.amount)
   const flagship = group.flagship ? _$('req.group.flagship') : ''
-  const note = group.note ? _$('req.group.note', parseShip(group.note)) : ''
+  const note = group.note
+    ? _$('req.group.note', { note: parseShip(group.note) })
+    : ''
   return _$('req.group.main', {
     select,
     ship,
@@ -221,10 +220,12 @@ class Requirement {
   get fleet() {
     const groups = parseGroups(this.groups)
     const disallowed = this.disallowed
-      ? _$('req.fleet.disallowed', parseShip(this.disallowed, 2))
+      ? _$('req.fleet.disallowed', {
+          disallowed: parseShip(this.disallowed, 2),
+        })
       : ''
     const fleet = this.fleetid
-      ? _$('req.fleet.fleetid', parseOrdinalize(this.fleetid))
+      ? _$('req.fleet.fleetid', { id: parseOrdinalize(this.fleetid) })
       : ''
     return _$('req.fleet.main', {
       groups,
@@ -255,17 +256,19 @@ class Requirement {
         })
       : ''
     const result = this.result
-      ? _$('req.sortie.result', __(`req.result.${this.result}`))
+      ? _$('req.sortie.result', { result: __(`req.result.${this.result}`) })
       : _$('req.sortie.!result') || ''
-    const times = _$('req.sortie.times', parseFrequency(this.times))
+    const times = _$('req.sortie.times', { times: parseFrequency(this.times) })
     const groups = this.groups
-      ? _$('req.sortie.groups', parseGroups(this.groups))
+      ? _$('req.sortie.groups', { groups: parseGroups(this.groups) })
       : ''
     const fleet = this.fleetid
-      ? _$('req.sortie.fleet', parseOrdinalize(this.fleetid))
+      ? _$('req.sortie.fleet', { id: parseOrdinalize(this.fleetid) })
       : ''
     const disallowed = this.disallowed
-      ? _$('req.sortie.disallowed', parseShip(this.disallowed, 2))
+      ? _$('req.sortie.disallowed', {
+          disallowed: parseShip(this.disallowed, 2),
+        })
       : ''
     return _$('req.sortie.main', {
       map,
@@ -285,8 +288,10 @@ class Requirement {
   //   "ship": (ship),
   // }
   get sink() {
-    const amount = _$('req.sink.amount', this.amount)
-    const ship = _$('req.sink.ship', parseShip(this.ship, this.amount))
+    const amount = _$('req.sink.amount', { amount: this.amount })
+    const ship = _$('req.sink.ship', {
+      ship: parseShip(this.ship, this.amount),
+    })
     return _$('req.sink.main', {
       amount,
       ship,
@@ -308,7 +313,7 @@ class Requirement {
         let name
         if (object.id) {
           const id = Array.isArray(object.id) ? object.id.join('/') : object.id
-          name = _$('req.expedition.id', id)
+          name = _$('req.expedition.id', { id })
         } else {
           name = _$('req.expedition.any')
         }
@@ -327,10 +332,12 @@ class Requirement {
       : ''
 
     const groups = this.groups
-      ? _$('req.expedition.groups', parseGroups(this.groups))
+      ? _$('req.expedition.groups', { groups: parseGroups(this.groups) })
       : ''
     const disallowed = this.disallowed
-      ? _$('req.expedition.disallowed', parseShip(this.disallowed, 2))
+      ? _$('req.expedition.disallowed', {
+          disallowed: parseShip(this.disallowed, 2),
+        })
       : ''
 
     return _$('req.expedition.main', {
@@ -407,7 +414,7 @@ class Requirement {
   get excercise() {
     const quantifier = _$('req.excercise.quantifier') || ''
     const groups = this.groups
-      ? _$('req.excercise.groups', parseGroups(this.groups))
+      ? _$('req.excercise.groups', { groups: parseGroups(this.groups) })
       : ''
     let times
     if (quantifier) {

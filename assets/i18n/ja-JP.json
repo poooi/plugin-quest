@@ -56,7 +56,7 @@
 
   "Undocumented quest, please wait for updates": "記載されていないクエスト、更新をお待ちください",
 
-  "Choose 1 of the following %s": "以下の %s つのオプションから 1 つを選択",
+  "Choose 1 of the following": "以下の {{amount}} つのオプションから 1 つを選択",
 
   "The info for this quest is incorrect, report it": "このクエストの情報が正しくない、報告する",
 
@@ -74,15 +74,15 @@
 
     "group": {
       "main": "{{lv}}{{ship}}{{select}}{{flagship}}{{amount}}{{note}}",
-      "lv": "Lv.%sの",
-      "lvmore": "Lv.%s以上の",
-      "amount": "%s隻",
-      "amountonly": "仅%s隻",
-      "amountmore": "%s隻以上",
-      "select": "の中から%s隻",
-      "note": "(%s)",
+      "lv": "Lv.{{lv}}の",
+      "lvmore": "Lv.{{lv}}以上の",
+      "amount": "{{amount}}隻",
+      "amountonly": "仅{{amount}}隻",
+      "amountmore": "{{amount}}隻以上",
+      "select": "の中から{{amount}}隻",
+      "note": "({{note}})",
       "flagship": "(旗艦)",
-      "class": "%s型"
+      "class": "{{class}}型"
     },
 
     "groups": {
@@ -91,26 +91,26 @@
 
     "fleet": {
       "main": "{{fleet}}{{groups}}による艦隊を編成{{disallowed}}",
-      "fleetid": "第%s艦隊に",
-      "disallowed": "(%sは不可)"
+      "fleetid": "第{{id}}艦隊に",
+      "disallowed": "({{disallowed}}は不可)"
     },
 
     "sortie": {
       "main": "{{fleet}}{{groups}}{{map}}{{times}}{{result}}{{disallowed}}",
-      "fleet": "第%s艦隊を",
-      "groups": "%sで",
+      "fleet": "第{{id}}艦隊を",
+      "groups": "{{groups}}で",
       "map": "{{map}}{{boss}}に",
       "boss": "ボス戦",
-      "times": "%s回",
-      "result": "%s",
+      "times": "{{times}}回",
+      "result": "{{result}}",
       "!result": "出撃",
-      "disallowed": "(%sは不可)"
+      "disallowed": "({{disallowed}}は不可)"
     },
 
     "sink": {
       "main": "{{ship}}{{amount}}を撃沈",
-      "ship": "%s",
-      "amount": "%s隻"
+      "ship": "{{ship}}",
+      "amount": "{{amount}}隻"
     },
 
     "a-gou": "S勝利6回、ボス戦勝利12回、ボス到達24回、出撃36回",
@@ -119,11 +119,11 @@
       "main": "{{objects}}成功{{resources}}{{groups}}{{disallowed}}",
       "object": "{{name}}を{{times}}回",
       "any": "遠征",
-      "id": "遠征%s",
+      "id": "遠征{{id}}",
       "resources": "{{resources}}を準備して、",
       "delim": "・",
-      "groups": "、%sで",
-      "disallowed": "(%sは不可)"
+      "groups": "、{{groups}}で",
+      "disallowed": "({{disallowed}}は不可)"
     },
 
     "simple": {
@@ -155,7 +155,7 @@
       "main": "{{daily}}{{times}}回演習{{victory}}",
       "victory": "で勝利",
       "daily": "本日中に",
-      "groups": "、%sで"
+      "groups": "、{{groups}}で"
     },
 
     "modelconversion": {

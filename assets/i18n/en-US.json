@@ -43,13 +43,13 @@
 
     "group": {
       "main": "{{select}}{{amount}}{{ship}}{{lv}}{{flagship}}{{note}}",
-      "lv": " of level %s",
-      "lvmore": " of level %s or more",
-      "amount": "%s ",
-      "amountonly": "only %s ",
-      "amountmore": "%s or more ",
-      "select": "any %s from ",
-      "note": " (%s)",
+      "lv": " of level {{lv}}",
+      "lvmore": " of level {{lv}} or more",
+      "amount": "{{amount}} ",
+      "amountonly": "only {{amount}} ",
+      "amountmore": "{{amount}} or more ",
+      "select": "any {{amount}} from ",
+      "note": " ({{note}})",
       "flagship": " as flagship",
       "class": " Class"
     },
@@ -61,25 +61,25 @@
 
     "fleet": {
       "main": "Have {{groups}} in your{{fleet}} fleet{{disallowed}}",
-      "fleetid": " %s",
-      "disallowed": ", %s not allowed"
+      "fleetid": " {{id}}",
+      "disallowed": ", {{disallowed}} not allowed"
     },
 
     "sortie": {
       "main": "Sortie{{fleet}}{{map}}{{times}}{{groups}}{{result}}{{boss}}{{disallowed}}",
-      "fleet": " your %s fleet",
-      "times": " %s",
+      "fleet": " your {{id}} fleet",
+      "times": " {{times}}",
       "map": " to World {{map}}",
-      "groups": " with %s",
-      "result": " and %s",
+      "groups": " with {{groups}}",
+      "result": " and {{result}}",
       "boss": " at the boss",
-      "disallowed": ", %s not allowed"
+      "disallowed": ", {{disallowed}} not allowed"
     },
 
     "sink": {
       "main": "Sink {{amount}} enemy {{ship}}",
-      "amount": "%s",
-      "ship": "%s"
+      "amount": "{{amount}}",
+      "ship": "{{ship}}"
     },
 
     "a-gou": "Launch your fleet 36 times, encounter 24 bosses, kill 12 bosses, and get 6 S-Rank victories",
@@ -88,11 +88,11 @@
       "main": "{{objects}}{{resources}}{{groups}}{{disallowed}}",
       "object": "Complete {{name}} {{times}}",
       "any": "any expeditions",
-      "id": "expedition %s",
+      "id": "expedition {{id}}",
       "resources": ", consuming {{resources}}",
       "delim": ". ",
-      "groups": " with %s",
-      "disallowed": ", %s not allowed"
+      "groups": " with {{groups}}",
+      "disallowed": ", {{disallowed}} not allowed"
     },
 
     "simple": {
@@ -133,7 +133,7 @@
       "quantifier": "excercise",
       "victory": " with victory",
       "daily": " within one day",
-      "groups": " with %s"
+      "groups": " with {{groups}}"
     },
 
     "modelconversion": {
