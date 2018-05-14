@@ -13,8 +13,8 @@
 #quest-info .tooltipTrigger a {
   display: inline-block;
   text-overflow: ellipsis;
-  white-space:nowrap;
-  overflow:hidden;
+  white-space: nowrap;
+  overflow: hidden;
   color: #bf534d;
   width: 175px;
 }
@@ -75,7 +75,8 @@
   flex: 1;
 }
 
-#quest-info .quest-info .reqDetail, #quest-info .quest-info .prereqName {
+#quest-info .quest-info .reqDetail,
+#quest-info .quest-info .prereqName {
   padding-left: 15px;
 }
 
@@ -88,12 +89,12 @@
 }
 
 #quest-info .cat-indicator {
-    display: inline-block;
-    height: 1em;
-    width: 4px;
-    vertical-align: middle;
-    margin-right: 4px;
-    flex: 0 0 auto;
+  display: inline-block;
+  height: 1em;
+  width: 4px;
+  vertical-align: middle;
+  margin-right: 4px;
+  flex: 0 0 auto;
 }
 
 #quest-info .dropdown-menu {
@@ -115,7 +116,7 @@
   width: calc(100% - 12em);
 }
 
-#quest-info .quest-select > div:first-child button{
+#quest-info .quest-select > div:first-child button {
   width: 12em;
 }
 

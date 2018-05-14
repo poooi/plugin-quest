@@ -18,7 +18,6 @@ const __ = (str, ...args) => {
   return /%s/.test(res) ? format(res, ...args) : res
 }
 
-
 // Translate: Returns null if not exist. Used for format controller
 const _$ = (str, ...args) => {
   const res = translate(str, ...args, {
@@ -37,7 +36,7 @@ const parsePluralize = (str, amount) => {
   return inflection.inflect(str, amount)
 }
 
-const parseFrequency = (times) => {
+const parseFrequency = times => {
   if (!_$('req.option.frequency')) {
     return times
   }
@@ -51,7 +50,7 @@ const parseFrequency = (times) => {
   }
 }
 
-const parseOrdinalize = (num) => {
+const parseOrdinalize = num => {
   if (!_$('req.option.ordinalize')) {
     return num
   }
@@ -74,7 +73,9 @@ const parseShipClass = (shipClass, _amount) => {
   if (typeof shipClass === 'string') {
     shipClassStr = _$('req.group.class', __(shipClass))
   } else if (Array.isArray(shipClass)) {
-    shipClassStr = shipClass.map(_shipClass => parseShipClass(_shipClass)).join('/')
+    shipClassStr = shipClass
+      .map(_shipClass => parseShipClass(_shipClass))
+      .join('/')
   }
   const amount = Array.isArray(_amount) ? _amount[_amount.length - 1] : _amount
   return parsePluralize(shipClassStr, amount)
@@ -95,7 +96,7 @@ const delimJoin = (strs, delim, last) => {
 //       <"select": 5,>    // "any 5 of xxx/xxx ships"
 //       <"lv": 99 | [95, 99] | [100, 999],>   // 999 == 'inf'
 //     }, ...
-const parseGroup = (group) => {
+const parseGroup = group => {
   let amount = ''
   if (group.amount) {
     if (Array.isArray(group.amount)) {
@@ -141,49 +142,68 @@ const parseGroup = (group) => {
 }
 
 const parseGroups = groups =>
-  delimJoin(groups.map(parseGroup), _$('req.groups.delim'), _$('req.groups.delim_last'))
+  delimJoin(
+    groups.map(parseGroup),
+    _$('req.groups.delim'),
+    _$('req.groups.delim_last'),
+  )
 
-const parseResources = (resources) => {
+const parseResources = resources => {
   const name = ['Fuel', 'Ammo', 'Steel', 'Bauxite']
-  return delimJoin(resources.map((resource, i) =>
-    resource
-      ? _$('req.simple.resource', {
-        name: __(name[i]),
-        amount: resource,
-      })
-      : null).filter(str => str != null), _$('req.simple.resource_delim'))
+  return delimJoin(
+    resources
+      .map(
+        (resource, i) =>
+          resource
+            ? _$('req.simple.resource', {
+                name: __(name[i]),
+                amount: resource,
+              })
+            : null,
+      )
+      .filter(str => str != null),
+    _$('req.simple.resource_delim'),
+  )
 }
 
 // const reqstrCategories = {}
-const parseRequirement = (requirements) => {
+const parseRequirement = requirements => {
   try {
     const { category } = requirements
     const req = new Requirement(requirements) // eslint-disable-line no-use-before-define
     const result = req[category]
     return result
   } catch (e) {
-    return console.log(`Invalid requirements: ${requirements} reason: ${e} ${e.stack}`)
+    return console.log(
+      `Invalid requirements: ${requirements} reason: ${e} ${e.stack}`,
+    )
   }
 }
 
-const parseSlotEuipment = (secretary, {
-  slot = 0, equipment, maxmodified, fullyskilled,
-}) => isArray(equipment)
-  ? equipment.map(eq =>
-    parseSlotEuipment(secretary, {
-      slot,
-      equipment: eq,
-      maxmodified,
-      fullyskilled,
-    })).join(_$('req.and.word'))
-  : _$('req.modelconversion.equip', {
-    secretary,
-    slot: _$(`req.modelconversion.slot.${slot}`),
-    equipment: __(equipment),
-    fullyskilled: fullyskilled ? _$('req.modelconversion.fullyskilled') : '',
-    maxmodified: maxmodified ? _$('req.modelconversion.maxmodified') : '',
-  })
-
+const parseSlotEuipment = (
+  secretary,
+  { slot = 0, equipment, maxmodified, fullyskilled },
+) =>
+  isArray(equipment)
+    ? equipment
+        .map(eq =>
+          parseSlotEuipment(secretary, {
+            slot,
+            equipment: eq,
+            maxmodified,
+            fullyskilled,
+          }),
+        )
+        .join(_$('req.and.word'))
+    : _$('req.modelconversion.equip', {
+        secretary,
+        slot: _$(`req.modelconversion.slot.${slot}`),
+        equipment: __(equipment),
+        fullyskilled: fullyskilled
+          ? _$('req.modelconversion.fullyskilled')
+          : '',
+        maxmodified: maxmodified ? _$('req.modelconversion.maxmodified') : '',
+      })
 
 class Requirement {
   constructor(requirement) {
@@ -200,8 +220,12 @@ class Requirement {
   // }
   get fleet() {
     const groups = parseGroups(this.groups)
-    const disallowed = this.disallowed ? _$('req.fleet.disallowed', parseShip(this.disallowed, 2)) : ''
-    const fleet = this.fleetid ? _$('req.fleet.fleetid', parseOrdinalize(this.fleetid)) : ''
+    const disallowed = this.disallowed
+      ? _$('req.fleet.disallowed', parseShip(this.disallowed, 2))
+      : ''
+    const fleet = this.fleetid
+      ? _$('req.fleet.fleetid', parseOrdinalize(this.fleetid))
+      : ''
     return _$('req.fleet.main', {
       groups,
       disallowed,
@@ -221,16 +245,28 @@ class Requirement {
   //   <"disallowed": "其它舰船" | "正规航母",>
   // }
   get sortie() {
-    const boss = this.boss ? _$('req.sortie.boss') || '' : _$('req.sortie.!boss') || ''
-    const map = this.map ? _$('req.sortie.map', {
-      map: this.map,
-      boss,
-    }) : ''
-    const result = this.result ? _$('req.sortie.result', __(`req.result.${this.result}`)) : _$('req.sortie.!result') || ''
+    const boss = this.boss
+      ? _$('req.sortie.boss') || ''
+      : _$('req.sortie.!boss') || ''
+    const map = this.map
+      ? _$('req.sortie.map', {
+          map: this.map,
+          boss,
+        })
+      : ''
+    const result = this.result
+      ? _$('req.sortie.result', __(`req.result.${this.result}`))
+      : _$('req.sortie.!result') || ''
     const times = _$('req.sortie.times', parseFrequency(this.times))
-    const groups = this.groups ? _$('req.sortie.groups', parseGroups(this.groups)) : ''
-    const fleet = this.fleetid ? _$('req.sortie.fleet', parseOrdinalize(this.fleetid)) : ''
-    const disallowed = this.disallowed ? _$('req.sortie.disallowed', parseShip(this.disallowed, 2)) : ''
+    const groups = this.groups
+      ? _$('req.sortie.groups', parseGroups(this.groups))
+      : ''
+    const fleet = this.fleetid
+      ? _$('req.sortie.fleet', parseOrdinalize(this.fleetid))
+      : ''
+    const disallowed = this.disallowed
+      ? _$('req.sortie.disallowed', parseShip(this.disallowed, 2))
+      : ''
     return _$('req.sortie.main', {
       map,
       boss,
@@ -267,29 +303,35 @@ class Requirement {
   //   <"disallowed": "其它舰船",>
   // }
   get expedition() {
-    const objects = this.objects.map((object) => {
-      let name
-      if (object.id) {
-        const id = Array.isArray(object.id) ? object.id.join('/') : object.id
-        name = _$('req.expedition.id', id)
-      } else {
-        name = _$('req.expedition.any')
-      }
-      const times = parseFrequency(object.times)
-      return _$('req.expedition.object', {
-        name,
-        times,
+    const objects = this.objects
+      .map(object => {
+        let name
+        if (object.id) {
+          const id = Array.isArray(object.id) ? object.id.join('/') : object.id
+          name = _$('req.expedition.id', id)
+        } else {
+          name = _$('req.expedition.any')
+        }
+        const times = parseFrequency(object.times)
+        return _$('req.expedition.object', {
+          name,
+          times,
+        })
       })
-    }).join(_$('req.expedition.delim'))
+      .join(_$('req.expedition.delim'))
 
     const resources = this.resources
       ? _$('req.expedition.resources', {
-        resources: parseResources(this.resources),
-      })
+          resources: parseResources(this.resources),
+        })
       : ''
 
-    const groups = this.groups ? _$('req.expedition.groups', parseGroups(this.groups)) : ''
-    const disallowed = this.disallowed ? _$('req.expedition.disallowed', parseShip(this.disallowed, 2)) : ''
+    const groups = this.groups
+      ? _$('req.expedition.groups', parseGroups(this.groups))
+      : ''
+    const disallowed = this.disallowed
+      ? _$('req.expedition.disallowed', parseShip(this.disallowed, 2))
+      : ''
 
     return _$('req.expedition.main', {
       objects,
@@ -299,9 +341,11 @@ class Requirement {
     })
   }
 
-  get ['a-gou']() { // eslint-disable-line class-methods-use-this
+  /* eslint-disable class-methods-use-this */
+  get ['a-gou']() {
     return _$('req.a-gou')
   }
+  /* eslint-enable class-methods-use-this */
 
   // FORMAT:
   // "requirements": {
@@ -337,14 +381,19 @@ class Requirement {
     const quantifier = _$(`${basename}_quantifier`) || ''
     let times
     if (!quantifier) {
-      ({ times } = this)
+      ;({ times } = this)
     } else if (quantifier === 'time') {
       times = parseFrequency(this.times)
     } else {
       times = `${this.times} ${parsePluralize(quantifier, this.times)}`
     }
-    const extras = mapValues(this.detail, (value, name) =>
-      value ? (_$(`${basename}_${name}`) || '') : (_$(`${basename}_!${name}`) || ''))
+    const extras = mapValues(
+      this.detail,
+      (value, name) =>
+        value
+          ? _$(`${basename}_${name}`) || ''
+          : _$(`${basename}_!${name}`) || '',
+    )
     return _$(`${basename}`, { ...extras, times })
   }
 
@@ -357,12 +406,14 @@ class Requirement {
   // }
   get excercise() {
     const quantifier = _$('req.excercise.quantifier') || ''
-    const groups = this.groups ? _$('req.excercise.groups', parseGroups(this.groups)) : ''
+    const groups = this.groups
+      ? _$('req.excercise.groups', parseGroups(this.groups))
+      : ''
     let times
     if (quantifier) {
       times = `${this.times} ${parsePluralize(quantifier, this.times)}`
     } else {
-      ({ times } = this)
+      ;({ times } = this)
     }
     const victory = this.victory ? _$('req.excercise.victory') : ''
     const daily = this.daily ? _$('req.excercise.daily') : ''
@@ -399,16 +450,16 @@ class Requirement {
   //   <"use_skilled_crew": true>
   // }
   get modelconversion() {
-    const secretary = this.secretary ? parseShip(this.secretary) : _$('req.modelconversion.secretarydefault')
+    const secretary = this.secretary
+      ? parseShip(this.secretary)
+      : _$('req.modelconversion.secretarydefault')
     let secretaryEquip
     if (this.slots) {
       secretaryEquip = this.slots
-        .map(equip =>
-          parseSlotEuipment(secretary, equip))
+        .map(equip => parseSlotEuipment(secretary, equip))
         .join(_$('req.and.word'))
     } else if (this.equipment) {
-      secretaryEquip =
-        parseSlotEuipment(secretary, this)
+      secretaryEquip = parseSlotEuipment(secretary, this)
     } else {
       secretaryEquip = _$('req.modelconversion.noequip', {
         secretary,
@@ -417,24 +468,42 @@ class Requirement {
 
     const scraps = this.scraps
       ? _$('req.modelconversion.scraps', {
-        scraps: this.scraps.map(scrap => _$('req.modelconversion.scrap', {
-          name: __(scrap.name),
-          amount: scrap.amount,
-        })).join(_$('req.modelconversion.scrapdelim')),
-      })
+          scraps: this.scraps
+            .map(scrap =>
+              _$('req.modelconversion.scrap', {
+                name: __(scrap.name),
+                amount: scrap.amount,
+              }),
+            )
+            .join(_$('req.modelconversion.scrapdelim')),
+        })
       : null
 
-    const consumptions = this.consumptions || this.resources
-      ? _$('req.modelconversion.consumptions', {
-        consumptions: [...(this.consumptions ? this.consumptions.map(consumption => _$('req.modelconversion.consumption', {
-          name: __(consumption.name),
-          amount: consumption.amount,
-        })) : []), this.resources && parseResources(this.resources)].filter(str => str != null).join(_$('req.modelconversion.scrapdelim')),
-      })
-      : null
+    const consumptions =
+      this.consumptions || this.resources
+        ? _$('req.modelconversion.consumptions', {
+            consumptions: [
+              ...(this.consumptions
+                ? this.consumptions.map(consumption =>
+                    _$('req.modelconversion.consumption', {
+                      name: __(consumption.name),
+                      amount: consumption.amount,
+                    }),
+                  )
+                : []),
+              this.resources && parseResources(this.resources),
+            ]
+              .filter(str => str != null)
+              .join(_$('req.modelconversion.scrapdelim')),
+          })
+        : null
 
-    const note = this.use_skilled_crew ? _$('req.modelconversion.useskilledcrew') : ''
-    const objects = ([scraps, consumptions].filter(str => str != null)).join(_$('req.modelconversion.scrapdelim'))
+    const note = this.use_skilled_crew
+      ? _$('req.modelconversion.useskilledcrew')
+      : ''
+    const objects = [scraps, consumptions]
+      .filter(str => str != null)
+      .join(_$('req.modelconversion.scrapdelim'))
     if (!objects && !note) {
       return _$('req.modelconversion.noextra', {
         secretary_equip: secretaryEquip,
@@ -458,10 +527,14 @@ class Requirement {
   //   ]
   // }
   get scrapequipment() {
-    const scraps = this.list.map(scrap => _$('req.scrapequipment.scrap', {
-      name: __(scrap.name),
-      amount: scrap.amount,
-    })).join(_$('req.modelconversion.scrapdelim'))
+    const scraps = this.list
+      .map(scrap =>
+        _$('req.scrapequipment.scrap', {
+          name: __(scrap.name),
+          amount: scrap.amount,
+        }),
+      )
+      .join(_$('req.modelconversion.scrapdelim'))
     return _$('req.scrapequipment.main', {
       scraps,
     })
@@ -483,37 +556,55 @@ class Requirement {
   // }
   get equipexchange() {
     const equipments = this.equipments
-      ? this.equipments.map(equipment => _$('req.equipexchange.equipment', {
-        name: __(equipment.name),
-        amount: equipment.amount,
-      })).join(_$('req.equipexchange.delim'))
+      ? this.equipments
+          .map(equipment =>
+            _$('req.equipexchange.equipment', {
+              name: __(equipment.name),
+              amount: equipment.amount,
+            }),
+          )
+          .join(_$('req.equipexchange.delim'))
       : null
 
     const scraps = this.scraps
-      ? this.scraps.map(scrap => _$('req.equipexchange.scrap', {
-        name: __(scrap.name),
-        amount: scrap.amount,
-      })).join(_$('req.equipexchange.delim'))
+      ? this.scraps
+          .map(scrap =>
+            _$('req.equipexchange.scrap', {
+              name: __(scrap.name),
+              amount: scrap.amount,
+            }),
+          )
+          .join(_$('req.equipexchange.delim'))
       : null
 
     let consumptions = this.resources ? parseResources(this.resources) : ''
     consumptions += this.consumptions
-      ? this.consumptions.map(consumption => _$('req.equipexchange.consumption', {
-        name: __(consumption.name),
-        amount: consumption.amount,
-      })).join(_$('req.equipexchange.delim'))
+      ? this.consumptions
+          .map(consumption =>
+            _$('req.equipexchange.consumption', {
+              name: __(consumption.name),
+              amount: consumption.amount,
+            }),
+          )
+          .join(_$('req.equipexchange.delim'))
       : ''
 
     return _$('req.equipexchange.main', {
-      equipments: equipments ? _$('req.equipexchange.equipments', {
-        equipments,
-      }) : '',
-      scraps: scraps ? _$('req.equipexchange.scraps', {
-        scraps,
-      }) : '',
-      consumptions: consumptions ? _$('req.equipexchange.consumptions', {
-        consumptions,
-      }) : '',
+      equipments: equipments
+        ? _$('req.equipexchange.equipments', {
+            equipments,
+          })
+        : '',
+      scraps: scraps
+        ? _$('req.equipexchange.scraps', {
+            scraps,
+          })
+        : '',
+      consumptions: consumptions
+        ? _$('req.equipexchange.consumptions', {
+            consumptions,
+          })
+        : '',
       delim: equipments && consumptions ? _$('req.equipexchange.delim') : '',
     })
   }
@@ -544,24 +635,33 @@ class Requirement {
   // }
   get modernization() {
     const consumptions = this.consumptions
-      ? this.consumptions.map(consumption => _$('req.modernization.consumption', {
-        ship: __(consumption.ship),
-        amount: consumption.amount,
-      })).join(_$('req.modernization.delim')) : null
+      ? this.consumptions
+          .map(consumption =>
+            _$('req.modernization.consumption', {
+              ship: __(consumption.ship),
+              amount: consumption.amount,
+            }),
+          )
+          .join(_$('req.modernization.delim'))
+      : null
     return _$('req.modernization.main', {
       ship: this.ship,
       times: parseFrequency(this.times),
-      consumptions: consumptions ? _$('req.modernization.consumptions', {
-        consumptions,
-      }) : '',
-      resources: this.resources ? _$('req.modernization.resources', {
-        resources: parseResources(this.resources),
-      }) : '',
+      consumptions: consumptions
+        ? _$('req.modernization.consumptions', {
+            consumptions,
+          })
+        : '',
+      resources: this.resources
+        ? _$('req.modernization.resources', {
+            resources: parseResources(this.resources),
+          })
+        : '',
     })
   }
 }
 
-export default (_translate) => {
+export default _translate => {
   translate = _translate
   return parseRequirement
 }

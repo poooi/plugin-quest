@@ -7,17 +7,17 @@ const CompatPanel = ({ header, children, ...props }) => {
     return (
       <Panel {...props}>
         <Panel.Heading>
-          <Panel.Title>
-            {header}
-          </Panel.Title>
+          <Panel.Title>{header}</Panel.Title>
         </Panel.Heading>
-        <Panel.Body>
-          {children}
-        </Panel.Body>
+        <Panel.Body>{children}</Panel.Body>
       </Panel>
     )
   }
-  return <Panel header={header} {...props}>{children}</Panel>
+  return (
+    <Panel header={header} {...props}>
+      {children}
+    </Panel>
+  )
 }
 
 CompatPanel.propTypes = {
