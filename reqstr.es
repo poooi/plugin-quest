@@ -7,8 +7,10 @@ const MAX_SHIP_LV = 200 // Doesn't matter, usually we use 999. See usage below
 let translate = str => str
 let language
 
+// directly translates ship and item name
 const __ = (str, ...args) =>
   translate(str, ...args, {
+    keySeparator: 'chiba', // there might be dots in item names
     interpolation: {
       escapeValue: false,
     },

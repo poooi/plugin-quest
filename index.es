@@ -26,7 +26,10 @@ import { reducer, readQuestInfo } from './redux'
 const EXTENSION_KEY = 'poi-plugin-quest-info'
 const pluginDataSelector = extensionSelectorFactory(EXTENSION_KEY)
 
-const __ = i18next.getFixedT(window.language, 'poi-plugin-quest-info')
+const __ = i18next.getFixedT(window.language, [
+  'poi-plugin-quest-info',
+  'resources',
+])
 
 const filterNames = [
   'Composition Quest',
