@@ -645,7 +645,7 @@ class Requirement {
       ? this.consumptions
           .map(consumption =>
             _$('req.modernization.consumption', {
-              ship: __(consumption.ship),
+              ship: parseShip(consumption.ship),
               amount: consumption.amount,
             }),
           )
