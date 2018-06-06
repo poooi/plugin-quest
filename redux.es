@@ -106,7 +106,7 @@ export const readQuestInfo = (path, __) => async dispatch => {
   } catch (e) {
     console.warn('Error in reading', path, e)
   }
-  const reqstr = generateReqstr(__)
+  const reqstr = generateReqstr(__, window.language)
   const quests = keyBy(data, 'game_id')
   forEach(quests, quest => {
     // Initialize `quests`

@@ -87,7 +87,7 @@
     },
 
     "group": {
-      "main": "{{lv}}{{ship}}{{select}}{{flagship}}{{amount}}{{note}}",
+      "main": "{{lv}}{{ship}}{{select}}{{flagship}}{{place}}{{amount}}{{note}}",
       "lv": "Lv.{{lv}}",
       "lvmore": "Lv.{{lv}}或以上",
       "amount": "{{amount}}只",
@@ -95,7 +95,8 @@
       "amountmore": "{{amount}}只或以上",
       "select": "任意{{amount}}只",
       "note": "({{note}})",
-      "flagship": "旗艦",
+      "flagship": "（旗艦）",
+      "place": "（{{place}}號艦）",
       "class": "{{class}}級"
     },
 

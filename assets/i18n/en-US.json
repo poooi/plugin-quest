@@ -42,7 +42,7 @@
     },
 
     "group": {
-      "main": "{{select}}{{amount}}{{ship}}{{lv}}{{flagship}}{{note}}",
+      "main": "{{select}}{{amount}}{{ship}}{{lv}}{{flagship}}{{place}}{{note}}",
       "lv": " of level {{lv}}",
       "lvmore": " of level {{lv}} or more",
       "amount": "{{amount}} ",
@@ -51,6 +51,7 @@
       "select": "any {{amount}} from ",
       "note": " ({{note}})",
       "flagship": " as flagship",
+      "place": " as {{place}} ship",
       "class": " Class"
     },
 

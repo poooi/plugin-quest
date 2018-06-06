@@ -81,7 +81,8 @@
       "amountmore": "{{amount}}隻以上",
       "select": "の中から{{amount}}隻",
       "note": "({{note}})",
-      "flagship": "(旗艦)",
+      "flagship": "（旗艦）",
+      "place": "（{{place}}番艦）",
       "class": "{{class}}型"
     },
 

@@ -61,7 +61,7 @@ const main = async () => {
 
     await Promise.each(['zh-CN', 'zh-TW', 'ja-JP', 'en-US'], async lng => {
       const translate = i18next.getFixedT(lng, 'poi-plugin-quest-info')
-      const reqstr = generateReqstr(translate)
+      const reqstr = generateReqstr(translate, lng)
       const result = map(content, quest => {
         try {
           return [quest.game_id, reqstr(quest.requirements)]
