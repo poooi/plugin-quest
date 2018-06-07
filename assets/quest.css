@@ -113,11 +113,11 @@
 }
 
 #quest-info .quest-select > div:last-child {
-  width: calc(100% - 12em);
+  width: calc(100% - 14em);
 }
 
 #quest-info .quest-select > div:first-child button {
-  width: 12em;
+  width: 14em;
 }
 
 #quest-info #quest-name-select {
