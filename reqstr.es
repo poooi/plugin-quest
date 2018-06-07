@@ -5,9 +5,12 @@ const MAX_SHIP_AMOUNT = 7
 const MAX_SHIP_LV = 200 // Doesn't matter, usually we use 999. See usage below
 
 let translate = str => str
+let language
 
+// directly translates ship and item name
 const __ = (str, ...args) =>
   translate(str, ...args, {
+    keySeparator: 'chiba', // there might be dots in item names
     interpolation: {
       escapeValue: false,
     },
@@ -16,6 +19,7 @@ const __ = (str, ...args) =>
 // Translate: Returns null if not exist. Used for format controller
 const _$ = (str, ...args) =>
   translate(str, ...args, {
+    keySeparator: '.',
     defaultValue: null,
     interpolation: {
       escapeValue: false,
@@ -43,9 +47,14 @@ const parseFrequency = times => {
   }
 }
 
+const HAN_NUMBERS = '〇一二三四五六七八九'.split('')
+
+const localizeNumber = num =>
+  ['zh-CN', 'zh-TW', 'ja-JP'].includes(language) ? HAN_NUMBERS[num] : num
+
 const parseOrdinalize = num => {
   if (!_$('req.option.ordinalize')) {
-    return num
+    return localizeNumber(num)
   }
   return inflection.ordinalize(`${num}`)
 }
@@ -127,6 +136,9 @@ const parseGroup = group => {
     ? parseShipClass(group.shipclass, group.amount)
     : parseShip(group.ship, group.amount)
   const flagship = group.flagship ? _$('req.group.flagship') : ''
+  const place = group.place
+    ? _$('req.group.place', { place: parseOrdinalize(group.place) })
+    : ''
   const note = group.note
     ? _$('req.group.note', { note: parseShip(group.note) })
     : ''
@@ -136,6 +148,7 @@ const parseGroup = group => {
     amount,
     lv,
     flagship,
+    place,
     note,
   })
 }
@@ -256,7 +269,7 @@ class Requirement {
         })
       : ''
     const result = this.result
-      ? _$('req.sortie.result', { result: __(`req.result.${this.result}`) })
+      ? _$('req.sortie.result', { result: _$(`req.result.${this.result}`) })
       : _$('req.sortie.!result') || ''
     const times = _$('req.sortie.times', { times: parseFrequency(this.times) })
     const groups = this.groups
@@ -645,7 +658,7 @@ class Requirement {
       ? this.consumptions
           .map(consumption =>
             _$('req.modernization.consumption', {
-              ship: __(consumption.ship),
+              ship: parseShip(consumption.ship),
               amount: consumption.amount,
             }),
           )
@@ -668,7 +681,8 @@ class Requirement {
   }
 }
 
-export default _translate => {
+export default (_translate, _language = 'en-US') => {
   translate = _translate
+  language = _language
   return parseRequirement
 }

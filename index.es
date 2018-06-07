@@ -26,21 +26,24 @@ import { reducer, readQuestInfo } from './redux'
 const EXTENSION_KEY = 'poi-plugin-quest-info'
 const pluginDataSelector = extensionSelectorFactory(EXTENSION_KEY)
 
-const __ = i18next.getFixedT(window.language, 'poi-plugin-quest-info')
+const __ = i18next.getFixedT(window.language, [
+  'poi-plugin-quest-info',
+  'resources',
+])
 
 const filterNames = [
-  'Composition Quest',
-  'Sortie Quest',
-  'Exercise Quest',
-  'Expedition Quest',
-  'Supply/Docking Quest',
-  'Arsenal Quest',
-  'Modernization Quest',
-  'Marriage Quest',
-  'Daily Quest',
-  'Weekly Quest',
-  'Monthly Quest',
-  'Quarterly Quest',
+  'Composition',
+  'Sortie',
+  'Exercise',
+  'Expedition',
+  'Supply/Docking',
+  'Arsenal',
+  'Modernization',
+  'Marriage',
+  'Daily',
+  'Weekly',
+  'Monthly',
+  'Quarterly',
 ]
 
 const categoryNames = [
@@ -64,13 +67,13 @@ const categoryColors = [
 ]
 
 const typeNames = [
-  'One-time Quest',
-  'Daily Quest',
-  'Weekly Quest',
+  'One-time',
+  'Daily',
+  'Weekly',
   '-3rd/-7th/-0th',
   '-2nd/-8th',
-  'Monthly Quest',
-  'Quarterly Quest',
+  'Monthly',
+  'Quarterly',
 ]
 
 const FilterItem = ({ index }) => (

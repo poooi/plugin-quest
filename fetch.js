@@ -24,16 +24,36 @@ const LOCALES = ['zh-CN', 'zh-TW', 'ja-JP', 'en-US']
 
 const initI18n = async () => {
   const res = await Promise.map(LOCALES, async locale => {
-    const data = await fs.readJSON(
+    const pluginData = await fs.readJSON(
       path.resolve(__dirname, `./assets/i18n/${locale}.json`),
     )
-    return [locale, { 'poi-plugin-quest-info': data }]
+    const resources = await fs.readJSON(
+      path.resolve(__dirname, `./resources/${locale}.json`),
+    )
+    return [locale, { resources, 'poi-plugin-quest-info': pluginData }]
   })
 
   i18next.init({
     resources: fromPairs(res),
   })
 }
+
+const fetchResource = () =>
+  Promise.map(LOCALES, async locale => {
+    const resp = await fetch(
+      `https://raw.githubusercontent.com/poooi/plugin-translator/master/i18n/${locale}.json`,
+      {
+        agent: proxy ? new HttpsProxyAgent(proxy) : null,
+      },
+    )
+    console.log('fetched resource')
+    const content = await resp.json()
+    await fs.outputJSON(
+      path.resolve(__dirname, `./resources/${locale}.json`),
+      content,
+      { spaces: 2 },
+    )
+  })
 
 const main = async () => {
   try {
@@ -57,11 +77,15 @@ const main = async () => {
       )
     }
 
+    await fetchResource()
     await initI18n()
 
     await Promise.each(['zh-CN', 'zh-TW', 'ja-JP', 'en-US'], async lng => {
-      const translate = i18next.getFixedT(lng, 'poi-plugin-quest-info')
-      const reqstr = generateReqstr(translate)
+      const translate = i18next.getFixedT(lng, [
+        'poi-plugin-quest-info',
+        'resources',
+      ])
+      const reqstr = generateReqstr(translate, lng)
       const result = map(content, quest => {
         try {
           return [quest.game_id, reqstr(quest.requirements)]
