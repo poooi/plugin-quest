@@ -19,6 +19,7 @@ const __ = (str, ...args) =>
 // Translate: Returns null if not exist. Used for format controller
 const _$ = (str, ...args) =>
   translate(str, ...args, {
+    keySeparator: '.',
     defaultValue: null,
     interpolation: {
       escapeValue: false,
@@ -268,7 +269,7 @@ class Requirement {
         })
       : ''
     const result = this.result
-      ? _$('req.sortie.result', { result: __(`req.result.${this.result}`) })
+      ? _$('req.sortie.result', { result: _$(`req.result.${this.result}`) })
       : _$('req.sortie.!result') || ''
     const times = _$('req.sortie.times', { times: parseFrequency(this.times) })
     const groups = this.groups
