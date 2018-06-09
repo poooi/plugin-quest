@@ -665,7 +665,7 @@ class Requirement {
           .join(_$('req.modernization.delim'))
       : null
     return _$('req.modernization.main', {
-      ship: this.ship,
+      ship: __(this.ship),
       times: parseFrequency(this.times),
       consumptions: consumptions
         ? _$('req.modernization.consumptions', {
