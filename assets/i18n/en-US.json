@@ -12,19 +12,22 @@
   "水母": "AV",
   "空母": "CV",
   "軽母": "CVL",
-  "装母": "armored carrier",
+  "装母": "CVB",
   "戦艦": "BB",
   "低速戦艦": "slow BB",
   "航戦": "BBV",
   "高速艦": "fast ship",
   "潜水艦": "SS",
   "潜水空母": "SSV",
-  "潜水母艦": "submarine tender (Taigei)",
+  "潜水母艦": "AS (Taigei)",
+  "海防艦": "DE",
 
   "敵補給艦": "transport ship",
   "敵潜水艦": "submarine",
   "敵空母": "CV",
   "敵軽母": "CVL",
+
+  "電探": "radar",
 
   "req": {
     "option": {
