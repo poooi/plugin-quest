@@ -1621,11 +1621,11 @@
       "category": "fleet",
       "groups": [
         {
-          "ship": [
-            "大和型",
-            "長門型",
-            "伊勢型",
-            "扶桑型"
+          "shipclass": [
+            "大和",
+            "長門",
+            "伊勢",
+            "扶桑"
           ],
           "amount": 3
         },
@@ -3015,16 +3015,14 @@
           "flagship": true
         },
         {
-          "ship": "鈴谷改二"
+          "ship": "鈴谷改二",
+          "place": 2
         },
         {
           "ship": "最上改"
         },
         {
           "ship": "三隈改"
-        },
-        {
-          "ship": "鈴谷改二"
         }
       ],
       "fleetid": 1
@@ -3059,7 +3057,26 @@
       "category": "fleet",
       "groups": [
         {
-          "ship": "伊勢改、日向改(旗艦及二番艦、練度50以上)"
+          "ship": [
+            "伊勢改",
+            "日向改"
+          ],
+          "flagship": true,
+          "lv": [
+            50,
+            999
+          ]
+        },
+        {
+          "ship": [
+            "伊勢改",
+            "日向改"
+          ],
+          "place": 2,
+          "lv": [
+            50,
+            999
+          ]
         },
         {
           "ship": "軽巡",
@@ -3212,7 +3229,10 @@
       "category": "fleet",
       "groups": [
         {
-          "ship": "Saratoga　Mk.Ⅱ 或 Mod.2",
+          "ship": [
+            "Saratoga Mk.II",
+            "Saratoga Mk.II Mod.2"
+          ],
           "flagship": true
         },
         {
@@ -3311,7 +3331,7 @@
       "category": "fleet",
       "groups": [
         {
-          "ship": "(第三艦隊)最上"
+          "ship": "最上"
         },
         {
           "ship": "時雨"
@@ -3325,7 +3345,8 @@
         {
           "ship": "山雲"
         }
-      ]
+      ],
+      "fleetid": 3
     }
   },
   {
@@ -3553,7 +3574,10 @@
           "amount": 1
         },
         {
-          "ship": "霞改二/改二乙",
+          "ship": [
+            "霞改二",
+            "霞改二乙"
+          ],
           "amount": 1
         },
         {
@@ -5483,11 +5507,11 @@
       "times": 1,
       "groups": [
         {
-          "ship": [
-            "大和型",
-            "長門型",
-            "伊勢型",
-            "扶桑型"
+          "shipclass": [
+            "大和",
+            "長門",
+            "伊勢",
+            "扶桑"
           ],
           "amount": 3
         },
@@ -7372,51 +7396,20 @@
         {
           "category": "sortie",
           "times": 1,
-          "map": "2-2",
+          "map": [
+            "2-2",
+            "2-3",
+            "2-4",
+            "2-5"
+          ],
           "boss": true,
           "result": "A",
           "groups": [
             {
-              "ship": "夕雲型/陽炎型",
-              "amount": 2
-            }
-          ]
-        },
-        {
-          "category": "sortie",
-          "times": 1,
-          "map": "2-3",
-          "boss": true,
-          "result": "A",
-          "groups": [
-            {
-              "ship": "夕雲型/陽炎型",
-              "amount": 2
-            }
-          ]
-        },
-        {
-          "category": "sortie",
-          "times": 1,
-          "map": "2-4",
-          "boss": true,
-          "result": "A",
-          "groups": [
-            {
-              "ship": "夕雲型/陽炎型",
-              "amount": 2
-            }
-          ]
-        },
-        {
-          "category": "sortie",
-          "times": 1,
-          "map": "2-5",
-          "boss": true,
-          "result": "A",
-          "groups": [
-            {
-              "ship": "夕雲型/陽炎型",
+              "shipclass": [
+                "夕雲",
+                "陽炎"
+              ],
               "amount": 2
             }
           ]
@@ -7457,7 +7450,7 @@
       676
     ],
     "requirements": {
-      "category": "and",
+      "category": "then",
       "list": [
         {
           "category": "excercise",
@@ -10355,7 +10348,11 @@
           "convert": true
         }
       ],
-      "secretary": "伊401 / 伊14 / 伊13"
+      "secretary": [
+        "伊401",
+        "伊14",
+        "伊13"
+      ]
     }
   },
   {
@@ -10773,7 +10770,7 @@
       "category": "equipexchange",
       "scraps": [
         {
-          "name": "小口径主炮",
+          "name": "小口径主砲",
           "amount": 16
         }
       ],
@@ -10873,7 +10870,7 @@
       "category": "equipexchange",
       "scraps": [
         {
-          "name": "機銃",
+          "name": "対空機銃",
           "amount": 10
         }
       ],
@@ -11148,7 +11145,7 @@
       ],
       "scraps": [
         {
-          "name": "電探系装備",
+          "name": "電探",
           "amount": 3
         },
         {
@@ -11228,7 +11225,7 @@
       "category": "equipexchange",
       "scraps": [
         {
-          "name": "機銃",
+          "name": "対空機銃",
           "amount": 3
         }
       ],
@@ -11284,7 +11281,7 @@
           "amount": 6
         },
         {
-          "name": "機銃",
+          "name": "対空機銃",
           "amount": 4
         }
       ],
@@ -11560,7 +11557,7 @@
       "category": "equipexchange",
       "scraps": [
         {
-          "name": "機銃",
+          "name": "対空機銃",
           "amount": 4
         },
         {
@@ -11709,7 +11706,10 @@
       "ship": "空母",
       "consumptions": [
         {
-          "ship": "轻母/空母",
+          "ship": [
+            "軽母",
+            "空母"
+          ],
           "amount": 5
         }
       ],
@@ -11842,7 +11842,11 @@
             {
               "ship": [
                 "水母",
-                "巡洋艦"
+                "軽巡洋艦",
+                "練習巡洋艦",
+                "重雷装巡洋艦",
+                "航空巡洋艦",
+                "重巡洋艦"
               ],
               "flagship": true
             },
@@ -14002,7 +14006,13 @@
       "result": "A",
       "groups": [
         {
-          "ship": "巡洋艦",
+          "ship": [
+            "軽巡洋艦",
+            "練習巡洋艦",
+            "重雷装巡洋艦",
+            "航空巡洋艦",
+            "重巡洋艦"
+          ],
           "flagship": true
         },
         {
@@ -14198,39 +14208,22 @@
       855
     ],
     "requirements": {
-      "category": "and",
-      "list": [
+      "category": "sortie",
+      "times": 1,
+      "map": [
+        "4-5",
+        "5-5"
+      ],
+      "boss": true,
+      "result": "S",
+      "groups": [
         {
-          "category": "sortie",
-          "times": 1,
-          "map": "4-5",
-          "boss": true,
-          "result": "S",
-          "groups": [
-            {
-              "ship": "長門改二",
-              "flagship": true
-            },
-            {
-              "ship": "陸奥改(二番艦)"
-            }
-          ]
+          "ship": "長門改二",
+          "flagship": true
         },
         {
-          "category": "sortie",
-          "times": 1,
-          "map": "5-5",
-          "boss": true,
-          "result": "S",
-          "groups": [
-            {
-              "ship": "長門改二",
-              "flagship": true
-            },
-            {
-              "ship": "陸奥改(二番艦)"
-            }
-          ]
+          "ship": "陸奥改",
+          "place": 2
         }
       ]
     }
@@ -14425,7 +14418,10 @@
         {
           "category": "sortie",
           "times": 1,
-          "map": "4-5",
+          "map": [
+            "4-5",
+            "6-2"
+          ],
           "boss": true,
           "result": "S",
           "groups": [
@@ -14434,31 +14430,18 @@
               "flagship": true
             },
             {
-              "ship": [
-                "鈴谷改二(二番艦)",
-                "最上改",
-                "三隈改"
-              ]
-            }
-          ]
-        },
-        {
-          "category": "sortie",
-          "times": 1,
-          "map": "6-2",
-          "boss": true,
-          "result": "S",
-          "groups": [
-            {
-              "ship": "熊野改二",
-              "flagship": true
+              "ship": "鈴谷改二",
+              "place": 2
             },
             {
-              "ship": [
-                "鈴谷改二(二番艦)",
-                "最上改",
-                "三隈改"
-              ]
+              "ship": "最上改"
+            },
+            {
+              "ship": "三隈改"
+            },
+            {
+              "ship": "艦",
+              "amount": 2
             }
           ]
         }
@@ -14498,47 +14481,44 @@
       182
     ],
     "requirements": {
-      "category": "and",
-      "list": [
+      "category": "sortie",
+      "times": 1,
+      "map": [
+        "2-5",
+        "3-5"
+      ],
+      "boss": true,
+      "result": "A",
+      "groups": [
         {
-          "category": "sortie",
-          "times": 1,
-          "map": "2-5",
-          "boss": true,
-          "result": "A",
-          "groups": [
-            {
-              "ship": "伊勢改、日向改(旗艦及二番艦、練度50以上)"
-            },
-            {
-              "ship": "軽巡",
-              "amount": 1
-            },
-            {
-              "ship": "駆逐",
-              "amount": 2
-            }
+          "ship": [
+            "伊勢改",
+            "日向改"
+          ],
+          "flagship": true,
+          "lv": [
+            50,
+            999
           ]
         },
         {
-          "category": "sortie",
-          "times": 1,
-          "map": "3-5",
-          "boss": true,
-          "result": "A",
-          "groups": [
-            {
-              "ship": "伊勢改、日向改(旗艦及二番艦、練度50以上)"
-            },
-            {
-              "ship": "軽巡",
-              "amount": 1
-            },
-            {
-              "ship": "駆逐",
-              "amount": 2
-            }
+          "ship": [
+            "伊勢改",
+            "日向改"
+          ],
+          "place": 2,
+          "lv": [
+            50,
+            999
           ]
+        },
+        {
+          "ship": "軽巡",
+          "amount": 1
+        },
+        {
+          "ship": "駆逐",
+          "amount": 2
         }
       ]
     }
@@ -14660,7 +14640,11 @@
           "map": "1-6",
           "groups": [
             {
-              "ship": "航空戦艦2隻或補給艦"
+              "ship": [
+                "航空戦艦",
+                "補給艦"
+              ],
+              "amount": 2
             }
           ]
         }
@@ -14963,58 +14947,26 @@
     ],
     "prerequisite": [],
     "requirements": {
-      "category": "and",
-      "list": [
+      "category": "sortie",
+      "times": 1,
+      "map": [
+        "1-3",
+        "1-4",
+        "1-5"
+      ],
+      "boss": true,
+      "result": "A",
+      "groups": [
         {
-          "category": "sortie",
-          "times": 1,
-          "map": "1-3",
-          "boss": true,
-          "result": "A",
-          "groups": [
-            {
-              "ship": "軽巡洋艦",
-              "flagship": true
-            },
-            {
-              "ship": "駆逐艦/海防艦",
-              "amount": 2
-            }
-          ]
+          "ship": "軽巡",
+          "flagship": true
         },
         {
-          "category": "sortie",
-          "times": 1,
-          "map": "1-4",
-          "boss": true,
-          "result": "A",
-          "groups": [
-            {
-              "ship": "軽巡洋艦",
-              "flagship": true
-            },
-            {
-              "ship": "駆逐艦/海防艦",
-              "amount": 2
-            }
-          ]
-        },
-        {
-          "category": "sortie",
-          "times": 1,
-          "map": "1-5",
-          "boss": true,
-          "result": "A",
-          "groups": [
-            {
-              "ship": "軽巡洋艦",
-              "flagship": true
-            },
-            {
-              "ship": "駆逐艦/海防艦",
-              "amount": 2
-            }
-          ]
+          "ship": [
+            "駆逐",
+            "海防艦"
+          ],
+          "amount": 2
         }
       ]
     }
@@ -15139,7 +15091,10 @@
           "result": "S",
           "groups": [
             {
-              "ship": "朝潮改二(丁)"
+              "ship": [
+                "朝潮改二",
+                "朝潮改二丁"
+              ]
             },
             {
               "ship": "満潮改二"
@@ -15160,7 +15115,10 @@
           "result": "S",
           "groups": [
             {
-              "ship": "朝潮改二(丁)"
+              "ship": [
+                "朝潮改二",
+                "朝潮改二丁"
+              ]
             },
             {
               "ship": "満潮改二"
@@ -15225,7 +15183,7 @@
               "amount": 1
             },
             {
-              "ship": "自由艦",
+              "ship": "艦",
               "amount": 5
             }
           ]
@@ -15259,7 +15217,7 @@
               "amount": 1
             },
             {
-              "ship": "自由艦",
+              "ship": "艦",
               "amount": 5
             }
           ]
@@ -15654,7 +15612,7 @@
             {
               "ship": [
                 "駆逐",
-                "海防"
+                "海防艦"
               ],
               "amount": [
                 3,
@@ -15678,7 +15636,7 @@
             {
               "ship": [
                 "駆逐",
-                "海防"
+                "海防艦"
               ],
               "amount": [
                 3,
@@ -15915,7 +15873,10 @@
           "amount": 1
         },
         {
-          "ship": "霞改二/改二乙",
+          "ship": [
+            "霞改二",
+            "霞改二乙"
+          ],
           "amount": 1
         },
         {
