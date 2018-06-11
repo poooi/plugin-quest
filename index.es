@@ -135,9 +135,12 @@ RewardItem.propTypes = {
 // 'W' represents wedding/marriage
 
 @translate(NS, { nsMode: 'fallback' })
-@connect(pluginDataSelector, {
-  readQuestInfo,
-})
+@connect(
+  pluginDataSelector,
+  {
+    readQuestInfo,
+  },
+)
 class PluginQuest extends Component {
   static initFilterFuncs = () => {
     const filterFuncs = {}
@@ -151,18 +154,6 @@ class PluginQuest extends Component {
     filterFuncs[10] = quest => quest.type === 6
     filterFuncs[11] = quest => quest.type === 7
     return filterFuncs
-  }
-
-  static renderQuestOption(quest, activeQuestId) {
-    return (
-      <MenuItem
-        key={quest.game_id}
-        eventKey={quest.game_id}
-        active={quest.game_id === activeQuestId}
-      >
-        <QuestItem quest={quest} />
-      </MenuItem>
-    )
   }
 
   static filterQuestByStatus(quests, questStatus, status) {
@@ -284,6 +275,18 @@ class PluginQuest extends Component {
 
     shell.openExternal(
       `https://github.com/kcwikizh/kcdata/issues/new?title=${title}`,
+    )
+  }
+
+  static renderQuestOption(quest, activeQuestId) {
+    return (
+      <MenuItem
+        key={quest.game_id}
+        eventKey={quest.game_id}
+        active={quest.game_id === activeQuestId}
+      >
+        <QuestItem quest={quest} />
+      </MenuItem>
     )
   }
 
