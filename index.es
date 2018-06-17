@@ -135,12 +135,9 @@ RewardItem.propTypes = {
 // 'W' represents wedding/marriage
 
 @translate(NS, { nsMode: 'fallback' })
-@connect(
-  pluginDataSelector,
-  {
-    readQuestInfo,
-  },
-)
+@connect(pluginDataSelector, {
+  readQuestInfo,
+})
 class PluginQuest extends Component {
   static initFilterFuncs = () => {
     const filterFuncs = {}
@@ -167,6 +164,18 @@ class PluginQuest extends Component {
     quests: PropTypes.arrayOf(PropTypes.object).isRequired,
     questStatus: PropTypes.objectOf(PropTypes.object).isRequired,
     t: PropTypes.func.isRequired,
+  }
+
+  static renderQuestOption(quest, activeQuestId) {
+    return (
+      <MenuItem
+        key={quest.game_id}
+        eventKey={quest.game_id}
+        active={quest.game_id === activeQuestId}
+      >
+        <QuestItem quest={quest} />
+      </MenuItem>
+    )
   }
 
   constructor(props) {
@@ -275,18 +284,6 @@ class PluginQuest extends Component {
 
     shell.openExternal(
       `https://github.com/kcwikizh/kcdata/issues/new?title=${title}`,
-    )
-  }
-
-  static renderQuestOption(quest, activeQuestId) {
-    return (
-      <MenuItem
-        key={quest.game_id}
-        eventKey={quest.game_id}
-        active={quest.game_id === activeQuestId}
-      >
-        <QuestItem quest={quest} />
-      </MenuItem>
     )
   }
 
@@ -451,10 +448,9 @@ class PluginQuest extends Component {
                                     reward.choices,
                                   )}`}
                                 >
-                                  {t(
-                                    'Choose 1 of the following %s',
-                                    reward.choices.length,
-                                  )}
+                                  {t('multiple_choices', {
+                                    amount: reward.choices.length,
+                                  })}
                                   <ul>
                                     {reward.choices.map(choice => (
                                       <RewardItem
