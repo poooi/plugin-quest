@@ -55,7 +55,7 @@
       "note": " ({{note}})",
       "flagship": " as flagship",
       "place": " as {{place}} ship",
-      "class": " {{class}} Class"
+      "class": "{{class}} Class"
     },
 
     "groups": {
