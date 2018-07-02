@@ -65,7 +65,7 @@
 
   "Undocumented quest, please wait for updates": "任務未收錄，請等待更新",
 
-  "Choose 1 of the following": "從以下 {{amount}} 項中選擇一項",
+  "multiple_choices": "從以下 {{amount}} 項中選擇一項",
 
   "The info for this quest is incorrect, report it": "這個任務的信息有錯誤，我要報錯",
 
