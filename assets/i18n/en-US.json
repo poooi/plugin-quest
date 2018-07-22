@@ -29,7 +29,7 @@
 
   "電探": "radar",
 
-  "multiple_choices": "Choose 1 from the following {{amout}}",
+  "multiple_choices": "Choose 1 from the following {{amount}}",
 
   "req": {
     "option": {
