@@ -1,8 +1,4 @@
-require('babel-register')({
-  extensions: ['.es'],
-  presets: ['es2017-node7', 'stage-0', 'react'],
-  plugins: ['add-module-exports', 'closure-elimination'],
-})
+require('@babel/register')(require('poi-util-transpile/babel.config.js'))
 
 const fetch = require('node-fetch')
 const fs = require('fs-extra')
