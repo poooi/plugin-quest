@@ -29,5 +29,5 @@ module.exports = {
     'no-confusing-arrow': 'off',
     'no-console': 'off',
     'prettier/prettier': 'error',
-	},
+  },
 }

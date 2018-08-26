@@ -4,10 +4,11 @@
   "description": "show quest info",
   "main": "index",
   "scripts": {
-    "fetch": "node fetch.es",
+    "fetch": "node fetch.js",
     "reset": "git clean -f && git checkout .",
     "prepack": "poi-util-transpile --sm --replace",
     "postpublish": "npm run reset",
+    "lint": "eslint --ext .es .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
