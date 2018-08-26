@@ -180,6 +180,9 @@ const parseResources = resources => {
 
 // const reqstrCategories = {}
 const parseRequirement = requirements => {
+  if (typeof requirements === 'string') {
+    return requirements
+  }
   try {
     const { category } = requirements
     const req = new Requirement(requirements) // eslint-disable-line no-use-before-define

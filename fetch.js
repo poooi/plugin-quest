@@ -51,27 +51,87 @@ const fetchResource = () =>
     )
   })
 
+const dataSources = [
+  {
+    source: 'https://kcwikizh.github.io/kcdata/quest/poi.json',
+    file: 'data',
+    keep: true,
+  },
+  {
+    source:
+      'https://raw.githubusercontent.com/KC3Kai/kc3-translations/master/data/en/quests.json',
+    file: 'KC3Kai',
+    keep: false,
+  },
+]
+
+const fixKC3KaiString = s => {
+  const r = s
+    .replace(/[^\x00-\x7F]/g, '') // eslint-disable-line no-control-regex
+    .replace(/\s?Press F10 to clear the overlay\.?/g, '')
+    .replace(/\s?Overlay: F10\.?/g, '')
+    .replace(/\s?F10 will clear the overlay\.?/g, '')
+  if (r.match(/overlay/i)) {
+    console.log(`KC3Kai string unfixed: ${s}`)
+  }
+  return r
+}
+
 const main = async () => {
   try {
-    let content
-    if (local) {
-      content = await fs.readJSON(path.resolve(__dirname, './assets/data.json'))
-      console.log('read from local file')
-    } else {
-      const resp = await fetch(
-        'https://kcwikizh.github.io/kcdata/quest/poi.json',
-        {
-          agent: proxy ? new HttpsProxyAgent(proxy) : null,
-        },
-      )
-      console.log('fetched')
-      content = await resp.json()
-      await fs.outputJSON(
-        path.resolve(__dirname, './assets/data.json'),
-        content,
-        { spaces: 2 },
-      )
-    }
+    const [content, contentKC3Kai] = await Promise.map(
+      dataSources,
+      async ({ source, file, keep }) => {
+        let data
+        if (local && keep) {
+          data = await fs.readJSON(
+            path.resolve(__dirname, `./assets/${file}.json`),
+          )
+          console.log(`${file} read from local file`)
+        } else {
+          const resp = await fetch(source, {
+            agent: proxy ? new HttpsProxyAgent(proxy) : null,
+          })
+          data = await resp.json()
+          console.log(`${file} fetched`)
+          if (keep) {
+            fs.outputJSON(
+              path.resolve(__dirname, `./assets/${file}.json`),
+              data,
+              {
+                spaces: 2,
+              },
+            )
+          }
+        }
+        return data
+      },
+    )
+
+    Object.keys(contentKC3Kai).forEach(no => {
+      const id = parseInt(no, 10)
+      const quest = content.find(e => e.game_id === id)
+      const { code, name, desc, memo } = contentKC3Kai[no]
+      if (quest) {
+        quest.code = code
+        quest.title = name
+        quest.desc = desc && fixKC3KaiString(desc)
+        quest.memo = memo && fixKC3KaiString(memo)
+      } else {
+        console.log(`KC3Kai only quest: ${id} ${code} ${name}`)
+        content.push({
+          code,
+          title: name,
+          desc: desc && fixKC3KaiString(desc),
+          memo: memo && fixKC3KaiString(memo),
+          game_id: id,
+        })
+      }
+    })
+    console.log(`KC3Kai data merged`)
+    fs.outputJSON(path.resolve(__dirname, `./assets/data.json`), content, {
+      spaces: 2,
+    })
 
     await fetchResource()
     await initI18n()
@@ -84,7 +144,7 @@ const main = async () => {
       const reqstr = generateReqstr(translate, lng)
       const result = map(content, quest => {
         try {
-          return [quest.game_id, reqstr(quest.requirements)]
+          return [quest.game_id, reqstr(quest.requirements || quest.desc)]
         } catch (e) {
           return [quest.game_id, '']
         }
