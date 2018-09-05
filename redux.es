@@ -3,7 +3,7 @@ import { forEach, range, get, keyBy, mapValues } from 'lodash'
 
 import generateReqstr from './reqstr'
 
-const { copyIfSame } = window
+import { copyIfSame } from 'views/utils/tools'
 
 const initState = {
   quests: {},
