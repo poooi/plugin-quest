@@ -29,6 +29,8 @@ const pluginDataSelector = extensionSelectorFactory(EXTENSION_KEY)
 
 const NS = [EXTENSION_KEY, 'resources']
 
+const { ipc } = window
+
 const filterNames = [
   'Composition',
   'Sortie',
@@ -125,9 +127,9 @@ const RewardItem = translate(NS, { nsMode: 'fallback' })(({ t, reward }) => {
 
 RewardItem.propTypes = {
   reward: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    amount: PropTypes.number.isRequired,
-    category: PropTypes.number.isRequired,
+    name: PropTypes.string,
+    amount: PropTypes.number,
+    category: PropTypes.number,
   }).isRequired,
   t: PropTypes.func.isRequired,
 }
@@ -135,9 +137,12 @@ RewardItem.propTypes = {
 // 'W' represents wedding/marriage
 
 @translate(NS, { nsMode: 'fallback' })
-@connect(pluginDataSelector, {
-  readQuestInfo,
-})
+@connect(
+  pluginDataSelector,
+  {
+    readQuestInfo,
+  },
+)
 class PluginQuest extends Component {
   static initFilterFuncs = () => {
     const filterFuncs = {}
@@ -166,18 +171,6 @@ class PluginQuest extends Component {
     t: PropTypes.func.isRequired,
   }
 
-  static renderQuestOption(quest, activeQuestId) {
-    return (
-      <MenuItem
-        key={quest.game_id}
-        eventKey={quest.game_id}
-        active={quest.game_id === activeQuestId}
-      >
-        <QuestItem quest={quest} />
-      </MenuItem>
-    )
-  }
-
   constructor(props) {
     super(props)
     this.filterFuncs = this.constructor.initFilterFuncs()
@@ -198,10 +191,14 @@ class PluginQuest extends Component {
 
   componentDidMount() {
     window.addEventListener('game.request', this.handleRequest)
+    ipc.register('quest-info', {
+      switchTo: this.handleSwitchTo,
+    })
   }
 
   componentWillUnmount() {
     window.removeEventListener('game.request', this.handleRequest)
+    ipc.unregister('quest-info')
   }
 
   getDefaultQuestId(questFilter = 0) {
@@ -215,6 +212,10 @@ class PluginQuest extends Component {
       '0.game_id',
       0,
     )
+  }
+
+  handleSwitchTo = questId => {
+    this.handlePrereqClick(questId)()
   }
 
   handleFileterSelect = eventKey => {
@@ -314,6 +315,18 @@ class PluginQuest extends Component {
           </a>
         </div>
       </OverlayTrigger>
+    )
+  }
+
+  static renderQuestOption(quest, activeQuestId) {
+    return (
+      <MenuItem
+        key={quest.game_id}
+        eventKey={quest.game_id}
+        active={quest.game_id === activeQuestId}
+      >
+        <QuestItem quest={quest} />
+      </MenuItem>
     )
   }
 
