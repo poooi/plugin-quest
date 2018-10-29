@@ -145,10 +145,10 @@
     },
 
     "excercise": {
-      "main": "{{daily}}{{times}}回演習{{victory}}",
+      "main": "{{groups}}{{daily}}{{times}}回演習{{victory}}",
       "victory": "で勝利",
       "daily": "本日中に",
-      "groups": "、{{groups}}で"
+      "groups": "{{groups}}で"
     },
 
     "modelconversion": {
