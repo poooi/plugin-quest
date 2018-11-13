@@ -90,6 +90,7 @@
   "192": "Have 1 Arare Kai Ni, 1 Kasumi Kai Ni&amp;#x2F;Kasumi Kai Ni B, 1 Kagerou Kai and 1 Shiranui Kai in your fleet",
   "193": "Have Kagerou Kai Ni, Shiranui Kai Ni, Kuroshio Kai Ni and 3 Kagerou Class&amp;#x2F;Yuugumo Classes of level 70 or more in your fleet",
   "194": "Have Tenryuu Kai Ni and Tatsuta Kai Ni in your fleet",
+  "195": "Have Isokaze B Kai, Hamakaze B Kai, Urakaze D Kai and Tanikaze D Kai in your fleet",
   "201": "Sortie once and obtain a B-Rank or better",
   "202": "Sortie once",
   "203": "Sortie to World 1-1 once and obtain a B-Rank or better at the boss",
@@ -174,6 +175,7 @@
   "295": "Sortie to World 2-3 once with Natori as flagship, Isuzu, Kinu and 3 any ships and obtain an S-Rank at the boss",
   "296": "Sortie to World 3-3 once with 2 CVs, 2 CAV&amp;amp;#x2F;BBVs and 2 DDs and obtain an S-Rank at the boss",
   "297": "Sortie to World 2-5 once with Kasumi as flagship, Ashigara, Ooyodo, Asashimo, Kiyoshimo and 1 any ship and obtain an S-Rank at the boss",
+  "298": "Sortie to World 2-1,2-2,2-3,2-4 once with any 2 from Akebono&amp;amp;#x2F;Ushio&amp;amp;#x2F;Sazanami&amp;amp;#x2F;Oboro and obtain an S-Rank at the boss",
   "301": "Perform 1 excercise",
   "302": "Perform 20 excercises with victory",
   "303": "Perform 3 excercises",
@@ -196,6 +198,9 @@
   "323": "Perform 4 excercises with victory within one day with 4 Kagerou Class&amp;amp;#x2F;Yuugumo Classes of level 70 or more",
   "324": "Perform 3 excercises with victory within one day with Ise Kai Ni as flagship, 2 DDs and 3 any ships",
   "325": "Perform 4 excercises with victory within one day with Yuugumo Kai Ni, Naganami Kai Ni and 4 any ships",
+  "326": "Perform 8 excercises with victory within one day",
+  "327": "Perform 4 excercises with victory within one day with 4 Asashio Classes",
+  "328": "Perform 4 excercises with victory within one day with Isokaze B Kai, Hamakaze B Kai, Urakaze D Kai and Tanikaze D Kai",
   "401": "Complete any expeditions once",
   "402": "Complete any expeditions 3 times",
   "403": "Complete any expeditions 10 times",
@@ -307,6 +312,8 @@
   "684": "Equip an UNLOCKED Suisei Model 22 (634 Air Group) on Ise Kai Ni&#39;s 3rd slot and as secretary, then scrap 3 Type 99 Dive Bomber, 3 Suisei, consuming 30 Development Material, 1 New Model Aerial Armament Material, 3000 Bauxite, consuming a Skilled Crew Member",
   "685": "Equip an UNLOCKED maxed modified 12.7cm Twin Gun Mount Model A Kai 2 on Fubuki&amp;#x2F;Shirayuki&amp;#x2F;Hatsuyuki&amp;#x2F;Miyuki&amp;#x2F;Murakumo&amp;#x2F;Isonami&amp;#x2F;Uranami&#39;s 1st slot and as secretary, then scrap 4 10cm Twin High-angle Gun Mount, 1 Type 94 Anti-Aircraft Fire Director, consuming 30 Development Material, 1 New Model Gun Mount Improvement Material, 900 Steel",
   "686": "Equip an UNLOCKED maxed modified 12.7cm Twin Gun Mount Model A Kai 2 on Fubuki&amp;#x2F;Shirayuki&amp;#x2F;Hatsuyuki&amp;#x2F;Miyuki&amp;#x2F;Murakumo&amp;#x2F;Isonami&amp;#x2F;Uranami&#39;s 1st slot and as secretary, then scrap 4 10cm Twin High-angle Gun Mount, 1 Type 94 Anti-Aircraft Fire Director, consuming 30 Development Material, 1 New Model Gun Mount Improvement Material, 900 Steel",
+  "687": "Equip an UNLOCKED maxed modified 12.7cm Twin Gun Mount Model B Kai 2 on Yuudachi Kai Ni&amp;#x2F;时雨改二&#39;s 1st slot and as secretary, then scrap 5 10cm Twin High-angle Gun Mount, 1 Type 94 Anti-Aircraft Fire Director, consuming 50 Development Material, 1 New Model Gun Mount Improvement Material, 1200 Steel",
+  "688": "Scrap 3 Carrier-based Fighter Aircraft, 3 Carrier-based Dive Bomber, 3 Carrier-based Torpedo Bomber, 3 Reconnaissance Seaplane. Have 1 Skilled Crew Member, consuming 1800 Bauxite",
   "701": "Perform 1 successful modernization",
   "702": "Perform 2 successful modernizations",
   "703": "Perform 15 successful modernizations",
@@ -387,5 +394,7 @@
   "886": "Sortie to World 6-5 3 times with Ise Kai Ni as flagship and 2 Destroyers and obtain an S-Rank at the boss",
   "887": "Sortie to World 1-2,1-4,1-5 once with Tenryuu, Tatsuta and 2 Destroyers and obtain an S-Rank at the boss; Sortie to World 1-6 once with Tenryuu, Tatsuta and 2 Destroyers and clear",
   "888": "Sortie to World 5-1,5-3,5-4 once with 4 Choukai&amp;amp;#x2F;Aoba&amp;amp;#x2F;Kinugasa&amp;amp;#x2F;Kako&amp;amp;#x2F;Furutaka&amp;amp;#x2F;Tenryuu&amp;amp;#x2F;Yuubaris and obtain an S-Rank at the boss",
-  "889": "Sortie to World 2-3,4-1,5-5,6-5 once with Shiratsuyu Kai Ni and Shigure Kai Ni and obtain an S-Rank at the boss"
+  "889": "Sortie to World 2-3,4-1,5-5,6-5 once with Shiratsuyu Kai Ni and Shigure Kai Ni and obtain an S-Rank at the boss",
+  "890": "Sortie to World 1-4,2-3,3-3,4-5 once with Choukai Kai Ni, Maya Kai Ni and 4 any ships and obtain an S-Rank at the boss",
+  "891": "Sortie to World 1-5,3-2,7-1,5-1 once with Isokaze B Kai, Hamakaze B Kai, Urakaze D Kai and Tanikaze D Kai and obtain an A-Rank or better at the boss"
 }
