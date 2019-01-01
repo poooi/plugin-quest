@@ -3085,6 +3085,10 @@
         {
           "ship": "駆逐",
           "amount": 2
+        },
+        {
+          "ship": "艦",
+          "amount": 1
         }
       ],
       "fleetid": 1
@@ -3514,7 +3518,8 @@
       }
     ],
     "prerequisite": [
-      680
+      680,
+      808
     ],
     "requirements": {
       "category": "fleet",
@@ -3725,6 +3730,51 @@
           "ship": "谷風丁改"
         }
       ]
+    }
+  },
+  {
+    "game_id": 196,
+    "wiki_id": "A91",
+    "category": 1,
+    "type": 1,
+    "name": "精鋭'第十駆逐隊'、抜錨準備！",
+    "detail": "甲型駆逐艦編成任務：夕雲型駆逐艦「夕雲改二」および「巻雲改二」の2隻から成る精鋭第十駆逐隊(2隻編成)を編成せよ！",
+    "reward_fuel": 200,
+    "reward_ammo": 0,
+    "reward_steel": 200,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {
+        "name": "戦闘糧食",
+        "amount": 1
+      },
+      {
+        "choices": [
+          {
+            "name": "高速修復材",
+            "amount": 5
+          },
+          {
+            "name": "特注家具職人",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "prerequisite": [
+      184
+    ],
+    "requirements": {
+      "category": "fleet",
+      "groups": [
+        {
+          "ship": "夕雲改二"
+        },
+        {
+          "ship": "巻雲改二"
+        }
+      ],
+      "disallowed": "他の艦"
     }
   },
   {
@@ -7127,6 +7177,81 @@
     }
   },
   {
+    "game_id": 299,
+    "wiki_id": "B125",
+    "category": 2,
+    "type": 1,
+    "name": "近海の警戒監視と哨戒活動を強化せよ！",
+    "detail": "軽巡旗艦、駆逐艦または海防艦2隻を含む艦隊を編成、南西諸島沖、製油所地帯沿岸、南西諸島防衛戦、南西諸島近海、バシー海峡を哨戒、敵艦隊を捕捉撃滅、近海の制海権を確立せよ！",
+    "reward_fuel": 800,
+    "reward_ammo": 800,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {
+        "choices": [
+          {
+            "name": "補強増設",
+            "amount": 1
+          },
+          {
+            "name": "勲章",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "choices": [
+          {
+            "name": "新型砲熕兵装資材",
+            "amount": 2
+          },
+          {
+            "name": "探照灯",
+            "amount": 2
+          },
+          {
+            "name": "戦闘詳報",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "prerequisite": [
+      303
+    ],
+    "requirements": {
+      "category": "sortie",
+      "map": [
+        "1-2",
+        "1-3",
+        "1-4",
+        "2-1",
+        "2-2"
+      ],
+      "boss": true,
+      "result": "S",
+      "times": 1,
+      "groups": [
+        {
+          "ship": "軽巡",
+          "flagship": true
+        },
+        {
+          "ship": [
+            "駆逐",
+            "海防艦"
+          ],
+          "amount": 2
+        },
+        {
+          "ship": "艦",
+          "amount": 3
+        }
+      ]
+    }
+  },
+  {
     "game_id": 301,
     "wiki_id": "C01",
     "category": 3,
@@ -7445,7 +7570,7 @@
   },
   {
     "game_id": 314,
-    "wiki_id": "C11",
+    "wiki_id": "C28",
     "category": 3,
     "type": 1,
     "name": "冬季大演習",
@@ -10999,57 +11124,6 @@
     }
   },
   {
-    "game_id": 657,
-    "wiki_id": "SF03",
-    "category": 6,
-    "type": 1,
-    "name": "春の準備任務：桃の節句準備！",
-    "detail": "春の準備任務：「14cm単装砲」を二つ廃棄、家具コイン5,000と「九九式艦爆」「61cm三連装魚雷」各二つを準備せよ！　※任務達成後、用意した家具コイン及び必要装備(低改修値のもの優先)は消費します。",
-    "reward_fuel": 0,
-    "reward_ammo": 0,
-    "reward_steel": 0,
-    "reward_bauxite": 0,
-    "reward_other": [
-      {
-        "name": "特注家具職人",
-        "amount": 1
-      },
-      {
-        "name": "菱餅",
-        "amount": 1
-      }
-    ],
-    "prerequisite": [
-      303,
-      604
-    ],
-    "requirements": {
-      "category": "equipexchange",
-      "equipments": [
-        {
-          "name": "九九式艦爆",
-          "amount": 2
-        },
-        {
-          "name": "61cm三連装魚雷",
-          "amount": 2
-        }
-      ],
-      "scraps": [
-        {
-          "name": "14cm単装砲",
-          "amount": 2
-        }
-      ],
-      "consumptions": [
-        {
-          "name": "家具コイン",
-          "amount": 5000
-        }
-      ]
-    }
-  },
-  {
     "game_id": 658,
     "wiki_id": "F50",
     "category": 6,
@@ -12662,6 +12736,144 @@
         0,
         0,
         1800
+      ]
+    }
+  },
+  {
+    "game_id": 689,
+    "wiki_id": "F80",
+    "category": 6,
+    "type": 1,
+    "name": "戦闘機隊戦力の拡充",
+    "detail": "戦闘機拡充任務：「艦戦」「水偵」各×4、「艦偵」×2装備を廃棄、熟練搭乗員×1、新型航空兵装資材×1、ボーキサイト3,000を準備せよ！（任務達成後、準備した資源・熟練搭乗員・新型航空兵装資材は消費）",
+    "reward_fuel": 0,
+    "reward_ammo": 100,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {
+        "choices": [
+          {
+            "name": "烈風改",
+            "amount": 1
+          },
+          {
+            "name": "三式戦 飛燕",
+            "amount": 2
+          },
+          {
+            "name": "Spitfire Mk.I",
+            "amount": 2
+          }
+        ]
+      }
+    ],
+    "prerequisite": [
+      204,
+      225,
+      303,
+      619,
+      673,
+      702
+    ],
+    "requirements": {
+      "category": "equipexchange",
+      "scraps": [
+        {
+          "name": "艦上戦闘機",
+          "amount": 4
+        },
+        {
+          "name": "水上偵察機",
+          "amount": 4
+        },
+        {
+          "name": "艦上偵察機",
+          "amount": 2
+        }
+      ],
+      "equipments": [
+        {
+          "name": "熟練搭乗員",
+          "amount": 1
+        },
+        {
+          "name": "新型航空兵装資材",
+          "amount": 1
+        }
+      ],
+      "resources": [
+        0,
+        0,
+        0,
+        3000
+      ]
+    }
+  },
+  {
+    "game_id": 690,
+    "wiki_id": "F81",
+    "category": 6,
+    "type": 1,
+    "name": "基地航空隊戦力の拡充",
+    "detail": "基地航空隊拡充任務：「艦戦」「艦爆」「艦攻」各×4装備を廃棄、熟練搭乗員×1、新型航空兵装資材×2、ボーキサイト4,800を準備せよ！（任務達成後、準備した資源・熟練搭乗員・新型航空兵装資材は消費）",
+    "reward_fuel": 0,
+    "reward_ammo": 200,
+    "reward_steel": 0,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {
+        "choices": [
+          {
+            "name": "雷電",
+            "amount": 1
+          },
+          {
+            "name": "試製東海",
+            "amount": 1
+          },
+          {
+            "name": "紫電一一型",
+            "amount": 2
+          }
+        ]
+      }
+    ],
+    "prerequisite": [
+      641,
+      689
+    ],
+    "requirements": {
+      "category": "equipexchange",
+      "scraps": [
+        {
+          "name": "艦上戦闘機",
+          "amount": 4
+        },
+        {
+          "name": "艦上爆撃機",
+          "amount": 4
+        },
+        {
+          "name": "艦上攻撃機",
+          "amount": 4
+        }
+      ],
+      "equipments": [
+        {
+          "name": "熟練搭乗員",
+          "amount": 1
+        },
+        {
+          "name": "新型航空兵装資材",
+          "amount": 2
+        }
+      ],
+      "resources": [
+        0,
+        0,
+        0,
+        4800
       ]
     }
   },
@@ -14402,38 +14614,6 @@
     }
   },
   {
-    "game_id": 847,
-    "wiki_id": "SB22",
-    "category": 2,
-    "type": 1,
-    "name": "春の準備任務：桃の節句準備を完遂せよ！",
-    "detail": "春の準備任務：艦隊を東部オリョール海に反復出撃、同方面敵艦隊を覆滅し、<br>同海域周辺の制海権を完全に確保、桃の節句を迎える準備を完遂せよ！",
-    "reward_fuel": 330,
-    "reward_ammo": 330,
-    "reward_steel": 0,
-    "reward_bauxite": 330,
-    "reward_other": [
-      {
-        "name": "菱餅",
-        "amount": 3
-      },
-      {
-        "name": "補強増設",
-        "amount": 1
-      }
-    ],
-    "prerequisite": [
-      657
-    ],
-    "requirements": {
-      "category": "sortie",
-      "map": "2-3",
-      "boss": true,
-      "result": "S",
-      "times": 5
-    }
-  },
-  {
     "game_id": 848,
     "wiki_id": "B92",
     "category": 2,
@@ -15908,58 +16088,23 @@
     ],
     "prerequisite": [],
     "requirements": {
-      "category": "and",
-      "list": [
+      "category": "sortie",
+      "times": 1,
+      "map": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "boss": true,
+      "result": "A",
+      "groups": [
         {
-          "category": "sortie",
-          "times": 1,
-          "map": "3-1",
-          "boss": true,
-          "result": "A",
-          "groups": [
-            {
-              "ship": "軽巡洋艦",
-              "amount": 1
-            },
-            {
-              "ship": "艦",
-              "amount": 5
-            }
-          ]
+          "ship": "軽巡洋艦",
+          "amount": 1
         },
         {
-          "category": "sortie",
-          "times": 1,
-          "map": "3-2",
-          "boss": true,
-          "result": "A",
-          "groups": [
-            {
-              "ship": "軽巡洋艦",
-              "amount": 1
-            },
-            {
-              "ship": "駆逐艦",
-              "amount": 5
-            }
-          ]
-        },
-        {
-          "category": "sortie",
-          "times": 1,
-          "map": "3-3",
-          "boss": true,
-          "result": "A",
-          "groups": [
-            {
-              "ship": "軽巡洋艦",
-              "amount": 1
-            },
-            {
-              "ship": "艦",
-              "amount": 5
-            }
-          ]
+          "ship": "艦",
+          "amount": 5
         }
       ]
     }
@@ -17177,6 +17322,269 @@
         },
         {
           "ship": "谷風丁改"
+        }
+      ]
+    }
+  },
+  {
+    "game_id": 892,
+    "wiki_id": "B126",
+    "category": 2,
+    "type": 1,
+    "name": "主力オブ主力、抜錨開始！",
+    "detail": "甲型駆逐艦編成任務：夕雲型駆逐艦「夕雲改二」及び「巻雲改二」の2隻から成る精鋭第十駆逐隊を含む有力な艦隊を南方海域に投入、サブ島沖海域、サーモン海域、サーモン海域北方の敵を捕捉撃滅せよ！",
+    "reward_fuel": 500,
+    "reward_ammo": 500,
+    "reward_steel": 500,
+    "reward_bauxite": 1000,
+    "reward_other": [
+      {
+        "choices": [
+          {
+            "name": "新型砲熕兵装資材",
+            "amount": 1
+          },
+          {
+            "name": "新型航空兵装資材",
+            "amount": 1
+          },
+          {
+            "name": "大発動艇",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "choices": [
+          {
+            "name": "熟練搭乗員",
+            "amount": 1
+          },
+          {
+            "name": "改修資材",
+            "amount": 4
+          }
+        ]
+      }
+    ],
+    "prerequisite": [
+      196,
+      201
+    ],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": [
+        "5-3",
+        "5-4",
+        "5-5"
+      ],
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {
+          "ship": "夕雲改二"
+        },
+        {
+          "ship": "巻雲改二"
+        },
+        {
+          "ship": "艦",
+          "amount": 4
+        }
+      ]
+    }
+  },
+  {
+    "game_id": 893,
+    "wiki_id": "Bq08",
+    "category": 2,
+    "type": 7,
+    "name": "泊地周辺海域の安全確保を徹底せよ！",
+    "detail": "泊地近海警戒戦果拡張：有力な泊地哨戒部隊を編成、鎮守府近海、ブルネイ泊地沖、タウイタウイ泊地沖に反復出撃！各周辺海域に出没する敵船を制圧、さらに泊地周辺の脅威となる敵戦力を捕捉撃滅せよ！",
+    "reward_fuel": 2000,
+    "reward_ammo": 500,
+    "reward_steel": 0,
+    "reward_bauxite": 500,
+    "reward_other": [
+      {
+        "name": "戦果300"
+      },
+      {
+        "choices": [
+          {
+            "name": "熟練見張員",
+            "amount": 1
+          },
+          {
+            "name": "熟練搭乗員",
+            "amount": 1
+          },
+          {
+            "name": "洋上補給",
+            "amount": 4
+          }
+        ]
+      }
+    ],
+    "prerequisite": [
+      214,
+      299
+    ],
+    "requirements": {
+      "category": "sortie",
+      "times": 3,
+      "map": [
+        "1-5",
+        "7-1",
+        "7-2-P1",
+        "7-2-P2"
+      ],
+      "boss": true,
+      "result": "S"
+    }
+  },
+  {
+    "game_id": 894,
+    "wiki_id": "Bq09",
+    "category": 2,
+    "type": 7,
+    "name": "空母戦力の投入による兵站線戦闘哨戒",
+    "detail": "空母を含む有力な哨戒艦隊を編成、製油所地帯沿岸、南西諸島防衛戦、南西諸島近海、バシー海峡及び東部オリョール海を戦闘哨戒、各海域の敵艦隊を捕捉撃滅、各海域兵站線の安全を確保せよ！",
+    "reward_fuel": 600,
+    "reward_ammo": 0,
+    "reward_steel": 600,
+    "reward_bauxite": 0,
+    "reward_other": [
+      {
+        "choices": [
+          {
+            "name": "新型航空兵装資材",
+            "amount": 1
+          },
+          {
+            "name": "開発資材",
+            "amount": 4
+          }
+        ]
+      },
+      {
+        "choices": [
+          {
+            "name": "彩雲",
+            "amount": 1
+          },
+          {
+            "name": "熟練搭乗員",
+            "amount": 1
+          },
+          {
+            "name": "プレゼント箱",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "prerequisite": [],
+    "requirements": {
+      "category": "sortie",
+      "times": 1,
+      "map": [
+        "1-3",
+        "1-4",
+        "2-1",
+        "2-2",
+        "2-3"
+      ],
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {
+          "ship": [
+            "軽空母",
+            "正規空母",
+            "装甲空母"
+          ],
+          "flagship": true
+        },
+        {
+          "ship": "艦",
+          "amount": 5
+        }
+      ]
+    }
+  },
+  {
+    "game_id": 895,
+    "wiki_id": "B127",
+    "category": 2,
+    "type": 1,
+    "name": "冬季北方海域作戦",
+    "detail": "冬季北方作戦：軽巡級を旗艦とする有力な艦隊で、モーレイ海、アルフォンシーノ方面、北方海域全域及び北方AL海域に反復出撃！同海域に遊弋する敵艦隊を捕捉、これを撃滅し、北方海域制海権を確保せよ！",
+    "reward_fuel": 0,
+    "reward_ammo": 800,
+    "reward_steel": 0,
+    "reward_bauxite": 800,
+    "reward_other": [
+      {
+        "choices": [
+          {
+            "name": "零式艦戦21型",
+            "amount": 3
+          },
+          {
+            "name": "零式艦戦32型",
+            "amount": 2
+          },
+          {
+            "name": "特注家具職人",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "choices": [
+          {
+            "name": "改修資材",
+            "amount": 4
+          },
+          {
+            "name": "22号対水上電探",
+            "amount": 3
+          },
+          {
+            "name": "新型航空兵装資材",
+            "amount": 2
+          }
+        ]
+      }
+    ],
+    "prerequisite": [
+      894
+    ],
+    "requirements": {
+      "category": "sortie",
+      "times": 2,
+      "map": [
+        "3-1",
+        "3-3",
+        "3-4",
+        "3-5"
+      ],
+      "boss": true,
+      "result": "S",
+      "groups": [
+        {
+          "ship": [
+            "軽巡洋艦",
+            "重雷装巡洋艦",
+            "練習巡洋艦"
+          ],
+          "flagship": true
+        },
+        {
+          "ship": "艦",
+          "amount": 5
         }
       ]
     }
