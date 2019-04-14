@@ -3661,12 +3661,16 @@
     "reward_bauxite": 0,
     "reward_other": [
       {
-        "name": "開発資材",
-        "amount": 5
-      },
-      {
-        "name": "特注家具職人",
-        "amount": 1
+        "choices": [
+          {
+            "name": "開発資材",
+            "amount": 5
+          },
+          {
+            "name": "特注家具職人",
+            "amount": 1
+          }
+        ]
       }
     ],
     "prerequisite": [
@@ -7243,10 +7247,6 @@
             "海防艦"
           ],
           "amount": 2
-        },
-        {
-          "ship": "艦",
-          "amount": 3
         }
       ]
     }
@@ -7538,70 +7538,8 @@
     }
   },
   {
-    "game_id": 313,
-    "wiki_id": "C10",
-    "category": 3,
-    "type": 1,
-    "name": "秋季大演習",
-    "detail": "秋の一日中に「演習」で8回以上「勝利」をおさめ、艦隊のさらなる練度に努めよ！",
-    "reward_fuel": 1000,
-    "reward_ammo": 0,
-    "reward_steel": 300,
-    "reward_bauxite": 0,
-    "reward_other": [
-      {
-        "name": "給糧艦「間宮」",
-        "amount": 1
-      },
-      {
-        "name": "プレゼント箱",
-        "amount": 1
-      }
-    ],
-    "prerequisite": [
-      303
-    ],
-    "requirements": {
-      "category": "excercise",
-      "times": 8,
-      "victory": true,
-      "daily": true
-    }
-  },
-  {
-    "game_id": 314,
-    "wiki_id": "C28",
-    "category": 3,
-    "type": 1,
-    "name": "冬季大演習",
-    "detail": "冬の一日中に「演習」で8回以上「勝利」をおさめ、艦隊のさらなる練度に努めよ！",
-    "reward_fuel": 300,
-    "reward_ammo": 1000,
-    "reward_steel": 0,
-    "reward_bauxite": 0,
-    "reward_other": [
-      {
-        "name": "高速修復材",
-        "amount": 3
-      },
-      {
-        "name": "給糧艦「間宮」",
-        "amount": 1
-      }
-    ],
-    "prerequisite": [
-      303
-    ],
-    "requirements": {
-      "category": "excercise",
-      "times": 8,
-      "victory": true,
-      "daily": true
-    }
-  },
-  {
     "game_id": 315,
-    "wiki_id": "C19",
+    "wiki_id": "C30",
     "category": 3,
     "type": 1,
     "name": "春季大演習",
@@ -9853,7 +9791,7 @@
       "equipment": "零戦52型丙(六〇一空)",
       "scraps": [
         {
-          "name": "烈風",
+          "name": "試製烈風 後期型",
           "amount": 2
         }
       ]
@@ -11015,7 +10953,7 @@
           "amount": 2
         },
         {
-          "name": "烈風",
+          "name": "試製烈風 後期型",
           "amount": 2
         }
       ],
@@ -12754,7 +12692,7 @@
       {
         "choices": [
           {
-            "name": "烈風改",
+            "name": "烈風 一一型",
             "amount": 1
           },
           {
@@ -16563,6 +16501,7 @@
       }
     ],
     "prerequisite": [
+      165,
       247
     ],
     "requirements": {
@@ -16820,7 +16759,8 @@
       }
     ],
     "prerequisite": [
-      323
+      323,
+      880
     ],
     "requirements": {
       "category": "sortie",
@@ -17504,8 +17444,7 @@
             "軽空母",
             "正規空母",
             "装甲空母"
-          ],
-          "flagship": true
+          ]
         },
         {
           "ship": "艦",
