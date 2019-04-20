@@ -1,6 +1,6 @@
 {
   "name": "poi-plugin-quest-info",
-  "version": "5.5.4",
+  "version": "5.5.5",
   "description": "show quest info",
   "main": "index",
   "scripts": {
