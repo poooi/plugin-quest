@@ -164,14 +164,13 @@ const parseResources = resources => {
   const name = ['Fuel', 'Ammo', 'Steel', 'Bauxite']
   return delimJoin(
     resources
-      .map(
-        (resource, i) =>
-          resource
-            ? _$('req.simple.resource', {
-                name: __(name[i]),
-                amount: resource,
-              })
-            : null,
+      .map((resource, i) =>
+        resource
+          ? _$('req.simple.resource', {
+              name: __(name[i]),
+              amount: resource,
+            })
+          : null,
       )
       .filter(str => str != null),
     _$('req.simple.resource_delim'),
@@ -407,12 +406,10 @@ class Requirement {
     } else {
       times = `${this.times} ${parsePluralize(quantifier, this.times)}`
     }
-    const extras = mapValues(
-      this.detail,
-      (value, name) =>
-        value
-          ? _$(`${basename}_${name}`) || ''
-          : _$(`${basename}_!${name}`) || '',
+    const extras = mapValues(this.detail, (value, name) =>
+      value
+        ? _$(`${basename}_${name}`) || ''
+        : _$(`${basename}_!${name}`) || '',
     )
     return _$(`${basename}`, { ...extras, times })
   }

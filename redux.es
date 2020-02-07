@@ -1,9 +1,8 @@
 import fs from 'fs-extra'
 import { forEach, range, get, keyBy, mapValues } from 'lodash'
 
-import generateReqstr from './reqstr'
-
 import { copyIfSame } from 'views/utils/tools'
+import generateReqstr from './reqstr'
 
 const initState = {
   quests: {},

@@ -29,5 +29,8 @@ module.exports = {
     'no-confusing-arrow': 'off',
     'no-console': 'off',
     'prettier/prettier': 'error',
+    'react/static-property-placement': 'off',
+    'react/destructuring-assignment': 'off',
+    'react/jsx-props-no-spreading': 'off',
 	},
 }

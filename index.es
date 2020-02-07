@@ -137,12 +137,9 @@ RewardItem.propTypes = {
 // 'W' represents wedding/marriage
 
 @translate(NS, { nsMode: 'fallback' })
-@connect(
-  pluginDataSelector,
-  {
-    readQuestInfo,
-  },
-)
+@connect(pluginDataSelector, {
+  readQuestInfo,
+})
 class PluginQuest extends Component {
   static initFilterFuncs = () => {
     const filterFuncs = {}
@@ -180,20 +177,18 @@ class PluginQuest extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    window.addEventListener('game.request', this.handleRequest)
+    ipc.register('quest-info', {
+      switchTo: this.handleSwitchTo,
+    })
+
     const dataPath = window.config.get(
       'plugin.quest.path',
       join(__dirname, 'assets', 'data.json'),
     )
     const __ = i18next.getFixedT(window.language, NS)
     this.props.readQuestInfo(dataPath, __)
-  }
-
-  componentDidMount() {
-    window.addEventListener('game.request', this.handleRequest)
-    ipc.register('quest-info', {
-      switchTo: this.handleSwitchTo,
-    })
   }
 
   componentWillUnmount() {
@@ -301,9 +296,8 @@ class PluginQuest extends Component {
           <Tooltip id={`quest-link-${qid}`}>
             <strong>{quest.name}</strong>
             <br />
-            {t(categoryNames[quest.category - 1])}-{t(
-              typeNames[quest.type - 1],
-            )}
+            {t(categoryNames[quest.category - 1])}-
+            {t(typeNames[quest.type - 1])}
             <br />
             {quest.condition}
           </Tooltip>
