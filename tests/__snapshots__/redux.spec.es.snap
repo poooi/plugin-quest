@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`readQuestInfo en-US should quests match snapshot 1`] = `
+exports[`readQuestInfo en-US should match snapshot 1`] = `
 Object {
   "101": Object {
     "condition": "Have 2 any ships in your fleet",
@@ -3956,7 +3956,7 @@ Object {
 }
 `;
 
-exports[`readQuestInfo ja-JP should quests match snapshot 1`] = `
+exports[`readQuestInfo ja-JP should match snapshot 1`] = `
 Object {
   "101": Object {
     "condition": "艦2隻による艦隊を編成",
@@ -7912,7 +7912,7 @@ Object {
 }
 `;
 
-exports[`readQuestInfo ko-KR should quests match snapshot 1`] = `
+exports[`readQuestInfo ko-KR should match snapshot 1`] = `
 Object {
   "101": Object {
     "condition": "艦2隻による艦隊を編成",
@@ -11868,7 +11868,7 @@ Object {
 }
 `;
 
-exports[`readQuestInfo zh-CN should quests match snapshot 1`] = `
+exports[`readQuestInfo zh-CN should match snapshot 1`] = `
 Object {
   "101": Object {
     "condition": "编组任意舰船2只",
@@ -15824,7 +15824,7 @@ Object {
 }
 `;
 
-exports[`readQuestInfo zh-TW should quests match snapshot 1`] = `
+exports[`readQuestInfo zh-TW should match snapshot 1`] = `
 Object {
   "101": Object {
     "condition": "編組任意艦船2只",

@@ -29,7 +29,7 @@ beforeEach(() => {})
 
 describe('readQuestInfo', () => {
   test.each(window.LOCALES.map(l => l.locale))(
-    '%s should quests match snapshot',
+    '%s should match snapshot',
     async lng => {
       window.language = lng
       const dataPath = join('assets', 'data.json')
