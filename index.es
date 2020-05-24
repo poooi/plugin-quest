@@ -18,7 +18,6 @@ import FA from 'react-fontawesome'
 import { shell } from 'electron'
 import { extensionSelectorFactory } from 'views/utils/selectors'
 import { MaterialIcon } from 'views/components/etc/icon'
-import i18next from 'views/env-parts/i18next'
 import { translate } from 'react-i18next'
 
 import Panel from './compat-panel'
@@ -187,8 +186,7 @@ class PluginQuest extends Component {
       'plugin.quest.path',
       join(__dirname, 'assets', 'data.json'),
     )
-    const __ = i18next.getFixedT(window.language, NS)
-    this.props.readQuestInfo(dataPath, __)
+    this.props.readQuestInfo(dataPath)
   }
 
   componentWillUnmount() {

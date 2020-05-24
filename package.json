@@ -24,7 +24,8 @@
   },
   "homepage": "https://github.com/poooi/plugin-quest#readme",
   "dependencies": {
-    "inflection": "^1.12.0"
+    "inflection": "^1.12.0",
+    "kcwiki-quest-data": "github:kcwikizh/kcwiki-quest-data#release"
   },
   "devDependencies": {
     "@babel/register": "^7.8.3",

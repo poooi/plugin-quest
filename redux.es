@@ -2,7 +2,7 @@ import fs from 'fs-extra'
 import { forEach, range, get, keyBy, mapValues } from 'lodash'
 
 import { copyIfSame } from 'views/utils/tools'
-import generateReqstr from './reqstr'
+import { QuestHelper } from 'kcwiki-quest-data'
 
 const initState = {
   quests: {},
@@ -98,19 +98,19 @@ export function reducer(state = initState, action) {
   return state
 }
 
-export const readQuestInfo = (path, __) => async dispatch => {
+export const readQuestInfo = path => async dispatch => {
   let data
   try {
     data = await fs.readJSON(path)
   } catch (e) {
     console.warn('Error in reading', path, e)
   }
-  const reqstr = generateReqstr(__, window.language)
   const quests = keyBy(data, 'game_id')
   forEach(quests, quest => {
     // Initialize `quests`
     quest.postquest = quest.postquest || [] // eslint-disable-line no-param-reassign
-    quest.condition = reqstr(quest.requirements) // eslint-disable-line no-param-reassign
+    quest.condition = QuestHelper.of(quest) // eslint-disable-line no-param-reassign
+      .translate(window.language)
     if (typeof quest.game_id !== 'number') {
       console.warn(
         `Unexpected quest game_id type "${typeof quest.game_id}" for quest "${
