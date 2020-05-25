@@ -182,11 +182,7 @@ class PluginQuest extends Component {
       switchTo: this.handleSwitchTo,
     })
 
-    const dataPath = window.config.get(
-      'plugin.quest.path',
-      join(__dirname, 'assets', 'data.json'),
-    )
-    this.props.readQuestInfo(dataPath)
+    this.props.readQuestInfo()
   }
 
   componentWillUnmount() {
