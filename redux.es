@@ -97,21 +97,22 @@ export function reducer(state = initState, action) {
   return state
 }
 
-export const readQuestInfo = () => async dispatch => {
+export const readQuestInfo = () => {
   const quests = questDataMap
   forEach(quests, quest => {
     // Initialize `quests`
     const questHelper = QuestHelper.of(quest)
-    quest.condition = questHelper.translate(window.language) // eslint-disable-line no-param-reassign
-    // TODO postquest should handled when build
-    quest.postquest = questHelper.getPostQuest().map(q => q.unwrap().game_id) // eslint-disable-line no-param-reassign
+    // eslint-disable-next-line no-param-reassign
+    quest.condition = questHelper.translate(window.language)
+    // eslint-disable-next-line no-param-reassign
+    quest.postquest = questHelper.getPostQuest().map(q => q.unwrap().game_id)
   })
   // Initialize `questStatus`
   const questStatus = mapValues(quests, () => COMPLETED)
 
-  dispatch({
+  return {
     type: '@@poi-plugin-quest-info@init',
     quests,
     questStatus,
-  })
+  }
 }
