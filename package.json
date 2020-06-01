@@ -5,6 +5,7 @@
   "main": "index",
   "scripts": {
     "fetch": "node fetch.es",
+    "dev": "webpack-dev-server --config explorer/webpack.config.ts --mode=development --colors --watch --hot",
     "reset": "git clean -f && git checkout .",
     "prepack": "poi-util-transpile --sm --replace",
     "postpublish": "npm run reset",
@@ -28,10 +29,12 @@
     "kcwiki-quest-data": "github:kcwikizh/kcwiki-quest-data#release"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.10.1",
     "@babel/register": "^7.8.3",
     "@commitlint/config-conventional": "^8.3.4",
     "@types/jest": "^25.2.3",
     "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.1.0",
     "bluebird": "^3.7.2",
     "commitlint": "^8.3.5",
     "eslint": "^6.8.0",
@@ -51,7 +54,10 @@
     "lodash": "^4.17.15",
     "node-fetch": "^2.6.0",
     "poi-util-transpile": "^10.3.4",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "webpack": "^5.0.0-beta.16",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
   },
   "husky": {
     "hooks": {
