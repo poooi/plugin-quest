@@ -18,7 +18,7 @@ import FA from 'react-fontawesome'
 import { shell } from 'electron'
 import { extensionSelectorFactory } from 'views/utils/selectors'
 import { MaterialIcon } from 'views/components/etc/icon'
-import { translate } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 
 import Panel from './compat-panel'
 import { reducer, readQuestInfo } from './redux'
@@ -75,7 +75,7 @@ const typeNames = [
   'Quarterly',
 ]
 
-const FilterItem = translate(NS)(({ t, index }) => (
+const FilterItem = withTranslation(NS)(({ t, index }) => (
   <span>
     {categoryColors[index] && (
       <span
@@ -108,21 +108,23 @@ QuestItem.propTypes = {
   }).isRequired,
 }
 
-const RewardItem = translate(NS, { nsMode: 'fallback' })(({ t, reward }) => {
-  let name = t(reward.name)
-  if (reward.category) {
-    name = t('「') + name + t('」')
-  }
-  const amount = reward.amount ? ` × ${reward.amount}` : ''
-  const category = t(reward.category || '')
-  return (
-    <li>
-      {category}
-      {name}
-      {amount}
-    </li>
-  )
-})
+const RewardItem = withTranslation(NS, { nsMode: 'fallback' })(
+  ({ t, reward }) => {
+    let name = t(reward.name)
+    if (reward.category) {
+      name = t('「') + name + t('」')
+    }
+    const amount = reward.amount ? ` × ${reward.amount}` : ''
+    const category = t(reward.category || '')
+    return (
+      <li>
+        {category}
+        {name}
+        {amount}
+      </li>
+    )
+  },
+)
 
 RewardItem.propTypes = {
   reward: PropTypes.shape({
@@ -135,7 +137,7 @@ RewardItem.propTypes = {
 
 // 'W' represents wedding/marriage
 
-@translate(NS, { nsMode: 'fallback' })
+@withTranslation(NS, { nsMode: 'fallback' })
 @connect(pluginDataSelector, {
   readQuestInfo,
 })
@@ -162,7 +164,7 @@ class PluginQuest extends Component {
 
   static propTypes = {
     readQuestInfo: PropTypes.func.isRequired,
-    quests: PropTypes.arrayOf(PropTypes.object).isRequired,
+    quests: PropTypes.objectOf(PropTypes.object).isRequired,
     questStatus: PropTypes.objectOf(PropTypes.object).isRequired,
     t: PropTypes.func.isRequired,
   }
@@ -278,8 +280,8 @@ class PluginQuest extends Component {
   }
 
   /* eslint-disable jsx-a11y/click-events-have-key-events,
-  jsx-a11y/no-static-element-interactions,
-  jsx-a11y/anchor-is-valid */
+    jsx-a11y/no-static-element-interactions,
+    jsx-a11y/anchor-is-valid */
   renderQuestLink = qid => {
     const quest = this.props.quests[qid] || {}
     const { t } = this.props
