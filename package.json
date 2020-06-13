@@ -2,11 +2,11 @@
   "name": "poi-plugin-quest-info",
   "version": "5.5.12",
   "description": "show quest info",
-  "main": "index",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "webpack-dev-server --config explorer/webpack.config.ts --mode=development --colors --watch --hot",
     "reset": "git clean -f && git checkout .",
-    "prepack": "poi-util-transpile --sm --replace",
+    "prepack": "rollup -c",
     "postpublish": "npm run reset",
     "test": "jest"
   },
@@ -23,16 +23,18 @@
     "url": "https://github.com/poooi/plugin-quest/issues"
   },
   "homepage": "https://github.com/poooi/plugin-quest#readme",
-  "dependencies": {
-    "kcwiki-quest-data": "^0.6.1"
-  },
   "devDependencies": {
     "@babel/preset-react": "^7.10.1",
     "@babel/register": "^7.8.3",
     "@commitlint/config-conventional": "^8.3.4",
+    "@rollup/plugin-babel": "^5.0.3",
+    "@rollup/plugin-commonjs": "^13.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^8.0.1",
     "@types/jest": "^25.2.3",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.1.0",
+    "builtin-modules": "^3.1.0",
     "commitlint": "^8.3.5",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
@@ -44,10 +46,12 @@
     "eslint-plugin-react": "^7.18.3",
     "husky": "^4.2.1",
     "jest": "^26.0.1",
+    "kcwiki-quest-data": "^0.6.1",
     "lint-staged": "^10.0.7",
     "lodash": "^4.17.15",
     "poi-util-transpile": "^10.3.4",
     "prettier": "^1.19.1",
+    "rollup": "^2.16.0",
     "webpack": "^5.0.0-beta.16",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
