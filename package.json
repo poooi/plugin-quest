@@ -5,9 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "webpack-dev-server --config explorer/webpack.config.ts --mode=development --colors --watch --hot",
-    "reset": "git clean -f && git checkout .",
     "prepack": "rollup -c",
-    "postpublish": "npm run reset",
+    "postpublish": "rimraf ./dist",
     "test": "jest"
   },
   "repository": {
@@ -51,6 +50,7 @@
     "lodash": "^4.17.15",
     "poi-util-transpile": "^10.3.4",
     "prettier": "^1.19.1",
+    "rimraf": "^3.0.2",
     "rollup": "^2.16.0",
     "webpack": "^5.0.0-beta.16",
     "webpack-cli": "^3.3.11",
