@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --config explorer/webpack.config.ts --mode=development --colors --watch --hot",
     "prepack": "rollup -c",
-    "postpublish": "rimraf ./dist",
+    "postpublish": "rimraf index.js index.js.map",
     "test": "jest"
   },
   "repository": {
@@ -52,7 +52,6 @@
     "prettier": "^1.19.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.16.0",
-    "rollup-plugin-copy": "^3.3.0",
     "webpack": "^5.0.0-beta.16",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
