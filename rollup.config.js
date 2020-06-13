@@ -2,6 +2,7 @@ import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import babel from '@rollup/plugin-babel'
 import json from '@rollup/plugin-json'
+import copy from 'rollup-plugin-copy'
 import builtins from 'builtin-modules'
 
 export default {
@@ -119,5 +120,8 @@ export default {
     commonjs(),
     babel(),
     json(),
+    copy({
+      targets: [{ src: './assets/quest.css', dest: './dist/assets' }],
+    }),
   ],
 }
