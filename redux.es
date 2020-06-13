@@ -1,8 +1,7 @@
-import fs from 'fs-extra'
-import { forEach, range, get, keyBy, mapValues } from 'lodash'
+import { forEach, range, get, mapValues } from 'lodash'
 
 import { copyIfSame } from 'views/utils/tools'
-import generateReqstr from './reqstr'
+import { QuestHelper, questDataMap } from 'kcwiki-quest-data'
 
 const initState = {
   quests: {},
@@ -98,52 +97,22 @@ export function reducer(state = initState, action) {
   return state
 }
 
-export const readQuestInfo = (path, __) => async dispatch => {
-  let data
-  try {
-    data = await fs.readJSON(path)
-  } catch (e) {
-    console.warn('Error in reading', path, e)
-  }
-  const reqstr = generateReqstr(__, window.language)
-  const quests = keyBy(data, 'game_id')
+export const readQuestInfo = () => {
+  const quests = questDataMap
   forEach(quests, quest => {
     // Initialize `quests`
-    quest.postquest = quest.postquest || [] // eslint-disable-line no-param-reassign
-    quest.condition = reqstr(quest.requirements) // eslint-disable-line no-param-reassign
-    if (typeof quest.game_id !== 'number') {
-      console.warn(
-        `Unexpected quest game_id type "${typeof quest.game_id}" for quest "${
-          quest.wiki_id
-        }"`,
-      )
-      quest.game_id = `_UNKNOWN-${quests.length}` // eslint-disable-line no-param-reassign
-    }
-    quest.prerequisite.forEach(pid => {
-      if (typeof pid !== 'number') {
-        console.warn(
-          `Unexpected quest prerequisite type "${typeof pid}" for quest "${
-            quest.wiki_id
-          }". Skipping.`,
-        )
-        return
-      }
-      const prereq = quests[pid]
-      if (!prereq) {
-        console.warn(
-          `Prereq ${pid} defined by quest ${quest.game_id} does not exist.`,
-        )
-        return
-      }
-      prereq.postquest = [...(prereq.postquest || []), quest.game_id]
-    })
+    const questHelper = QuestHelper.of(quest)
+    // eslint-disable-next-line no-param-reassign
+    quest.condition = questHelper.translate(window.language)
+    // eslint-disable-next-line no-param-reassign
+    quest.postquest = questHelper.getPostQuest().map(q => q.unwrap().game_id)
   })
   // Initialize `questStatus`
   const questStatus = mapValues(quests, () => COMPLETED)
 
-  dispatch({
+  return {
     type: '@@poi-plugin-quest-info@init',
     quests,
     questStatus,
-  })
+  }
 }
