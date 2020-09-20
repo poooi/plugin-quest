@@ -110,7 +110,7 @@ QuestItem.propTypes = {
 
 const RewardItem = withTranslation(NS, { nsMode: 'fallback' })(
   ({ t, reward }) => {
-    let name = t(reward.name)
+    let name = t(reward.name, { keySeparator: false })
     if (reward.category) {
       name = t('「') + name + t('」')
     }
