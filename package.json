@@ -45,7 +45,7 @@
     "eslint-plugin-react": "^7.18.3",
     "husky": "^4.2.1",
     "jest": "^26.0.1",
-    "kcwiki-quest-data": "^0.7.2",
+    "kcwiki-quest-data": "^0.8.0",
     "lint-staged": "^10.0.7",
     "lodash": "^4.17.15",
     "poi-util-transpile": "^10.3.4",
