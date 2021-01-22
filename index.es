@@ -275,7 +275,7 @@ class PluginQuest extends Component {
       : `[Wrong data] Quest ${questId}`
 
     shell.openExternal(
-      `https://github.com/kcwikizh/kcdata/issues/new?title=${title}`,
+      `https://github.com/kcwikizh/kcwiki-quest-data/issues/new?title=${title}`,
     )
   }
 
